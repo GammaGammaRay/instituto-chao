@@ -21,17 +21,6 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script type="module" src="/src/js/setScroll.js"></script>
   </body>
-  <script>
-    window.addEventListener(
-      "scroll",
-      () => {
-        document.body.style.setProperty(
-          "--scroll",
-          window.pageYOffset / (document.body.offsetHeight - window.innerHeight)
-        );
-      },
-      false
-    );
-  </script>
 </html>
