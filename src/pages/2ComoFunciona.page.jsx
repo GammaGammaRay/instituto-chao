@@ -71,9 +71,9 @@ const ComoFuncionaContainer = styled(ContentContainer)`
 `;
 
 const ComoFuncionaTitle = styled(VerticalTitle)`
-  font-family: var(--title-font) a;
-  font-weight: 500;
-  font-size: 16vh;
+  font-family: var(--title-font);
+  font-weight: var(--title-font-weight);
+  font-size: var(--title-font-size);
   line-height: 0.8em;
   word-wrap: break-word;
 
@@ -81,7 +81,7 @@ const ComoFuncionaTitle = styled(VerticalTitle)`
 
   display: flex;
   align-items: end;
-  justify-content: end;
+  justify-content: start;
 
   text-align: start;
 `;

@@ -11,7 +11,6 @@ function Historico() {
   return (
     <Section>
       <QuemSomosContainer>
-        <QuemSomosTitle>HISTÓRICO</QuemSomosTitle>
         <SectionText>
           <p>
             Abrimos as portas em maio de 2015, começamos com 6 pessoas e um
@@ -66,6 +65,7 @@ function Historico() {
           </p>
           <br />
         </SectionText>
+        <QuemSomosTitle>HISTÓRICO</QuemSomosTitle>
       </QuemSomosContainer>
     </Section>
   );
@@ -85,8 +85,8 @@ const QuemSomosContainer = styled(ContentContainer)`
 
 const QuemSomosTitle = styled(VerticalTitle)`
   font-family: var(--title-font);
-  font-weight: 500;
-  font-size: 16vh;
+  font-weight: var(--title-font-weight);
+  font-size: var(--title-font-size);
   line-height: 0.8em;
   word-wrap: break-word;
 
@@ -94,7 +94,7 @@ const QuemSomosTitle = styled(VerticalTitle)`
 
   display: flex;
   align-items: end;
-  justify-content: end;
+  justify-content: start;
 
   text-align: start;
 `;

@@ -7,20 +7,24 @@ const BodyContainer = styled.div`
   height: calc(100vh - var(--nav-height));
 `;
 
-const Section = styled.div`
+const Section = styled.section`
   width: 100%;
-
+  min-height: 100%;
   scroll-snap-align: start;
+  overflow-y: hidden;
 `;
 
 const ContentContainer = styled.div`
   width: 100%;
   height: 100%;
+
+  ::-webkit-scrollbar {
+    width: 0 !important;
+  }
 `;
 
 const SectionText = styled.div`
   width: 60%;
-  overflow-y: auto;
 `;
 
 const VerticalTitle = styled.div`

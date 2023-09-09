@@ -82,8 +82,8 @@ const QuemSomosContainer = styled(ContentContainer)`
 
 const QuemSomosTitle = styled(VerticalTitle)`
   font-family: var(--title-font);
-  font-weight: 500;
-  font-size: 20vh;
+  font-weight: var(--title-font-weight);
+  font-size: var(--title-font-size);
   writing-mode: vertical-rl;
   line-height: 0.8em;
   word-wrap: break-word;
@@ -91,6 +91,7 @@ const QuemSomosTitle = styled(VerticalTitle)`
 
   display: flex;
   align-items: end;
+  justify-content: end;
 
   text-align: end;
 `;

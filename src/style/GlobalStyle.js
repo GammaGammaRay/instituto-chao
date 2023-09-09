@@ -19,9 +19,11 @@ const GlobalStyle = createGlobalStyle`
 
     --title-font: 'Poppins', sans-serif;
     --title-font-weight: 500;
-    /* --title-font-size: clamp(0.6em, 6em, 12em); */
+    --title-font-size: 14vh;
 
 }
+
+
     
     body{
     font-family: Arial, Helvetica, sans-serif;

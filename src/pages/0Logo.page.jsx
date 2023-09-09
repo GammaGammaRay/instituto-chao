@@ -32,6 +32,7 @@ const LogoPage = styled.div`
 
 const LogoSection = styled(Section)`
   scroll-snap-align: unset;
+  height: 100%;
 `;
 
 export default Logo;
