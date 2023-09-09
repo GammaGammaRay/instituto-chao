@@ -12,7 +12,7 @@ function QuemSomos() {
     <Section>
       <QuemSomosContainer>
         <QuemSomosTitle>QUEM SOMOS?</QuemSomosTitle>
-        <SectionText>
+        <QuemSomosText>
           <p>
             O Chão é uma associação de trabalhadores, sem fins lucrativos, que
             se movimenta para o aprofundamento da consciência crítica, da
@@ -62,11 +62,15 @@ function QuemSomos() {
             pública, pelo combate à fome, pela biodiversidade e preservação
             ambiental e pela soberania alimentar.
           </p>
-        </SectionText>
+        </QuemSomosText>
       </QuemSomosContainer>
     </Section>
   );
 }
+
+const QuemSomosText = styled(SectionText)`
+  padding-right: var(--text-padding);
+`;
 
 const QuemSomosContainer = styled(ContentContainer)`
   background-color: var(--color-yellow);

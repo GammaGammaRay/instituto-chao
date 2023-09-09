@@ -11,7 +11,7 @@ function ComoFunciona() {
   return (
     <Section>
       <ComoFuncionaContainer>
-        <SectionText>
+        <ComoFuncionaText>
           <p>
             O Chão é essencialmente um lugar de construção cotidiana de um outro
             mundo necessário. Uma associação autogestionária que funciona como
@@ -52,12 +52,16 @@ function ComoFunciona() {
             e, hoje, nossa necessidade mínima é de 25% e a sugestão de 30% sobre
             o valor dos produtos.
           </p>
-        </SectionText>
+        </ComoFuncionaText>
         <ComoFuncionaTitle>COMO FUNCIONA?</ComoFuncionaTitle>
       </ComoFuncionaContainer>
     </Section>
   );
 }
+
+const ComoFuncionaText = styled(SectionText)`
+  padding-right: var(--text-padding);
+`;
 
 const ComoFuncionaContainer = styled(ContentContainer)`
   background-color: var(--color-brown);

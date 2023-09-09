@@ -12,7 +12,7 @@ function Buscamos() {
     <Section>
       <BuscamosContainer>
         <BuscamosTitle>O QUE BUSCAMOS?</BuscamosTitle>
-        <SectionText>
+        <BuscamosText>
           <p>
             Além de ser transparente, esta é uma forma mais eficiente de
             comercialização, já que não há exploração de quem produz, nem de
@@ -74,11 +74,15 @@ function Buscamos() {
             ser fonte de lucro, em detrimento da defesa da vida.
           </p>
           <br />
-        </SectionText>
+        </BuscamosText>
       </BuscamosContainer>
     </Section>
   );
 }
+
+const BuscamosText = styled(SectionText)`
+  padding-right: var(--text-padding);
+`;
 
 const BuscamosContainer = styled(ContentContainer)`
   background-color: var(--color-green);
@@ -110,8 +114,8 @@ const BuscamosTitle = styled(VerticalTitle)`
 
   text-align: end;
 
-  /* position: sticky; */
-  /* top: 0px; */
+  position: sticky;
+  top: 0px;
 `;
 
 const ExtraHeightDiv = styled.div`

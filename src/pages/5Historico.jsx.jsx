@@ -10,8 +10,8 @@ import { styled } from "styled-components";
 function Historico() {
   return (
     <Section>
-      <QuemSomosContainer>
-        <SectionText>
+      <HistoricoContainer>
+        <HistoricoText>
           <p>
             Abrimos as portas em maio de 2015, começamos com 6 pessoas e um
             financiamento coletivo de R$42 mil.
@@ -64,26 +64,32 @@ function Historico() {
             cooperativas.
           </p>
           <br />
-        </SectionText>
-        <QuemSomosTitle>HISTÓRICO</QuemSomosTitle>
-      </QuemSomosContainer>
+        </HistoricoText>
+        <HistoricoTitle>HISTÓRICO</HistoricoTitle>
+      </HistoricoContainer>
     </Section>
   );
 }
 
-const QuemSomosContainer = styled(ContentContainer)`
+const HistoricoText = styled(SectionText)`
+  padding-right: var(--text-padding);
+`;
+
+const HistoricoContainer = styled(ContentContainer)`
   background-color: var(--color1-yellow);
   color: black;
   line-height: 1.2em;
   padding-top: 24px;
   overflow: hidden;
 
+  margin-left: 20%;
+
   display: flex;
   flex-direction: row;
   justify-content: start;
 `;
 
-const QuemSomosTitle = styled(VerticalTitle)`
+const HistoricoTitle = styled(VerticalTitle)`
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
   font-size: var(--title-font-size);

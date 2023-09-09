@@ -21,6 +21,8 @@ const GlobalStyle = createGlobalStyle`
     --title-font-weight: 500;
     --title-font-size: 14vh;
 
+    --text-padding: 50px;
+
 }
 
 

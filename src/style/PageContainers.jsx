@@ -11,6 +11,8 @@ const Section = styled.section`
   width: 100%;
   min-height: 100%;
   scroll-snap-align: start;
+  /* scroll-padding-top: 50vh; */
+  /* scroll-margin-top: 20vh; */
   overflow-y: hidden;
 `;
 
