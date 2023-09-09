@@ -10,14 +10,17 @@ const GlobalStyle = createGlobalStyle`
     :root {
     --nav-height: 50px;
 
-    --color1-yellow: #e5d26a;
-    --color2-brown: #a58b74;
-    --color3-green: #6b7e5f;
-    --color4-pink: #e5a5b0;
-    --color5-red: #e65226;
-    --color6-salmon: #d57659;
+    --color-yellow: #e5d26a;
+    --color-brown: #a58b74;
+    --color-green: #6b7e5f;
+    --color-pink: #e5a5b0;
+    --color-red: #e65226;
+    --color-salmon: #d57659;
 
     --title-font: 'Poppins', sans-serif;
+    --title-font-weight: 500;
+    /* --title-font-size: clamp(0.6em, 6em, 12em); */
+
 }
     
     body{

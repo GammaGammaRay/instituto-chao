@@ -60,7 +60,7 @@ function ComoFunciona() {
 }
 
 const ComoFuncionaContainer = styled(ContentContainer)`
-  background-color: var(--color2-brown);
+  background-color: var(--color-brown);
   color: white;
   line-height: 1.2em;
   padding-top: 24px;

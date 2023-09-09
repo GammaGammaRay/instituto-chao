@@ -69,7 +69,7 @@ function QuemSomos() {
 }
 
 const QuemSomosContainer = styled(ContentContainer)`
-  background-color: var(--color1-yellow);
+  background-color: var(--color-yellow);
   color: black;
   line-height: 1.2em;
   padding-top: 24px;
@@ -83,8 +83,8 @@ const QuemSomosContainer = styled(ContentContainer)`
 const QuemSomosTitle = styled(VerticalTitle)`
   font-family: var(--title-font);
   font-weight: 500;
-  writing-mode: vertical-rl;
   font-size: 20vh;
+  writing-mode: vertical-rl;
   line-height: 0.8em;
   word-wrap: break-word;
   transform: rotate(180deg);

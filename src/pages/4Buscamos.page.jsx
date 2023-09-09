@@ -19,7 +19,7 @@ function Buscamos() {
 }
 
 const QuemSomosContainer = styled(ContentContainer)`
-  background-color: var(--color1-yellow);
+  background-color: var(--color-green);
   color: black;
   line-height: 1.2em;
   padding-top: 24px;
