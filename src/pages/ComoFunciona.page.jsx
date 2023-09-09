@@ -60,8 +60,8 @@ function ComoFunciona() {
 }
 
 const ComoFuncionaContainer = styled(ContentContainer)`
-  background-color: #e5d26a;
-  color: black;
+  background-color: var(--color2-brown);
+  color: white;
   line-height: 1.2em;
   padding-top: 24px;
   /* overflow: hidden; */
@@ -71,11 +71,13 @@ const ComoFuncionaContainer = styled(ContentContainer)`
 `;
 
 const ComoFuncionaTitle = styled(VerticalTitle)`
-  writing-mode: vertical-rl;
+  font-family: var(--title-font) a;
+  font-weight: 500;
   font-size: 16vh;
   line-height: 0.8em;
   word-wrap: break-word;
-  /* transform: rotate(180deg); */
+
+  writing-mode: vertical-rl;
 
   display: flex;
   align-items: end;
