@@ -9,7 +9,16 @@ const GlobalStyle = createGlobalStyle`
 
     :root {
     --nav-height: 50px;
-  }
+
+    --color1-yellow: #e5d26a;
+    --color2-brown: #a58b74;
+    --color3-green: #6b7e5f;
+    --color4-pink: #e5a5b0;
+    --color5-red: #e65226;
+    --color6-salmon: #d57659;
+
+    --title-font: 'Poppins', sans-serif;
+}
     
     body{
     font-family: Arial, Helvetica, sans-serif;
