@@ -9,7 +9,7 @@ import { styled } from "styled-components";
 
 function QuemSomos() {
   return (
-    <Section>
+    <QuemSomosSection>
       <QuemSomosContainer>
         <QuemSomosTitle>QUEM SOMOS?</QuemSomosTitle>
         <QuemSomosText>
@@ -64,17 +64,19 @@ function QuemSomos() {
           </p>
         </QuemSomosText>
       </QuemSomosContainer>
-    </Section>
+    </QuemSomosSection>
   );
 }
 
+const QuemSomosSection = styled(Section)`
+  scroll-padding-bottom: 10vh;
+`;
+
 const QuemSomosText = styled(SectionText)`
-  padding-right: var(--text-padding);
+  padding-left: var(--text-padding);
 `;
 
 const QuemSomosContainer = styled(ContentContainer)`
-  background-color: var(--color-yellow);
-  color: black;
   line-height: 1.2em;
   padding-top: 24px;
   overflow: hidden;

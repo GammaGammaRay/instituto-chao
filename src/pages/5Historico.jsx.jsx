@@ -76,8 +76,6 @@ const HistoricoText = styled(SectionText)`
 `;
 
 const HistoricoContainer = styled(ContentContainer)`
-  background-color: var(--color1-yellow);
-  color: black;
   line-height: 1.2em;
   padding-top: 24px;
   overflow: hidden;

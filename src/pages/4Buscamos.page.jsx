@@ -81,12 +81,10 @@ function Buscamos() {
 }
 
 const BuscamosText = styled(SectionText)`
-  padding-right: var(--text-padding);
+  padding-left: var(--text-padding);
 `;
 
 const BuscamosContainer = styled(ContentContainer)`
-  background-color: var(--color-green);
-  color: black;
   line-height: 1.2em;
   padding-top: 24px;
 

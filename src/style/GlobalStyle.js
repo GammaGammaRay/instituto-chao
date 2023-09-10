@@ -10,8 +10,12 @@ const GlobalStyle = createGlobalStyle`
     :root {
     --nav-height: 50px;
 
+    --section-height: calc(100vh - var(--nav-height));
+    --color-gray: #ded6d0;
+ 
     --color-yellow: #e5d26a;
     --color-brown: #a58b74;
+    --color-brown2: #a58b74;
     --color-green: #6b7e5f;
     --color-pink: #e5a5b0;
     --color-red: #e65226;

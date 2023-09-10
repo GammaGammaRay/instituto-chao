@@ -31,7 +31,7 @@ const LogoPage = styled.div`
 `;
 
 const LogoSection = styled(Section)`
-  scroll-snap-align: unset;
+  /* scroll-snap-align: unset; */
   height: 100%;
 `;
 
