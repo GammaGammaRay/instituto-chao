@@ -1,5 +1,5 @@
 import React from "react";
-import Nav from "./components/nav.component.jsx";
+import Nav from "./components/Nav.component.jsx";
 import Logo from "./pages/0Logo.page.jsx";
 import QuemSomos from "./pages/1QuemSomos.page.jsx";
 import { BodyContainer } from "./style/PageContainers";
