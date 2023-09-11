@@ -6,7 +6,12 @@ import { gsap } from "gsap";
 
 function Logo() {
   useEffect(() => {
-    gsap.to(".logo", { duration: 1.5, scale: 0.5, opacity: 100, ease: "back" });
+    gsap.to(".logo", {
+      duration: 3,
+      width: 500,
+      opacity: 100,
+      ease: "back",
+    });
   }, []);
 
   return (
@@ -32,7 +37,7 @@ const LogoPage = styled.div`
   align-items: center;
 
   img {
-    width: 1000px;
+    width: 0px;
   }
 `;
 
