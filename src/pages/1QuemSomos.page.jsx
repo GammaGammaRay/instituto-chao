@@ -73,7 +73,7 @@ const QuemSomosSection = styled(Section)`
 `;
 
 const QuemSomosText = styled(SectionText)`
-  padding-left: var(--text-padding);
+  /* padding-left: var(--text-padding); */
 `;
 
 const QuemSomosContainer = styled(ContentContainer)`
@@ -83,7 +83,7 @@ const QuemSomosContainer = styled(ContentContainer)`
 
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: center;
 `;
 
 const QuemSomosTitle = styled(VerticalTitle)`
@@ -98,6 +98,7 @@ const QuemSomosTitle = styled(VerticalTitle)`
   display: flex;
   align-items: end;
   justify-content: end;
+  flex-basis: 0;
 
   text-align: end;
 `;

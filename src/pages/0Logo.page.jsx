@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { styled } from "styled-components";
 
 import { Section } from "../style/PageContainers";
+import { gsap } from "gsap";
 
 function Logo() {
+  useEffect(() => {
+    gsap.to(".logo", { duration: 1.5, scale: 0.5, opacity: 100, ease: "back" });
+  }, []);
+
   return (
     <LogoSection>
       <LogoPage>
         <img
+          className="logo"
           type="image/svg+xml"
           src="chao_logo_preto-no-branco.svg"
           alt="Logo Instituto Chão"
@@ -26,7 +32,7 @@ const LogoPage = styled.div`
   align-items: center;
 
   img {
-    width: 50%;
+    width: 1000px;
   }
 `;
 

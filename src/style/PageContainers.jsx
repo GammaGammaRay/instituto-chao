@@ -4,6 +4,7 @@ const BodyContainer = styled.div`
   margin-top: var(--nav-height);
   overflow-y: scroll;
   scroll-snap-type: y proximity;
+
   height: var(--section-height);
 `;
 
@@ -11,43 +12,41 @@ const Section = styled.section`
   width: 100%;
   min-height: 100%;
   scroll-snap-align: start;
-  scroll-snap-stop: always;
+  /* scroll-margin-top: 100vh; */
 
-  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
 
   &:nth-of-type(1) {
     background-color: black;
-    height: 100%;
   }
   &:nth-of-type(2) {
     background-color: var(--color-yellow);
-    height: 100%;
     color: black;
   }
   &:nth-of-type(3) {
     background-color: var(--color-brown);
-    height: 100%;
   }
   &:nth-of-type(4) {
     background-color: var(--color-brown2);
-    height: 100%;
   }
   &:nth-of-type(5) {
     background-color: var(--color-green);
-    height: 100%;
   }
   &:nth-of-type(6) {
     background-color: var(--color-pink);
-    height: 100%;
   }
   &:nth-of-type(7) {
     background-color: var(--color-salmon);
-    height: 100%;
   }
 `;
 
 const ContentContainer = styled.div`
-  width: 100%;
+  width: 70%;
   height: 100%;
 
   ::-webkit-scrollbar {
@@ -56,11 +55,12 @@ const ContentContainer = styled.div`
 `;
 
 const SectionText = styled.div`
-  width: 60%;
+  width: 80%;
+  align-items: center;
 `;
 
 const VerticalTitle = styled.div`
-  width: 30%;
+  width: fit-content;
 `;
 
 export { BodyContainer, Section, ContentContainer, SectionText, VerticalTitle };

@@ -60,16 +60,15 @@ function ComoFunciona() {
 }
 
 const ComoFuncionaText = styled(SectionText)`
-  padding-right: var(--text-padding);
+  /* padding-right: var(--text-padding); */
 `;
 
 const ComoFuncionaContainer = styled(ContentContainer)`
   line-height: 1.2em;
   padding-top: 24px;
-  /* overflow: hidden; */
   display: flex;
   flex-direction: row;
-  justify-content: end;
+  justify-content: center;
 `;
 
 const ComoFuncionaTitle = styled(VerticalTitle)`
