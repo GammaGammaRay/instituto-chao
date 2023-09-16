@@ -1,5 +1,8 @@
 import React from "react";
 import Nav from "./components/Nav.component.jsx";
+import Lenis from "@studio-freight/lenis";
+// import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
 import Logo from "./pages/0Logo.page.jsx";
 import QuemSomos from "./pages/1QuemSomos.page.jsx";
 import { BodyContainer } from "./style/PageContainers";

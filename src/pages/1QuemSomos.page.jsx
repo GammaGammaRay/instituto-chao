@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import {
   Section,
   SectionText,
@@ -6,12 +6,62 @@ import {
   ContentContainer,
 } from "../style/PageContainers";
 import { styled } from "styled-components";
+import { gsap } from "gsap";
+import { CSSPlugin } from "gsap/CSSPlugin";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 function QuemSomos() {
+  const main = useRef();
+  const titleRef = useRef();
+
+  useLayoutEffect(() => {
+    console.log("useLayoutEffect executed");
+    gsap.registerPlugin(ScrollTrigger);
+    const ctx = gsap.context(() => {
+      const animation = gsap.timeline({
+        defaults: {
+          opacity: 0,
+          // y: 500,
+          duration: 1.5,
+          ease: "power3.inOut",
+        },
+      });
+
+      animation
+        .from(
+          titleRef.current.querySelectorAll("span"),
+          {
+            opacity: 0,
+            yPercent: 120,
+            stagger: 0.2,
+          },
+          {
+            scrollTrigger: {
+              trigger: titleRef.current,
+              // start: "top center",
+              // end: "top top",
+              // scrub: true,
+              pin: true,
+              markers: true, // Add markers for debugging (remove this in production)
+            },
+          }
+        )
+        .from(main.current.querySelectorAll("p"), {
+          opacity: 0,
+          delay: -1,
+          stagger: 0.2,
+        });
+    }, main); // <- Scope!
+    return () => ctx.revert(); // <- Cleanup!
+  }, []);
+
   return (
-    <QuemSomosSection>
+    <QuemSomosSection className="quemSomosSection" ref={main}>
       <QuemSomosContainer>
-        <QuemSomosTitle>QUEM SOMOS?</QuemSomosTitle>
+        <QuemSomosTitle ref={titleRef} className="quemSomosTitle">
+          <span className="quem">QUEM</span>
+          <span className="somos">SOMOS?</span>
+        </QuemSomosTitle>
         <QuemSomosText>
           <p>
             O Chão é uma associação de trabalhadores, sem fins lucrativos, que
@@ -19,27 +69,23 @@ function QuemSomos() {
             democracia e da igualdade de direitos, a fim de construir
             coletivamente uma sociedade justa e solidária.
           </p>
-          <br />
           <p>
             Buscamos uma democracia real: tudo é decidido em assembléias
             semanais, divide-se as funções de forma conjunta, recebe-se
             igualmente e apenas pelo trabalho, não remunera-se capital. Não há
             relação de exploração.
           </p>
-          <br />
           <p>
             Seguimos os princípios da Economia Solidária, uma política econômica
             do cuidado, tendo as pessoas como sujeito e finalidade da atividade
             econômica.
           </p>
-          <br />
           <p>
             Articulamos e integramos redes que fomentam a autonomia, o
             cooperativismo, a autogestão, o antirracismo, o feminismo, o
             antifascismo, o anti capacitismo e a redistribuição radical de
             renda.
           </p>
-          <br />
           <p>
             Visando a equidade e a horizontalidade, o Chão não tem dono, nem
             hierarquia. A prática diária se baseia no debate reflexivo sobre o
@@ -52,7 +98,6 @@ function QuemSomos() {
             decidindo os rumos e se responsabilizando juntas pelo caminho
             trilhado.
           </p>
-          <br />
           <p>
             Com todas as contradições inerentes, o nosso caminho é o do cuidado,
             da aproximação das pessoas, da busca por relações mais justas e
@@ -70,6 +115,9 @@ function QuemSomos() {
 
 const QuemSomosSection = styled(Section)`
   scroll-padding-bottom: 10vh;
+  p {
+    margin-bottom: 12px;
+  }
 `;
 
 const QuemSomosText = styled(SectionText)`
@@ -96,6 +144,7 @@ const QuemSomosTitle = styled(VerticalTitle)`
   transform: rotate(180deg);
 
   display: flex;
+  flex-direction: column;
   align-items: end;
   justify-content: end;
   flex-basis: 0;

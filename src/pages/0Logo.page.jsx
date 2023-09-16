@@ -1,22 +1,36 @@
-import React, { useEffect } from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import { styled } from "styled-components";
 
 import { Section } from "../style/PageContainers";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/all";
 
 function Logo() {
-  useEffect(() => {
-    gsap.to(".logo", {
-      duration: 3,
-      width: 500,
-      opacity: 100,
-      ease: "back",
-    });
+  const logoPage = useRef();
+  gsap.registerPlugin(ScrollTrigger);
+
+  useLayoutEffect(() => {
+    gsap.fromTo(
+      ".logo",
+      { width: 300, opacity: 0 },
+      {
+        width: 500,
+        opacity: 1, // Corrected opacity value
+        duration: 2,
+        ease: "back",
+        scrollTrigger: {
+          trigger: logoPage.current, // Corrected trigger reference
+          start: "top center",
+          end: "bottom center",
+          scrub: true,
+        },
+      }
+    );
   }, []);
 
   return (
     <LogoSection>
-      <LogoPage>
+      <LogoPage ref={logoPage}>
         <img
           className="logo"
           type="image/svg+xml"
