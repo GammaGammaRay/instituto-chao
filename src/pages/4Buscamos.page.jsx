@@ -30,12 +30,12 @@ function Buscamos() {
       animation
         .from(title.current.querySelectorAll("span"), {
           opacity: 0,
-          yPercent: -150,
+          yPercent: 150,
           stagger: 0.5,
           scrollTrigger: {
             trigger: title.current,
-            start: "-50% 100%",
-            end: "bottom 80%",
+            start: "top 50%",
+            end: "bottom 60%",
             scrub: true,
             // markers: true,
           },
@@ -43,9 +43,9 @@ function Buscamos() {
         .from(main.current, {
           opacity: 100,
           scrollTrigger: {
-            trigger: main.current,
-            start: "top 50px",
-            end: "bottom top",
+            trigger: title.current,
+            start: "top top",
+            end: "bottom bottom",
             scrub: true,
             // markers: true,
             pin: true,
@@ -68,7 +68,7 @@ function Buscamos() {
     return () => ctx.revert(); // <- Cleanup!
   }, []);
   return (
-    <BuscamosSection ref={main}>
+    <BuscamosSection ref={main} id="buscamos">
       <BuscamosContainer>
         <BuscamosTitle ref={title}>
           <span>O QUE</span>

@@ -1,18 +1,19 @@
 import React, { useEffect, useRef } from "react";
+import { styled } from "styled-components";
+import { gsap } from "gsap";
+import { CSSPlugin } from "gsap/CSSPlugin";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import {
   Section,
   SectionText,
   VerticalTitle,
   ContentContainer,
 } from "../style/PageContainers";
-import { styled } from "styled-components";
-import { gsap } from "gsap";
-import { CSSPlugin } from "gsap/CSSPlugin";
-import ScrollTrigger from "gsap/ScrollTrigger";
 
 function QuemSomos() {
   const main = useRef();
   const title = useRef();
+  const bg = useRef();
 
   useEffect(() => {
     console.log("useLayoutEffect executed");
@@ -28,6 +29,17 @@ function QuemSomos() {
       });
       // <--------- ANIMATION START --------->
       animation
+        .from(main.current, {
+          opacity: 100,
+          scrollTrigger: {
+            trigger: main.current,
+            start: "top 50px",
+            end: "bottom top",
+            scrub: true,
+            pin: true,
+          },
+        })
+
         .from(title.current.querySelectorAll("span"), {
           opacity: 0,
           yPercent: -150,
@@ -37,21 +49,9 @@ function QuemSomos() {
             start: "-50% 100%",
             end: "bottom 80%",
             scrub: true,
-            // markers: true,
           },
         })
-        .from(main.current, {
-          opacity: 100,
-          scrollTrigger: {
-            trigger: main.current,
-            start: "top 50px",
-            end: "bottom top",
-            scrub: true,
-            // markers: true,
-            pin: true,
-          },
-        })
-
+        // Paragraph
         .from(main.current.querySelectorAll("p"), {
           opacity: 0,
           stagger: 0.6,
@@ -60,7 +60,7 @@ function QuemSomos() {
             start: "60% bottom",
             end: "bottom top",
             scrub: true,
-            markers: true,
+            // markers: true,
           },
         });
       // <--------- ANIMATION END --------->
@@ -69,7 +69,8 @@ function QuemSomos() {
   }, []);
 
   return (
-    <QuemSomosSection className="quemSomosSection" ref={main}>
+    <QuemSomosSection id="quem-somos" className="quemSomosSection" ref={main}>
+      <QuemSomosBg />
       <QuemSomosContainer>
         <QuemSomosTitle ref={title} className="quemSomosTitle">
           <span className="quem">QUEM</span>
@@ -128,10 +129,17 @@ function QuemSomos() {
 
 const QuemSomosSection = styled(Section)`
   /* scroll-padding-bottom: 10vh; */
-  background-color: var(--color-yellow);
   p {
     margin-bottom: 12px;
   }
+`;
+
+const QuemSomosBg = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-yellow);
+  z-index: -5;
+  position: absolute;
 `;
 
 const QuemSomosText = styled(SectionText)`
@@ -151,7 +159,7 @@ const QuemSomosContainer = styled(ContentContainer)`
 const QuemSomosTitle = styled(VerticalTitle)`
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
-  font-size: var(--title-font-size);
+  font-size: calc(var(--title-font-size) * 0.95);
   writing-mode: vertical-lr;
   text-orientation: sideways;
   line-height: 0.8em;

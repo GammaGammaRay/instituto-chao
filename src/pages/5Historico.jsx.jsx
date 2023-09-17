@@ -9,7 +9,7 @@ import { styled } from "styled-components";
 
 function Historico() {
   return (
-    <Section>
+    <HistoricoSection>
       <HistoricoContainer>
         <HistoricoText>
           <p>
@@ -67,9 +67,13 @@ function Historico() {
         </HistoricoText>
         <HistoricoTitle>HISTÓRICO</HistoricoTitle>
       </HistoricoContainer>
-    </Section>
+    </HistoricoSection>
   );
 }
+
+const HistoricoSection = styled(Section)`
+  background-color: var(--color-pink);
+`;
 
 const HistoricoText = styled(SectionText)`
   padding-right: var(--text-padding);

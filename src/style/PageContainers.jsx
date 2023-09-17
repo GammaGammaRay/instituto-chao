@@ -16,29 +16,6 @@ const Section = styled.section`
   justify-content: center;
 
   overflow: hidden;
-
-  /* &:nth-of-type(1) {
-    background-color: black;
-  }
-  &:nth-of-type(2) {
-    background-color: var(--color-yellow);
-    color: black;
-  }
-  &:nth-of-type(3) {
-    background-color: var(--color-brown);
-  }
-  &:nth-of-type(4) {
-    background-color: var(--color-brown2);
-  }
-  &:nth-of-type(5) {
-    background-color: var(--color-green);
-  }
-  &:nth-of-type(6) {
-    background-color: var(--color-pink);
-  }
-  &:nth-of-type(7) {
-    background-color: var(--color-salmon);
-  } */
 `;
 
 const ContentContainer = styled.div`

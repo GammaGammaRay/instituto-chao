@@ -13,6 +13,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 function ComoFunciona() {
   const main = useRef();
   const title = useRef();
+  // const info = useRef();
 
   useEffect(() => {
     console.log("useLayoutEffect executed");
@@ -60,16 +61,27 @@ function ComoFunciona() {
             start: "60% bottom",
             end: "bottom top",
             scrub: true,
-            markers: true,
+            // markers: true,
           },
         });
+      // .from(info.current, {
+      //   opacity: 0,
+      //   scrollTrigger: {
+      //     trigger: info.current,
+      //     start: "bottom top",
+      //     end: "bottom top",
+      //     scrub: true,
+      //     pin: true,
+      //     // markers: true,
+      //   },
+      // });
       // <--------- ANIMATION END --------->
     }, main); // <- Scope!
     return () => ctx.revert(); // <- Cleanup!
   }, []);
 
   return (
-    <ComoFuncionaSection ref={main}>
+    <ComoFuncionaSection ref={main} id="como-funciona">
       <ComoFuncionaContainer>
         <ComoFuncionaText>
           <p>
@@ -112,6 +124,11 @@ function ComoFunciona() {
             e, hoje, nossa necessidade mínima é de 25% e a sugestão de 30% sobre
             o valor dos produtos.
           </p>
+          {/* <img
+            ref={info}
+            src="calculoContribuicao.png"
+            alt="calculo da contribuição"
+          /> */}
         </ComoFuncionaText>
         <ComoFuncionaTitle ref={title}>
           <span>COMO</span>
@@ -142,7 +159,7 @@ const ComoFuncionaContainer = styled(ContentContainer)`
 const ComoFuncionaTitle = styled(VerticalTitle)`
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
-  font-size: var(--title-font-size);
+  font-size: calc(var(--title-font-size) * 0.6);
   line-height: 0.8em;
   word-wrap: break-word;
 
