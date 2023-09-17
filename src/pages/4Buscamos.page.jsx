@@ -1,17 +1,79 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import {
-  ContentContainer,
   Section,
   SectionText,
   VerticalTitle,
+  ContentContainer,
 } from "../style/PageContainers";
 import { styled } from "styled-components";
+import { gsap } from "gsap";
+import { CSSPlugin } from "gsap/CSSPlugin";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 function Buscamos() {
+  const main = useRef();
+  const title = useRef();
+
+  useEffect(() => {
+    console.log("useLayoutEffect executed");
+
+    const ctx = gsap.context(() => {
+      gsap.registerPlugin(ScrollTrigger);
+      const animation = gsap.timeline({
+        defaults: {
+          opacity: 0,
+          duration: 1.5,
+          ease: "power3.inOut",
+        },
+      });
+      // <--------- ANIMATION START --------->
+      animation
+        .from(title.current.querySelectorAll("span"), {
+          opacity: 0,
+          yPercent: -150,
+          stagger: 0.5,
+          scrollTrigger: {
+            trigger: title.current,
+            start: "-50% 100%",
+            end: "bottom 80%",
+            scrub: true,
+            // markers: true,
+          },
+        })
+        .from(main.current, {
+          opacity: 100,
+          scrollTrigger: {
+            trigger: main.current,
+            start: "top 50px",
+            end: "bottom top",
+            scrub: true,
+            // markers: true,
+            pin: true,
+          },
+        });
+
+      // .from(main.current.querySelectorAll("p"), {
+      //   opacity: 0,
+      //   stagger: 0.6,
+      //   scrollTrigger: {
+      //     trigger: main.current,
+      //     start: "60% bottom",
+      //     end: "bottom top",
+      //     scrub: true,
+      //     markers: true,
+      //   },
+      // });
+      // <--------- ANIMATION END --------->
+    }, main); // <- Scope!
+    return () => ctx.revert(); // <- Cleanup!
+  }, []);
   return (
-    <Section>
+    <BuscamosSection ref={main}>
       <BuscamosContainer>
-        <BuscamosTitle>O QUE BUSCAMOS?</BuscamosTitle>
+        <BuscamosTitle ref={title}>
+          <span>O QUE</span>
+          <span>BUSCAMOS?</span>
+        </BuscamosTitle>
         <BuscamosText>
           <p>
             Além de ser transparente, esta é uma forma mais eficiente de
@@ -76,9 +138,13 @@ function Buscamos() {
           <br />
         </BuscamosText>
       </BuscamosContainer>
-    </Section>
+    </BuscamosSection>
   );
 }
+
+const BuscamosSection = styled(Section)`
+  background-color: var(--color-green);
+`;
 
 const BuscamosText = styled(SectionText)`
   padding-left: var(--text-padding);
@@ -107,8 +173,10 @@ const BuscamosTitle = styled(VerticalTitle)`
   transform: rotate(180deg);
 
   display: flex;
-  align-items: end;
-  justify-content: start;
+  flex-direction: column;
+  align-items: start;
+  justify-content: end;
+  flex-basis: 0;
 
   text-align: end;
 

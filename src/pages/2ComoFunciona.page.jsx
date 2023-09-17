@@ -26,54 +26,50 @@ function ComoFunciona() {
           ease: "power3.inOut",
         },
       });
-
+      // <--------- ANIMATION START --------->
       animation
-        // .from(main.current, {
-        //   scrollTrigger: {
-        //     trigger: main.current,
-        //     start: "top top",
-        //     end: "bottom bottom",
-        //     scrub: true,
-        //     markers: true,
-        //     pin: true,
-        //   },
-        // })
-        .from(main.current, {
+        .from(title.current.querySelectorAll("span"), {
+          opacity: 0,
+          yPercent: -150,
+          stagger: 0.5,
           scrollTrigger: {
-            trigger: main.current,
-            start: "top 80%",
-            end: "bottom 90%",
+            trigger: title.current,
+            start: "-50% 100%",
+            end: "bottom 80%",
             scrub: true,
             // markers: true,
-            // pin: true,
+          },
+        })
+        .from(main.current, {
+          opacity: 100,
+          scrollTrigger: {
+            trigger: main.current,
+            start: "top 50px",
+            end: "bottom top",
+            scrub: true,
+            // markers: true,
+            pin: true,
           },
         })
 
         .from(main.current.querySelectorAll("p"), {
           opacity: 0,
-          delay: -1,
-          stagger: 0.2,
+          stagger: 0.6,
           scrollTrigger: {
             trigger: main.current,
-            start: "top 70%",
-            end: "bottom bottom",
-            // markers: true,
+            start: "60% bottom",
+            end: "bottom top",
             scrub: true,
-          },
-        })
-        .from(main.current, {
-          scrolltrigger: {
-            trigger: main.current,
-            start: "top top",
-            end: "bottom bottom",
+            markers: true,
           },
         });
+      // <--------- ANIMATION END --------->
     }, main); // <- Scope!
     return () => ctx.revert(); // <- Cleanup!
   }, []);
 
   return (
-    <Section ref={main}>
+    <ComoFuncionaSection ref={main}>
       <ComoFuncionaContainer>
         <ComoFuncionaText>
           <p>
@@ -122,9 +118,13 @@ function ComoFunciona() {
           <span>FUNCIONA?</span>
         </ComoFuncionaTitle>
       </ComoFuncionaContainer>
-    </Section>
+    </ComoFuncionaSection>
   );
 }
+
+const ComoFuncionaSection = styled(Section)`
+  background-color: var(--color-brown);
+`;
 
 const ComoFuncionaText = styled(SectionText)`
   /* padding-right: var(--text-padding); */

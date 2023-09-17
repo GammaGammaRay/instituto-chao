@@ -34,13 +34,14 @@ function QuemSomos() {
           stagger: 0.5,
           scrollTrigger: {
             trigger: title.current,
-            start: "top 80%",
-            end: "bottom bottom",
+            start: "-50% 100%",
+            end: "bottom 80%",
             scrub: true,
-            markers: true,
+            // markers: true,
           },
         })
         .from(main.current, {
+          opacity: 100,
           scrollTrigger: {
             trigger: main.current,
             start: "top 50px",
@@ -53,14 +54,13 @@ function QuemSomos() {
 
         .from(main.current.querySelectorAll("p"), {
           opacity: 0,
-          delay: -1,
-          stagger: 0.2,
+          stagger: 0.6,
           scrollTrigger: {
             trigger: main.current,
-            start: "top 70%",
-            end: "bottom bottom",
-            // markers: true,
+            start: "60% bottom",
+            end: "bottom top",
             scrub: true,
+            markers: true,
           },
         });
       // <--------- ANIMATION END --------->

@@ -4,17 +4,18 @@ import { styled } from "styled-components";
 
 function Contribuicao() {
   return (
-    <ContribuicaoContainer>
+    <ContribuicaoSection>
       <img src="calculoContribuicao.png" alt="calculo da contribuição" />
-    </ContribuicaoContainer>
+    </ContribuicaoSection>
   );
 }
 
-const ContribuicaoContainer = styled(Section)`
+const ContribuicaoSection = styled(Section)`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: var(--color-brown2);
   img {
     max-width: 90%;
   }
