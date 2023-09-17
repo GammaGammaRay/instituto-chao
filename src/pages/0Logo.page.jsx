@@ -37,7 +37,6 @@ function Logo() {
 }
 
 const LogoPage = styled.div`
-  background-color: black;
   height: 100%;
 
   display: flex;
@@ -52,6 +51,7 @@ const LogoPage = styled.div`
 const LogoSection = styled(Section)`
   /* scroll-snap-align: unset; */
   height: 100%;
+  background-color: black;
 `;
 
 export default Logo;

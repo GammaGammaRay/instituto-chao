@@ -17,7 +17,7 @@ const Section = styled.section`
 
   overflow: hidden;
 
-  &:nth-of-type(1) {
+  /* &:nth-of-type(1) {
     background-color: black;
   }
   &:nth-of-type(2) {
@@ -38,7 +38,7 @@ const Section = styled.section`
   }
   &:nth-of-type(7) {
     background-color: var(--color-salmon);
-  }
+  } */
 `;
 
 const ContentContainer = styled.div`

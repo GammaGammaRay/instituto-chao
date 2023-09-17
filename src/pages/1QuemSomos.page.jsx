@@ -26,23 +26,27 @@ function QuemSomos() {
           ease: "power3.inOut",
         },
       });
-
+      // <--------- ANIMATION START --------->
       animation
         .from(title.current.querySelectorAll("span"), {
           opacity: 0,
-          yPercent: 120,
+          yPercent: -150,
           stagger: 0.5,
           scrollTrigger: {
-            trigger: main.current,
+            trigger: title.current,
             start: "top 80%",
             end: "bottom bottom",
             scrub: true,
-            // markers: true,
-            // pin: true,
+            markers: true,
           },
         })
-        .from(title.current, {
+        .from(main.current, {
           scrollTrigger: {
+            trigger: main.current,
+            start: "top 50px",
+            end: "bottom top",
+            scrub: true,
+            // markers: true,
             pin: true,
           },
         })
@@ -59,6 +63,7 @@ function QuemSomos() {
             scrub: true,
           },
         });
+      // <--------- ANIMATION END --------->
     }, main); // <- Scope!
     return () => ctx.revert(); // <- Cleanup!
   }, []);
@@ -123,6 +128,7 @@ function QuemSomos() {
 
 const QuemSomosSection = styled(Section)`
   /* scroll-padding-bottom: 10vh; */
+  background-color: var(--color-yellow);
   p {
     margin-bottom: 12px;
   }
@@ -146,14 +152,14 @@ const QuemSomosTitle = styled(VerticalTitle)`
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
   font-size: var(--title-font-size);
-  writing-mode: vertical-rl;
+  writing-mode: vertical-lr;
+  text-orientation: sideways;
   line-height: 0.8em;
   word-wrap: break-word;
-  transform: rotate(180deg);
 
   display: flex;
   flex-direction: column;
-  align-items: end;
+  align-items: start;
   justify-content: end;
   flex-basis: 0;
 
@@ -161,6 +167,7 @@ const QuemSomosTitle = styled(VerticalTitle)`
 
   span {
     overflow: visible;
+    transform: rotate(180deg);
   }
 
   /* position: sticky; */

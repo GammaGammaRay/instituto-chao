@@ -28,22 +28,24 @@ function ComoFunciona() {
       });
 
       animation
-        .from(title.current.querySelectorAll("span"), {
-          opacity: 0,
-          yPercent: 120,
-          stagger: 0.5,
+        // .from(main.current, {
+        //   scrollTrigger: {
+        //     trigger: main.current,
+        //     start: "top top",
+        //     end: "bottom bottom",
+        //     scrub: true,
+        //     markers: true,
+        //     pin: true,
+        //   },
+        // })
+        .from(main.current, {
           scrollTrigger: {
             trigger: main.current,
             start: "top 80%",
-            end: "bottom bottom",
+            end: "bottom 90%",
             scrub: true,
             // markers: true,
             // pin: true,
-          },
-        })
-        .from(title.current, {
-          scrollTrigger: {
-            pin: true,
           },
         })
 
@@ -55,8 +57,15 @@ function ComoFunciona() {
             trigger: main.current,
             start: "top 70%",
             end: "bottom bottom",
-            markers: true,
+            // markers: true,
             scrub: true,
+          },
+        })
+        .from(main.current, {
+          scrolltrigger: {
+            trigger: main.current,
+            start: "top top",
+            end: "bottom bottom",
           },
         });
     }, main); // <- Scope!
@@ -108,7 +117,10 @@ function ComoFunciona() {
             o valor dos produtos.
           </p>
         </ComoFuncionaText>
-        <ComoFuncionaTitle ref={title}>COMO FUNCIONA?</ComoFuncionaTitle>
+        <ComoFuncionaTitle ref={title}>
+          <span>COMO</span>
+          <span>FUNCIONA?</span>
+        </ComoFuncionaTitle>
       </ComoFuncionaContainer>
     </Section>
   );
@@ -137,7 +149,8 @@ const ComoFuncionaTitle = styled(VerticalTitle)`
   writing-mode: vertical-rl;
 
   display: flex;
-  align-items: end;
+  flex-direction: column;
+  align-items: start;
   justify-content: start;
 
   text-align: start;

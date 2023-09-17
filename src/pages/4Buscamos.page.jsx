@@ -99,7 +99,7 @@ const BuscamosContainer = styled(ContentContainer)`
 const BuscamosTitle = styled(VerticalTitle)`
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
-  font-size: var(--title-font-size);
+  font-size: calc(var(--title-font-size) * 0.6);
   line-height: 0.8em;
   word-wrap: break-word;
 
