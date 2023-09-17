@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import {
   Section,
   SectionText,
@@ -12,44 +12,52 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 
 function QuemSomos() {
   const main = useRef();
-  const titleRef = useRef();
+  const title = useRef();
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     console.log("useLayoutEffect executed");
-    gsap.registerPlugin(ScrollTrigger);
+
     const ctx = gsap.context(() => {
+      gsap.registerPlugin(ScrollTrigger);
       const animation = gsap.timeline({
         defaults: {
           opacity: 0,
-          // y: 500,
           duration: 1.5,
           ease: "power3.inOut",
         },
       });
 
       animation
-        .from(
-          titleRef.current.querySelectorAll("span"),
-          {
-            opacity: 0,
-            yPercent: 120,
-            stagger: 0.2,
+        .from(title.current.querySelectorAll("span"), {
+          opacity: 0,
+          yPercent: 120,
+          stagger: 0.5,
+          scrollTrigger: {
+            trigger: main.current,
+            start: "top 80%",
+            end: "bottom bottom",
+            scrub: true,
+            // markers: true,
+            // pin: true,
           },
-          {
-            scrollTrigger: {
-              trigger: titleRef.current,
-              // start: "top center",
-              // end: "top top",
-              // scrub: true,
-              pin: true,
-              markers: true, // Add markers for debugging (remove this in production)
-            },
-          }
-        )
+        })
+        .from(title.current, {
+          scrollTrigger: {
+            pin: true,
+          },
+        })
+
         .from(main.current.querySelectorAll("p"), {
           opacity: 0,
           delay: -1,
           stagger: 0.2,
+          scrollTrigger: {
+            trigger: main.current,
+            start: "top 70%",
+            end: "bottom bottom",
+            // markers: true,
+            scrub: true,
+          },
         });
     }, main); // <- Scope!
     return () => ctx.revert(); // <- Cleanup!
@@ -58,7 +66,7 @@ function QuemSomos() {
   return (
     <QuemSomosSection className="quemSomosSection" ref={main}>
       <QuemSomosContainer>
-        <QuemSomosTitle ref={titleRef} className="quemSomosTitle">
+        <QuemSomosTitle ref={title} className="quemSomosTitle">
           <span className="quem">QUEM</span>
           <span className="somos">SOMOS?</span>
         </QuemSomosTitle>
@@ -114,7 +122,7 @@ function QuemSomos() {
 }
 
 const QuemSomosSection = styled(Section)`
-  scroll-padding-bottom: 10vh;
+  /* scroll-padding-bottom: 10vh; */
   p {
     margin-bottom: 12px;
   }
@@ -150,6 +158,12 @@ const QuemSomosTitle = styled(VerticalTitle)`
   flex-basis: 0;
 
   text-align: end;
+
+  span {
+    overflow: visible;
+  }
+
+  /* position: sticky; */
 `;
 
 export default QuemSomos;

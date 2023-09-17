@@ -13,6 +13,9 @@ const GlobalStyle = createGlobalStyle`
     --section-height: calc(100vh - var(--nav-height));
     --color-gray: #ded6d0;
  
+    
+    
+    
     --color-yellow: #e5d26a;
     --color-brown: #a58b74;
     --color-brown2: #a58b74;
@@ -23,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
 
     --title-font: 'Poppins', sans-serif;
     --title-font-weight: 500;
-    --title-font-size: 14vh;
+    --title-font-size: 10em;
 
     --text-padding: 50px;
 

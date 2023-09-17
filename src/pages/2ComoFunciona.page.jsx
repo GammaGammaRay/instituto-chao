@@ -1,15 +1,70 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import {
-  ContentContainer,
   Section,
   SectionText,
   VerticalTitle,
-} from "../style/PageContainers.jsx";
+  ContentContainer,
+} from "../style/PageContainers";
 import { styled } from "styled-components";
+import { gsap } from "gsap";
+import { CSSPlugin } from "gsap/CSSPlugin";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 function ComoFunciona() {
+  const main = useRef();
+  const title = useRef();
+
+  useEffect(() => {
+    console.log("useLayoutEffect executed");
+
+    const ctx = gsap.context(() => {
+      gsap.registerPlugin(ScrollTrigger);
+      const animation = gsap.timeline({
+        defaults: {
+          opacity: 0,
+          duration: 1.5,
+          ease: "power3.inOut",
+        },
+      });
+
+      animation
+        .from(title.current.querySelectorAll("span"), {
+          opacity: 0,
+          yPercent: 120,
+          stagger: 0.5,
+          scrollTrigger: {
+            trigger: main.current,
+            start: "top 80%",
+            end: "bottom bottom",
+            scrub: true,
+            // markers: true,
+            // pin: true,
+          },
+        })
+        .from(title.current, {
+          scrollTrigger: {
+            pin: true,
+          },
+        })
+
+        .from(main.current.querySelectorAll("p"), {
+          opacity: 0,
+          delay: -1,
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: main.current,
+            start: "top 70%",
+            end: "bottom bottom",
+            markers: true,
+            scrub: true,
+          },
+        });
+    }, main); // <- Scope!
+    return () => ctx.revert(); // <- Cleanup!
+  }, []);
+
   return (
-    <Section>
+    <Section ref={main}>
       <ComoFuncionaContainer>
         <ComoFuncionaText>
           <p>
@@ -53,7 +108,7 @@ function ComoFunciona() {
             o valor dos produtos.
           </p>
         </ComoFuncionaText>
-        <ComoFuncionaTitle>COMO FUNCIONA?</ComoFuncionaTitle>
+        <ComoFuncionaTitle ref={title}>COMO FUNCIONA?</ComoFuncionaTitle>
       </ComoFuncionaContainer>
     </Section>
   );
@@ -69,6 +124,7 @@ const ComoFuncionaContainer = styled(ContentContainer)`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  color: white;
 `;
 
 const ComoFuncionaTitle = styled(VerticalTitle)`

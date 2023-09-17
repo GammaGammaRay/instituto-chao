@@ -30,6 +30,7 @@ const NavContainer = styled.div`
   flex-direction: row;
   justify-content: end;
   align-items: center;
+  color: white;
 `;
 
 const NavButtonContainer = styled.div`

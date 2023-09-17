@@ -15,15 +15,9 @@ function Logo() {
       { width: 300, opacity: 0 },
       {
         width: 500,
-        opacity: 1, // Corrected opacity value
+        opacity: 1,
         duration: 2,
         ease: "back",
-        scrollTrigger: {
-          trigger: logoPage.current, // Corrected trigger reference
-          start: "top center",
-          end: "bottom center",
-          scrub: true,
-        },
       }
     );
   }, []);
