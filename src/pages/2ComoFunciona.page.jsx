@@ -38,7 +38,6 @@ function ComoFunciona() {
             start: "-50% 100%",
             end: "bottom 80%",
             scrub: true,
-            // markers: true,
           },
         })
         .from(main.current, {
@@ -48,7 +47,6 @@ function ComoFunciona() {
             start: "top 50px",
             end: "bottom top",
             scrub: true,
-            // markers: true,
             pin: true,
           },
         })
@@ -61,7 +59,6 @@ function ComoFunciona() {
             start: "60% bottom",
             end: "bottom top",
             scrub: true,
-            // markers: true,
           },
         });
       // .from(info.current, {

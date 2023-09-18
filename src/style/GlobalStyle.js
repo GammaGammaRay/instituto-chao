@@ -30,6 +30,8 @@ const GlobalStyle = createGlobalStyle`
 
     --text-padding: 50px;
 
+    --sm-screen: 768px;
+
 }
 
 

@@ -34,8 +34,6 @@ function Contribuicao() {
             start: "top 100%",
             end: "bottom 50%",
             scrub: true,
-            // pin: true,
-            // markers: true,
           },
         })
         .from(section.current, {
@@ -45,7 +43,6 @@ function Contribuicao() {
             end: "bottom top",
             scrub: true,
             pin: true,
-            // markers: true,
           },
         });
 

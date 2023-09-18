@@ -37,7 +37,6 @@ function Buscamos() {
             start: "top 50%",
             end: "bottom 60%",
             scrub: true,
-            // markers: true,
           },
         })
         .from(main.current, {
@@ -47,7 +46,6 @@ function Buscamos() {
             start: "top top",
             end: "bottom bottom",
             scrub: true,
-            // markers: true,
             pin: true,
           },
         });
