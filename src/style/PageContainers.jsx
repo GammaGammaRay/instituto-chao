@@ -26,7 +26,7 @@ const Section = styled.section`
 
 const ContentContainer = styled.div`
   width: 70%;
-  height: 100%;
+  height: fit-content;
 
   ::-webkit-scrollbar {
     width: 0 !important;
@@ -39,12 +39,14 @@ const ContentContainer = styled.div`
 `;
 
 const SectionText = styled.div`
+  margin-top: 26px;
   width: 80%;
   min-width: 40%;
   align-items: center;
   font-size: 20px;
   padding-bottom: 50px;
   line-height: 1.1em;
+  text-align: justify;
 `;
 
 const VerticalTitle = styled.div`

@@ -40,16 +40,16 @@ function ComoFunciona() {
             scrub: true,
           },
         })
-        .from(main.current, {
-          opacity: 100,
-          scrollTrigger: {
-            trigger: main.current,
-            start: "top 50px",
-            end: "bottom top",
-            scrub: true,
-            pin: true,
-          },
-        })
+        // .from(main.current, {
+        //   opacity: 100,
+        //   scrollTrigger: {
+        //     trigger: main.current,
+        //     start: "top 50px",
+        //     end: "bottom top",
+        //     scrub: true,
+        //     pin: true,
+        //   },
+        // })
 
         .from(main.current.querySelectorAll("p"), {
           opacity: 0,
