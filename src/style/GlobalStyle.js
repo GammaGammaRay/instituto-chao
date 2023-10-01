@@ -2,10 +2,10 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 
-    /* html{
+    html{
         scroll-snap-type: y proximity;
 
-    } */
+    }
 
     :root {
     --nav-height: 50px;
@@ -26,7 +26,8 @@ const GlobalStyle = createGlobalStyle`
 
     --title-font: 'Poppins', sans-serif;
     --title-font-weight: 500;
-    --title-font-size: 10em;
+    --title-font-size-vert: clamp(4vh, 20vh, 70vh);
+    --title-font-size-horz: clamp(13vw, 4vw, 20px);
 
     --text-padding: 50px;
 

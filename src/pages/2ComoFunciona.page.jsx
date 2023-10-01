@@ -15,71 +15,13 @@ function ComoFunciona() {
   const title = useRef();
   // const info = useRef();
 
-  useEffect(() => {
-    console.log("useLayoutEffect executed");
-
-    const ctx = gsap.context(() => {
-      gsap.registerPlugin(ScrollTrigger);
-      const animation = gsap.timeline({
-        defaults: {
-          opacity: 0,
-          duration: 1.5,
-          ease: "power3.inOut",
-        },
-      });
-      // <--------- ANIMATION START --------->
-      animation
-        .from(title.current.querySelectorAll("span"), {
-          opacity: 0,
-          yPercent: -150,
-          stagger: 0.5,
-          scrollTrigger: {
-            trigger: title.current,
-            start: "-50% 100%",
-            end: "bottom 80%",
-            scrub: true,
-          },
-        })
-        // .from(main.current, {
-        //   opacity: 100,
-        //   scrollTrigger: {
-        //     trigger: main.current,
-        //     start: "top 50px",
-        //     end: "bottom top",
-        //     scrub: true,
-        //     pin: true,
-        //   },
-        // })
-
-        .from(main.current.querySelectorAll("p"), {
-          opacity: 0,
-          stagger: 0.6,
-          scrollTrigger: {
-            trigger: main.current,
-            start: "60% bottom",
-            end: "bottom top",
-            scrub: true,
-          },
-        });
-      // .from(info.current, {
-      //   opacity: 0,
-      //   scrollTrigger: {
-      //     trigger: info.current,
-      //     start: "bottom top",
-      //     end: "bottom top",
-      //     scrub: true,
-      //     pin: true,
-      //     // markers: true,
-      //   },
-      // });
-      // <--------- ANIMATION END --------->
-    }, main); // <- Scope!
-    return () => ctx.revert(); // <- Cleanup!
-  }, []);
-
   return (
     <ComoFuncionaSection ref={main} id="como-funciona">
       <ComoFuncionaContainer>
+        <ComoFuncionaTitle ref={title}>
+          <span>COMO</span>
+          <span>FUNCIONA?</span>
+        </ComoFuncionaTitle>
         <ComoFuncionaText>
           <p>
             O Chão é essencialmente um lugar de construção cotidiana de um outro
@@ -127,10 +69,6 @@ function ComoFunciona() {
             alt="calculo da contribuição"
           /> */}
         </ComoFuncionaText>
-        <ComoFuncionaTitle ref={title}>
-          <span>COMO</span>
-          <span>FUNCIONA?</span>
-        </ComoFuncionaTitle>
       </ComoFuncionaContainer>
     </ComoFuncionaSection>
   );
@@ -148,19 +86,21 @@ const ComoFuncionaContainer = styled(ContentContainer)`
   line-height: 1.2em;
   padding-top: 24px;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: start;
   color: white;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 `;
 
 const ComoFuncionaTitle = styled(VerticalTitle)`
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
-  font-size: calc(var(--title-font-size) * 0.6);
+  font-size: var(--title-font-size-horz);
   line-height: 0.8em;
   word-wrap: break-word;
-
-  writing-mode: vertical-rl;
 
   display: flex;
   flex-direction: column;
@@ -168,6 +108,18 @@ const ComoFuncionaTitle = styled(VerticalTitle)`
   justify-content: start;
 
   text-align: start;
+
+  @media (min-width: 768px) {
+    width: 100%;
+    height: 100%;
+    writing-mode: vertical-lr;
+    text-orientation: sideways;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    flex-basis: 0;
+    font-size: clamp(4vh, 20vh, 70vh);
+  }
 `;
 
 export default ComoFunciona;

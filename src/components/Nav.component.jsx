@@ -81,7 +81,7 @@ const NavContainer = styled.div`
 const NavButtonContainer = styled.div`
   width: fit-content;
   /* margin-right: 16px; */
-  width: 60%;
+  width: clamp();
 
   display: flex;
   flex-direction: row;

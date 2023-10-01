@@ -11,6 +11,10 @@ import {
 } from "../style/PageContainers";
 
 function QuemSomos() {
+  const main = useRef();
+  const title = useRef();
+  const bg = useRef();
+
   return (
     <QuemSomosSection id="quem-somos" className="quemSomosSection" ref={main}>
       <QuemSomosBg />
@@ -104,14 +108,13 @@ const QuemSomosBg = styled.div`
 `;
 
 const QuemSomosText = styled(SectionText)`
-  margin-bottom: 500px;
-  /* padding-left: var(--text-padding); */
-  /* overflow-y: scroll; */
+  padding-left: var(--text-padding);
+  overflow-y: scroll;
 `;
 
 const QuemSomosContainer = styled(ContentContainer)`
   line-height: 1.2em;
-  height: fit-content;
+  height: 100%;
   /* padding-top: 24px; */
   /* overflow: hidden; */
 
@@ -128,7 +131,7 @@ const QuemSomosContainer = styled(ContentContainer)`
 const QuemSomosTitle = styled(VerticalTitle)`
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
-  font-size: clamp(13vw, 4vw, 20px);
+  font-size: var(--title-font-size-horz);
   height: 100%;
 
   /* position: sticky; */
@@ -146,13 +149,14 @@ const QuemSomosTitle = styled(VerticalTitle)`
 
   @media (min-width: 768px) {
     width: 100%;
+    height: 100%;
     writing-mode: vertical-lr;
     text-orientation: sideways;
     flex-direction: column;
     align-items: start;
     justify-content: start;
     flex-basis: 0;
-    font-size: calc(var(--title-font-size) * 0.95);
+    font-size: var(--title-font-size-vert);
   }
 
   span {

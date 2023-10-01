@@ -15,81 +15,6 @@ function Balanco() {
   const title = useRef();
   const bg = useRef();
 
-  useEffect(() => {
-    // console.log("useLayoutEffect executed");
-
-    const ctx = gsap.context(() => {
-      let mm = gsap.matchMedia();
-      gsap.registerPlugin(ScrollTrigger);
-
-      const animation = gsap.timeline({
-        defaults: {
-          opacity: 0,
-          duration: 1.5,
-          ease: "power3.inOut",
-        },
-      });
-      // <--------- ANIMATION START --------->
-      animation
-        // Main pin
-        .from(main.current, {
-          opacity: 100,
-          scrollTrigger: {
-            trigger: main.current,
-            start: "top 50px",
-            end: "bottom top",
-            scrub: true,
-            pin: title.current,
-            // invalidateOnRefresh: true,
-          },
-        })
-        // Title
-        .from(title.current.querySelectorAll("span"), {
-          opacity: 0,
-          yPercent: -150,
-          stagger: 0.5,
-          scrollTrigger: {
-            trigger: title.current,
-            start: "-50% 100%",
-            end: "bottom 80%",
-            scrub: true,
-            // invalidateOnRefresh: true,
-          },
-        })
-        // Paragraph
-        .from(main.current.querySelectorAll("p"), {
-          opacity: 0,
-          stagger: 0.6,
-          scrollTrigger: {
-            trigger: main.current,
-            start: "top 50%",
-            end: "bottom bottom",
-            scrub: true,
-            markers: true,
-            // invalidateOnRefresh: true,
-          },
-        });
-
-      mm.add("(max-width: 768px)", () => {
-        animation.from(title.current.querySelectorAll("span"), {
-          opacity: 0,
-          // x: -150,
-          stagger: 0.5,
-          scrollTrigger: {
-            trigger: title.current,
-            start: "-50% 30%",
-            end: "bottom bottom",
-            scrub: true,
-            // markers: true,
-            // invalidateOnRefresh: true,
-          },
-        });
-      });
-      // <--------- ANIMATION END --------->
-    }, main); // <- Scope!
-    return () => ctx.revert(); // <- Cleanup!
-  }, []);
-
   return (
     <BalancoSection id="quem-somos" className="BalancoSection" ref={main}>
       <BalancoBg />
@@ -104,7 +29,8 @@ function Balanco() {
 }
 
 const BalancoSection = styled(Section)`
-  /* scroll-padding-bottom: 10vh; */
+  height: 100%;
+
   p {
     margin-bottom: 12px;
   }

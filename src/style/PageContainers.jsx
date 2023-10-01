@@ -8,8 +8,10 @@ const BodyContainer = styled.div`
 
 const Section = styled.section`
   width: 100%;
-  height: 100%;
-
+  height: calc(100% - var(--nav-height));
+  scroll-snap-type: y proximity;
+  scroll-snap-align: start;
+  scroll-margin: var(--nav-height);
   display: flex;
   flex-direction: column;
   align-items: center;
