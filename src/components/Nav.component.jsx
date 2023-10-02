@@ -53,9 +53,9 @@ function Nav() {
         <NavBtn onClick={() => scrollToSection("buscamos")}>
           O que buscamos?
         </NavBtn>
-        <NavBtn>Histórico</NavBtn>
-        <NavBtn>Balanço</NavBtn>
-        <NavBtn>Contato</NavBtn>
+        <NavBtn onClick={() => scrollToSection("historico")}>Histórico</NavBtn>
+        <NavBtn onClick={() => scrollToSection("balanco")}>Balanço</NavBtn>
+        <NavBtn onClick={() => scrollToSection("contato")}>Contato</NavBtn>
       </NavButtonContainer>
     </NavContainer>
   );
@@ -81,7 +81,8 @@ const NavContainer = styled.div`
 const NavButtonContainer = styled.div`
   width: fit-content;
   /* margin-right: 16px; */
-  width: clamp();
+  max-width: 100%;
+  width: 800px;
 
   display: flex;
   flex-direction: row;

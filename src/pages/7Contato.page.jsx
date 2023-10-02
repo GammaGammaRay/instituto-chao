@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 function Contato() {
   return (
-    <ContatoSection>
+    <ContatoSection id="contato">
       <ContatoBG />
       <ContatoInfoContainer>
         <h2>CONTATO E ENDEREÇO</h2>

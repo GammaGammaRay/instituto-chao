@@ -9,8 +9,9 @@ import { styled } from "styled-components";
 
 function Historico() {
   return (
-    <HistoricoSection>
+    <HistoricoSection id="historico">
       <HistoricoContainer>
+        <HistoricoTitle>HISTÓRICO</HistoricoTitle>
         <HistoricoText>
           <p>
             Abrimos as portas em maio de 2015, começamos com 6 pessoas e um
@@ -65,7 +66,7 @@ function Historico() {
           </p>
           <br />
         </HistoricoText>
-        <HistoricoTitle>HISTÓRICO</HistoricoTitle>
+        {/* <HistoricoTitle>HISTÓRICO</HistoricoTitle> */}
       </HistoricoContainer>
     </HistoricoSection>
   );
@@ -77,9 +78,11 @@ const HistoricoSection = styled(Section)`
 
 const HistoricoText = styled(SectionText)`
   padding-right: var(--text-padding);
+  overflow-y: scroll;
 `;
 
 const HistoricoContainer = styled(ContentContainer)`
+  height: 100%;
   line-height: 1.2em;
   padding-top: 24px;
   overflow: hidden;
@@ -87,24 +90,37 @@ const HistoricoContainer = styled(ContentContainer)`
   margin-left: 20%;
 
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: start;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 `;
 
 const HistoricoTitle = styled(VerticalTitle)`
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
-  font-size: var(--title-font-size);
+  font-size: var(--title-font-size-vert);
   line-height: 0.8em;
   word-wrap: break-word;
-
-  writing-mode: vertical-rl;
-
   display: flex;
   align-items: end;
   justify-content: start;
 
   text-align: start;
+
+  @media (min-width: 768px) {
+    width: 100%;
+    height: 100%;
+    writing-mode: vertical-lr;
+    text-orientation: sideways;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    flex-basis: 0;
+    font-size: clamp(4vh, 20vh, 70vh);
+  }
 `;
 
 export default Historico;

@@ -79,10 +79,13 @@ const ComoFuncionaSection = styled(Section)`
 `;
 
 const ComoFuncionaText = styled(SectionText)`
-  /* padding-right: var(--text-padding); */
+  padding-left: var(--text-padding);
+  overflow-y: scroll;
+  height: 100%;
 `;
 
 const ComoFuncionaContainer = styled(ContentContainer)`
+  height: 100%;
   line-height: 1.2em;
   padding-top: 24px;
   display: flex;
@@ -118,7 +121,7 @@ const ComoFuncionaTitle = styled(VerticalTitle)`
     align-items: start;
     justify-content: start;
     flex-basis: 0;
-    font-size: clamp(4vh, 20vh, 70vh);
+    font-size: clamp(4vh, 18vh, 70vh);
   }
 `;
 

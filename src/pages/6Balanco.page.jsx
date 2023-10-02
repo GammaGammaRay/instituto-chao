@@ -16,7 +16,7 @@ function Balanco() {
   const bg = useRef();
 
   return (
-    <BalancoSection id="quem-somos" className="BalancoSection" ref={main}>
+    <BalancoSection id="balanco" className="BalancoSection" ref={main}>
       <BalancoBg />
       <BalancoContainer>
         <BalancoTitle ref={title} className="BalancoTitle">

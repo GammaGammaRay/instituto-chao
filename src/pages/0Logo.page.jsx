@@ -14,7 +14,7 @@ function Logo() {
       ".logo",
       { width: 300, opacity: 0 },
       {
-        width: 500,
+        width: 400,
         opacity: 1,
         duration: 2,
         ease: "back",

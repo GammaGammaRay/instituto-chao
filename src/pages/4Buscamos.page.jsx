@@ -90,23 +90,28 @@ function Buscamos() {
 }
 
 const BuscamosSection = styled(Section)`
+  height: 100%;
   background-color: var(--color-green);
 `;
 
-const BuscamosText = styled(SectionText)`
-  padding-left: var(--text-padding);
-`;
-
 const BuscamosContainer = styled(ContentContainer)`
+  height: 100%;
   line-height: 1.2em;
   padding-top: 24px;
 
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: start;
   align-items: start;
 
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+
   /* overflow-y: auto; */
+`;
+const BuscamosText = styled(SectionText)`
+  padding-left: var(--text-padding);
 `;
 
 const BuscamosTitle = styled(VerticalTitle)`
@@ -115,9 +120,6 @@ const BuscamosTitle = styled(VerticalTitle)`
   font-size: calc(var(--title-font-size) * 0.6);
   line-height: 0.8em;
   word-wrap: break-word;
-
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
 
   display: flex;
   flex-direction: column;
@@ -129,6 +131,19 @@ const BuscamosTitle = styled(VerticalTitle)`
 
   position: sticky;
   top: 0px;
+
+  @media (min-width: 768px) {
+    transform: rotate(180deg);
+    width: 100%;
+    height: 100%;
+    writing-mode: vertical-rl;
+    text-orientation: sideways;
+    flex-direction: column;
+    align-items: end;
+    justify-content: start;
+    flex-basis: 0;
+    font-size: clamp(50px, 14.5vh, 70vh);
+  }
 `;
 
 const ExtraHeightDiv = styled.div`
