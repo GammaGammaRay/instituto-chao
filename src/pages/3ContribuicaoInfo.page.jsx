@@ -99,7 +99,7 @@ function Contribuicao() {
 }
 
 const ContribuicaoSection = styled(Section)`
-  width: 100%;
+  height: calc(50vw);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -131,7 +131,7 @@ const ContribuicaoContainer = styled(ContentContainer)`
     width: 80%;
     flex-direction: row;
     min-height: 100%;
-    height: 100vh;
+    height: calc(50vw);
     justify-content: space-between;
   }
 

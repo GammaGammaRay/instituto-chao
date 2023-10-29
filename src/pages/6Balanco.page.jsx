@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { styled } from "styled-components";
 import { gsap } from "gsap";
 import { CSSPlugin } from "gsap/CSSPlugin";
@@ -16,10 +16,26 @@ function Balanco() {
   const title = useRef();
   const bg = useRef();
 
+  const [spreadsheetData, setSpreadsheetData] = useState(null);
+
   useEffect(() => {
     const fetchData = async () => {
-      const spreadsheetData = await getSpreadsheetData();
-      console.log(spreadsheetData);
+      try {
+        const data = await getSpreadsheetData();
+        console.log(data); // Log the fetched data to understand its structure
+
+        // Convert the object into an array of arrays
+        const dataArray = Object.values(data);
+
+        if (Array.isArray(dataArray) && dataArray.length > 0) {
+          setSpreadsheetData(dataArray);
+        } else {
+          setSpreadsheetData("Data is not in the expected format");
+        }
+      } catch (error) {
+        console.error("Error fetching data", error);
+        setSpreadsheetData("Failed to fetch data");
+      }
     };
 
     fetchData();
@@ -32,7 +48,15 @@ function Balanco() {
         <BalancoTitle ref={title} className="BalancoTitle">
           <span className="balanco">BALANÇO</span>
         </BalancoTitle>
-        <BalancoText></BalancoText>
+        {spreadsheetData === null ? (
+          <BalancoText>Loading...</BalancoText>
+        ) : (
+          <div>
+            {spreadsheetData.slice(0, 1).map((data, index) => (
+              <div key={index}>{data}</div>
+            ))}
+          </div>
+        )}
       </BalancoContainer>
     </BalancoSection>
   );

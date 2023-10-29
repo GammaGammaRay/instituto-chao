@@ -47,7 +47,7 @@ function QuemSomos() {
       <QuemSomosContainer>
         {/* <StickyContainer> */}
         <QuemSomosTitle ref={title} className="quemSomosTitle">
-          <span className="quem">QUEM</span>
+          <span className="quem">QUEM&nbsp;</span>
           <span className="somos">SOMOS?</span>
         </QuemSomosTitle>
         {/* </StickyContainer> */}
@@ -136,7 +136,10 @@ const QuemSomosSection = styled(Section)`
 `;
 
 const QuemSomosText = styled(SectionText)`
-  padding-left: var(--text-padding);
+  padding-left: calc(var(--text-padding) * 0.2);
+  @media (min-width: 768px) {
+    padding-left: var(--text-padding);
+  }
   /* overflow-y: scroll; */
 `;
 
@@ -147,7 +150,7 @@ const QuemSomosContainer = styled(ContentContainer)`
   /* overflow: hidden; */
 
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
 
   @media (min-width: 768px) {
@@ -177,16 +180,16 @@ const QuemSomosTitle = styled(VerticalTitle)`
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
   font-size: var(--title-font-size-horz);
-  height: 100%;
-
+  height: 100vh;
   line-height: 0.8em;
-  /* word-wrap: break-word; */
+  word-wrap: break-word;
 
   display: flex;
   flex-direction: row;
   align-items: start;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   flex-basis: 0;
+  writing-mode: vertical-lr;
 
   text-align: end;
 

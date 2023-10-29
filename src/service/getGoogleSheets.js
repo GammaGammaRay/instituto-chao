@@ -20,9 +20,8 @@ export async function getSpreadsheetData() {
       columnData[columnIndex].push(value);
     });
   });
-
-  // 'columnData' now contains the data organized by columns, ignoring commas inside double quotes.
   console.log(columnData);
+  return columnData;
 }
 
 function parseCSV(input) {

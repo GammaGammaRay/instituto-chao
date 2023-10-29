@@ -102,6 +102,9 @@ function ComoFunciona() {
 
 const ComoFuncionaSection = styled(Section)`
   background-color: var(--color-brown);
+  p {
+    margin-bottom: 12px;
+  }
 `;
 
 const ComoFuncionaText = styled(SectionText)`
@@ -110,17 +113,31 @@ const ComoFuncionaText = styled(SectionText)`
 `;
 
 const ComoFuncionaContainer = styled(ContentContainer)`
-  height: 100%;
   line-height: 1.2em;
-  padding-top: 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
+  height: 100%;
   color: white;
+  /* padding-top: 24px; */
+  /* overflow: hidden; */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 
   @media (min-width: 768px) {
     flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
+    width: 95%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  @media (min-width: 1200px) {
+    flex-direction: column;
     justify-content: start;
+    align-items: start;
     width: 60%;
 
     display: flex;
