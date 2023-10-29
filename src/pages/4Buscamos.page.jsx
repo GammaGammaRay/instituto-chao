@@ -1,18 +1,47 @@
 import React, { useEffect, useRef } from "react";
+import { styled } from "styled-components";
+import { gsap } from "gsap";
+import { CSSPlugin } from "gsap/CSSPlugin";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import {
   Section,
   SectionText,
   VerticalTitle,
   ContentContainer,
 } from "../style/PageContainers";
-import { styled } from "styled-components";
-import { gsap } from "gsap";
-import { CSSPlugin } from "gsap/CSSPlugin";
-import ScrollTrigger from "gsap/ScrollTrigger";
 
 function Buscamos() {
   const main = useRef();
   const title = useRef();
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.registerPlugin(ScrollTrigger);
+
+      const sectionHeight = main.current.offsetHeight;
+      const titleHeight = title.current.offsetHeight;
+
+      const timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: main.current,
+          start: "-50 top",
+          // end: "bottom bottom",
+          end: () => `+=${sectionHeight - titleHeight}`,
+          // end: () => `bottom+=${sectionHeight} top`,
+          scrub: true, // Add scrubbing effect
+          markers: true, // Add markers for visualization (remove this in production)
+        },
+      });
+
+      // Stick the title to the top
+      timeline.to(title.current, {
+        y: sectionHeight - titleHeight, // Adjust the value as needed
+        ease: "none",
+      });
+    }, main);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
     <BuscamosSection ref={main} id="buscamos">
@@ -90,25 +119,43 @@ function Buscamos() {
 }
 
 const BuscamosSection = styled(Section)`
-  height: 100%;
   background-color: var(--color-green);
+  p {
+    margin-bottom: 12px;
+  }
 `;
 
 const BuscamosContainer = styled(ContentContainer)`
-  height: 100%;
   line-height: 1.2em;
-  padding-top: 24px;
+  height: 100%;
+  /* padding-top: 24px; */
+  /* overflow: hidden; */
 
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  align-items: start;
+  justify-content: center;
 
   @media (min-width: 768px) {
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: 95%;
+
+    display: flex;
     flex-direction: row;
+    justify-content: center;
   }
 
-  /* overflow-y: auto; */
+  @media (min-width: 1200px) {
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: 60%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
 `;
 const BuscamosText = styled(SectionText)`
   padding-left: var(--text-padding);
@@ -117,33 +164,41 @@ const BuscamosText = styled(SectionText)`
 const BuscamosTitle = styled(VerticalTitle)`
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
-  font-size: calc(var(--title-font-size) * 0.6);
+  font-size: var(--title-font-size-horz);
+  height: 100%;
+
   line-height: 0.8em;
-  word-wrap: break-word;
+  /* word-wrap: break-word; */
 
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: start;
-  justify-content: end;
+  justify-content: space-between;
   flex-basis: 0;
 
   text-align: end;
 
-  position: sticky;
-  top: 0px;
-
   @media (min-width: 768px) {
-    transform: rotate(180deg);
     width: 100%;
     height: 100%;
-    writing-mode: vertical-rl;
+    writing-mode: vertical-lr;
     text-orientation: sideways;
     flex-direction: column;
-    align-items: end;
+    align-items: start;
     justify-content: start;
     flex-basis: 0;
-    font-size: clamp(50px, 14.5vh, 70vh);
+    font-size: calc(var(--title-font-size-vert) * 0.75);
   }
+
+  span {
+    overflow: visible;
+
+    @media (min-width: 768px) {
+      transform: rotate(180deg);
+    }
+  }
+
+  /* position: sticky; */
 `;
 
 const ExtraHeightDiv = styled.div`

@@ -59,7 +59,7 @@ function Contribuicao() {
               <LineContentRight>
                 <LineInfoExtraBold>25%</LineInfoExtraBold>
                 <LineInfoSmall>
-                  <span>De arrecadações</span>
+                  <span>De arrecadações </span>
                   <span>para pagar os custos</span>
                   <span>do espaço e do</span>
                   <span>nosso trabalho</span>
@@ -85,6 +85,11 @@ function Contribuicao() {
           </LineVert>
           <LineVert>
             OU MAIS
+            <LineInfoBoldRight>
+              <span>Para manutencão e ampliacão</span>
+              <span>(equilibra as contas e possibilita</span>
+              <span>investir no projeto)</span>
+            </LineInfoBoldRight>
             <LineRect />
           </LineVert>
         </ContribuicaoColRight>
@@ -94,58 +99,76 @@ function Contribuicao() {
 }
 
 const ContribuicaoSection = styled(Section)`
-  padding-top: var(--nav-height);
-  padding-bottom: var(--nav-height);
-  height: 100%;
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   background-color: var(--color-brown2);
-  box-sizing: border-box;
 
   @media (min-width: 768px) {
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
   }
 
   color: white;
+  /* background-color: lightpink; */
 `;
 
 const ContribuicaoContainer = styled(ContentContainer)`
-  width: 95%;
-  height: 90%;
+  width: 98%;
+  height: 100%;
 
   display: flex;
   flex-direction: column;
   align-items: start;
-  justify-content: space-between;
+  justify-content: start;
+
   @media (min-width: 768px) {
-    width: 90%;
+    align-items: center;
+    width: 80%;
     flex-direction: row;
-    height: 100%;
+    min-height: 100%;
+    height: 100vh;
+    justify-content: space-between;
   }
+
+  /* background-color: blanchedalmond; */
 `;
 
 const ContribuicaoColLeft = styled.div`
-  height: 100%;
-  width: 67.5%;
+  width: 100%;
+  height: 80%;
 
-  margin-bottom: 55px;
-
-  @media (min-width: 768px) {
-    width: 55%;
-    height: 100%;
-  }
+  /* margin-bottom: 55px; */
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media (min-width: 768px) {
+    padding-bottom: 50px;
+    width: 70%;
+    height: 90%;
+    justify-content: space-between;
+  }
+
+  /* background-color: lightcoral; */
 `;
 
 const ContribuicaoColRight = styled.div`
   height: 100%;
-  width: 37.5%;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    height: 100%;
+    width: fit-content;
+    margin-left: 40px;
+  }
+
+  /* background-color: lightgreen; */
 `;
 
 const Line = styled.div`
@@ -174,7 +197,14 @@ const LineContent = styled.div`
   align-items: end;
 
   font-weight: 700;
-  font-size: calc(var(--title-font-size-horz) * 0.2);
+  font-size: calc(var(--title-font-size-horz) * 0.4);
+
+  @media (min-width: 768px) {
+    font-weight: 700;
+    font-size: calc(var(--title-font-size-horz) * 0.2);
+  }
+
+  /* background-color: lightblue; */
 `;
 
 const LineContentVert = styled.div`
@@ -183,22 +213,34 @@ const LineContentVert = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: start;
-  background-color: green;
 
   font-weight: 700;
   font-size: calc(var(--title-font-size-horz) * 0.2);
 `;
 
 const LineInfoBold = styled.span`
-  font-size: calc(var(--title-font-size-horz) * 0.45);
+  font-size: calc(var(--title-font-size-horz));
   transform: translateY(5px);
   @media (min-width: 768px) {
     font-size: calc(var(--title-font-size-horz) * 0.35);
   }
 `;
 
+const LineInfoBoldRight = styled.span`
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+
+  font-size: calc(var(--title-font-size-horz));
+  transform: translateY(5px);
+
+  @media (min-width: 768px) {
+    font-size: calc(var(--title-font-size-horz) * 0.18);
+  }
+`;
+
 const LineInfoExtraBold = styled.span`
-  font-size: calc(var(--title-font-size-horz) * 0.7);
+  font-size: calc(var(--title-font-size-horz) * 3);
   transform: translateY(5px);
   @media (min-width: 768px) {
     font-size: calc(var(--title-font-size-horz) * 0.5);
@@ -206,9 +248,15 @@ const LineInfoExtraBold = styled.span`
 `;
 
 const LineInfoSmall = styled.span`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
   font-weight: 700;
-  font-size: calc(var(--title-font-size-horz) * 0.15);
-  transform: translateY(5px);
+  font-size: calc(var(--title-font-size-horz) * 0.09);
+  /* transform: translateY(-20px); */
+  /* background-color: blue; */
 `;
 
 const LineContentLeft = styled.div`
@@ -221,11 +269,13 @@ const LineContentLeft = styled.div`
 `;
 const LineContentRight = styled.div`
   font-size: calc(var(--title-font-size-horz) * 0.25);
-  width: 50%;
+  /* width: 50%; */
+  /* height: 150px; */
   display: flex;
   flex-direction: row;
   align-items: end;
   justify-content: end;
+  /* background-color: green; */
 `;
 
 export default Contribuicao;

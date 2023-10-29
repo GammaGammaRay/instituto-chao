@@ -8,7 +8,9 @@ const BodyContainer = styled.div`
 
 const Section = styled.section`
   width: 100%;
-  height: calc(100% - var(--nav-height));
+  /* height: calc(100% - var(--nav-height)); */
+  min-height: 100%;
+  height: fit-content;
   scroll-snap-type: y proximity;
   scroll-snap-align: start;
   scroll-margin: var(--nav-height);
@@ -27,20 +29,21 @@ const Section = styled.section`
 `;
 
 const ContentContainer = styled.div`
-  width: 70%;
+  /* height: 100%; */
   height: fit-content;
 
   ::-webkit-scrollbar {
     width: 0 !important;
   }
 
-  @media (max-width: 768px) {
-    width: 100%;
-    height: 20%;
+  @media (min-width: 768px) {
+    /* width: 100%; */
+    /* height: 20%; */
   }
 `;
 
 const SectionText = styled.div`
+  max-width: 600px;
   margin-top: 26px;
   width: 80%;
   min-width: 40%;
@@ -49,6 +52,7 @@ const SectionText = styled.div`
   padding-bottom: 50px;
   line-height: 1.1em;
   text-align: justify;
+  line-height: 1.2em;
 `;
 
 const VerticalTitle = styled.div`

@@ -15,14 +15,42 @@ function QuemSomos() {
   const title = useRef();
   const bg = useRef();
 
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.registerPlugin(ScrollTrigger);
+
+      const sectionHeight = main.current.offsetHeight;
+      const titleHeight = title.current.offsetHeight;
+
+      const timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: main.current,
+          start: "-50 top",
+          end: () => `+=${sectionHeight - titleHeight}`,
+          scrub: true, // Add scrubbing effect
+          markers: true, // Add markers for visualization (remove this in production)
+        },
+      });
+
+      // Stick the title to the top
+      timeline.to(title.current, {
+        y: sectionHeight - titleHeight, // Adjust the value as needed
+        ease: "none",
+      });
+    }, main);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <QuemSomosSection id="quem-somos" className="quemSomosSection" ref={main}>
-      <QuemSomosBg />
       <QuemSomosContainer>
+        {/* <StickyContainer> */}
         <QuemSomosTitle ref={title} className="quemSomosTitle">
           <span className="quem">QUEM</span>
           <span className="somos">SOMOS?</span>
         </QuemSomosTitle>
+        {/* </StickyContainer> */}
         <QuemSomosText>
           <p>
             O Chão é uma associação de trabalhadores, sem fins lucrativos, que
@@ -92,24 +120,24 @@ function QuemSomos() {
   );
 }
 
+const StickyContainer = styled.div`
+  position: -webkit-sticky; /* For Safari */
+  position: sticky;
+  top: 0;
+  background-color: white; /* Add your desired background color for the sticky title */
+  z-index: 1;
+`;
 const QuemSomosSection = styled(Section)`
-  /* scroll-padding-bottom: 10vh; */
+  /* height: fit-content; */
+  background-color: var(--color-yellow);
   p {
     margin-bottom: 12px;
   }
 `;
 
-const QuemSomosBg = styled.div`
-  width: 100%;
-  height: 100%;
-  background-color: var(--color-yellow);
-  z-index: -5;
-  position: absolute;
-`;
-
 const QuemSomosText = styled(SectionText)`
   padding-left: var(--text-padding);
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 `;
 
 const QuemSomosContainer = styled(ContentContainer)`
@@ -119,12 +147,29 @@ const QuemSomosContainer = styled(ContentContainer)`
   /* overflow: hidden; */
 
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
 
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
     flex-direction: column;
     justify-content: start;
+    align-items: start;
+    width: 95%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  @media (min-width: 1200px) {
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: 60%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
 `;
 
@@ -133,8 +178,6 @@ const QuemSomosTitle = styled(VerticalTitle)`
   font-weight: var(--title-font-weight);
   font-size: var(--title-font-size-horz);
   height: 100%;
-
-  /* position: sticky; */
 
   line-height: 0.8em;
   /* word-wrap: break-word; */
@@ -165,6 +208,13 @@ const QuemSomosTitle = styled(VerticalTitle)`
     @media (min-width: 768px) {
       transform: rotate(180deg);
     }
+  }
+
+  &.sticky {
+    /* position: absolute; */
+    /* z-index: -1; */
+    top: 0;
+    background-color: white;
   }
 
   /* position: sticky; */

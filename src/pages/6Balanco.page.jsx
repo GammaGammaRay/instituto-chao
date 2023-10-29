@@ -9,11 +9,21 @@ import {
   VerticalTitle,
   ContentContainer,
 } from "../style/PageContainers";
+import { getSpreadsheetData } from "../service/getGoogleSheets.js";
 
 function Balanco() {
   const main = useRef();
   const title = useRef();
   const bg = useRef();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const spreadsheetData = await getSpreadsheetData();
+      console.log(spreadsheetData);
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <BalancoSection id="balanco" className="BalancoSection" ref={main}>

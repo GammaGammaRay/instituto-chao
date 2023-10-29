@@ -13,15 +13,37 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 function ComoFunciona() {
   const main = useRef();
   const title = useRef();
-  // const info = useRef();
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.registerPlugin(ScrollTrigger);
+
+      const sectionHeight = main.current.offsetHeight;
+      const titleHeight = title.current.offsetHeight;
+
+      const timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: main.current,
+          start: "-50 top",
+          end: () => `+=${sectionHeight - titleHeight}`,
+          scrub: true, // Add scrubbing effect
+          markers: true, // Add markers for visualization (remove this in production)
+        },
+      });
+
+      // Stick the title to the top
+      timeline.to(title.current, {
+        y: sectionHeight - titleHeight, // Adjust the value as needed
+        ease: "none",
+      });
+    }, main);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
     <ComoFuncionaSection ref={main} id="como-funciona">
       <ComoFuncionaContainer>
-        <ComoFuncionaTitle ref={title}>
-          <span>COMO</span>
-          <span>FUNCIONA?</span>
-        </ComoFuncionaTitle>
         <ComoFuncionaText>
           <p>
             O Chão é essencialmente um lugar de construção cotidiana de um outro
@@ -69,6 +91,10 @@ function ComoFunciona() {
             alt="calculo da contribuição"
           /> */}
         </ComoFuncionaText>
+        <ComoFuncionaTitle ref={title}>
+          <span>COMO</span>
+          <span>FUNCIONA?</span>
+        </ComoFuncionaTitle>
       </ComoFuncionaContainer>
     </ComoFuncionaSection>
   );
@@ -79,9 +105,8 @@ const ComoFuncionaSection = styled(Section)`
 `;
 
 const ComoFuncionaText = styled(SectionText)`
-  padding-left: var(--text-padding);
+  padding-right: var(--text-padding);
   overflow-y: scroll;
-  height: 100%;
 `;
 
 const ComoFuncionaContainer = styled(ContentContainer)`
@@ -94,7 +119,13 @@ const ComoFuncionaContainer = styled(ContentContainer)`
   color: white;
 
   @media (min-width: 768px) {
+    flex-direction: column;
+    justify-content: start;
+    width: 60%;
+
+    display: flex;
     flex-direction: row;
+    justify-content: center;
   }
 `;
 
@@ -115,13 +146,13 @@ const ComoFuncionaTitle = styled(VerticalTitle)`
   @media (min-width: 768px) {
     width: 100%;
     height: 100%;
-    writing-mode: vertical-lr;
+    writing-mode: vertical-rl;
     text-orientation: sideways;
     flex-direction: column;
     align-items: start;
     justify-content: start;
     flex-basis: 0;
-    font-size: clamp(4vh, 18vh, 70vh);
+    font-size: calc(var(--title-font-size-vert) * 0.8);
   }
 `;
 

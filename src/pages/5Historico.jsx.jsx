@@ -1,17 +1,50 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { styled } from "styled-components";
+import { gsap } from "gsap";
+import { CSSPlugin } from "gsap/CSSPlugin";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import {
-  ContentContainer,
   Section,
   SectionText,
   VerticalTitle,
+  ContentContainer,
 } from "../style/PageContainers";
-import { styled } from "styled-components";
 
 function Historico() {
+  const main = useRef();
+  const title = useRef();
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.registerPlugin(ScrollTrigger);
+
+      const sectionHeight = main.current.offsetHeight;
+      const titleHeight = title.current.offsetHeight;
+
+      const timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: main.current,
+          start: "-50 top",
+          end: () => `+=${sectionHeight - titleHeight}`,
+          // end: () => `bottom+=${sectionHeight} top`,
+          scrub: true, // Add scrubbing effect
+          markers: true, // Add markers for visualization (remove this in production)
+        },
+      });
+
+      // Stick the title to the top
+      timeline.to(title.current, {
+        y: sectionHeight - titleHeight, // Adjust the value as needed
+        ease: "none",
+      });
+    }, main);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <HistoricoSection id="historico">
+    <HistoricoSection id="historico" ref={main}>
       <HistoricoContainer>
-        <HistoricoTitle>HISTÓRICO</HistoricoTitle>
         <HistoricoText>
           <p>
             Abrimos as portas em maio de 2015, começamos com 6 pessoas e um
@@ -30,7 +63,7 @@ function Historico() {
           <p>
             Atualmente, somos uma equipe de 30 pessoas, que movimenta mais de
             R$3,2 milhões por mês em alimentos orgânicos, agroecológicos e
-            artesanais, sempre prorizando produtos provenientes da reforma
+            artesanais, sempre priorizando produtos provenientes da reforma
             agrária, da agricultura familiar e de comunidades indígenas e
             quilombolas.
           </p>
@@ -66,6 +99,7 @@ function Historico() {
           </p>
           <br />
         </HistoricoText>
+        <HistoricoTitle ref={title}>HISTÓRICO</HistoricoTitle>
         {/* <HistoricoTitle>HISTÓRICO</HistoricoTitle> */}
       </HistoricoContainer>
     </HistoricoSection>
@@ -85,27 +119,32 @@ const HistoricoContainer = styled(ContentContainer)`
   height: 100%;
   line-height: 1.2em;
   padding-top: 24px;
-  overflow: hidden;
-
-  margin-left: 20%;
-
   display: flex;
   flex-direction: column;
   justify-content: start;
+  color: black;
 
   @media (min-width: 768px) {
+    flex-direction: column;
+    justify-content: start;
+    width: 65%;
+
+    display: flex;
     flex-direction: row;
+    justify-content: center;
   }
 `;
 
 const HistoricoTitle = styled(VerticalTitle)`
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
-  font-size: var(--title-font-size-vert);
+  font-size: var(--title-font-size-horz);
   line-height: 0.8em;
   word-wrap: break-word;
+
   display: flex;
-  align-items: end;
+  flex-direction: column;
+  align-items: start;
   justify-content: start;
 
   text-align: start;
@@ -119,7 +158,7 @@ const HistoricoTitle = styled(VerticalTitle)`
     align-items: start;
     justify-content: start;
     flex-basis: 0;
-    font-size: clamp(4vh, 20vh, 70vh);
+    font-size: calc(var(--title-font-size-vert) * 0.8);
   }
 `;
 
