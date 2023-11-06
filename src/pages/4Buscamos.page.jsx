@@ -165,7 +165,7 @@ const BuscamosTitle = styled(VerticalTitle)`
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
   font-size: var(--title-font-size-horz);
-  height: 100%;
+  height: fit-content;
 
   line-height: 0.8em;
   /* word-wrap: break-word; */
@@ -177,10 +177,11 @@ const BuscamosTitle = styled(VerticalTitle)`
   flex-basis: 0;
 
   text-align: end;
+  background-color: lightblue;
 
   @media (min-width: 768px) {
     width: 100%;
-    height: 100%;
+    height: fit-content;
     writing-mode: vertical-lr;
     text-orientation: sideways;
     flex-direction: column;

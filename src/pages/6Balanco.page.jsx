@@ -14,7 +14,6 @@ import { getSpreadsheetData } from "../service/getGoogleSheets.js";
 function Balanco() {
   const main = useRef();
   const title = useRef();
-  const bg = useRef();
 
   const [spreadsheetData, setSpreadsheetData] = useState(null);
 
@@ -30,7 +29,7 @@ function Balanco() {
         if (Array.isArray(dataArray) && dataArray.length > 0) {
           setSpreadsheetData(dataArray);
         } else {
-          setSpreadsheetData("Data is not in the expected format");
+          setSpreadsheetData("Dados não estão no formato esperado.");
         }
       } catch (error) {
         console.error("Error fetching data", error);
@@ -43,16 +42,23 @@ function Balanco() {
 
   return (
     <BalancoSection id="balanco" className="BalancoSection" ref={main}>
-      <BalancoBg />
       <BalancoContainer>
-        <BalancoTitle ref={title} className="BalancoTitle">
-          <span className="balanco">BALANÇO</span>
-        </BalancoTitle>
+        <BalancoTableTop>
+          <BalancoTitle ref={title} className="BalancoTitle">
+            <span className="balanco">BALANÇO</span>
+            <span className="balanco">FINANCEIRO</span>
+          </BalancoTitle>
+        </BalancoTableTop>
         {spreadsheetData === null ? (
-          <BalancoText>Loading...</BalancoText>
+          <BalancoText>Buscando Dados...</BalancoText>
         ) : (
           <div>
-            {spreadsheetData.slice(0, 1).map((data, index) => (
+            {/* MÊS */}
+            {spreadsheetData[0].slice(0, 1).map((data, index) => (
+              <div key={index}>{data}</div>
+            ))}
+            {/* ANO */}
+            {spreadsheetData[0].slice(1, 2).map((data, index) => (
               <div key={index}>{data}</div>
             ))}
           </div>
@@ -64,31 +70,20 @@ function Balanco() {
 
 const BalancoSection = styled(Section)`
   height: 100%;
+  background-color: var(--color-red);
 
   p {
     margin-bottom: 12px;
   }
 `;
 
-const BalancoBg = styled.div`
-  width: 100%;
-  height: 100%;
-  background-color: var(--color-red);
-  z-index: -5;
-  position: absolute;
-`;
-
 const BalancoText = styled(SectionText)`
   margin-bottom: 500px;
-  /* padding-left: var(--text-padding); */
-  /* overflow-y: scroll; */
 `;
 
 const BalancoContainer = styled(ContentContainer)`
   line-height: 1.2em;
-  /* height: 100%; */
-  /* padding-top: 24px; */
-  /* overflow: hidden; */
+  width: 66%;
 
   display: flex;
   flex-direction: row;
@@ -103,14 +98,10 @@ const BalancoContainer = styled(ContentContainer)`
 const BalancoTitle = styled(VerticalTitle)`
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
-  /* font-size: clamp(13v, 1vw, 20px); */
-  /* font-size: clamp(13v, 1vw, 20px); */
+  font-size: var(--title-font-size-horz);
   height: 100%;
 
-  /* position: sticky; */
-
   line-height: 0.8em;
-  /* word-wrap: break-word; */
 
   display: flex;
   flex-direction: row;
@@ -122,8 +113,6 @@ const BalancoTitle = styled(VerticalTitle)`
 
   @media (min-width: 768px) {
     width: 100%;
-    writing-mode: vertical-lr;
-    text-orientation: sideways;
     flex-direction: column;
     align-items: start;
     justify-content: start;
@@ -133,13 +122,22 @@ const BalancoTitle = styled(VerticalTitle)`
 
   span {
     overflow: visible;
-
-    @media (min-width: 768px) {
-      transform: rotate(180deg);
-    }
   }
+`;
 
-  /* position: sticky; */
+const BalancoTableTop = styled.div`
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+const BalancoTableTopLeft = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+const BalancoTableTopRight = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 export default Balanco;

@@ -19,8 +19,8 @@ function QuemSomos() {
     const ctx = gsap.context(() => {
       gsap.registerPlugin(ScrollTrigger);
 
-      const sectionHeight = main.current.offsetHeight;
-      const titleHeight = title.current.offsetHeight;
+      const sectionHeight = gsap.getProperty(main.current, "offsetHeight");
+      const titleHeight = gsap.getProperty(title.current, "offsetHeight");
 
       const timeline = gsap.timeline({
         scrollTrigger: {
@@ -180,22 +180,22 @@ const QuemSomosTitle = styled(VerticalTitle)`
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
   font-size: var(--title-font-size-horz);
-  height: 100vh;
+  height: fit-content;
   line-height: 0.8em;
   word-wrap: break-word;
 
   display: flex;
   flex-direction: row;
   align-items: start;
-  /* justify-content: space-between; */
   flex-basis: 0;
   writing-mode: vertical-lr;
 
   text-align: end;
+  background-color: lightcyan;
 
   @media (min-width: 768px) {
     width: 100%;
-    height: 100%;
+    height: fit-content;
     writing-mode: vertical-lr;
     text-orientation: sideways;
     flex-direction: column;

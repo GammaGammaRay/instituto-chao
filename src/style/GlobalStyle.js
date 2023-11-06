@@ -1,6 +1,19 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+@font-face {
+  font-family: 'Grotesk'; /* The name you want to use for the 'Grotesk' font */
+  src: url('/fonts/Grotesk-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MDNichrome'; /* The name you want to use for the 'MDNichrome' font */
+  src: url('/fonts/MDNichrome-Dark.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
 
     html{
         scroll-snap-type: y proximity;
@@ -24,7 +37,7 @@ const GlobalStyle = createGlobalStyle`
     --color-red: #e65226;
     --color-salmon: #d57659;
 
-    --title-font: 'Poppins', sans-serif;
+    --title-font: 'MDNichrome', sans-serif;
     --title-font-weight: 500;
     --title-font-size-vert: clamp(4em, 20vh, 70vh);
     --title-font-size-horz: clamp(13vw, 4vw, 20px);
@@ -38,7 +51,7 @@ const GlobalStyle = createGlobalStyle`
 
     
     body{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Grotesk', sans-serif;
     background-color: #d7d7d7;
     
 }
