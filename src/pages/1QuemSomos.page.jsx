@@ -192,6 +192,7 @@ const QuemSomosTitle = styled(VerticalTitle)`
 
   text-align: end;
   background-color: lightcyan;
+  will-change: transform;
 
   @media (min-width: 768px) {
     width: 100%;
@@ -203,6 +204,7 @@ const QuemSomosTitle = styled(VerticalTitle)`
     justify-content: start;
     flex-basis: 0;
     font-size: var(--title-font-size-vert);
+    will-change: transform;
   }
 
   span {
