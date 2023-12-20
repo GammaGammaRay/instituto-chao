@@ -121,7 +121,7 @@ function QuemSomos() {
 
 const QuemSomosSection = styled(Section)`
   /* height: fit-content; */
-  background-color: var(--color-yellow);
+  background-color: #e5d26a;
   p {
     margin-bottom: 12px;
   }
