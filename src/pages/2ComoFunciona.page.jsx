@@ -20,7 +20,6 @@ function ComoFunciona() {
 
       const sectionHeight = main.current.offsetHeight;
       const titleHeight = title.current.offsetHeight;
-
       const timeline = gsap.timeline({
         scrollTrigger: {
           trigger: main.current,
@@ -150,27 +149,49 @@ const ComoFuncionaTitle = styled(VerticalTitle)`
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
   font-size: var(--title-font-size-horz);
+  height: fit-content;
   line-height: 0.8em;
   word-wrap: break-word;
 
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: start;
-  justify-content: start;
+  flex-basis: 0;
+  writing-mode: vertical-lr;
 
-  text-align: start;
+  text-align: end;
+  background-color: lightcyan;
+  will-change: transform;
 
   @media (min-width: 768px) {
     width: 100%;
-    height: 100%;
+    height: fit-content;
     writing-mode: vertical-rl;
     text-orientation: sideways;
     flex-direction: column;
     align-items: start;
     justify-content: start;
     flex-basis: 0;
-    font-size: calc(var(--title-font-size-vert) * 0.8);
+    font-size: var(--title-font-size-vert);
+    will-change: transform;
   }
+
+  span {
+    overflow: visible;
+
+    @media (min-width: 768px) {
+      /* transform: rotate(180deg); */
+    }
+  }
+
+  &.sticky {
+    /* position: absolute; */
+    /* z-index: -1; */
+    top: 0;
+    background-color: white;
+  }
+
+  /* position: sticky; */
 `;
 
 export default ComoFunciona;

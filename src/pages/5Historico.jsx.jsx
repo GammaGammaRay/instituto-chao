@@ -20,13 +20,11 @@ function Historico() {
 
       const sectionHeight = main.current.offsetHeight;
       const titleHeight = title.current.offsetHeight;
-
       const timeline = gsap.timeline({
         scrollTrigger: {
           trigger: main.current,
           start: "-50 top",
           end: () => `+=${sectionHeight - titleHeight}`,
-          // end: () => `bottom+=${sectionHeight} top`,
           scrub: true, // Add scrubbing effect
           markers: true, // Add markers for visualization (remove this in production)
         },
@@ -116,19 +114,77 @@ const HistoricoText = styled(SectionText)`
 `;
 
 const HistoricoContainer = styled(ContentContainer)`
-  height: 100%;
   line-height: 1.2em;
-  padding-top: 24px;
+  height: 100%;
+  /* padding-top: 24px; */
+  /* overflow: hidden; */
+
   display: flex;
-  flex-direction: column;
-  justify-content: start;
-  color: black;
+  flex-direction: row;
+  justify-content: center;
 
   @media (min-width: 768px) {
     flex-direction: column;
     justify-content: start;
-    width: 65%;
+    align-items: start;
+    width: 95%;
 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  @media (min-width: 1200px) {
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: 60%;
+    font-family: var(--title-font);
+    font-weight: var(--title-font-weight);
+    font-size: var(--title-font-size-horz);
+    height: fit-content;
+    line-height: 0.8em;
+    word-wrap: break-word;
+
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    flex-basis: 0;
+    writing-mode: vertical-lr;
+
+    text-align: end;
+    background-color: lightcyan;
+    will-change: transform;
+
+    @media (min-width: 768px) {
+      width: 100%;
+      height: fit-content;
+      writing-mode: vertical-lr;
+      text-orientation: sideways;
+      flex-direction: column;
+      align-items: start;
+      justify-content: start;
+      flex-basis: 0;
+      font-size: var(--title-font-size-vert);
+      will-change: transform;
+    }
+
+    span {
+      overflow: visible;
+
+      @media (min-width: 768px) {
+        transform: rotate(180deg);
+      }
+    }
+
+    &.sticky {
+      /* position: absolute; */
+      /* z-index: -1; */
+      top: 0;
+      background-color: white;
+    }
+
+    /* position: sticky; */
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -139,27 +195,49 @@ const HistoricoTitle = styled(VerticalTitle)`
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
   font-size: var(--title-font-size-horz);
+  height: fit-content;
   line-height: 0.8em;
   word-wrap: break-word;
 
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: start;
-  justify-content: start;
+  flex-basis: 0;
+  writing-mode: vertical-lr;
 
-  text-align: start;
+  text-align: end;
+  background-color: lightcyan;
+  will-change: transform;
 
   @media (min-width: 768px) {
     width: 100%;
-    height: 100%;
+    height: fit-content;
     writing-mode: vertical-lr;
     text-orientation: sideways;
     flex-direction: column;
     align-items: start;
     justify-content: start;
     flex-basis: 0;
-    font-size: calc(var(--title-font-size-vert) * 0.8);
+    font-size: var(--title-font-size-vert);
+    will-change: transform;
   }
+
+  span {
+    overflow: visible;
+
+    @media (min-width: 768px) {
+      transform: rotate(180deg);
+    }
+  }
+
+  &.sticky {
+    /* position: absolute; */
+    /* z-index: -1; */
+    top: 0;
+    background-color: white;
+  }
+
+  /* position: sticky; */
 `;
 
 export default Historico;

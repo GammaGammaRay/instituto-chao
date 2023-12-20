@@ -20,14 +20,11 @@ function Buscamos() {
 
       const sectionHeight = main.current.offsetHeight;
       const titleHeight = title.current.offsetHeight;
-
       const timeline = gsap.timeline({
         scrollTrigger: {
           trigger: main.current,
           start: "-50 top",
-          // end: "bottom bottom",
           end: () => `+=${sectionHeight - titleHeight}`,
-          // end: () => `bottom+=${sectionHeight} top`,
           scrub: true, // Add scrubbing effect
           markers: true, // Add markers for visualization (remove this in production)
         },
@@ -128,11 +125,9 @@ const BuscamosSection = styled(Section)`
 const BuscamosContainer = styled(ContentContainer)`
   line-height: 1.2em;
   height: 100%;
-  /* padding-top: 24px; */
-  /* overflow: hidden; */
 
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
 
   @media (min-width: 768px) {
@@ -168,18 +163,20 @@ const BuscamosTitle = styled(VerticalTitle)`
   height: fit-content;
 
   line-height: 0.8em;
-  /* word-wrap: break-word; */
 
-  display: flex;
-  flex-direction: row;
+  width: 100%;
+  height: fit-content;
+  writing-mode: vertical-rl;
+  text-orientation: sideways;
+  flex-direction: column;
   align-items: start;
-  justify-content: space-between;
+  justify-content: start;
   flex-basis: 0;
+  font-size: calc(var(--title-font-size-vert) * 0.75);
 
-  text-align: end;
   background-color: lightblue;
 
-  @media (min-width: 768px) {
+  /* @media (min-width: 768px) {
     width: 100%;
     height: fit-content;
     writing-mode: vertical-lr;
@@ -189,15 +186,7 @@ const BuscamosTitle = styled(VerticalTitle)`
     justify-content: start;
     flex-basis: 0;
     font-size: calc(var(--title-font-size-vert) * 0.75);
-  }
-
-  span {
-    overflow: visible;
-
-    @media (min-width: 768px) {
-      transform: rotate(180deg);
-    }
-  }
+  } */
 
   /* position: sticky; */
 `;
