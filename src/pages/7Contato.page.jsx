@@ -44,8 +44,6 @@ const ContatoSection = styled(Section)`
   letter-spacing: 0.1em;
   background-color: var(--color-salmon);
   color: white;
-
-  /* background-color: lightgray; */
 `;
 
 const HorarioContainer = styled.div`

@@ -84,11 +84,24 @@ function ComoFunciona() {
             e, hoje, nossa necessidade mínima é de 25% e a sugestão de 30% sobre
             o valor dos produtos.
           </p>
-          {/* <img
-            ref={info}
-            src="calculoContribuicao.png"
-            alt="calculo da contribuição"
-          /> */}
+          <br />
+          <p>
+            Todo mês fazemos uma previsão de custos e uma previsão de vendas e,
+            a partir disso, sugerimos aos frequentadores, a cada compra, um
+            percentual de contribuição para que possamos manter o espaço
+            funcionando. Ao longo dos anos esses valores foram se estabilizando
+            e, hoje, nossa necessidade mínima é de 25% e a sugestão de 30% sobre
+            o valor dos produtos.
+          </p>
+          <br />
+          <p>
+            Todo mês fazemos uma previsão de custos e uma previsão de vendas e,
+            a partir disso, sugerimos aos frequentadores, a cada compra, um
+            percentual de contribuição para que possamos manter o espaço
+            funcionando. Ao longo dos anos esses valores foram se estabilizando
+            e, hoje, nossa necessidade mínima é de 25% e a sugestão de 30% sobre
+            o valor dos produtos.
+          </p>
         </ComoFuncionaText>
         <ComoFuncionaTitle ref={title}>
           <span>COMO</span>
@@ -101,9 +114,6 @@ function ComoFunciona() {
 
 const ComoFuncionaSection = styled(Section)`
   background-color: var(--color-brown);
-  p {
-    margin-bottom: 12px;
-  }
 `;
 
 const ComoFuncionaText = styled(SectionText)`

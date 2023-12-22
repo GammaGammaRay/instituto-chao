@@ -120,26 +120,12 @@ function QuemSomos() {
 }
 
 const QuemSomosSection = styled(Section)`
-  /* height: fit-content; */
   background-color: #e5d26a;
-  p {
-    margin-bottom: 12px;
-  }
-`;
-
-const QuemSomosText = styled(SectionText)`
-  padding-left: calc(var(--text-padding) * 0.2);
-  @media (min-width: 768px) {
-    padding-left: var(--text-padding);
-  }
-  /* overflow-y: scroll; */
 `;
 
 const QuemSomosContainer = styled(ContentContainer)`
   line-height: 1.2em;
   height: 100%;
-  /* padding-top: 24px; */
-  /* overflow: hidden; */
 
   display: flex;
   flex-direction: row;
@@ -165,6 +151,13 @@ const QuemSomosContainer = styled(ContentContainer)`
     display: flex;
     flex-direction: row;
     justify-content: center;
+  }
+`;
+
+const QuemSomosText = styled(SectionText)`
+  padding-left: calc(var(--text-padding) * 0.2);
+  @media (min-width: 768px) {
+    padding-left: var(--text-padding);
   }
 `;
 

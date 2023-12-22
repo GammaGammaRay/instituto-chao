@@ -19,6 +19,10 @@ const Section = styled.section`
   align-items: center;
   justify-content: center;
 
+  p {
+    margin-bottom: 12px;
+  }
+
   @media (max-width: 768px) {
     flex-direction: row;
     align-items: start;

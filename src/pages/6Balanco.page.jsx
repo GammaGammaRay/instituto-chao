@@ -71,10 +71,6 @@ function Balanco() {
 const BalancoSection = styled(Section)`
   height: 100%;
   background-color: var(--color-red);
-
-  p {
-    margin-bottom: 12px;
-  }
 `;
 
 const BalancoText = styled(SectionText)`
