@@ -21,7 +21,7 @@ function QuemSomos() {
       <QuemSomosContainer>
         {/* <StickyContainer> */}
         <QuemSomosTitle ref={title} className="quemSomosTitle">
-          <span className="quem">QUEM&nbsp;</span>
+          <span className="quem">QUEM</span>
           <span className="somos">SOMOS?</span>
         </QuemSomosTitle>
         {/* </StickyContainer> */}
@@ -138,6 +138,7 @@ const QuemSomosText = styled(SectionText)`
 
 const QuemSomosTitle = styled(VerticalTitle)`
   writing-mode: vertical-lr;
+  flex-direction: column;
 
   span {
     @media (min-width: 768px) {

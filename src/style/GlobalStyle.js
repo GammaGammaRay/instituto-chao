@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
 
     html{
         scroll-snap-type: y proximity;
-
+        scroll-behavior: smooth;
     }
 
     :root {
@@ -39,8 +39,6 @@ const GlobalStyle = createGlobalStyle`
 
     --title-font: 'MDNichrome', sans-serif;
     --title-font-weight: 500;
-    --title-font-size-vert: clamp(4em, 20vh, 70vh);
-    --title-font-size-horz: clamp(13vw, 4vw, 20px);
 
     --text-padding: 50px;
 

@@ -34,6 +34,8 @@ const ContentContainer = styled.div`
   margin-top: 26px;
   height: fit-content;
 
+  background-color: #dc143c45;
+
   ::-webkit-scrollbar {
     width: 0 !important;
   }
@@ -54,7 +56,7 @@ const SectionText = styled.div`
 const VerticalTitle = styled.div`
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
-  font-size: var(--title-font-size-horz);
+  font-size: clamp(4em, 20vh, 70vh);
   height: fit-content;
   line-height: 0.8em;
   word-wrap: break-word;

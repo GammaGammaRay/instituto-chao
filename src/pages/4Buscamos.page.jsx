@@ -134,6 +134,8 @@ const BuscamosText = styled(SectionText)`
 
 const BuscamosTitle = styled(VerticalTitle)`
   writing-mode: vertical-rl;
+
+  background-color: #ffebcd59;
   span {
     overflow: visible;
 
