@@ -16,14 +16,12 @@ const GlobalStyle = createGlobalStyle`
 }
 
     html{
-        scroll-snap-type: y proximity;
-        scroll-snap-stop: normal;
+        
         /* scroll-behavior: smooth; */
     }
 
     :root {
     --nav-height: 50px;
-
     --section-height: calc(100vh - var(--nav-height));
     --color-gray: #ded6d0;
  
@@ -74,22 +72,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 26px;
     color: white;
 }
-    input {
-    font-size: 20px;
-    width: calc(100% - 30px);
-    border-radius: 5px;
-    outline: none;
-    border: 1px solid #ccc;
-    padding: 15px;
-    margin: 1px;
-    :focus {
-        border: 2px solid #ffb6b6;
-        margin: 0px;
-    }
-}
-
-
-
+    
     a {
     font-weight: 700;
     font-size: 15px;

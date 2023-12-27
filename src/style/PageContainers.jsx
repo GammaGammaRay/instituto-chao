@@ -1,22 +1,27 @@
 import { styled } from "styled-components";
 
 const BodyContainer = styled.div`
-  height: 100vh;
+  /* height: 100vh; */
 `;
 
 const Section = styled.section`
   width: 100%;
-  /* height: var(--section-height); */
+  height: var(--section-height);
   /* min-height: 100%; */
-  height: fit-content;
+  /* height: fit-content; */
   scroll-snap-type: y proximity;
+  scroll-snap-stop: normal;
   scroll-snap-align: start;
-  /* scroll-margin: var(--nav-height); */
+  scroll-margin: var(--nav-height);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  /* overflow-y: scroll; */
 
+  ::-webkit-scrollbar {
+    width: 0 !important;
+  }
   p {
     margin-bottom: 12px;
   }
@@ -26,19 +31,13 @@ const Section = styled.section`
     align-items: start;
     justify-content: start;
   }
-
-  overflow: hidden;
 `;
 
 const ContentContainer = styled.div`
   margin-top: 26px;
-  height: fit-content;
+  /* height: 100%; */
 
   background-color: #dc143c45;
-
-  ::-webkit-scrollbar {
-    width: 0 !important;
-  }
 `;
 
 const SectionText = styled.div`
@@ -84,9 +83,9 @@ const VerticalTitle = styled.div`
     will-change: transform;
   }
 
-  span {
+  /* span {
     overflow: visible;
-  }
+  } */
 `;
 
 const HorizontalTitle = styled.div`

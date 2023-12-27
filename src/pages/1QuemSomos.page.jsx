@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { styled } from "styled-components";
 import {
   Section,
@@ -6,33 +6,49 @@ import {
   VerticalTitle,
   ContentContainer,
 } from "../style/PageContainers";
-import stickyTitles from "../js/stickyTitles.jsx";
-import Sticky from "react-sticky-el";
 
 function QuemSomos() {
   const main = useRef();
   const title = useRef();
-  // stickyTitles(main, title);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const section = main.current;
+      const titleElement = title.current;
+
+      if (section && titleElement) {
+        const sectionRect = section.getBoundingClientRect();
+        const titleRect = titleElement.getBoundingClientRect();
+
+        // Adjust the threshold as needed
+        const scrollThreshold = 100; // Change this value based on your layout
+
+        // Enable scrolling only when the section reaches the top
+        if (sectionRect.top <= scrollThreshold) {
+          section.style.overflowY = "auto";
+          document.body.style.overflowY = "hidden";
+        } else {
+          section.style.overflowY = "hidden";
+          document.body.style.overflowY = "auto";
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <QuemSomosSection id="quem-somos" ref={main} className="scrollElement">
-      <QuemSomosContainer className="boundaryElement">
-        {/* <Sticky
-          stickyStyle={{ transform: "none", backgroundColor: "aliceblue" }}
-          // topOffset={-200}
-          boundaryElement=".boundaryElement"
-          // scrollElement=".boundaryElement"
-          // scrollElement=".body"
-          // scrollElement="window"
-          hideOnBoundaryHit={false}
-          // dontUpdateHolderHeightWhenSticky={true}
-          // offsetTransforms={true}
-        > */}
-        <QuemSomosTitle ref={title} className="quemSomosTitle">
-          <span className="quem">QUEM</span>
-          <span className="somos">SOMOS?</span>
-        </QuemSomosTitle>
-        {/* </Sticky> */}
+    <QuemSomosSection id="quem-somos" ref={main}>
+      <QuemSomosContainer>
+        <QuemSomosTitleContainer className="sticky-title">
+          <QuemSomosTitle ref={title} className="quemSomosTitle">
+            <span className="quem">QUEM</span>
+            <span className="somos">SOMOS?</span>
+          </QuemSomosTitle>
+        </QuemSomosTitleContainer>
         <QuemSomosText>
           <p>
             O Chão é uma associação de trabalhadores, sem fins lucrativos, que
@@ -108,7 +124,9 @@ const QuemSomosSection = styled(Section)`
 
 const QuemSomosContainer = styled(ContentContainer)`
   line-height: 1.2em;
-  height: 100%;
+  height: fit-content;
+  position: relative;
+  /* overflow-y: scroll; */
 
   display: flex;
   flex-direction: row;
@@ -142,6 +160,13 @@ const QuemSomosText = styled(SectionText)`
   @media (min-width: 768px) {
     padding-left: var(--text-padding);
   }
+`;
+
+const QuemSomosTitleContainer = styled.div`
+  position: sticky;
+  top: 50px;
+  background-color: aliceblue; /* Adjust styles as needed */
+  /* Other styles for sticky behavior */
 `;
 
 const QuemSomosTitle = styled(VerticalTitle)`

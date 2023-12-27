@@ -74,8 +74,10 @@ const LogoPage = styled.div`
 `;
 
 const LogoSection = styled(Section)`
-  height: 100%;
+  /* height: 100%; */
+  margin-top: var(--nav-height);
   background-color: black;
+  overflow-y: hidden;
 `;
 
 export default Logo;
