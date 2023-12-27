@@ -7,31 +7,26 @@ const stickyTitles = (main, title) => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    const sectionHeight = main.current.offsetHeight;
-    const titleHeight = title.current.offsetHeight;
-
     const timeline = gsap.timeline({
       scrollTrigger: {
         trigger: main.current,
         start: "-50 top",
-        end: `+=${sectionHeight - titleHeight}`,
+        end: `+=${main.current.offsetHeight - title.current.offsetHeight}`,
         scrub: true,
         // markers: true,
       },
     });
 
     timeline.to(title.current, {
-      y: sectionHeight - titleHeight,
+      y: main.current.offsetHeight - title.current.offsetHeight,
       ease: "none",
     });
 
     const updateOnScreenResize = _.debounce(() => {
-      const sectionHeight = main.current.offsetHeight;
-      const titleHeight = title.current.offsetHeight;
-
-      timeline.scrollTrigger.animation.end = `+=${sectionHeight - titleHeight}`;
-      timeline.invalidate().restart(); // Restart the timeline with updated values
-    }, 100); // Debounce delay in milliseconds
+      const newEnd = main.current.offsetHeight - title.current.offsetHeight;
+      timeline.scrollTrigger.animation.end = `+=${newEnd}`;
+      timeline.invalidate();
+    }, 100); // Adjust the debounce delay as needed
 
     const handleResize = () => {
       updateOnScreenResize();
@@ -41,13 +36,13 @@ const stickyTitles = (main, title) => {
 
     return () => {
       window.removeEventListener("resize", handleResize);
-      updateOnScreenResize.cancel(); // Cancel the debounced function on component unmount
-      timeline.kill(); // Kill the timeline on component unmount
+      updateOnScreenResize.cancel();
+      timeline.kill();
     };
-  }, [main, title]); // Ensure useEffect runs whenever main or title changes
+  }, [main, title]);
 
   return () => {
-    timeline.kill(); // Clean up the GSAP animation on component unmount
+    timeline.kill();
   };
 };
 

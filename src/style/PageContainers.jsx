@@ -6,7 +6,7 @@ const BodyContainer = styled.div`
 
 const Section = styled.section`
   width: 100%;
-  /* height: calc(100% - var(--nav-height)); */
+  /* height: var(--section-height); */
   /* min-height: 100%; */
   height: fit-content;
   scroll-snap-type: y proximity;

@@ -17,6 +17,7 @@ const GlobalStyle = createGlobalStyle`
 
     html{
         scroll-snap-type: y proximity;
+        scroll-snap-stop: normal;
         /* scroll-behavior: smooth; */
     }
 
@@ -87,20 +88,8 @@ const GlobalStyle = createGlobalStyle`
     }
 }
 
-    input::placeholder {
-    font-weight: 100;
-    font-style: italic;
-    color: #cfcfcfff;
-}
-    form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    width: 100%;
-    border-radius: 5px;
-}
+
+
     a {
     font-weight: 700;
     font-size: 15px;

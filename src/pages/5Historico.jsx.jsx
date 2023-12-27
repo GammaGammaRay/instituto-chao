@@ -89,8 +89,6 @@ const HistoricoContainer = styled(ContentContainer)`
   flex-direction: row;
   justify-content: space-between;
 
-  background-color: #00ffff40;
-
   @media (min-width: 768px) {
     display: flex;
     flex-direction: row;

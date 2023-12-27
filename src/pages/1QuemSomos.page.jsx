@@ -7,21 +7,32 @@ import {
   ContentContainer,
 } from "../style/PageContainers";
 import stickyTitles from "../js/stickyTitles.jsx";
+import Sticky from "react-sticky-el";
 
 function QuemSomos() {
   const main = useRef();
   const title = useRef();
-  stickyTitles(main, title);
+  // stickyTitles(main, title);
 
   return (
-    <QuemSomosSection id="quem-somos" className="quemSomosSection" ref={main}>
-      <QuemSomosContainer>
-        {/* <StickyContainer> */}
+    <QuemSomosSection id="quem-somos" ref={main} className="scrollElement">
+      <QuemSomosContainer className="boundaryElement">
+        {/* <Sticky
+          stickyStyle={{ transform: "none", backgroundColor: "aliceblue" }}
+          // topOffset={-200}
+          boundaryElement=".boundaryElement"
+          // scrollElement=".boundaryElement"
+          // scrollElement=".body"
+          // scrollElement="window"
+          hideOnBoundaryHit={false}
+          // dontUpdateHolderHeightWhenSticky={true}
+          // offsetTransforms={true}
+        > */}
         <QuemSomosTitle ref={title} className="quemSomosTitle">
           <span className="quem">QUEM</span>
           <span className="somos">SOMOS?</span>
         </QuemSomosTitle>
-        {/* </StickyContainer> */}
+        {/* </Sticky> */}
         <QuemSomosText>
           <p>
             O Chão é uma associação de trabalhadores, sem fins lucrativos, que
@@ -135,7 +146,8 @@ const QuemSomosText = styled(SectionText)`
 
 const QuemSomosTitle = styled(VerticalTitle)`
   writing-mode: vertical-lr;
-  flex-direction: column;
+  /* flex-direction: row; */
+  background-color: aliceblue;
 
   span {
     @media (min-width: 768px) {
