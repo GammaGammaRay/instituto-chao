@@ -9,36 +9,13 @@ import { styled } from "styled-components";
 import { gsap } from "gsap";
 import { CSSPlugin } from "gsap/CSSPlugin";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import stickyTitles from "../js/stickyTitles";
 
 function ComoFunciona() {
   const main = useRef();
   const title = useRef();
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.registerPlugin(ScrollTrigger);
-
-      const sectionHeight = main.current.offsetHeight;
-      const titleHeight = title.current.offsetHeight;
-      const timeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: main.current,
-          start: "-50 top",
-          end: () => `+=${sectionHeight - titleHeight}`,
-          scrub: true, // Add scrubbing effect
-          markers: true, // Add markers for visualization (remove this in production)
-        },
-      });
-
-      // Stick the title to the top
-      timeline.to(title.current, {
-        y: sectionHeight - titleHeight, // Adjust the value as needed
-        ease: "none",
-      });
-    }, main);
-
-    return () => ctx.revert();
-  }, []);
+  stickyTitles(main, title);
 
   return (
     <ComoFuncionaSection ref={main} id="como-funciona">

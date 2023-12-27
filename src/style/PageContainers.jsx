@@ -33,16 +33,10 @@ const Section = styled.section`
 `;
 
 const ContentContainer = styled.div`
-  /* height: 100%; */
   height: fit-content;
 
   ::-webkit-scrollbar {
     width: 0 !important;
-  }
-
-  @media (min-width: 768px) {
-    /* width: 100%; */
-    /* height: 20%; */
   }
 `;
 

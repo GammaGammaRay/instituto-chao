@@ -5,7 +5,19 @@ import styled from "styled-components";
 function Contato() {
   return (
     <ContatoSection id="contato">
-      <ContentContainer>
+      <ContatoContainer>
+        <ContatoEnderecoContainer>
+          <h2>CONTATO E ENDEREÇO</h2>
+          <span>
+            +55 11 3819-4205
+            <a href="mailto:contato@institutochao.org">
+              contato@institutochao.org
+            </a>
+          </span>
+          <span>Rua Harmonia, 114 - Vila Madalena</span>
+          <span>São Paulo / SP - 05435-000 - BR</span>
+        </ContatoEnderecoContainer>
+
         <HorarioContainer>
           <HorariosLista>
             <Horario>
@@ -23,18 +35,7 @@ function Contato() {
           </HorariosLista>
           <HorarioTitle>HORÁRIO</HorarioTitle>
         </HorarioContainer>
-        <ContatoEnderecoContainer>
-          <h2>CONTATO E ENDEREÇO</h2>
-          <span>
-            +55 11 3819-4205
-            <a href="mailto:contato@institutochao.org">
-              contato@institutochao.org
-            </a>
-          </span>
-          <span>Rua Harmonia, 114 - Vila Madalena</span>
-          <span>São Paulo / SP - 05435-000 - BR</span>
-        </ContatoEnderecoContainer>
-      </ContentContainer>
+      </ContatoContainer>
     </ContatoSection>
   );
 }
@@ -44,6 +45,15 @@ const ContatoSection = styled(Section)`
   letter-spacing: 0.1em;
   background-color: var(--color-salmon);
   color: white;
+
+  display: flex;
+  flex-direction: row;
+`;
+
+const ContatoContainer = styled(ContentContainer)`
+  display: flex;
+  flex-direction: row;
+  align-items: end;
 `;
 
 const HorarioContainer = styled.div`
