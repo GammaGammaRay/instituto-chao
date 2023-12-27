@@ -99,9 +99,11 @@ function Contribuicao() {
 }
 
 const ContribuicaoSection = styled(Section)`
+  box-shadow: 0px -10px 12px rgba(0, 0, 0, 0.1); /* Horizontal offset, vertical offset, blur radius, color */
+
   font-family: "MDNichrome";
   letter-spacing: 0.1em;
-  height: 100%;
+  height: calc(100% - var(--nav-height));
   display: flex;
   flex-direction: column;
   align-items: center;

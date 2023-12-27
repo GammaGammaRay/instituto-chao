@@ -20,7 +20,7 @@ function Buscamos() {
     <BuscamosSection ref={main} id="buscamos">
       <BuscamosContainer>
         <BuscamosTitle ref={title}>
-          <span>O QUE</span>
+          <span>O QUE </span>
           <span>BUSCAMOS?</span>
         </BuscamosTitle>
         <BuscamosText>
@@ -134,22 +134,6 @@ const BuscamosText = styled(SectionText)`
 
 const BuscamosTitle = styled(VerticalTitle)`
   writing-mode: vertical-rl;
-
-  background-color: lightcyan;
-
-  @media (min-width: 768px) {
-    width: 100%;
-    height: fit-content;
-    writing-mode: vertical-lr;
-    text-orientation: sideways;
-    flex-direction: column;
-    align-items: start;
-    justify-content: start;
-    flex-basis: 0;
-    font-size: var(--title-font-size-vert);
-    will-change: transform;
-  }
-
   span {
     overflow: visible;
 

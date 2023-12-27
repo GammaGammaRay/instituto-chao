@@ -7,7 +7,7 @@ const BodyContainer = styled.div`
 const Section = styled.section`
   width: 100%;
   /* height: calc(100% - var(--nav-height)); */
-  min-height: 100%;
+  /* min-height: 100%; */
   height: fit-content;
   scroll-snap-type: y proximity;
   scroll-snap-align: start;
@@ -31,6 +31,7 @@ const Section = styled.section`
 `;
 
 const ContentContainer = styled.div`
+  margin-top: 26px;
   height: fit-content;
 
   ::-webkit-scrollbar {
@@ -40,13 +41,12 @@ const ContentContainer = styled.div`
 
 const SectionText = styled.div`
   max-width: 600px;
-  margin-top: 26px;
+
   width: 80%;
   min-width: 40%;
   align-items: center;
   font-size: 20px;
-  padding-bottom: 50px;
-  line-height: 1.1em;
+  /* padding-bottom: 50px; */
   text-align: justify;
   line-height: 1.2em;
 `;
@@ -65,12 +65,11 @@ const VerticalTitle = styled.div`
   flex-basis: 0;
 
   text-align: end;
-  background-color: lightcyan;
+  /* background-color: lightcyan; */
   will-change: transform;
 
   @media (max-width: 768px) {
     width: 100%;
-    font-size: 10px;
   }
 
   @media (min-width: 768px) {
@@ -81,8 +80,12 @@ const VerticalTitle = styled.div`
     align-items: start;
     justify-content: start;
     flex-basis: 0;
-    font-size: var(--title-font-size-vert);
     will-change: transform;
+  }
+
+  span {
+    overflow: visible;
+    margin-bottom: 12px;
   }
 `;
 
@@ -100,7 +103,7 @@ const HorizontalTitle = styled.div`
   flex-basis: 0;
 
   text-align: end;
-  background-color: lightcyan;
+  /* background-color: lightcyan; */
   will-change: transform;
 
   @media (max-width: 768px) {

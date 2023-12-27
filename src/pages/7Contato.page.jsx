@@ -1,11 +1,15 @@
 import React from "react";
-import { ContentContainer, Section } from "../style/PageContainers";
+import {
+  ContentContainer,
+  HorizontalTitle,
+  Section,
+} from "../style/PageContainers";
 import styled from "styled-components";
 
 function Contato() {
   return (
     <ContatoSection id="contato">
-      <ContatoContainer>
+      <InfosContainer>
         <ContatoEnderecoContainer>
           <h2>CONTATO E ENDEREÇO</h2>
           <span>
@@ -33,9 +37,9 @@ function Contato() {
               <span>8 ÀS 17h</span>
             </Horario>
           </HorariosLista>
-          <HorarioTitle>HORÁRIO</HorarioTitle>
+          <h2>HORÁRIO</h2>
         </HorarioContainer>
-      </ContatoContainer>
+      </InfosContainer>
     </ContatoSection>
   );
 }
@@ -46,26 +50,52 @@ const ContatoSection = styled(Section)`
   background-color: var(--color-salmon);
   color: white;
 
+  height: calc(100% - var(--nav-height));
+  width: 100%;
   display: flex;
   flex-direction: row;
 `;
 
-const ContatoContainer = styled(ContentContainer)`
+const InfosContainer = styled(ContentContainer)`
   display: flex;
   flex-direction: row;
   align-items: end;
+  justify-content: space-between;
+  background-color: #f0f8ff6a;
+
+  h2 {
+    font-family: var(--title-font);
+    font-weight: var(--title-font-weight);
+    font-size: calc(var(--title-font-size-horz) * 0.5);
+    overflow: visible;
+  }
+`;
+
+const ContatoEnderecoContainer = styled(ContentContainer)`
+  display: flex;
+  flex-direction: column;
+  font-size: 25px;
+  background-color: #206bad6a;
+
+  h2 {
+    margin-bottom: 30px;
+  }
+
+  a {
+    margin-left: 20px;
+  }
 `;
 
 const HorarioContainer = styled.div`
   display: flex;
   flex-direction: row;
-`;
+  align-items: start;
+  background-color: #892be22b;
 
-const HorarioTitle = styled.div`
-  font-family: var(--title-font);
-  font-weight: var(--title-font-weight);
-  font-size: var(--title-font-size-horz);
-  writing-mode: vertical-rl;
+  h2 {
+    writing-mode: vertical-rl;
+    font-size: calc(var(--title-font-size-horz) * 0.8);
+  }
 `;
 
 const HorariosLista = styled.div`
@@ -74,27 +104,10 @@ const HorariosLista = styled.div`
 `;
 
 const Horario = styled.div`
+  font-size: 24px;
   display: flex;
   flex-direction: column;
   margin-bottom: 16px;
-`;
-
-const ContatoEnderecoContainer = styled(ContentContainer)`
-  display: flex;
-  flex-direction: column;
-  font-size: 25px;
-
-  h2 {
-    font-family: "MDNichrome";
-    margin-bottom: 30px;
-    font-family: var(--title-font);
-    font-weight: var(--title-font-weight);
-    font-size: calc(var(--title-font-size-horz) * 0.5);
-  }
-
-  a {
-    margin-left: 20px;
-  }
 `;
 
 export default Contato;

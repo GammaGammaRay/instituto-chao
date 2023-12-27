@@ -140,8 +140,6 @@ const QuemSomosTitle = styled(VerticalTitle)`
   writing-mode: vertical-lr;
 
   span {
-    overflow: visible;
-
     @media (min-width: 768px) {
       transform: rotate(180deg);
     }

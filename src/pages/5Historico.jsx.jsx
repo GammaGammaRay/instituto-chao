@@ -75,7 +75,6 @@ function Historico() {
           <br />
         </HistoricoText>
         <HistoricoTitle ref={title}>HISTÓRICO</HistoricoTitle>
-        {/* <HistoricoTitle>HISTÓRICO</HistoricoTitle> */}
       </HistoricoContainer>
     </HistoricoSection>
   );
@@ -85,76 +84,43 @@ const HistoricoSection = styled(Section)`
   background-color: var(--color-pink);
 `;
 
-const HistoricoText = styled(SectionText)`
-  padding-right: var(--text-padding);
-  overflow-y: scroll;
-`;
-
 const HistoricoContainer = styled(ContentContainer)`
   line-height: 1.2em;
   height: 100%;
 
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
+
+  background-color: #00ffff40;
 
   @media (min-width: 768px) {
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
-    width: 95%;
-
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: start;
+    width: 95%;
   }
 
   @media (min-width: 1200px) {
     flex-direction: column;
-    justify-content: start;
+    justify-content: space-between;
     align-items: start;
     width: 60%;
 
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
   }
+`;
+
+const HistoricoText = styled(SectionText)`
+  padding-right: calc(var(--text-padding) * 0.2);
+  overflow-y: scroll;
 `;
 
 const HistoricoTitle = styled(VerticalTitle)`
   writing-mode: vertical-lr;
-
-  background-color: lightcyan;
-
-  @media (min-width: 768px) {
-    width: 100%;
-    height: fit-content;
-    writing-mode: vertical-lr;
-    text-orientation: sideways;
-    flex-direction: column;
-    align-items: start;
-    justify-content: start;
-    flex-basis: 0;
-    font-size: var(--title-font-size-vert);
-    will-change: transform;
-  }
-
-  span {
-    overflow: visible;
-
-    @media (min-width: 768px) {
-      transform: rotate(180deg);
-    }
-  }
-
-  &.sticky {
-    /* position: absolute; */
-    /* z-index: -1; */
-    top: 0;
-    background-color: white;
-  }
-
-  /* position: sticky; */
 `;
 
 export default Historico;

@@ -80,7 +80,6 @@ const NavContainer = styled.div`
 
 const NavButtonContainer = styled.div`
   width: fit-content;
-  /* margin-right: 16px; */
   max-width: 100%;
   width: 800px;
 
@@ -89,7 +88,6 @@ const NavButtonContainer = styled.div`
   justify-content: space-around;
 `;
 const NavBtn = styled.div`
-  /* margin-left: 16px; */
   cursor: pointer;
 `;
 
