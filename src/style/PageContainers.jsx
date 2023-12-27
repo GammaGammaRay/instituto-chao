@@ -11,7 +11,7 @@ const Section = styled.section`
   height: fit-content;
   scroll-snap-type: y proximity;
   scroll-snap-align: start;
-  scroll-margin: var(--nav-height);
+  /* scroll-margin: var(--nav-height); */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,7 +48,6 @@ const SectionText = styled.div`
   min-width: 40%;
   align-items: center;
   font-size: 20px;
-  /* padding-bottom: 50px; */
   text-align: justify;
   line-height: 1.2em;
 `;
@@ -87,7 +86,6 @@ const VerticalTitle = styled.div`
 
   span {
     overflow: visible;
-    margin-bottom: 12px;
   }
 `;
 

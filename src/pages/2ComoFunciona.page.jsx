@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import {
   Section,
   SectionText,
@@ -6,9 +6,6 @@ import {
   ContentContainer,
 } from "../style/PageContainers";
 import { styled } from "styled-components";
-import { gsap } from "gsap";
-import { CSSPlugin } from "gsap/CSSPlugin";
-import ScrollTrigger from "gsap/ScrollTrigger";
 import stickyTitles from "../js/stickyTitles.jsx";
 
 function ComoFunciona() {

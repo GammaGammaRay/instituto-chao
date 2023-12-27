@@ -1,8 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
 import { styled } from "styled-components";
-import { gsap } from "gsap";
-import { CSSPlugin } from "gsap/CSSPlugin";
-import ScrollTrigger from "gsap/ScrollTrigger";
 import {
   Section,
   SectionText,

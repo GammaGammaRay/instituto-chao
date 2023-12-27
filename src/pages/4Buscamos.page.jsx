@@ -1,8 +1,5 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { styled } from "styled-components";
-import { gsap } from "gsap";
-import { CSSPlugin } from "gsap/CSSPlugin";
-import ScrollTrigger from "gsap/ScrollTrigger";
 import {
   Section,
   SectionText,
@@ -145,8 +142,6 @@ const BuscamosTitle = styled(VerticalTitle)`
   }
 
   &.sticky {
-    /* position: absolute; */
-    /* z-index: -1; */
     top: 0;
     background-color: white;
   }

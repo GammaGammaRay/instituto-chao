@@ -46,12 +46,9 @@ const stickyTitles = (main, title) => {
     };
   }, [main, title]); // Ensure useEffect runs whenever main or title changes
 
-  return (
-    <div ref={main}>
-      <h1 ref={title}>Title</h1>
-      {/* Other content */}
-    </div>
-  );
+  return () => {
+    timeline.kill(); // Clean up the GSAP animation on component unmount
+  };
 };
 
 export default stickyTitles;
