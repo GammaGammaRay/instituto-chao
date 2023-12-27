@@ -9,7 +9,7 @@ import {
   VerticalTitle,
   ContentContainer,
 } from "../style/PageContainers";
-import stickyTitles from "../js/stickyTitles";
+import stickyTitles from "../js/stickyTitles.jsx";
 
 function Buscamos() {
   const main = useRef();

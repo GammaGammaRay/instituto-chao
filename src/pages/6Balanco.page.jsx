@@ -8,6 +8,7 @@ import {
   SectionText,
   VerticalTitle,
   ContentContainer,
+  HorizontalTitle,
 } from "../style/PageContainers";
 import { getSpreadsheetData } from "../service/getGoogleSheets.js";
 
@@ -52,7 +53,7 @@ function Balanco() {
         {spreadsheetData === null ? (
           <BalancoText>Buscando Dados...</BalancoText>
         ) : (
-          <div>
+          <MonthTitle>
             {/* MÊS */}
             {spreadsheetData[0].slice(0, 1).map((data, index) => (
               <div key={index}>{data}</div>
@@ -61,7 +62,7 @@ function Balanco() {
             {spreadsheetData[0].slice(1, 2).map((data, index) => (
               <div key={index}>{data}</div>
             ))}
-          </div>
+          </MonthTitle>
         )}
       </BalancoContainer>
     </BalancoSection>
@@ -91,7 +92,7 @@ const BalancoContainer = styled(ContentContainer)`
   }
 `;
 
-const BalancoTitle = styled(VerticalTitle)`
+const BalancoTitle = styled(HorizontalTitle)`
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
   font-size: var(--title-font-size-horz);
@@ -113,7 +114,33 @@ const BalancoTitle = styled(VerticalTitle)`
     align-items: start;
     justify-content: start;
     flex-basis: 0;
-    font-size: calc(var(--title-font-size) * 0.95);
+  }
+
+  span {
+    overflow: visible;
+  }
+`;
+
+const MonthTitle = styled(HorizontalTitle)`
+  font-family: var(--title-font);
+  font-weight: var(--title-font-weight);
+  font-size: var(--title-font-size-horz);
+  height: 100%;
+
+  line-height: 0.8em;
+
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  justify-content: space-between;
+  flex-basis: 0;
+
+  text-align: end;
+
+  @media (min-width: 768px) {
+    width: 100%;
+    flex-direction: column;
+    flex-basis: 0;
   }
 
   span {

@@ -9,7 +9,7 @@ import { styled } from "styled-components";
 import { gsap } from "gsap";
 import { CSSPlugin } from "gsap/CSSPlugin";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import stickyTitles from "../js/stickyTitles";
+import stickyTitles from "../js/stickyTitles.jsx";
 
 function ComoFunciona() {
   const main = useRef();
@@ -144,7 +144,7 @@ const ComoFuncionaTitle = styled(VerticalTitle)`
   flex-direction: row;
   align-items: start;
   flex-basis: 0;
-  writing-mode: vertical-lr;
+  writing-mode: vertical-rl;
 
   text-align: end;
   background-color: lightcyan;
