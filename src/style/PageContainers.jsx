@@ -61,6 +61,20 @@ const SectionText = styled.div`
 
 const VerticalTitle = styled.div`
   width: fit-content;
+  font-family: var(--title-font);
+  font-weight: var(--title-font-weight);
+  font-size: var(--title-font-size-horz);
+  height: fit-content;
+  line-height: 0.8em;
+  word-wrap: break-word;
+
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  flex-basis: 0;
+
+  text-align: end;
+  will-change: transform;
 
   @media (max-width: 768px) {
     width: 100%;

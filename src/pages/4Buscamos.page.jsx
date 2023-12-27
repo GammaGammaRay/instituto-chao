@@ -157,24 +157,9 @@ const BuscamosText = styled(SectionText)`
 `;
 
 const BuscamosTitle = styled(VerticalTitle)`
-  font-family: var(--title-font);
-  font-weight: var(--title-font-weight);
-  font-size: var(--title-font-size-horz);
-  height: fit-content;
-  line-height: 0.8em;
-  word-wrap: break-word;
-
-  display: flex;
-  flex-direction: row;
-  align-items: start;
-  flex-basis: 0;
   writing-mode: vertical-rl;
 
-  text-align: end;
   background-color: lightcyan;
-  will-change: transform;
-
-  background-color: lightblue;
 
   @media (min-width: 768px) {
     width: 100%;
