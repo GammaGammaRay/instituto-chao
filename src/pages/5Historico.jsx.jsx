@@ -118,6 +118,7 @@ const HistoricoText = styled(SectionText)`
 
 const HistoricoTitle = styled(VerticalTitle)`
   writing-mode: vertical-lr;
+  background-color: #deb8875d;
 `;
 
 export default Historico;

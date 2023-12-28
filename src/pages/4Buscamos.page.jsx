@@ -34,7 +34,12 @@ function Buscamos() {
             ver um comparativo dos preços do Chão com outros mercados da região.
           </p>
 
-          <ExtraHeightDiv />
+          <img
+            className="graficoComparacaoPreco"
+            type="image/svg+xml"
+            src="graph.svg"
+            alt="Gráfico Comparando Preços dos Diferentes Tipos de Mercado"
+          />
 
           <p>
             Assim, amplia-se o consumo de produtos mais sustentáveis, promove-se
@@ -130,23 +135,14 @@ const BuscamosText = styled(SectionText)`
 `;
 
 const BuscamosTitle = styled(VerticalTitle)`
-  writing-mode: vertical-rl;
+  writing-mode: vertical-lr;
+  flex-direction: column;
 
-  background-color: #ffebcd59;
   span {
-    overflow: visible;
-
     @media (min-width: 768px) {
       transform: rotate(180deg);
     }
   }
-
-  &.sticky {
-    top: 0;
-    background-color: white;
-  }
-
-  /* position: sticky; */
 `;
 
 const ExtraHeightDiv = styled.div`

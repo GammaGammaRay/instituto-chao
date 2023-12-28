@@ -11,7 +11,7 @@ const Section = styled.section`
   height: fit-content;
   scroll-snap-type: y proximity;
   scroll-snap-align: start;
-  /* scroll-margin: var(--nav-height); */
+  scroll-margin: var(--nav-height);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,7 +34,7 @@ const ContentContainer = styled.div`
   margin-top: 26px;
   height: fit-content;
 
-  background-color: #dc143c45;
+  /* background-color: #dc143c45; */
 
   ::-webkit-scrollbar {
     width: 0 !important;

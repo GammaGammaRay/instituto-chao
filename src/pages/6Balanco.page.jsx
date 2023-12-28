@@ -15,6 +15,10 @@ function Balanco() {
 
   const [spreadsheetData, setSpreadsheetData] = useState(null);
 
+  const formatCurrency = (value) => {
+    return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -38,41 +42,138 @@ function Balanco() {
     fetchData();
   }, []);
 
+  function mapDataToTable(data) {
+    if (!data || typeof data !== "object") {
+      console.error("Invalid data format.");
+      return null;
+    }
+
+    const keys = Object.keys(data);
+    const dataArray = keys.map((key) => data[key]);
+
+    if (dataArray.length < 2) {
+      console.error("Insufficient data arrays.");
+      return null;
+    }
+
+    const firstArray = dataArray[0].slice(0, -6); // Exclude last 4 entries
+    const secondArray = dataArray[1].slice(0, -6); // Exclude last 4 entries
+
+    return (
+      <>
+        {firstArray.slice(2).map((data, index) => (
+          <BalancoTableLine key={`entry-${index}`}>
+            <span style={{ width: "70%" }}>{data}</span>
+            <span>R$ {formatCurrency(secondArray[index + 2])}</span>
+          </BalancoTableLine>
+        ))}
+      </>
+    );
+  }
+
   return (
     <BalancoSection id="balanco" className="BalancoSection" ref={main}>
-      <BalancoContainer>
-        <BalancoTableTop>
-          <BalancoTitle ref={title} className="BalancoTitle">
-            <span className="balanco">BALANÇO</span>
-            <span className="balanco">FINANCEIRO</span>
-          </BalancoTitle>
-        </BalancoTableTop>
-        {spreadsheetData === null ? (
-          <BalancoText>Buscando Dados...</BalancoText>
-        ) : (
-          <MonthTitle>
-            {/* MÊS */}
-            {spreadsheetData[0].slice(0, 1).map((data, index) => (
-              <div key={index}>{data}</div>
-            ))}
-            {/* ANO */}
-            {spreadsheetData[0].slice(1, 2).map((data, index) => (
-              <div key={index}>{data}</div>
-            ))}
-          </MonthTitle>
-        )}
-      </BalancoContainer>
+      {spreadsheetData === null ? (
+        <BalancoText>Buscando Dados...</BalancoText>
+      ) : (
+        <BalancoContainer>
+          <BalancoTableTop>
+            <BalancoTitle ref={title}>
+              <span style={{ marginBottom: "8px" }}>BALANÇO</span>
+              <span>FINANCEIRO</span>
+            </BalancoTitle>
+
+            <MonthTitle>
+              <img
+                className="logoSolidBlack"
+                type="image/svg+xml"
+                src="chaoLogo_solidBlack.svg"
+                alt="Logo Instituto Chão"
+              />
+              {/* MÊS */}
+              {spreadsheetData[0].slice(0, 1).map((data, index) => (
+                <h2 key={`month-${index}`}>{data}</h2>
+              ))}
+              {/* ANO */}
+              {spreadsheetData[0].slice(1, 2).map((data, index) => (
+                <h2 key={`year-${index}`}>{data}</h2>
+              ))}
+            </MonthTitle>
+          </BalancoTableTop>
+
+          <HorizontalLine />
+          <h3 style={{ marginBottom: "6px" }}>CUSTOS OPERACIONAIS</h3>
+          <BalancoTableBody>
+            {mapDataToTable(spreadsheetData)}
+            <HorizontalLine />
+            <BalancoTableLine>
+              <h3>DESPESAS TOTAIS</h3>
+              <span>
+                {spreadsheetData[1].slice(15, 16).map((data, index) => (
+                  <div key={`${index}`}>R$ {formatCurrency(data)}</div>
+                ))}
+              </span>
+            </BalancoTableLine>
+
+            <HorizontalLine />
+            <BalancoTableLine>
+              <h3>ARRECADAÇÕES TOTAIS</h3>
+              <span>
+                {spreadsheetData[1].slice(16, 17).map((data, index) => (
+                  <div key={`${index}`}>R$ {formatCurrency(data)}</div>
+                ))}
+              </span>
+            </BalancoTableLine>
+            <HorizontalLine />
+            <BalancoTableLine>
+              <h3>SALDO MENSAL</h3>
+              <span>
+                {spreadsheetData[1].slice(17, 18).map((data, index) => (
+                  <div key={`${index}`}>R$ {formatCurrency(data)}</div>
+                ))}
+              </span>
+            </BalancoTableLine>
+            <HorizontalLine />
+            <BalancoTableLine>
+              <h3>VENDAS DE PRODUTOS</h3>
+              <span>
+                {spreadsheetData[1].slice(18, 19).map((data, index) => (
+                  <div key={`${index}`}>R$ {formatCurrency(data)}</div>
+                ))}
+              </span>
+            </BalancoTableLine>
+            <HorizontalLine />
+            <BalancoTableLine>
+              <h3>PERCENTUAL DE ARRECADAÇÃO</h3>
+              <span>
+                {spreadsheetData[1].slice(19, 20).map((data, index) => (
+                  <div key={`${index}`}>{data}%</div>
+                ))}
+              </span>
+            </BalancoTableLine>
+            <HorizontalLine />
+          </BalancoTableBody>
+        </BalancoContainer>
+      )}
     </BalancoSection>
   );
 }
 
 const BalancoSection = styled(Section)`
-  height: 100%;
+  height: fit-content;
+  justify-content: start;
   background-color: var(--color-red);
+  display: flex;
+
+  h3 {
+    font-size: 24px;
+    font-weight: 500;
+  }
 `;
 
 const BalancoText = styled(SectionText)`
   margin-bottom: 500px;
+  /* background-color: #892be258; */
 `;
 
 const BalancoContainer = styled(ContentContainer)`
@@ -80,8 +181,10 @@ const BalancoContainer = styled(ContentContainer)`
   width: 66%;
 
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+
+  /* background-color: #7fffd488; */
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -92,7 +195,7 @@ const BalancoContainer = styled(ContentContainer)`
 const BalancoTitle = styled(HorizontalTitle)`
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
-  font-size: var(--title-font-size-horz);
+  font-size: clamp(6vw, 4vw, 20px);
   height: 100%;
 
   line-height: 0.8em;
@@ -100,7 +203,7 @@ const BalancoTitle = styled(HorizontalTitle)`
   display: flex;
   flex-direction: row;
   align-items: start;
-  justify-content: space-between;
+  justify-content: end;
   flex-basis: 0;
 
   text-align: end;
@@ -109,7 +212,7 @@ const BalancoTitle = styled(HorizontalTitle)`
     width: 100%;
     flex-direction: column;
     align-items: start;
-    justify-content: start;
+    justify-content: end;
     flex-basis: 0;
   }
 
@@ -121,26 +224,27 @@ const BalancoTitle = styled(HorizontalTitle)`
 const MonthTitle = styled(HorizontalTitle)`
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
-  font-size: var(--title-font-size-horz);
+  font-size: clamp(3vw, 3vw, 20px);
   height: 100%;
 
   line-height: 0.8em;
 
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: end;
   justify-content: space-between;
   flex-basis: 0;
 
   text-align: end;
 
+  /* background-color: #00ffff78; */
+
   @media (min-width: 768px) {
     width: 100%;
-    flex-direction: column;
     flex-basis: 0;
   }
 
-  span {
+  .h2 {
     overflow: visible;
   }
 `;
@@ -150,14 +254,31 @@ const BalancoTableTop = styled.div`
   width: 100%;
   flex-direction: row;
   justify-content: space-between;
+  align-items: end;
+  /* height: 200px; */
+
+  /* background-color: bisque; */
 `;
-const BalancoTableTopLeft = styled.div`
+const BalancoTableBody = styled.div`
   display: flex;
   flex-direction: column;
 `;
-const BalancoTableTopRight = styled.div`
+const BalancoTableLine = styled.div`
+  font-size: 20px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2px;
+`;
+
+const HorizontalLine = styled.div`
+  width: 100%;
+  height: 2px;
+  background-color: black;
+
+  margin-top: 12px;
+  margin-bottom: 12px;
 `;
 
 export default Balanco;
