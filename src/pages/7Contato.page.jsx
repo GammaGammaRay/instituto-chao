@@ -50,7 +50,7 @@ const ContatoSection = styled(Section)`
   background-color: var(--color-salmon);
   color: white;
 
-  height: calc(100% - var(--nav-height));
+  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -58,15 +58,17 @@ const ContatoSection = styled(Section)`
 
 const InfosContainer = styled(ContentContainer)`
   display: flex;
+  width: 100%;
+  height: 100%;
   flex-direction: row;
   align-items: end;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   background-color: #f0f8ff6a;
 
   h2 {
     font-family: var(--title-font);
     font-weight: var(--title-font-weight);
-    font-size: calc(var(--title-font-size-horz) * 0.5);
+    font-size: calc(var(--title-font-size-horz) * 0.8);
     overflow: visible;
   }
 `;
@@ -74,11 +76,15 @@ const InfosContainer = styled(ContentContainer)`
 const ContatoEnderecoContainer = styled(ContentContainer)`
   display: flex;
   flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  width: 70%;
+  height: 50%;
   font-size: 25px;
   background-color: #206bad6a;
 
   h2 {
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
   }
 
   a {
@@ -90,17 +96,23 @@ const HorarioContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: start;
+  justify-content: end;
   background-color: #892be22b;
+  width: 30%;
+  height: 100%;
 
   h2 {
     writing-mode: vertical-rl;
-    font-size: calc(var(--title-font-size-horz) * 0.8);
+    font-size: calc(var(--title-font-size-horz) * 1.2);
   }
 `;
 
 const HorariosLista = styled.div`
   display: flex;
   flex-direction: column;
+  width: 70%;
+  height: 70%;
+  background-color: #ff149160;
 `;
 
 const Horario = styled.div`
@@ -108,6 +120,11 @@ const Horario = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 16px;
+
+  span:nth-child(2) {
+    font-weight: 100;
+    font-size: smaller;
+  }
 `;
 
 export default Contato;

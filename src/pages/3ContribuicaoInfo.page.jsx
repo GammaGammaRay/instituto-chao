@@ -262,7 +262,7 @@ const LineInfoSmall = styled.span`
   display: flex;
   flex-direction: column;
   align-items: start;
-  justify-content: start;
+  justify-content: end;
   font-weight: 500;
   font-size: calc(var(--title-font-size-horz) * 0.09);
   transform: translateY(-20px);
@@ -285,7 +285,7 @@ const LineContentRight = styled.div`
   flex-direction: row;
   align-items: end;
   justify-content: end;
-  /* background-color: green; */
+  background-color: green;
 `;
 
 export default Contribuicao;
