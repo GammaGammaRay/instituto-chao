@@ -50,7 +50,7 @@ const ContatoSection = styled(Section)`
   background-color: var(--color-salmon);
   color: white;
 
-  height: 100%;
+  /* height: 100%; */
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -63,7 +63,7 @@ const InfosContainer = styled(ContentContainer)`
   flex-direction: row;
   align-items: end;
   /* justify-content: space-between; */
-  background-color: #f0f8ff6a;
+  /* background-color: #f0f8ff6a; */
 
   h2 {
     font-family: var(--title-font);

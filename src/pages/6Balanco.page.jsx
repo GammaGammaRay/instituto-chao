@@ -160,7 +160,7 @@ function Balanco() {
 }
 
 const BalancoSection = styled(Section)`
-  height: fit-content;
+  /* height: fit-content; */
   justify-content: start;
   background-color: var(--color-red);
   display: flex;
@@ -245,7 +245,7 @@ const MonthTitle = styled(HorizontalTitle)`
   }
 
   .h2 {
-    overflow: visible;
+    /* overflow: visible; */
   }
 `;
 
@@ -269,15 +269,16 @@ const BalancoTableLine = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 2px;
+  /* margin-bottom: 2px; */
 `;
 
 const HorizontalLine = styled.div`
   width: 100%;
-  height: 2px;
+  height: 3px;
   background-color: black;
+  /* transform: translateZ(0); */
 
-  margin-top: 12px;
+  /* margin-top: 12px; */
   margin-bottom: 12px;
 `;
 

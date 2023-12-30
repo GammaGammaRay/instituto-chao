@@ -11,7 +11,7 @@ import stickyTitles from "../js/stickyTitles.jsx";
 function Buscamos() {
   const main = useRef();
   const title = useRef();
-  stickyTitles(main, title);
+  // stickyTitles(main, title);
 
   return (
     <BuscamosSection ref={main} id="buscamos">

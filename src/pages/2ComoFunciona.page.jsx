@@ -12,7 +12,7 @@ function ComoFunciona() {
   const main = useRef();
   const title = useRef();
 
-  stickyTitles(main, title);
+  // stickyTitles(main, title);
 
   return (
     <ComoFuncionaSection ref={main} id="como-funciona">

@@ -6,12 +6,13 @@ const BodyContainer = styled.div`
 
 const Section = styled.section`
   width: 100%;
-  /* height: calc(100% - var(--nav-height)); */
+  height: calc(100% - var(--nav-height));
   /* min-height: 100%; */
-  height: fit-content;
+  /* height: fit-content; */
   scroll-snap-type: y proximity;
   scroll-snap-align: start;
-  scroll-margin: var(--nav-height);
+  /* scroll-margin: 0, 0, 0, var(--nav-height); */
+  scroll-margin: 50px 0px 0px 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,6 +51,7 @@ const SectionText = styled.div`
   font-size: 20px;
   text-align: justify;
   line-height: 1.2em;
+  overflow-y: scroll;
 `;
 
 const VerticalTitle = styled.div`

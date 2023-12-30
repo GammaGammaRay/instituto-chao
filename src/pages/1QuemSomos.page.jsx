@@ -11,7 +11,7 @@ import stickyTitles from "../js/stickyTitles.jsx";
 function QuemSomos() {
   const main = useRef();
   const title = useRef();
-  stickyTitles(main, title);
+  // stickyTitles(main, title);
 
   return (
     <QuemSomosSection id="quem-somos" className="quemSomosSection" ref={main}>
@@ -128,6 +128,8 @@ const QuemSomosContainer = styled(ContentContainer)`
 
 const QuemSomosText = styled(SectionText)`
   padding-left: calc(var(--text-padding) * 0.2);
+  overflow-y: scroll;
+
   @media (min-width: 768px) {
     padding-left: var(--text-padding);
   }

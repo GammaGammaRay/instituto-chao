@@ -22,27 +22,12 @@ function Logo() {
           ease: "back",
         }
       );
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: logoPage.current,
-          start: "top top",
-          end: "bottom top",
-          scrub: true,
-          markers: true,
-        },
-      });
-
-      tl.fromTo(
-        logoPage.current,
-        { y: 0 },
-        { y: "100%", ease: "none" } // Adjust the y value as needed
-      );
-    }, 10); // Adjust the debounce delay as needed
+    }, 10);
 
     debouncedAnimation();
 
     return () => {
-      debouncedAnimation.cancel(); // Cancel any pending debounced function calls on unmount
+      debouncedAnimation.cancel();
     };
   }, []);
 

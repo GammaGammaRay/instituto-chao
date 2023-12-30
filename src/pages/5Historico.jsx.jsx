@@ -12,7 +12,7 @@ function Historico() {
   const main = useRef();
   const title = useRef();
 
-  stickyTitles(main, title);
+  // stickyTitles(main, title);
 
   return (
     <HistoricoSection id="historico" ref={main}>
@@ -89,7 +89,7 @@ const HistoricoContainer = styled(ContentContainer)`
   flex-direction: row;
   justify-content: space-between;
 
-  background-color: #00ffff40;
+  /* background-color: #00ffff40; */
 
   @media (min-width: 768px) {
     display: flex;
@@ -118,7 +118,7 @@ const HistoricoText = styled(SectionText)`
 
 const HistoricoTitle = styled(VerticalTitle)`
   writing-mode: vertical-lr;
-  background-color: #deb8875d;
+  /* background-color: #deb8875d; */
 `;
 
 export default Historico;
