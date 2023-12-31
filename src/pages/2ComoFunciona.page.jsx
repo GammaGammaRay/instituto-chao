@@ -92,7 +92,6 @@ const ComoFuncionaSection = styled(Section)`
 
 const ComoFuncionaText = styled(SectionText)`
   padding-right: var(--text-padding);
-  overflow-y: scroll;
 `;
 
 const ComoFuncionaContainer = styled(ContentContainer)`
@@ -100,11 +99,26 @@ const ComoFuncionaContainer = styled(ContentContainer)`
   height: 100%;
   color: white;
   /* padding-top: 24px; */
-  /* overflow: hidden; */
+  overflow-y: auto;
+  overflow-x: hidden;
 
   display: flex;
   flex-direction: row;
   justify-content: center;
+
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+  /* &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  } */
+  &::-webkit-scrollbar-thumb {
+    background: #ffffff;
+    border-radius: 6px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #bdbdbd;
+  }
 
   @media (min-width: 768px) {
     flex-direction: column;
@@ -131,6 +145,8 @@ const ComoFuncionaContainer = styled(ContentContainer)`
 
 const ComoFuncionaTitle = styled(VerticalTitle)`
   writing-mode: vertical-rl;
+  position: sticky;
+  top: 0px;
 `;
 
 export default ComoFunciona;

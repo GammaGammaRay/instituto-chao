@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { styled } from "styled-components";
 import {
   Section,
@@ -9,15 +9,33 @@ import {
 import stickyTitles from "../js/stickyTitles.jsx";
 
 function QuemSomos() {
+  const [isSticky, setIsSticky] = useState(false);
   const main = useRef();
   const title = useRef();
-  // stickyTitles(main, title);
+
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (window.scrollY > main.current.offsetTop) {
+  //       setIsSticky(true);
+  //     } else {
+  //       setIsSticky(false);
+  //     }
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   return (
     <QuemSomosSection id="quem-somos" className="quemSomosSection" ref={main}>
       <QuemSomosContainer>
         {/* <StickyContainer> */}
-        <QuemSomosTitle ref={title} className="quemSomosTitle">
+        <QuemSomosTitle
+          ref={title}
+          className={`quemSomosTitle ${isSticky ? "sticky" : ""}`}
+        >
           <span className="quem">QUEM</span>
           <span className="somos">SOMOS?</span>
         </QuemSomosTitle>
@@ -93,15 +111,35 @@ function QuemSomos() {
 
 const QuemSomosSection = styled(Section)`
   background-color: #e5d26a;
+
+  display: flex;
+  position: relative;
 `;
 
 const QuemSomosContainer = styled(ContentContainer)`
   line-height: 1.2em;
   height: 100%;
+  padding-right: 12px;
 
   display: flex;
   flex-direction: row;
   justify-content: center;
+  position: relative;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+  /* &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  } */
+  &::-webkit-scrollbar-thumb {
+    background: #000000;
+    border-radius: 6px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #bdbdbd;
+  }
 
   @media (min-width: 768px) {
     flex-direction: column;
@@ -128,7 +166,7 @@ const QuemSomosContainer = styled(ContentContainer)`
 
 const QuemSomosText = styled(SectionText)`
   padding-left: calc(var(--text-padding) * 0.2);
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 
   @media (min-width: 768px) {
     padding-left: var(--text-padding);
@@ -138,6 +176,12 @@ const QuemSomosText = styled(SectionText)`
 const QuemSomosTitle = styled(VerticalTitle)`
   writing-mode: vertical-lr;
   flex-direction: column;
+  position: sticky;
+  top: 0px;
+  &.sticky {
+    position: fixed;
+    z-index: 999;
+  }
 
   span {
     @media (min-width: 768px) {

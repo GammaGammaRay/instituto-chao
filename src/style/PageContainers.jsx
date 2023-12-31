@@ -2,6 +2,7 @@ import { styled } from "styled-components";
 
 const BodyContainer = styled.div`
   height: 100vh;
+  /* overflow-y: auto; */
 `;
 
 const Section = styled.section`
@@ -17,6 +18,8 @@ const Section = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  /* overflow-y: auto; */
+  position: relative;
 
   p {
     margin-bottom: 12px;
@@ -28,7 +31,7 @@ const Section = styled.section`
     justify-content: start;
   }
 
-  overflow: hidden;
+  /* overflow: hidden; */
 `;
 
 const ContentContainer = styled.div`
@@ -37,21 +40,20 @@ const ContentContainer = styled.div`
 
   /* background-color: #dc143c45; */
 
-  ::-webkit-scrollbar {
+  /* ::-webkit-scrollbar {
     width: 0 !important;
-  }
+  } */
 `;
 
 const SectionText = styled.div`
   max-width: 600px;
-
+  height: 90%;
   width: 80%;
   min-width: 40%;
   align-items: center;
   font-size: 20px;
   text-align: justify;
   line-height: 1.2em;
-  overflow-y: scroll;
 `;
 
 const VerticalTitle = styled.div`

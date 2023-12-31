@@ -17,7 +17,8 @@ const GlobalStyle = createGlobalStyle`
 
     html{
         scroll-snap-type: y proximity;
-        /* scroll-behavior: smooth; */
+        /* Custom scrollbar */
+  
     }
 
     :root {

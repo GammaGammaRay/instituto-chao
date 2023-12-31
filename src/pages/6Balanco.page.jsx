@@ -62,7 +62,12 @@ function Balanco() {
     return (
       <>
         {firstArray.slice(2).map((data, index) => (
-          <BalancoTableLine key={`entry-${index}`}>
+          <BalancoTableLine
+            key={`entry-${index}`}
+            style={{
+              backgroundColor: index % 2 === 0 ? "#ffffff1c" : "#ffffff0",
+            }}
+          >
             <span style={{ width: "70%" }}>{data}</span>
             <span>R$ {formatCurrency(secondArray[index + 2])}</span>
           </BalancoTableLine>
@@ -78,31 +83,33 @@ function Balanco() {
       ) : (
         <BalancoContainer>
           <BalancoTableTop>
-            <BalancoTitle ref={title}>
-              <span style={{ marginBottom: "8px" }}>BALANÇO</span>
-              <span>FINANCEIRO</span>
-            </BalancoTitle>
+            <BalancoTableTopContent>
+              <BalancoTitle ref={title}>
+                <span style={{ marginBottom: "8px" }}>BALANÇO</span>
+                <span>FINANCEIRO</span>
+              </BalancoTitle>
 
-            <MonthTitle>
-              <img
-                className="logoSolidBlack"
-                type="image/svg+xml"
-                src="chaoLogo_solidBlack.svg"
-                alt="Logo Instituto Chão"
-              />
-              {/* MÊS */}
-              {spreadsheetData[0].slice(0, 1).map((data, index) => (
-                <h2 key={`month-${index}`}>{data}</h2>
-              ))}
-              {/* ANO */}
-              {spreadsheetData[0].slice(1, 2).map((data, index) => (
-                <h2 key={`year-${index}`}>{data}</h2>
-              ))}
-            </MonthTitle>
+              <MonthTitle>
+                <img
+                  className="logoSolidBlack"
+                  type="image/svg+xml"
+                  src="chaoLogo_solidBlack.svg"
+                  alt="Logo Instituto Chão"
+                />
+                {/* MÊS */}
+                {spreadsheetData[0].slice(0, 1).map((data, index) => (
+                  <h2 key={`month-${index}`}>{data}</h2>
+                ))}
+                {/* ANO */}
+                {spreadsheetData[0].slice(1, 2).map((data, index) => (
+                  <h2 key={`year-${index}`}>{data}</h2>
+                ))}
+              </MonthTitle>
+            </BalancoTableTopContent>
+            <HorizontalLine />
           </BalancoTableTop>
 
-          <HorizontalLine />
-          <h3 style={{ marginBottom: "6px" }}>CUSTOS OPERACIONAIS</h3>
+          <h3>CUSTOS OPERACIONAIS</h3>
           <BalancoTableBody>
             {mapDataToTable(spreadsheetData)}
             <HorizontalLine />
@@ -114,8 +121,8 @@ function Balanco() {
                 ))}
               </span>
             </BalancoTableLine>
-
             <HorizontalLine />
+
             <BalancoTableLine>
               <h3>ARRECADAÇÕES TOTAIS</h3>
               <span>
@@ -164,6 +171,7 @@ const BalancoSection = styled(Section)`
   justify-content: start;
   background-color: var(--color-red);
   display: flex;
+  overflow-y: auto;
 
   h3 {
     font-size: 24px;
@@ -173,6 +181,7 @@ const BalancoSection = styled(Section)`
 
 const BalancoText = styled(SectionText)`
   margin-bottom: 500px;
+
   /* background-color: #892be258; */
 `;
 
@@ -224,7 +233,7 @@ const BalancoTitle = styled(HorizontalTitle)`
 const MonthTitle = styled(HorizontalTitle)`
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
-  font-size: clamp(3vw, 3vw, 20px);
+  font-size: clamp(3vw, 4vw, 20px);
   height: 100%;
 
   line-height: 0.8em;
@@ -245,16 +254,28 @@ const MonthTitle = styled(HorizontalTitle)`
   }
 
   .h2 {
-    /* overflow: visible; */
+    overflow: visible;
   }
+`;
+
+const BalancoTableTopContent = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 12px;
 `;
 
 const BalancoTableTop = styled.div`
   display: flex;
   width: 100%;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: start;
   align-items: end;
+
+  position: sticky;
+  top: 0px;
+  background-color: var(--color-red);
   /* height: 200px; */
 
   /* background-color: bisque; */
@@ -262,20 +283,33 @@ const BalancoTableTop = styled.div`
 const BalancoTableBody = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
 `;
 const BalancoTableLine = styled.div`
+  width: 100%;
+  font-size: clamp(1vw, 1vw, 14px);
+
+  /* height: fit-content; */
   font-size: 20px;
+  padding-top: 6px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   /* margin-bottom: 2px; */
+  /* background-color: antiquewhite; */
+
+  span:nth-child(2) {
+    width: "30%";
+    /* background-color: antiquewhite; */
+  }
 `;
 
 const HorizontalLine = styled.div`
   width: 100%;
   height: 3px;
   background-color: black;
+
   /* transform: translateZ(0); */
 
   /* margin-top: 12px; */
