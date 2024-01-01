@@ -65,6 +65,7 @@ const NavContainer = styled.div`
   width: 100%;
   height: var(--nav-height);
   position: fixed;
+  overflow-x: hidden;
 
   top: 0px;
   left: 0px;

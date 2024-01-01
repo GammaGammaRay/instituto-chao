@@ -109,6 +109,7 @@ const ContribuicaoSection = styled(Section)`
   align-items: center;
   justify-content: start;
   background-color: var(--color-brown2);
+  overflow-x: hidden;
 
   @media (min-width: 768px) {
     flex-direction: column;
@@ -224,14 +225,14 @@ const LineContentVert = styled.div`
   align-items: start;
 
   font-weight: 400;
-  font-size: calc(var(--title-font-size-horz) * 0.2);
+  font-size: calc(var(--title-font-size-horz) * 0.5);
 `;
 
 const LineInfoBold = styled.span`
   font-size: calc(var(--title-font-size-horz));
   transform: translateY(5px);
   @media (min-width: 768px) {
-    font-size: calc(var(--title-font-size-horz) * 0.35);
+    font-size: calc(var(--title-font-size-horz) * 0.4);
   }
 `;
 
@@ -271,6 +272,8 @@ const LineInfoSmall = styled.span`
 
 const LineContentLeft = styled.div`
   height: 100%;
+  width: 50%;
+  background-color: antiquewhite;
   display: flex;
   flex-direction: column;
   span {

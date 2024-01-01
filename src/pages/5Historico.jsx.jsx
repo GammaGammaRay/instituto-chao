@@ -113,7 +113,19 @@ const HistoricoContainer = styled(ContentContainer)`
 
 const HistoricoText = styled(SectionText)`
   padding-right: calc(var(--text-padding) * 0.2);
-  overflow-y: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #000000;
+    border-radius: 6px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #292929;
+  }
 `;
 
 const HistoricoTitle = styled(VerticalTitle)`

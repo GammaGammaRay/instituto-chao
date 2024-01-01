@@ -109,8 +109,8 @@ function Balanco() {
             <HorizontalLine />
           </BalancoTableTop>
 
-          <h3>CUSTOS OPERACIONAIS</h3>
           <BalancoTableBody>
+            <h3>CUSTOS OPERACIONAIS</h3>
             {mapDataToTable(spreadsheetData)}
             <HorizontalLine />
             <BalancoTableLine>
@@ -171,6 +171,7 @@ const BalancoSection = styled(Section)`
   justify-content: start;
   background-color: var(--color-red);
   display: flex;
+  justify-content: center;
   overflow-y: auto;
 
   h3 {
@@ -284,6 +285,7 @@ const BalancoTableBody = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  padding-top: 6px;
 `;
 const BalancoTableLine = styled.div`
   width: 100%;
@@ -307,7 +309,7 @@ const BalancoTableLine = styled.div`
 
 const HorizontalLine = styled.div`
   width: 100%;
-  height: 3px;
+  height: 2px;
   background-color: black;
 
   /* transform: translateZ(0); */

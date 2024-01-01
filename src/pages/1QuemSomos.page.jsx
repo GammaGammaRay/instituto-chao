@@ -29,17 +29,12 @@ function QuemSomos() {
   // }, []);
 
   return (
-    <QuemSomosSection id="quem-somos" className="quemSomosSection" ref={main}>
+    <QuemSomosSection id="quem-somos" ref={main}>
       <QuemSomosContainer>
-        {/* <StickyContainer> */}
-        <QuemSomosTitle
-          ref={title}
-          className={`quemSomosTitle ${isSticky ? "sticky" : ""}`}
-        >
+        <QuemSomosTitle ref={title}>
           <span className="quem">QUEM</span>
           <span className="somos">SOMOS?</span>
         </QuemSomosTitle>
-        {/* </StickyContainer> */}
         <QuemSomosText>
           <p>
             O Chão é uma associação de trabalhadores, sem fins lucrativos, que
@@ -125,21 +120,6 @@ const QuemSomosContainer = styled(ContentContainer)`
   flex-direction: row;
   justify-content: center;
   position: relative;
-  overflow: auto;
-
-  &::-webkit-scrollbar {
-    width: 12px;
-  }
-  /* &::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  } */
-  &::-webkit-scrollbar-thumb {
-    background: #000000;
-    border-radius: 6px;
-  }
-  &::-webkit-scrollbar-thumb:hover {
-    background: #bdbdbd;
-  }
 
   @media (min-width: 768px) {
     flex-direction: column;
@@ -160,13 +140,25 @@ const QuemSomosContainer = styled(ContentContainer)`
 
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
   }
 `;
 
 const QuemSomosText = styled(SectionText)`
   padding-left: calc(var(--text-padding) * 0.2);
-  /* overflow-y: scroll; */
+  padding-right: 20px;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #000000;
+    border-radius: 6px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #292929;
+  }
 
   @media (min-width: 768px) {
     padding-left: var(--text-padding);
@@ -176,13 +168,16 @@ const QuemSomosText = styled(SectionText)`
 const QuemSomosTitle = styled(VerticalTitle)`
   writing-mode: vertical-lr;
   flex-direction: column;
-  position: sticky;
+  /* position: sticky;
   top: 0px;
   &.sticky {
     position: fixed;
     z-index: 999;
+  } */
+  @media (max-width: 768px) {
+    flex-direction: row;
+    margin-left: 12px;
   }
-
   span {
     @media (min-width: 768px) {
       transform: rotate(180deg);

@@ -92,26 +92,13 @@ const ComoFuncionaSection = styled(Section)`
 
 const ComoFuncionaText = styled(SectionText)`
   padding-right: var(--text-padding);
-`;
 
-const ComoFuncionaContainer = styled(ContentContainer)`
-  line-height: 1.2em;
-  height: 100%;
-  color: white;
-  /* padding-top: 24px; */
-  overflow-y: auto;
-  overflow-x: hidden;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  padding-right: 20px;
+  overflow: auto;
 
   &::-webkit-scrollbar {
     width: 12px;
   }
-  /* &::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  } */
   &::-webkit-scrollbar-thumb {
     background: #ffffff;
     border-radius: 6px;
@@ -119,10 +106,23 @@ const ComoFuncionaContainer = styled(ContentContainer)`
   &::-webkit-scrollbar-thumb:hover {
     background: #bdbdbd;
   }
+`;
+
+const ComoFuncionaContainer = styled(ContentContainer)`
+  line-height: 1.2em;
+  height: 100%;
+  color: white;
+  /* padding-top: 24px; */
+  /* overflow-y: auto; */
+  /* overflow-x: hidden; */
+
+  /* background-color: #f0f8ff3d; */
+
+  display: flex;
+  justify-content: space-between;
 
   @media (min-width: 768px) {
     flex-direction: column;
-    justify-content: space-around;
     align-items: start;
     width: 95%;
 
@@ -133,19 +133,18 @@ const ComoFuncionaContainer = styled(ContentContainer)`
 
   @media (min-width: 1200px) {
     flex-direction: column;
-    justify-content: start;
     align-items: start;
     width: 60%;
+    justify-content: space-between;
 
     display: flex;
     flex-direction: row;
-    justify-content: center;
   }
 `;
 
 const ComoFuncionaTitle = styled(VerticalTitle)`
   writing-mode: vertical-rl;
-  position: sticky;
+  /* position: sticky; */
   top: 0px;
 `;
 

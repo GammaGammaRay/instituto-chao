@@ -49,16 +49,16 @@ const ContatoSection = styled(Section)`
   letter-spacing: 0.1em;
   background-color: var(--color-salmon);
   color: white;
+  overflow-x: hidden;
 
-  /* height: 100%; */
-  width: 100%;
+  height: 100%;
+  /* width: 100%; */
   display: flex;
   flex-direction: row;
 `;
 
 const InfosContainer = styled(ContentContainer)`
   display: flex;
-  width: 100%;
   height: 100%;
   flex-direction: row;
   align-items: end;
@@ -78,7 +78,7 @@ const ContatoEnderecoContainer = styled(ContentContainer)`
   flex-direction: column;
   justify-content: start;
   align-items: start;
-  width: 70%;
+  width: 50%;
   height: 50%;
   font-size: 25px;
   background-color: #206bad6a;

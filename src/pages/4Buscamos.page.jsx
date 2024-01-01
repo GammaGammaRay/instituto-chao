@@ -129,6 +129,21 @@ const BuscamosContainer = styled(ContentContainer)`
 `;
 const BuscamosText = styled(SectionText)`
   padding-left: calc(var(--text-padding) * 0.2);
+
+  padding-right: 20px;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #000000;
+    border-radius: 6px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #292929;
+  }
+
   @media (min-width: 768px) {
     padding-left: var(--text-padding);
   }
@@ -136,12 +151,11 @@ const BuscamosText = styled(SectionText)`
 
 const BuscamosTitle = styled(VerticalTitle)`
   writing-mode: vertical-lr;
-  flex-direction: column;
+  flex-direction: row;
+  margin-right: 12px;
 
-  span {
-    @media (min-width: 768px) {
-      transform: rotate(180deg);
-    }
+  @media (min-width: 768px) {
+    flex-direction: column;
   }
 `;
 

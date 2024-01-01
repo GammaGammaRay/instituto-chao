@@ -17,8 +17,12 @@ const GlobalStyle = createGlobalStyle`
 
     html{
         scroll-snap-type: y proximity;
-        /* Custom scrollbar */
-  
+        &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent;
+}
+
     }
 
     :root {
@@ -53,6 +57,8 @@ const GlobalStyle = createGlobalStyle`
     body{
     font-family: 'Grotesk', sans-serif;
     background-color: #d7d7d7;
+    width: 100%;
+
     
 }
     input::-webkit-input-placeholder {

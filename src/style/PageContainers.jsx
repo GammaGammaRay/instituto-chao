@@ -2,23 +2,20 @@ import { styled } from "styled-components";
 
 const BodyContainer = styled.div`
   height: 100vh;
-  /* overflow-y: auto; */
 `;
 
 const Section = styled.section`
-  width: 100%;
-  height: calc(100% - var(--nav-height));
-  /* min-height: 100%; */
-  /* height: fit-content; */
-  scroll-snap-type: y proximity;
+  width: 100vw;
+  /* height: calc(100% - var(--nav-height)); */
+  height: calc(100vh - var(--nav-height));
+  scroll-snap-type: y mandatory;
+  scroll-snap-stop: always;
   scroll-snap-align: start;
-  /* scroll-margin: 0, 0, 0, var(--nav-height); */
   scroll-margin: 50px 0px 0px 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* overflow-y: auto; */
   position: relative;
 
   p {
@@ -29,31 +26,32 @@ const Section = styled.section`
     flex-direction: row;
     align-items: start;
     justify-content: start;
+    max-width: 100%;
   }
-
-  /* overflow: hidden; */
 `;
 
 const ContentContainer = styled.div`
-  margin-top: 26px;
-  height: fit-content;
-
-  /* background-color: #dc143c45; */
-
-  /* ::-webkit-scrollbar {
-    width: 0 !important;
-  } */
+  /* margin-top: 26px; */
+  /* height: fit-content; */
+  padding-top: 20px;
+  padding-left: 12px;
+  padding-right: 12px;
 `;
 
 const SectionText = styled.div`
-  max-width: 600px;
-  height: 90%;
-  width: 80%;
+  font-size: 16px;
+  max-width: 750px;
+  height: 95%;
+  width: 90%;
   min-width: 40%;
   align-items: center;
-  font-size: 20px;
-  text-align: justify;
   line-height: 1.2em;
+  padding-bottom: 12px;
+  text-align: justify;
+
+  @media (min-width: 768px) {
+    font-size: 22px;
+  }
 `;
 
 const VerticalTitle = styled.div`
@@ -73,8 +71,18 @@ const VerticalTitle = styled.div`
   /* background-color: lightcyan; */
   will-change: transform;
 
+  span {
+    margin-bottom: 16px;
+
+    @media (min-width: 768px) {
+      margin-bottom: 0px;
+      transform: rotate(180deg);
+    }
+  }
+
   @media (max-width: 768px) {
     width: 100%;
+    font-size: clamp(2em, 10vh, 10vh);
   }
 
   @media (min-width: 768px) {
@@ -86,10 +94,6 @@ const VerticalTitle = styled.div`
     justify-content: start;
     flex-basis: 0;
     will-change: transform;
-  }
-
-  span {
-    overflow: visible;
   }
 `;
 
