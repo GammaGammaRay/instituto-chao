@@ -10,23 +10,59 @@ function Logo() {
   const logoPage = useRef();
 
   useEffect(() => {
-    const debouncedAnimation = debounce(() => {
+    const handleAnimation = () => {
       gsap.registerPlugin(ScrollTrigger);
-      gsap.fromTo(
-        ".logo",
-        { width: 300, opacity: 0 },
-        {
-          width: 400,
-          opacity: 1,
-          duration: 2,
-          ease: "back",
-        }
-      );
-    }, 10);
+      let animation;
 
+      if (window.innerWidth > 768) {
+        // Change the animation for screen widths above 768px
+        animation = gsap.fromTo(
+          ".logo",
+          { width: 300, opacity: 0 },
+          {
+            width: 400,
+            opacity: 1,
+            duration: 2,
+            ease: "back",
+          }
+        );
+      } else {
+        // Default animation for screen widths below or equal to 768px
+        animation = gsap.fromTo(
+          ".logo",
+          { width: 200, opacity: 0 },
+          {
+            width: 300,
+            opacity: 1,
+            duration: 2,
+            ease: "power2.inOut",
+          }
+        );
+      }
+
+      ScrollTrigger.saveStyles(".logo");
+      ScrollTrigger.matchMedia({
+        "(min-width: 769px)": () => {
+          // Apply ScrollTrigger or other configurations if needed
+          ScrollTrigger.create({
+            trigger: ".logo",
+            animation: animation,
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none none",
+            // markers: true, // Set to true to visualize ScrollTrigger boundaries
+          });
+        },
+      });
+    };
+
+    const debouncedAnimation = debounce(handleAnimation, 10);
     debouncedAnimation();
 
+    window.addEventListener("resize", debouncedAnimation);
+
     return () => {
+      window.removeEventListener("resize", debouncedAnimation);
       debouncedAnimation.cancel();
     };
   }, []);

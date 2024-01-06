@@ -6,17 +6,12 @@ import {
   VerticalTitle,
   ContentContainer,
 } from "../style/PageContainers";
-import stickyTitles from "../js/stickyTitles.jsx";
 
 function Buscamos() {
-  const main = useRef();
-  const title = useRef();
-  // stickyTitles(main, title);
-
   return (
-    <BuscamosSection ref={main} id="buscamos">
+    <BuscamosSection id="buscamos">
       <BuscamosContainer>
-        <BuscamosTitle ref={title}>
+        <BuscamosTitle>
           <span>O QUE </span>
           <span>BUSCAMOS?</span>
         </BuscamosTitle>
@@ -40,6 +35,9 @@ function Buscamos() {
             src="graph.svg"
             alt="Gráfico Comparando Preços dos Diferentes Tipos de Mercado"
           />
+          <button a="https://drive.google.com/file/d/11ftAww3OHQfi0fInlIeFH-SM0idRE__R/view">
+            Veja a pesquisa completa
+          </button>
 
           <p>
             Assim, amplia-se o consumo de produtos mais sustentáveis, promove-se
@@ -95,10 +93,16 @@ function Buscamos() {
 
 const BuscamosSection = styled(Section)`
   background-color: var(--color-green);
+
+  button {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    font-size: 0.8rem;
+  }
 `;
 
 const BuscamosContainer = styled(ContentContainer)`
-  line-height: 1.2em;
+  line-height: 1.2rem;
   height: 100%;
 
   display: flex;
@@ -129,6 +133,10 @@ const BuscamosContainer = styled(ContentContainer)`
 `;
 const BuscamosText = styled(SectionText)`
   padding-left: calc(var(--text-padding) * 0.2);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   padding-right: 20px;
   overflow: auto;

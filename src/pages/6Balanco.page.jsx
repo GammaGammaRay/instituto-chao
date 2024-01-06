@@ -172,7 +172,7 @@ const BalancoSection = styled(Section)`
   background-color: var(--color-red);
   display: flex;
   justify-content: center;
-  overflow-y: auto;
+  /* overflow-y: hidden; */
 
   h3 {
     font-size: 24px;
@@ -194,6 +194,11 @@ const BalancoContainer = styled(ContentContainer)`
   flex-direction: column;
   justify-content: center;
 
+  padding-bottom: 20px;
+
+  /* overflow-y: hidden; */
+  overflow-x: hidden;
+
   /* background-color: #7fffd488; */
 
   @media (max-width: 768px) {
@@ -211,7 +216,7 @@ const BalancoTitle = styled(HorizontalTitle)`
   line-height: 0.8em;
 
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: start;
   justify-content: end;
   flex-basis: 0;
@@ -220,14 +225,9 @@ const BalancoTitle = styled(HorizontalTitle)`
 
   @media (min-width: 768px) {
     width: 100%;
-    flex-direction: column;
     align-items: start;
     justify-content: end;
     flex-basis: 0;
-  }
-
-  span {
-    overflow: visible;
   }
 `;
 
@@ -285,20 +285,34 @@ const BalancoTableBody = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: fit-content;
   padding-top: 6px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-right: 12px;
+  background-color: greenyellow;
+
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #000000;
+    border-radius: 6px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #292929;
+  }
 `;
 const BalancoTableLine = styled.div`
   width: 100%;
   font-size: clamp(1vw, 1vw, 14px);
 
-  /* height: fit-content; */
   font-size: 20px;
   padding-top: 6px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  /* margin-bottom: 2px; */
   /* background-color: antiquewhite; */
 
   span:nth-child(2) {
@@ -312,10 +326,7 @@ const HorizontalLine = styled.div`
   height: 2px;
   background-color: black;
 
-  /* transform: translateZ(0); */
-
-  /* margin-top: 12px; */
-  margin-bottom: 12px;
+  margin-bottom: 6px;
 `;
 
 export default Balanco;

@@ -69,11 +69,11 @@ const GlobalStyle = createGlobalStyle`
     outline: none;
     border: none;
     border-radius: 5px;
-    background-color: #adc857;
+    background-color: #e6d36b;
     font-size: 20px;
     color: #fff;
     cursor: pointer;
-    width: 100%;
+    width: 60%;
     padding: 12px;
 }
     h1 {
@@ -110,12 +110,9 @@ const GlobalStyle = createGlobalStyle`
     border-radius: 5px;
 }
     a {
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 18px;
+    /* line-height: 18px; */
     color: white;
     text-decoration: none;
-    padding-top: 30px;
 }
     
 `;

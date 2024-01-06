@@ -7,7 +7,7 @@ const BodyContainer = styled.div`
 const Section = styled.section`
   width: 100vw;
   /* height: calc(100% - var(--nav-height)); */
-  height: calc(100vh - var(--nav-height));
+  height: calc(100% - var(--nav-height));
   scroll-snap-type: y mandatory;
   scroll-snap-stop: always;
   scroll-snap-align: start;
@@ -17,10 +17,6 @@ const Section = styled.section`
   align-items: center;
   justify-content: center;
   position: relative;
-
-  p {
-    margin-bottom: 12px;
-  }
 
   @media (max-width: 768px) {
     flex-direction: row;
@@ -34,8 +30,11 @@ const ContentContainer = styled.div`
   /* margin-top: 26px; */
   /* height: fit-content; */
   padding-top: 20px;
-  padding-left: 12px;
-  padding-right: 12px;
+
+  @media (min-width: 768px) {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
 `;
 
 const SectionText = styled.div`
@@ -47,9 +46,14 @@ const SectionText = styled.div`
   align-items: center;
   line-height: 1.2em;
   padding-bottom: 12px;
-  text-align: justify;
+  /* text-align: justify; */
+
+  p {
+    margin-bottom: 12px;
+  }
 
   @media (min-width: 768px) {
+    text-align: justify;
     font-size: 22px;
   }
 `;

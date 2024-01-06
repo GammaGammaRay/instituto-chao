@@ -1,23 +1,11 @@
-import React, { useRef } from "react";
-import {
-  Section,
-  SectionText,
-  VerticalTitle,
-  ContentContainer,
-} from "../style/PageContainers";
+import React from "react";
+import { Section, ContentContainer } from "../style/PageContainers";
 import { styled } from "styled-components";
-import { gsap } from "gsap";
-import { CSSPlugin } from "gsap/CSSPlugin";
-import ScrollTrigger from "gsap/ScrollTrigger";
-// import { Container } from "postcss";
-// import LottieScrollTrigger from "../js/lottieScrollTrigger";
+import { Icon } from "@iconify/react";
 
 function Contribuicao() {
-  const info = useRef();
-  const section = useRef();
-
   return (
-    <ContribuicaoSection id="contribuicao" ref={section}>
+    <ContribuicaoSection id="contribuicao">
       <ContribuicaoContainer>
         <ContribuicaoColLeft>
           <Line>
@@ -33,6 +21,7 @@ function Contribuicao() {
             </LineContent>
             <LineRect />
           </Line>
+          <IconWrapper icon="pepicons-pop:division-circle" />
 
           <Line>
             <LineContent>
@@ -48,6 +37,7 @@ function Contribuicao() {
             </LineContent>
             <LineRect />
           </Line>
+          <IconWrapper icon="pepicons-pop:equal-circle" />
 
           <Line>
             <LineContent>
@@ -110,6 +100,7 @@ const ContribuicaoSection = styled(Section)`
   justify-content: start;
   background-color: var(--color-brown2);
   overflow-x: hidden;
+  overflow-y: hidden;
 
   @media (min-width: 768px) {
     flex-direction: column;
@@ -131,6 +122,9 @@ const ContribuicaoContainer = styled(ContentContainer)`
   align-items: start;
   justify-content: start;
 
+  padding-bottom: 16px;
+  padding-top: 16px;
+
   @media (min-width: 768px) {
     align-items: center;
     width: 80%;
@@ -147,10 +141,12 @@ const ContribuicaoColLeft = styled.div`
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: start;
+
+  /* background-color: #cd5c5ca3; */
 
   @media (min-width: 768px) {
-    width: 70%;
+    /* width: 70%; */
     justify-content: space-between;
   }
 
@@ -158,7 +154,6 @@ const ContribuicaoColLeft = styled.div`
 `;
 
 const ContribuicaoColRight = styled.div`
-  height: 100%;
   width: 100%;
 
   display: flex;
@@ -211,7 +206,6 @@ const LineContent = styled.div`
 
   @media (min-width: 768px) {
     font-weight: 400;
-    font-size: calc(var(--title-font-size-horz) * 0.2);
   }
 
   /* background-color: lightblue; */
@@ -266,29 +260,38 @@ const LineInfoSmall = styled.span`
   justify-content: end;
   font-weight: 500;
   font-size: calc(var(--title-font-size-horz) * 0.09);
-  transform: translateY(-20px);
-  /* background-color: blue; */
+
+  /* background-color: #0000ff82; */
 `;
 
 const LineContentLeft = styled.div`
   height: 100%;
   width: 50%;
-  background-color: antiquewhite;
   display: flex;
   flex-direction: column;
+  align-items: start;
+
+  font-size: 2rem;
+
+  /* background-color: #b8870b8c; */
   span {
     overflow: visible;
   }
 `;
 const LineContentRight = styled.div`
   font-size: calc(var(--title-font-size-horz) * 0.25);
-  /* width: 50%; */
-  /* height: 150px; */
   display: flex;
   flex-direction: row;
   align-items: end;
   justify-content: end;
-  background-color: green;
+  /* background-color: green; */
+`;
+
+const IconWrapper = styled(Icon)`
+  width: 45px;
+  height: 45px;
+  margin-top: 12px;
+  margin-bottom: 12px;
 `;
 
 export default Contribuicao;
