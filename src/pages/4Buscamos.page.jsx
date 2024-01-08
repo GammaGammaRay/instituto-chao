@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import { styled } from "styled-components";
 import {
   Section,
@@ -6,15 +6,23 @@ import {
   VerticalTitle,
   ContentContainer,
 } from "../style/PageContainers";
+import { MobileContext } from "../context/mobileContext";
 
 function Buscamos() {
+  const isMobile = useContext(MobileContext);
+
   return (
     <BuscamosSection id="buscamos">
       <BuscamosContainer>
-        <BuscamosTitle>
-          <span>O QUE </span>
-          <span>BUSCAMOS?</span>
-        </BuscamosTitle>
+        {!isMobile ? (
+          <BuscamosTitle>
+            <span>O QUE </span>
+            <span>BUSCAMOS?</span>
+          </BuscamosTitle>
+        ) : (
+          <div />
+        )}
+
         <BuscamosText>
           <p>
             Além de ser transparente, esta é uma forma mais eficiente de
@@ -86,6 +94,14 @@ function Buscamos() {
           </p>
           <br />
         </BuscamosText>
+        {isMobile ? (
+          <BuscamosTitle>
+            <span>O QUE </span>
+            <span>BUSCAMOS?</span>
+          </BuscamosTitle>
+        ) : (
+          <div />
+        )}
       </BuscamosContainer>
     </BuscamosSection>
   );
@@ -102,6 +118,8 @@ const BuscamosSection = styled(Section)`
 `;
 
 const BuscamosContainer = styled(ContentContainer)`
+  margin-bottom: 16px;
+
   line-height: 1.2rem;
   height: 100%;
 
@@ -132,7 +150,7 @@ const BuscamosContainer = styled(ContentContainer)`
   }
 `;
 const BuscamosText = styled(SectionText)`
-  padding-left: calc(var(--text-padding) * 0.2);
+  padding-left: 16px;
 
   display: flex;
   flex-direction: column;
@@ -160,7 +178,6 @@ const BuscamosText = styled(SectionText)`
 const BuscamosTitle = styled(VerticalTitle)`
   writing-mode: vertical-lr;
   flex-direction: row;
-  margin-right: 12px;
 
   @media (min-width: 768px) {
     flex-direction: column;

@@ -6,13 +6,10 @@ import {
   VerticalTitle,
   ContentContainer,
 } from "../style/PageContainers";
-import stickyTitles from "../js/stickyTitles.jsx";
 
 function Historico() {
   const main = useRef();
   const title = useRef();
-
-  // stickyTitles(main, title);
 
   return (
     <HistoricoSection id="historico" ref={main}>
@@ -79,6 +76,7 @@ function Historico() {
 
 const HistoricoSection = styled(Section)`
   background-color: var(--color-pink);
+  overflow: hidden;
 `;
 
 const HistoricoContainer = styled(ContentContainer)`

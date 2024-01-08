@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useContext } from "react";
 import { styled } from "styled-components";
 import {
   Section,
@@ -6,35 +6,25 @@ import {
   VerticalTitle,
   ContentContainer,
 } from "../style/PageContainers";
-import stickyTitles from "../js/stickyTitles.jsx";
+import { MobileContext } from "../context/mobileContext";
 
 function QuemSomos() {
-  const [isSticky, setIsSticky] = useState(false);
   const main = useRef();
   const title = useRef();
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     if (window.scrollY > main.current.offsetTop) {
-  //       setIsSticky(true);
-  //     } else {
-  //       setIsSticky(false);
-  //     }
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
+  const isMobile = useContext(MobileContext);
 
   return (
     <QuemSomosSection id="quem-somos" ref={main}>
       <QuemSomosContainer>
-        <QuemSomosTitle ref={title}>
-          <span className="quem">QUEM</span>
-          <span className="somos">SOMOS?</span>
-        </QuemSomosTitle>
+        {!isMobile ? (
+          <QuemSomosTitle ref={title}>
+            <span className="quem">QUEM</span>
+            <span className="somos">SOMOS?</span>
+          </QuemSomosTitle>
+        ) : (
+          <div />
+        )}
+
         <QuemSomosText>
           <p>
             O Chão é uma associação de trabalhadores, sem fins lucrativos, que
@@ -99,6 +89,14 @@ function QuemSomos() {
             ambiental e pela soberania alimentar.
           </p>
         </QuemSomosText>
+        {isMobile ? (
+          <QuemSomosTitle ref={title}>
+            <span className="quem">QUEM</span>
+            <span className="somos">SOMOS?</span>
+          </QuemSomosTitle>
+        ) : (
+          <div />
+        )}
       </QuemSomosContainer>
     </QuemSomosSection>
   );
@@ -168,14 +166,15 @@ const QuemSomosText = styled(SectionText)`
 const QuemSomosTitle = styled(VerticalTitle)`
   writing-mode: vertical-lr;
   flex-direction: column;
+  flex-direction: row;
   /* position: sticky;
   top: 0px;
   &.sticky {
     position: fixed;
     z-index: 999;
   } */
-  @media (max-width: 768px) {
-    flex-direction: row;
+  @media (min-width: 768px) {
+    flex-direction: column;
     margin-left: 12px;
   }
   span {

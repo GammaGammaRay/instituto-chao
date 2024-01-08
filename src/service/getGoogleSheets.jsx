@@ -55,3 +55,25 @@ function parseCSV(input) {
 
   return output;
 }
+
+export async function fetchData(setSpreadsheetData) {
+  try {
+    const data = await getSpreadsheetData();
+    console.log(data);
+
+    const dataArray = Object.values(data);
+
+    if (Array.isArray(dataArray) && dataArray.length > 0) {
+      setSpreadsheetData(dataArray);
+    } else {
+      setSpreadsheetData("Não foi possível buscar os dados.");
+    }
+  } catch (error) {
+    console.error("Error fetching data", error);
+    setSpreadsheetData("Failed to fetch data");
+  }
+}
+
+export function formatCurrency(value) {
+  return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}

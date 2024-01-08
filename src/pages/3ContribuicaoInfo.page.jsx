@@ -46,8 +46,10 @@ function Contribuicao() {
                 <span>MÍNIMA DE</span>
                 <span>ARRECADAÇÃO</span>
               </LineContentLeft>
-              <LineContentRight>
-                <LineInfoExtraBold>25%</LineInfoExtraBold>
+              <LineContentRight className="vert">
+                <LineInfoExtraBold className="percentageLarge">
+                  25%
+                </LineInfoExtraBold>
                 <LineInfoSmall>
                   <span>De arrecadações </span>
                   <span>para pagar os custos</span>
@@ -62,12 +64,12 @@ function Contribuicao() {
         <ContribuicaoColRight>
           <LineVert>
             <LineContentVert>
-              <LineInfoBold>
+              <LineInfoBold className="contribuicao">
                 <span>CONTRIBUIÇÃO</span>
                 <br />
                 <span>SUGERIDA</span>
               </LineInfoBold>
-              <LineInfoExtraBold>
+              <LineInfoExtraBold className="percentageLarge">
                 <span>30%</span>
               </LineInfoExtraBold>
             </LineContentVert>
@@ -90,10 +92,8 @@ function Contribuicao() {
 
 const ContribuicaoSection = styled(Section)`
   box-shadow: 0px -10px 12px rgba(0, 0, 0, 0.1); /* Horizontal offset, vertical offset, blur radius, color */
-
   font-family: "MDNichrome";
   letter-spacing: 0.1em;
-  height: calc(100% - var(--nav-height));
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -102,7 +102,7 @@ const ContribuicaoSection = styled(Section)`
   overflow-x: hidden;
   overflow-y: hidden;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1300px) {
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -115,19 +115,19 @@ const ContribuicaoSection = styled(Section)`
 
 const ContribuicaoContainer = styled(ContentContainer)`
   width: 98%;
-  height: 80%;
+  height: 100%;
 
   display: flex;
   flex-direction: column;
-  align-items: start;
-  justify-content: start;
+  align-items: center;
+  justify-content: space-between;
 
-  padding-bottom: 16px;
-  padding-top: 16px;
+  padding: 16px;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1300px) {
     align-items: center;
-    width: 80%;
+    width: 100%;
+    align-items: center;
     flex-direction: row;
     justify-content: space-between;
   }
@@ -136,33 +136,50 @@ const ContribuicaoContainer = styled(ContentContainer)`
 `;
 
 const ContribuicaoColLeft = styled.div`
-  width: 50%;
+  width: 95%;
   height: 100%;
+
+  /* padding-left: 40px; */
+  /* padding-right: 40px; */
 
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: center;
+  justify-content: space-between;
 
   /* background-color: #cd5c5ca3; */
+  padding-bottom: 50px;
 
-  @media (min-width: 768px) {
-    /* width: 70%; */
+  @media (min-width: 1300px) {
+    align-items: start;
+    width: 80%;
+    height: 100%;
     justify-content: space-between;
+    padding-bottom: 0px;
+    padding-left: 50px;
+    /* padding-right: 50px; */
   }
 
   /* background-color: lightcoral; */
 `;
 
 const ContribuicaoColRight = styled.div`
-  width: 100%;
+  height: fit-content;
+  width: 95%;
 
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-between;
 
-  @media (min-width: 768px) {
-    width: fit-content;
-    margin-left: 80px;
+  padding-bottom: 50px;
+
+  @media (min-width: 1300px) {
+    width: 40%;
+    padding-right: 50px;
+    padding-left: 50px;
+    flex-direction: column;
+    height: fit-content;
   }
 
   /* background-color: lightgreen; */
@@ -178,6 +195,8 @@ const LineVert = styled.div`
   height: fit-content;
   display: flex;
   flex-direction: column;
+  /* align-items: end;
+  justify-content: end; */
 `;
 const LineVertManutencao = styled.div`
   width: 100%;
@@ -186,6 +205,13 @@ const LineVertManutencao = styled.div`
   height: fit-content;
   display: flex;
   flex-direction: column;
+  align-items: end;
+
+  @media (min-width: 1300px) {
+    align-items: start;
+  }
+
+  font-size: 1em;
 `;
 
 const LineRect = styled.div`
@@ -214,19 +240,29 @@ const LineContent = styled.div`
 const LineContentVert = styled.div`
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
-  align-items: start;
-
-  font-weight: 400;
-  font-size: calc(var(--title-font-size-horz) * 0.5);
+  align-items: end;
+  padding-bottom: 6px;
+  @media (min-width: 768px) {
+    align-items: center;
+    padding-bottom: 0px;
+  }
 `;
 
 const LineInfoBold = styled.span`
-  font-size: calc(var(--title-font-size-horz));
+  font-size: 3em;
   transform: translateY(5px);
+  &.contribuicao {
+    /* font-size: clamp(20px, 50px, 80px); */
+    font-size: clamp(0.5rem, 2rem, 3rem);
+  }
   @media (min-width: 768px) {
-    font-size: calc(var(--title-font-size-horz) * 0.4);
+    font-size: 6rem;
+    &.contribuicao {
+      /* font-size: clamp(20px, 50px, 80px); */
+      font-size: clamp(1rem, 4rem, 6rem);
+    }
   }
 `;
 
@@ -234,20 +270,30 @@ const LineInfoBoldRight = styled.span`
   width: fit-content;
   display: flex;
   flex-direction: column;
+  justify-content: end;
+  text-align: end;
 
-  font-size: calc(var(--title-font-size-horz));
-  transform: translateY(5px);
+  font-size: 1.5em;
+  /* transform: translateY(5px); */
+
+  /* background-color: blanchedalmond; */
 
   @media (min-width: 768px) {
-    font-size: calc(var(--title-font-size-horz) * 0.18);
+    font-size: 2em;
+  }
+  @media (min-width: 1300px) {
+    justify-content: start;
+    text-align: start;
   }
 `;
 
 const LineInfoExtraBold = styled.span`
-  font-size: calc(var(--title-font-size-horz) * 3);
-  transform: translateY(5px);
+  font-size: clamp(20px, 16px, 20px);
+  /* background-color: #dc143c60; */
+
   @media (min-width: 768px) {
-    font-size: calc(var(--title-font-size-horz) * 0.5);
+    font-size: 10rem;
+    /* font-size: clamp(16px, 50px, 70px); */
   }
 `;
 
@@ -259,9 +305,10 @@ const LineInfoSmall = styled.span`
   align-items: start;
   justify-content: end;
   font-weight: 500;
-  font-size: calc(var(--title-font-size-horz) * 0.09);
-
-  /* background-color: #0000ff82; */
+  font-size: 0.8em;
+  @media (min-width: 768px) {
+    font-size: 0.2em;
+  }
 `;
 
 const LineContentLeft = styled.div`
@@ -271,20 +318,33 @@ const LineContentLeft = styled.div`
   flex-direction: column;
   align-items: start;
 
-  font-size: 2rem;
+  font-size: 1.5em;
 
-  /* background-color: #b8870b8c; */
+  @media (min-width: 768px) {
+    /* font-size: 1em; */
+    font-size: clamp(1em, 2em, 1em);
+  }
   span {
     overflow: visible;
   }
 `;
 const LineContentRight = styled.div`
-  font-size: calc(var(--title-font-size-horz) * 0.25);
+  font-size: 1em;
   display: flex;
   flex-direction: row;
   align-items: end;
   justify-content: end;
   /* background-color: green; */
+  &.vert {
+    flex-direction: column;
+  }
+  @media (min-width: 768px) {
+    font-size: 1em;
+    padding-left: 50px;
+    &.vert {
+      flex-direction: row;
+    }
+  }
 `;
 
 const IconWrapper = styled(Icon)`

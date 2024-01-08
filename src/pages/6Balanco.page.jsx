@@ -7,39 +7,16 @@ import {
   ContentContainer,
   HorizontalTitle,
 } from "../style/PageContainers";
-import { getSpreadsheetData } from "../service/getGoogleSheets.js";
+import { fetchData, formatCurrency } from "../service/getGoogleSheets.jsx";
 
 function Balanco() {
   const main = useRef();
   const title = useRef();
 
-  const [spreadsheetData, setSpreadsheetData] = useState(null);
-
-  const formatCurrency = (value) => {
-    return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-  };
+  const [spreadsheetData, setSpreadsheetData] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await getSpreadsheetData();
-        console.log(data); // Log the fetched data to understand its structure
-
-        // Convert the object into an array of arrays
-        const dataArray = Object.values(data);
-
-        if (Array.isArray(dataArray) && dataArray.length > 0) {
-          setSpreadsheetData(dataArray);
-        } else {
-          setSpreadsheetData("Dados não estão no formato esperado.");
-        }
-      } catch (error) {
-        console.error("Error fetching data", error);
-        setSpreadsheetData("Failed to fetch data");
-      }
-    };
-
-    fetchData();
+    fetchData(setSpreadsheetData);
   }, []);
 
   function mapDataToTable(data) {
@@ -77,8 +54,8 @@ function Balanco() {
   }
 
   return (
-    <BalancoSection id="balanco" className="BalancoSection" ref={main}>
-      {spreadsheetData === null ? (
+    <BalancoSection id="balanco" ref={main}>
+      {spreadsheetData === null || spreadsheetData.length === 0 ? (
         <BalancoText>Buscando Dados...</BalancoText>
       ) : (
         <BalancoContainer>
@@ -167,7 +144,7 @@ function Balanco() {
 }
 
 const BalancoSection = styled(Section)`
-  /* height: fit-content; */
+  height: fit-content;
   justify-content: start;
   background-color: var(--color-red);
   display: flex;
@@ -189,17 +166,16 @@ const BalancoText = styled(SectionText)`
 const BalancoContainer = styled(ContentContainer)`
   line-height: 1.2em;
   width: 66%;
-
+  height: 95%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-
   padding-bottom: 20px;
 
-  /* overflow-y: hidden; */
+  /* overflow-y: scroll; */
   overflow-x: hidden;
 
-  /* background-color: #7fffd488; */
+  /* background-colo  r: #7fffd488; */
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -274,8 +250,7 @@ const BalancoTableTop = styled.div`
   justify-content: start;
   align-items: end;
 
-  position: sticky;
-  top: 0px;
+  /* position: sticky; */
   background-color: var(--color-red);
   /* height: 200px; */
 
@@ -285,27 +260,21 @@ const BalancoTableBody = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: fit-content;
-  padding-top: 6px;
-  overflow-y: scroll;
+
+  padding-top: 20px;
+  overflow-y: hidden;
   overflow-x: hidden;
   padding-right: 12px;
-  background-color: greenyellow;
-
-  &::-webkit-scrollbar {
-    width: 12px;
+  @media (min-width: 768px) {
+    /* box-shadow: inset 0 0 0 -0 #0000004d; */
   }
-  &::-webkit-scrollbar-thumb {
-    background: #000000;
-    border-radius: 6px;
-  }
-  &::-webkit-scrollbar-thumb:hover {
-    background: #292929;
-  }
+  /* box-shadow: inset 0 -8px 30px -6px #0000004d; */
+  /* background-color: #e553e051; */
 `;
+
 const BalancoTableLine = styled.div`
   width: 100%;
-  font-size: clamp(1vw, 1vw, 14px);
+  font-size: clamp(0.5vw, 1vw, 14px);
 
   font-size: 20px;
   padding-top: 6px;

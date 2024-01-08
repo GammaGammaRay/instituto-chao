@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import {
   Section,
   SectionText,
@@ -6,13 +6,13 @@ import {
   ContentContainer,
 } from "../style/PageContainers";
 import { styled } from "styled-components";
-import stickyTitles from "../js/stickyTitles.jsx";
+import { MobileContext } from "../context/mobileContext";
 
 function ComoFunciona() {
   const main = useRef();
   const title = useRef();
 
-  // stickyTitles(main, title);
+  const isMobile = useContext(MobileContext);
 
   return (
     <ComoFuncionaSection ref={main} id="como-funciona">
@@ -77,6 +77,7 @@ function ComoFunciona() {
             o valor dos produtos.
           </p>
         </ComoFuncionaText>
+
         <ComoFuncionaTitle ref={title}>
           <span>COMO</span>
           <span>FUNCIONA?</span>
@@ -88,6 +89,7 @@ function ComoFunciona() {
 
 const ComoFuncionaSection = styled(Section)`
   background-color: var(--color-brown);
+  overflow: hidden;
 `;
 
 const ComoFuncionaText = styled(SectionText)`

@@ -6,23 +6,23 @@ const BodyContainer = styled.div`
 
 const Section = styled.section`
   width: 100vw;
-  /* height: calc(100% - var(--nav-height)); */
-  height: calc(100% - var(--nav-height));
+  height: 100%;
   scroll-snap-type: y mandatory;
   scroll-snap-stop: always;
   scroll-snap-align: start;
-  scroll-margin: 50px 0px 0px 0px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex-direction: row;
+  align-items: start;
+  justify-content: start;
+
   position: relative;
 
-  @media (max-width: 768px) {
-    flex-direction: row;
-    align-items: start;
-    justify-content: start;
-    max-width: 100%;
+  @media (min-width: 768px) {
+    scroll-margin: 50px 0px 0px 0px;
+    height: calc(100% - var(--nav-height));
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 `;
 
@@ -30,6 +30,7 @@ const ContentContainer = styled.div`
   /* margin-top: 26px; */
   /* height: fit-content; */
   padding-top: 20px;
+  /* padding-bottom: 20px !important; */
 
   @media (min-width: 768px) {
     padding-left: 12px;
@@ -46,6 +47,7 @@ const SectionText = styled.div`
   align-items: center;
   line-height: 1.2em;
   padding-bottom: 12px;
+  padding-left: 16px !important;
   /* text-align: justify; */
 
   p {
@@ -61,7 +63,9 @@ const SectionText = styled.div`
 const VerticalTitle = styled.div`
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
-  font-size: clamp(4em, 20vh, 70vh);
+
+  margin-top: 66px;
+
   height: fit-content;
   line-height: 0.8em;
   word-wrap: break-word;
@@ -70,23 +74,24 @@ const VerticalTitle = styled.div`
   flex-direction: row;
   align-items: start;
   flex-basis: 0;
+  width: 100%;
+  font-size: clamp(2em, 10vh, 10vh);
 
   text-align: end;
   /* background-color: lightcyan; */
   will-change: transform;
 
+  padding-left: 10px;
+  padding-right: 20px;
+
   span {
     margin-bottom: 16px;
 
     @media (min-width: 768px) {
+      margin-top: 0px;
       margin-bottom: 0px;
       transform: rotate(180deg);
     }
-  }
-
-  @media (max-width: 768px) {
-    width: 100%;
-    font-size: clamp(2em, 10vh, 10vh);
   }
 
   @media (min-width: 768px) {
@@ -98,6 +103,7 @@ const VerticalTitle = styled.div`
     justify-content: start;
     flex-basis: 0;
     will-change: transform;
+    font-size: clamp(4em, 20vh, 70vh);
   }
 `;
 
