@@ -32,23 +32,27 @@ function QuemSomos() {
             democracia e da igualdade de direitos, a fim de construir
             coletivamente uma sociedade justa e solidária.
           </p>
+          <br />
           <p>
             Buscamos uma democracia real: tudo é decidido em assembléias
             semanais, divide-se as funções de forma conjunta, recebe-se
             igualmente e apenas pelo trabalho, não remunera-se capital. Não há
             relação de exploração.
           </p>
+          <br />
           <p>
             Seguimos os princípios da Economia Solidária, uma política econômica
             do cuidado, tendo as pessoas como sujeito e finalidade da atividade
             econômica.
           </p>
+          <br />
           <p>
             Articulamos e integramos redes que fomentam a autonomia, o
             cooperativismo, a autogestão, o antirracismo, o feminismo, o
             antifascismo, o anti capacitismo e a redistribuição radical de
             renda.
           </p>
+          <br />
           <p>
             Visando a equidade e a horizontalidade, o Chão não tem dono, nem
             hierarquia. A prática diária se baseia no debate reflexivo sobre o
@@ -61,6 +65,7 @@ function QuemSomos() {
             decidindo os rumos e se responsabilizando juntas pelo caminho
             trilhado.
           </p>
+          <br />
           <p>
             Com todas as contradições inerentes, o nosso caminho é o do cuidado,
             da aproximação das pessoas, da busca por relações mais justas e
@@ -70,6 +75,7 @@ function QuemSomos() {
             pública, pelo combate à fome, pela biodiversidade e preservação
             ambiental e pela soberania alimentar.
           </p>
+          <br />
           <p>
             Com todas as contradições inerentes, o nosso caminho é o do cuidado,
             da aproximação das pessoas, da busca por relações mais justas e
@@ -79,6 +85,7 @@ function QuemSomos() {
             pública, pelo combate à fome, pela biodiversidade e preservação
             ambiental e pela soberania alimentar.
           </p>
+          <br />
           <p>
             Com todas as contradições inerentes, o nosso caminho é o do cuidado,
             da aproximação das pessoas, da busca por relações mais justas e

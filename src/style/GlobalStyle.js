@@ -29,7 +29,6 @@ const GlobalStyle = createGlobalStyle`
 
     --nav-height: 50px;
     --section-height: 100vh;
-    --nav-height: 0px;
 
     --color-gray: #ded6d0;
     --title-font-size-horz: clamp(10vw, 4vw, 20px);

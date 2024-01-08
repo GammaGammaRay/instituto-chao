@@ -2,12 +2,15 @@ import React, { useContext, useEffect, useRef } from "react";
 import { styled } from "styled-components";
 import { gsap } from "gsap";
 import ScrollToPlugin from "gsap/ScrollToPlugin";
+import { MobileContext } from "../context/mobileContext.jsx";
 
 gsap.registerPlugin(ScrollToPlugin);
 
 function Nav() {
   const buttons = useRef();
   const buttonMenu = useRef();
+
+  const isMobile = useContext(MobileContext);
 
   // <--------- ANIMATION WRAPPER START--------->
   useEffect(() => {
@@ -52,39 +55,41 @@ function Nav() {
 
   return (
     <React.Fragment>
-      <ButtonMenu ref={buttonMenu}>
-        <img
-          className="MenuButtonImage"
-          type="image/svg+xml"
-          src="chao_burguerMenu-border.svg"
-          alt="Logo Instituto Chão"
-        />
-        {/* <img
+      {isMobile ? (
+        <ButtonMenu ref={buttonMenu}>
+          <img
+            className="MenuButtonImage"
+            type="image/svg+xml"
+            src="chao_burguerMenu-border.svg"
+            alt="Logo Instituto Chão"
+          />
+          {/* <img
           className="MenuButtonImage"
           type="image/svg+xml"
           src="chao_burguerMenu-circle.svg"
           alt="Logo Instituto Chão"
         /> */}
-      </ButtonMenu>
-
-      <NavBar>
-        <NavButtonContainer ref={buttons}>
-          <NavBtn onClick={() => scrollToSection("quem-somos")}>
-            Quem Somos?
-          </NavBtn>
-          <NavBtn onClick={() => scrollToSection("como-funciona")}>
-            Como Funciona?
-          </NavBtn>
-          <NavBtn onClick={() => scrollToSection("buscamos")}>
-            O que buscamos?
-          </NavBtn>
-          <NavBtn onClick={() => scrollToSection("historico")}>
-            Histórico
-          </NavBtn>
-          <NavBtn onClick={() => scrollToSection("balanco")}>Balanço</NavBtn>
-          <NavBtn onClick={() => scrollToSection("contato")}>Contato</NavBtn>
-        </NavButtonContainer>
-      </NavBar>
+        </ButtonMenu>
+      ) : (
+        <NavBar>
+          <NavButtonContainer ref={buttons}>
+            <NavBtn onClick={() => scrollToSection("quem-somos")}>
+              Quem Somos?
+            </NavBtn>
+            <NavBtn onClick={() => scrollToSection("como-funciona")}>
+              Como Funciona?
+            </NavBtn>
+            <NavBtn onClick={() => scrollToSection("buscamos")}>
+              O que buscamos?
+            </NavBtn>
+            <NavBtn onClick={() => scrollToSection("historico")}>
+              Histórico
+            </NavBtn>
+            <NavBtn onClick={() => scrollToSection("balanco")}>Balanço</NavBtn>
+            <NavBtn onClick={() => scrollToSection("contato")}>Contato</NavBtn>
+          </NavButtonContainer>
+        </NavBar>
+      )}
     </React.Fragment>
   );
 }
@@ -99,9 +104,9 @@ const ButtonMenu = styled.div`
   :hover {
     cursor: pointer;
   }
-  @media (min-width: 768px) {
+  /* @media (min-width: 768px) {
     display: none;
-  }
+  } */
   &img {
     width: 50px;
     height: auto;
@@ -111,20 +116,24 @@ const ButtonMenu = styled.div`
 `;
 
 const NavBar = styled.div`
-  display: none !important;
+  /* display: none !important; */
   width: 100%;
+  height: var(--nav-height);
   position: fixed;
   overflow-x: hidden;
   overflow-y: hidden;
+  font-size: 20px;
 
-  @media (min-width: 768px) {
+  /* @media (min-width: 768px) {
     height: var(--nav-height);
     display: block;
-  }
+  } */
   top: 0px;
   left: 0px;
   z-index: 10;
   background-color: black;
+
+  /* padding-top: 16px; */
 
   display: flex;
   flex-direction: row;

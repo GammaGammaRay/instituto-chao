@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   ContentContainer,
   HorizontalTitle,
@@ -6,8 +6,10 @@ import {
 } from "../style/PageContainers";
 import styled from "styled-components";
 import { Icon } from "@iconify/react";
+import { MobileContext } from "../context/mobileContext";
 
 function Contato() {
+  const isMobile = useContext(MobileContext);
   return (
     <ContatoSection id="contato">
       <InfosContainer>
@@ -22,35 +24,42 @@ function Contato() {
           <span>Rua Harmonia, 114 - Vila Madalena</span>
           <span>São Paulo / SP - 05435-000 - BR</span>
         </ContatoEnderecoContainer>
-
-        <HorarioContainer>
-          <HorariosLeft>
-            <HorariosLista>
-              <Horario>
-                <span>2ᵃ FEIRA</span>
-                <span>8 ÀS 14h</span>
-              </Horario>
-              <Horario>
-                <span>3ᵃ a 6ᵃ FEIRA</span>
-                <span>8 ÀS 19h</span>
-              </Horario>
-              <Horario>
-                <span>SÁB. E DOM.</span>
-                <span>8 ÀS 17h</span>
-              </Horario>
-            </HorariosLista>
+        <RightDiv>
+          <HorarioContainer>
+            <HorariosLeft>
+              <HorariosLista>
+                <Horario>
+                  <span>2ᵃ FEIRA</span>
+                  <span>8 ÀS 14h</span>
+                </Horario>
+                <Horario>
+                  <span>3ᵃ a 6ᵃ FEIRA</span>
+                  <span>8 ÀS 19h</span>
+                </Horario>
+                <Horario>
+                  <span>SÁB. E DOM.</span>
+                  <span>8 ÀS 17h</span>
+                </Horario>
+              </HorariosLista>
+            </HorariosLeft>
+            <HorariosRight>
+              <h2>HORÁRIO</h2>
+            </HorariosRight>
+          </HorarioContainer>
+          {!isMobile ? (
             <SocialLinksContainer>
               <a href="https://www.facebook.com/institutochao/">
-                <LinkWrapper icon="simple-icons:facebook" width="5em" />
+                <LinkWrapper icon="simple-icons:facebook" width="7em" />
               </a>
 
               <a href="https://www.facebook.com/institutochao/">
-                <LinkWrapper icon="simple-icons:instagram" width="5em" />
+                <LinkWrapper icon="simple-icons:instagram" width="7em" />
               </a>
             </SocialLinksContainer>
-          </HorariosLeft>
-          <h2 style={{ fontSize: "9em" }}>HORÁRIO</h2>
-        </HorarioContainer>
+          ) : (
+            <div></div>
+          )}
+        </RightDiv>
       </InfosContainer>
     </ContatoSection>
   );
@@ -72,14 +81,14 @@ const ContatoSection = styled(Section)`
 const InfosContainer = styled(ContentContainer)`
   display: flex;
   flex-direction: column-reverse;
-  align-items: start;
+  align-items: end;
   justify-content: space-between;
 
-  /* height: 100%; */
+  height: 90%;
   width: 100%;
-  background-color: #80fe95ab;
+  /* background-color: #80fe95ab; */
   padding-bottom: 40px;
-  padding-top: 40px;
+  padding-top: 60px;
   /* margin-bottom: 20px; */
   /* padding-bottom: 30px; */
 
@@ -95,7 +104,7 @@ const InfosContainer = styled(ContentContainer)`
     justify-content: space-between;
     margin-bottom: 50px;
     h2 {
-      font-size: calc(var(--title-font-size-horz) * 0.8);
+      font-size: 5em;
     }
   }
 `;
@@ -103,16 +112,30 @@ const InfosContainer = styled(ContentContainer)`
 const ContatoEnderecoContainer = styled(ContentContainer)`
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: start;
   align-items: start;
-  /* width: 100%; */
+  width: 100%;
+  height: 50%;
 
-  font-size: 25px;
-  background-color: #206bad6a;
+  font-size: 26px;
+  /* background-color: #206bad6a; */
+
+  span {
+    margin-bottom: 6px;
+  }
+
+  h2 {
+    font-size: 10dvw;
+    margin-bottom: 20px;
+  }
 
   @media (min-width: 768px) {
-    width: 50%;
-    height: 50%;
+    width: 90%;
+    justify-content: end;
+    h2 {
+      font-size: clamp(5dvw, 6dvw, 7dvw);
+      margin-bottom: 10px;
+    }
   }
 `;
 
@@ -120,28 +143,54 @@ const HorarioContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: start;
-  background-color: #892be265;
+  justify-content: end;
+  /* background-color: #892be265; */
   width: 100%;
-
-  @media (min-width: 768px) {
-    flex-direction: row;
-    justify-content: end;
-    width: 50%;
-  }
+  height: 100%;
 
   h2 {
     writing-mode: vertical-rl;
+    font-size: 15dvh;
+  }
+
+  @media (min-width: 768px) {
+    width: 70%;
+    flex-direction: row;
+    h2 {
+      margin-right: 16px;
+    }
+  }
+`;
+const RightDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 100%;
+  justify-content: end;
+  height: 100%;
+  @media (min-width: 768px) {
+    width: 50%;
+    align-items: end;
   }
 `;
 
 const HorariosLeft = styled.div`
   height: 100%;
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: end;
-  background-color: #4c008267;
+  /* background-color: #4c008267; */
+`;
+const HorariosRight = styled.div`
+  height: 100%;
+  /* width: 100%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+  /* background-color: #8834c567; */
 `;
 
 const HorariosLista = styled.div`
@@ -149,7 +198,7 @@ const HorariosLista = styled.div`
   flex-direction: column;
   align-items: end;
   height: 70%;
-  background-color: #ff149160;
+  /* background-color: #ff149160; */
   padding-right: 12px;
 `;
 
@@ -168,22 +217,27 @@ const Horario = styled.div`
 
 const SocialLinksContainer = styled.div`
   width: 100%;
+  height: 20%;
 
-  background-color: #14ff575f;
+  /* background-color: #14ff575f; */
 
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: end;
   align-items: end;
+  margin-right: 20px;
 
   @media (min-width: 768px) {
-    align-items: end;
+    align-items: center;
     justify-content: end;
   }
 `;
 
 const LinkWrapper = styled(Icon)`
-  margin-left: 12px;
+  margin-left: 50px;
+  :hover {
+    color: #c4c4c4;
+  }
 `;
 
 export default Contato;

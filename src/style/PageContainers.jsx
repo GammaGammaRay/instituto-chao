@@ -39,24 +39,28 @@ const ContentContainer = styled.div`
 `;
 
 const SectionText = styled.div`
-  font-size: 16px;
+  font-size: 5dvw;
   max-width: 750px;
   height: 95%;
-  width: 90%;
+  /* width: 90%; */
   min-width: 40%;
   align-items: center;
   line-height: 1.2em;
   padding-bottom: 12px;
   padding-left: 16px !important;
   /* text-align: justify; */
+  word-wrap: break-word;
 
   p {
     margin-bottom: 12px;
   }
 
   @media (min-width: 768px) {
+    min-width: 60%;
+    max-width: 80%;
+    /* width: 100%; */
     text-align: justify;
-    font-size: 22px;
+    font-size: 26px;
   }
 `;
 
@@ -64,7 +68,7 @@ const VerticalTitle = styled.div`
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
 
-  margin-top: 66px;
+  margin-top: 40px;
 
   height: fit-content;
   line-height: 0.8em;
@@ -82,7 +86,7 @@ const VerticalTitle = styled.div`
   will-change: transform;
 
   padding-left: 10px;
-  padding-right: 20px;
+  padding-right: 10px;
 
   span {
     margin-bottom: 16px;

@@ -111,9 +111,10 @@ const BuscamosSection = styled(Section)`
   background-color: var(--color-green);
 
   button {
+    width: 50%;
     margin-top: 12px;
     margin-bottom: 12px;
-    font-size: 0.8rem;
+    font-size: 1.5dvw;
   }
 `;
 
