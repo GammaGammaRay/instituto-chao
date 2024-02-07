@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 
 const BodyContainer = styled.div`
-  /* height: 100vh; */
+  height: 100vh;
 `;
 
 const Section = styled.section`
