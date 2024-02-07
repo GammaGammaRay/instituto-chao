@@ -85,7 +85,7 @@ export const ContribuicaoColRight = styled.div`
     padding-right: 50px;
     padding-left: 50px;
     flex-direction: column;
-    height: fit-content;
+    /* height: fit-content; */
   }
 
   /* background-color: lightgreen; */

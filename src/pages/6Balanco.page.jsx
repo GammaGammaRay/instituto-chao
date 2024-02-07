@@ -45,10 +45,8 @@ function Balanco() {
               backgroundColor: index % 2 === 0 ? "#ffffff1c" : "#ffffff0",
             }}
           >
-            <span style={{ width: "60%" }}>{data}</span>
-            <span style={{ width: "40%" }}>
-              R$ {formatCurrency(secondArray[index + 2])}
-            </span>
+            <span>{data}</span>
+            <span>R$ {formatCurrency(secondArray[index + 2])}</span>
           </BalancoTableLine>
         ))}
       </>
@@ -280,14 +278,11 @@ const BalancoTableBody = styled.div`
 `;
 
 const BalancoTableLine = styled.div`
-  width: 100%;
   height: fit-content;
   font-size: 3dvw;
 
-  padding: 16px 0px;
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: space-between;
   /* background-color: antiquewhite; */
 
@@ -307,19 +302,13 @@ const BalancoTableLine = styled.div`
       font-size: 2dvw;
     }
     font-size: 5dvw;
-    width: fit-content;
-    align-items: end;
     /* background-color: antiquewhite; */
   }
 `;
 
 const HorizontalLine = styled.div`
   background-color: black;
-  /* margin: 0; */
-  /* padding: 0; */
   height: 4px;
-
-  /* margin-bottom: 6px; */
 `;
 
 export default Balanco;

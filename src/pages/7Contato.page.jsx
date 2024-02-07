@@ -14,15 +14,34 @@ function Contato() {
     <ContatoSection id="contato">
       <InfosContainer>
         <ContatoEnderecoContainer>
-          <h2>CONTATO E ENDEREÇO</h2>
-          <span>+55 11 3819-4205</span>
-          <span>
-            <a href="mailto:contato@institutochao.org">
-              contato@institutochao.org
-            </a>
-          </span>
-          <span>Rua Harmonia, 114 - Vila Madalena</span>
-          <span>São Paulo / SP - 05435-000 - BR</span>
+          <ContatoEnderecoInfo>
+            <h2>CONTATO E ENDEREÇO</h2>
+            <span>+55 11 3819-4205</span>
+            <span>
+              <a href="mailto:contato@institutochao.org">
+                contato@institutochao.org
+              </a>
+            </span>
+            <span>Rua Harmonia, 114 - Vila Madalena</span>
+            <span>São Paulo / SP - 05435-000 - BR</span>
+          </ContatoEnderecoInfo>
+          {!isMobile ? (
+            <div></div>
+          ) : (
+            <SocialLinksContainer>
+              <LinkWrapper>
+                <a href="https://www.facebook.com/institutochao/">
+                  <Icon icon="simple-icons:facebook" width="7em" />
+                </a>
+              </LinkWrapper>
+
+              <LinkWrapper>
+                <a href="https://www.instagram.com/institutochao">
+                  <Icon icon="simple-icons:instagram" width="7em" />
+                </a>
+              </LinkWrapper>
+            </SocialLinksContainer>
+          )}
         </ContatoEnderecoContainer>
         <RightDiv>
           <HorarioContainer>
@@ -55,7 +74,7 @@ function Contato() {
               </LinkWrapper>
 
               <LinkWrapper>
-                <a href="https://www.facebook.com/institutochao/">
+                <a href="https://www.instagram.com/institutochao">
                   <Icon icon="simple-icons:instagram" width="7em" />
                 </a>
               </LinkWrapper>
@@ -118,13 +137,12 @@ const InfosContainer = styled(ContentContainer)`
 const ContatoEnderecoContainer = styled(ContentContainer)`
   display: flex;
   flex-direction: column;
-  justify-content: start;
   align-items: start;
   width: 100%;
   height: 50%;
 
   font-size: 26px;
-  /* background-color: #206bad6a; */
+  background-color: #206bad6a;
 
   span {
     margin-bottom: 6px;
@@ -143,6 +161,14 @@ const ContatoEnderecoContainer = styled(ContentContainer)`
       margin-bottom: 10px;
     }
   }
+`;
+
+const ContatoEnderecoInfo = styled.div`
+  justify-content: space-between;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 `;
 
 const HorarioContainer = styled.div`
