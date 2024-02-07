@@ -106,6 +106,7 @@ const ContatoSection = styled(Section)`
 
 const InfosContainer = styled(ContentContainer)`
   padding: 15px;
+  height: 100%;
 
   display: flex;
   flex-direction: column-reverse;
@@ -273,7 +274,7 @@ const LinkWrapper = styled.div`
 `;
 
 const StyledIcon = styled(Icon)`
-  width: 100px;
+  width: 60px;
   height: 100px;
 `;
 

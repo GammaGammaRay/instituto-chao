@@ -108,7 +108,7 @@ function Buscamos() {
 }
 
 const BuscamosSection = styled(Section)`
-  height: 100%;
+  /* height: 100%; */
   background-color: var(--color-green);
 
   button {
@@ -120,21 +120,18 @@ const BuscamosSection = styled(Section)`
 `;
 
 const BuscamosContainer = styled(ContentContainer)`
-  background-color: blue;
-  /* height: 100%; */
+  /* background-color: blue; */
+  height: 100%;
 
   /* margin-bottom: 16px; */
   /* padding-bottom: 100px; */
   line-height: 1.2rem;
-  height: 100%;
 
   display: flex;
   flex-direction: row;
   justify-content: center;
 
   @media (min-width: 768px) {
-    flex-direction: column;
-    justify-content: start;
     align-items: start;
     width: 95%;
 
@@ -144,7 +141,6 @@ const BuscamosContainer = styled(ContentContainer)`
   }
 
   @media (min-width: 1200px) {
-    justify-content: start;
     align-items: start;
     width: 60%;
 
