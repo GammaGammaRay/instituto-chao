@@ -119,7 +119,6 @@ const QuemSomosSection = styled(Section)`
 const QuemSomosContainer = styled(ContentContainer)`
   line-height: 1.2em;
   height: 100%;
-  padding-right: 12px;
 
   display: flex;
   flex-direction: row;
@@ -150,8 +149,8 @@ const QuemSomosContainer = styled(ContentContainer)`
 `;
 
 const QuemSomosText = styled(SectionText)`
-  padding-left: calc(var(--text-padding) * 0.2);
-  padding-right: 20px;
+  /* padding-left: calc(var(--text-padding) * 0.2); */
+  /* padding-right: 20px; */
   overflow: auto;
 
   &::-webkit-scrollbar {

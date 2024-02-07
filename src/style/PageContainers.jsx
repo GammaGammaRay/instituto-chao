@@ -7,6 +7,7 @@ const BodyContainer = styled.div`
 const Section = styled.section`
   width: 100vw;
   height: 100vh;
+
   scroll-snap-type: y mandatory;
   scroll-snap-stop: always;
   scroll-snap-align: start;
@@ -31,6 +32,9 @@ const ContentContainer = styled.div`
   /* height: fit-content; */
   padding-top: 20px;
   /* padding-bottom: 20px !important; */
+
+  padding-top: 20px;
+  padding-bottom: 20px;
 
   @media (min-width: 768px) {
     padding-left: 12px;

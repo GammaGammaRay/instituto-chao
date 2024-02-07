@@ -93,7 +93,7 @@ const ComoFuncionaSection = styled(Section)`
 `;
 
 const ComoFuncionaText = styled(SectionText)`
-  padding-right: var(--text-padding);
+  /* padding-right: var(--text-padding); */
 
   padding-right: 20px;
   overflow: auto;

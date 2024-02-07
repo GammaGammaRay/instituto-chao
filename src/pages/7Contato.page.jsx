@@ -31,13 +31,13 @@ function Contato() {
             <SocialLinksContainer>
               <LinkWrapper>
                 <a href="https://www.facebook.com/institutochao/">
-                  <Icon icon="simple-icons:facebook" width="7em" />
+                  <StyledIcon icon="simple-icons:facebook" />
                 </a>
               </LinkWrapper>
 
               <LinkWrapper>
                 <a href="https://www.instagram.com/institutochao">
-                  <Icon icon="simple-icons:instagram" width="7em" />
+                  <StyledIcon icon="simple-icons:instagram" />
                 </a>
               </LinkWrapper>
             </SocialLinksContainer>
@@ -69,13 +69,13 @@ function Contato() {
             <SocialLinksContainer>
               <LinkWrapper>
                 <a href="https://www.facebook.com/institutochao/">
-                  <Icon icon="simple-icons:facebook" width="7em" />
+                  <StyledIcon icon="simple-icons:facebook" />
                 </a>
               </LinkWrapper>
 
               <LinkWrapper>
                 <a href="https://www.instagram.com/institutochao">
-                  <Icon icon="simple-icons:instagram" width="7em" />
+                  <StyledIcon icon="simple-icons:instagram" />
                 </a>
               </LinkWrapper>
             </SocialLinksContainer>
@@ -93,8 +93,10 @@ const ContatoSection = styled(Section)`
   letter-spacing: 0.1em;
   background-color: var(--color-salmon);
   color: white;
-  /* overflow: hidden; */
-  overflow-x: hidden;
+  overflow: hidden;
+  /* overflow-x: hidden; */
+  margin-bottom: 50px;
+  /* margin-top: 50px; */
 
   display: flex;
   flex-direction: row;
@@ -110,11 +112,11 @@ const InfosContainer = styled(ContentContainer)`
   align-items: end;
   justify-content: space-between;
 
-  height: 90%;
+  /* height: 90%; */
   width: 100%;
   /* background-color: #80fe95ab; */
-  padding-bottom: 40px;
-  padding-top: 60px;
+  /* padding-bottom: 40px; */
+  /* padding-top: 60px; */
   /* margin-bottom: 20px; */
   /* padding-bottom: 30px; */
 
@@ -124,11 +126,10 @@ const InfosContainer = styled(ContentContainer)`
   }
 
   @media (min-width: 768px) {
-    /* height: 100%; */
     flex-direction: row;
     align-items: end;
     justify-content: space-between;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
     h2 {
       font-size: 5em;
     }
@@ -139,10 +140,11 @@ const ContatoEnderecoContainer = styled(ContentContainer)`
   display: flex;
   flex-direction: column;
   align-items: start;
+  justify-content: space-between;
   width: 100%;
-  height: 50%;
+  height: 100%;
 
-  font-size: 26px;
+  /* font-size: 26px; */
   background-color: #206bad6a;
 
   span {
@@ -166,7 +168,6 @@ const ContatoEnderecoContainer = styled(ContentContainer)`
 
 const ContatoEnderecoInfo = styled.div`
   justify-content: space-between;
-  height: 100%;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -178,7 +179,6 @@ const HorarioContainer = styled.div`
   align-items: start;
   justify-content: end;
   width: 100%;
-  height: 100%;
 
   h2 {
     writing-mode: vertical-rl;
@@ -199,7 +199,6 @@ const RightDiv = styled.div`
   align-items: start;
   width: 100%;
   justify-content: end;
-  height: 100%;
   @media (min-width: 768px) {
     width: 50%;
     align-items: end;
@@ -207,7 +206,7 @@ const RightDiv = styled.div`
 `;
 
 const HorariosLeft = styled.div`
-  height: 100%;
+  /* height: 100%; */
   /* width: 100%; */
   display: flex;
   flex-direction: column;
@@ -216,7 +215,7 @@ const HorariosLeft = styled.div`
   /* background-color: #4c008267; */
 `;
 const HorariosRight = styled.div`
-  height: 100%;
+  /* height: 100%; */
   /* width: 100%; */
   display: flex;
   flex-direction: column;
@@ -229,7 +228,7 @@ const HorariosLista = styled.div`
   display: flex;
   flex-direction: column;
   align-items: end;
-  height: 70%;
+  /* height: 70%; */
   /* background-color: #ff149160; */
   padding-right: 12px;
 `;
@@ -249,15 +248,15 @@ const Horario = styled.div`
 
 const SocialLinksContainer = styled.div`
   width: 100%;
-  height: 20%;
+  /* height: 20%; */
 
-  /* background-color: #14ff575f; */
+  background-color: #14ff575f;
 
   display: flex;
   flex-direction: row;
   justify-content: end;
   align-items: end;
-  margin-right: 20px;
+  /* margin-right: 20px; */
 
   @media (min-width: 768px) {
     align-items: center;
@@ -271,6 +270,11 @@ const LinkWrapper = styled.div`
   :hover {
     color: #c4c4c4;
   }
+`;
+
+const StyledIcon = styled(Icon)`
+  width: 100px;
+  height: 100px;
 `;
 
 export default Contato;
