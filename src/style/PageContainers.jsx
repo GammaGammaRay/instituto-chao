@@ -1,12 +1,10 @@
 import { styled } from "styled-components";
 
-const BodyContainer = styled.div`
-  height: 100vh;
-`;
+const BodyContainer = styled.div``;
 
 const Section = styled.section`
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   scroll-snap-type: y mandatory;
   scroll-snap-stop: always;
   scroll-snap-align: start;
