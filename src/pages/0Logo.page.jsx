@@ -43,14 +43,12 @@ function Logo() {
       ScrollTrigger.saveStyles(".logo");
       ScrollTrigger.matchMedia({
         "(min-width: 769px)": () => {
-          // Apply ScrollTrigger or other configurations if needed
           ScrollTrigger.create({
             trigger: ".logo",
             animation: animation,
             start: "top 80%",
             end: "bottom 20%",
             toggleActions: "play none none none",
-            // markers: true, // Set to true to visualize ScrollTrigger boundaries
           });
         },
       });
