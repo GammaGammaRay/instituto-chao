@@ -1,6 +1,8 @@
 import { styled } from "styled-components";
 
-const BodyContainer = styled.div``;
+const BodyContainer = styled.div`
+  /* height: 100vh; */
+`;
 
 const Section = styled.section`
   width: 100vw;
@@ -17,7 +19,7 @@ const Section = styled.section`
 
   @media (min-width: 768px) {
     scroll-margin: 50px 0px 0px 0px;
-    height: calc(100% - var(--nav-height));
+    height: calc(100vh - var(--nav-height));
     flex-direction: column;
     align-items: center;
     justify-content: center;
