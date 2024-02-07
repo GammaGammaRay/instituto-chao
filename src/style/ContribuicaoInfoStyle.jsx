@@ -3,6 +3,8 @@ import { Section, ContentContainer } from "./PageContainers";
 import { Icon } from "@iconify/react";
 
 export const ContribuicaoSection = styled(Section)`
+  height: 100%;
+  width: 100%;
   box-shadow: 0px -10px 12px rgba(0, 0, 0, 0.1); /* Horizontal offset, vertical offset, blur radius, color */
   font-family: "MDNichrome";
   letter-spacing: 0.1em;

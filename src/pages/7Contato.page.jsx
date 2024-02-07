@@ -94,6 +94,7 @@ const ContatoSection = styled(Section)`
   background-color: var(--color-salmon);
   color: white;
   /* overflow: hidden; */
+  overflow-x: hidden;
 
   display: flex;
   flex-direction: row;
