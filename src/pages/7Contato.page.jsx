@@ -48,13 +48,17 @@ function Contato() {
           </HorarioContainer>
           {!isMobile ? (
             <SocialLinksContainer>
-              <a href="https://www.facebook.com/institutochao/">
-                <LinkWrapper icon="simple-icons:facebook" width="7em" />
-              </a>
+              <LinkWrapper>
+                <a href="https://www.facebook.com/institutochao/">
+                  <Icon icon="simple-icons:facebook" width="7em" />
+                </a>
+              </LinkWrapper>
 
-              <a href="https://www.facebook.com/institutochao/">
-                <LinkWrapper icon="simple-icons:instagram" width="7em" />
-              </a>
+              <LinkWrapper>
+                <a href="https://www.facebook.com/institutochao/">
+                  <Icon icon="simple-icons:instagram" width="7em" />
+                </a>
+              </LinkWrapper>
             </SocialLinksContainer>
           ) : (
             <div></div>
@@ -79,6 +83,8 @@ const ContatoSection = styled(Section)`
 `;
 
 const InfosContainer = styled(ContentContainer)`
+  padding: 15px;
+
   display: flex;
   flex-direction: column-reverse;
   align-items: end;
@@ -144,7 +150,6 @@ const HorarioContainer = styled.div`
   flex-direction: row;
   align-items: start;
   justify-content: end;
-  /* background-color: #892be265; */
   width: 100%;
   height: 100%;
 
@@ -233,8 +238,9 @@ const SocialLinksContainer = styled.div`
   }
 `;
 
-const LinkWrapper = styled(Icon)`
+const LinkWrapper = styled.div`
   margin-left: 50px;
+  cursor: pointer;
   :hover {
     color: #c4c4c4;
   }
