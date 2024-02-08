@@ -28,7 +28,7 @@ const Section = styled.section`
 `;
 
 const ContentContainer = styled.div`
-  margin-top: 26px;
+  margin: 26px, 0px;
   /* height: fit-content; */
   padding-top: 20px;
   /* padding-bottom: 20px !important; */
@@ -43,8 +43,7 @@ const ContentContainer = styled.div`
 `;
 
 const SectionText = styled.div`
-  /* font-size: 5dvw; */
-  font-size: 30px;
+  font-size: 24px;
   max-width: 750px;
   height: 93%;
   /* width: 90%; */
@@ -54,12 +53,14 @@ const SectionText = styled.div`
   padding-bottom: 12px;
   padding-left: 16px !important;
   word-wrap: break-word;
+  margin-bottom: 12px;
 
   p {
     margin-bottom: 12px;
   }
 
   @media (min-width: 768px) {
+    margin-bottom: 0px;
     height: 95%;
     min-width: 60%;
     max-width: 80%;
@@ -72,7 +73,7 @@ const VerticalTitle = styled.div`
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
 
-  /* margin-top: 40px; */
+  margin-top: 40px;
 
   height: fit-content;
   line-height: 0.8em;
@@ -112,6 +113,7 @@ const VerticalTitle = styled.div`
     flex-basis: 0;
     will-change: transform;
     font-size: clamp(4em, 20vh, 70vh);
+    margin-top: 0px;
   }
 `;
 

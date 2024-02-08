@@ -13,35 +13,39 @@ function Contato() {
   return (
     <ContatoSection id="contato">
       <InfosContainer>
-        <ContatoEnderecoContainer>
-          <ContatoEnderecoInfo>
-            <h2>CONTATO E ENDEREÇO</h2>
-            <span>+55 11 3819-4205</span>
-            <span>
-              <a href="mailto:contato@institutochao.org">
-                contato@institutochao.org
+        {!isMobile ? (
+          <div></div>
+        ) : (
+          <SocialLinksContainer>
+            <LinkWrapper>
+              <a href="https://www.facebook.com/institutochao/">
+                <StyledIcon icon="simple-icons:facebook" />
               </a>
-            </span>
-            <span>Rua Harmonia, 114 - Vila Madalena</span>
-            <span>São Paulo / SP - 05435-000 - BR</span>
-          </ContatoEnderecoInfo>
-          {!isMobile ? (
-            <div></div>
-          ) : (
-            <SocialLinksContainer>
-              <LinkWrapper>
-                <a href="https://www.facebook.com/institutochao/">
-                  <StyledIcon icon="simple-icons:facebook" />
-                </a>
-              </LinkWrapper>
+            </LinkWrapper>
 
-              <LinkWrapper>
-                <a href="https://www.instagram.com/institutochao">
-                  <StyledIcon icon="simple-icons:instagram" />
+            <LinkWrapper>
+              <a href="https://www.instagram.com/institutochao">
+                <StyledIcon icon="simple-icons:instagram" />
+              </a>
+            </LinkWrapper>
+          </SocialLinksContainer>
+        )}
+        <ContatoEnderecoContainer>
+          <h2>CONTATO E ENDEREÇO</h2>
+          <ContatoEnderecoInfo>
+            <div>
+              <span>+55 11 3819-4205</span>
+              <span>
+                <a href="mailto:contato@institutochao.org">
+                  contato@institutochao.org
                 </a>
-              </LinkWrapper>
-            </SocialLinksContainer>
-          )}
+              </span>
+            </div>
+            <div>
+              <span>Rua Harmonia, 114 - Vila Madalena</span>
+              <span>São Paulo / SP - 05435-000 - BR</span>
+            </div>
+          </ContatoEnderecoInfo>
         </ContatoEnderecoContainer>
         <RightDiv>
           <HorarioContainer>
@@ -90,13 +94,10 @@ function Contato() {
 
 const ContatoSection = styled(Section)`
   font-family: "Grotesk";
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   background-color: var(--color-salmon);
   color: white;
   overflow: hidden;
-  /* overflow-x: hidden; */
-  margin-bottom: 50px;
-  /* margin-top: 50px; */
 
   display: flex;
   flex-direction: row;
@@ -105,33 +106,29 @@ const ContatoSection = styled(Section)`
 `;
 
 const InfosContainer = styled(ContentContainer)`
-  padding: 15px;
-  height: 100%;
-
+  width: 100%;
+  margin-top: 40px;
   display: flex;
   flex-direction: column-reverse;
   align-items: end;
   justify-content: space-between;
 
-  /* height: 90%; */
-  width: 100%;
   /* background-color: #80fe95ab; */
-  /* padding-bottom: 40px; */
-  /* padding-top: 60px; */
-  /* margin-bottom: 20px; */
-  /* padding-bottom: 30px; */
 
   h2 {
+    margin-left: 12px;
     font-family: var(--title-font);
     font-weight: var(--title-font-weight);
   }
 
   @media (min-width: 768px) {
+    height: 100%;
+    padding: 15px;
     flex-direction: row;
     align-items: end;
     justify-content: space-between;
-    /* margin-bottom: 50px; */
     h2 {
+      margin-left: 0px;
       font-size: 5em;
     }
   }
@@ -143,10 +140,10 @@ const ContatoEnderecoContainer = styled(ContentContainer)`
   align-items: start;
   justify-content: space-between;
   width: 100%;
-  height: 100%;
+  height: fit-content;
+  font-size: 24px;
 
-  /* font-size: 26px; */
-  background-color: #206bad6a;
+  /* background-color: #206bad6a; */
 
   span {
     margin-bottom: 6px;
@@ -154,30 +151,70 @@ const ContatoEnderecoContainer = styled(ContentContainer)`
 
   h2 {
     font-size: 10dvw;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   @media (min-width: 768px) {
+    font-size: 34px;
     width: 90%;
     justify-content: end;
+    padding-bottom: 50px;
+    margin-left: 50px;
     h2 {
-      font-size: clamp(5dvw, 6dvw, 7dvw);
-      margin-bottom: 10px;
+      font-size: max(5dvw, 7dvw);
+      margin-bottom: 40px;
     }
   }
 `;
 
 const ContatoEnderecoInfo = styled.div`
-  justify-content: space-between;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
+  justify-content: space-between;
+  padding-left: 12px;
+  margin-top: 12px;
+
+  /* background-color: #a76b21; */
+  span {
+    margin-bottom: 12px;
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  @media (min-width: 768px) {
+    width: 90%;
+    height: 90px;
+    flex-direction: row;
+    justify-content: space-between;
+    span {
+      margin-bottom: 0px;
+    }
+
+    div {
+      justify-content: space-between;
+    }
+
+    div:nth-child(1) {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+    }
+    div:nth-child(2) {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+    }
+  }
 `;
 
 const HorarioContainer = styled.div`
   display: flex;
   flex-direction: row;
-  /* align-items: start; */
+  align-items: start;
   justify-content: start;
   width: 100%;
 
@@ -189,39 +226,54 @@ const HorarioContainer = styled.div`
   }
 
   @media (min-width: 768px) {
+    align-items: start;
+    justify-content: end;
     width: 70%;
     flex-direction: row;
     h2 {
+      font-size: 20dvh;
       margin-right: 16px;
     }
   }
 `;
 const RightDiv = styled.div`
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: start;
   justify-content: end;
+  padding-right: 20px;
+
+  /* background-color: darkcyan; */
 
   @media (min-width: 768px) {
+    width: 100%;
+    justify-content: space-between;
+    align-items: end;
+    height: 100%;
     width: 50%;
-    /* align-items: end; */
-    /* justify-content: start; */
   }
 `;
 
 const HorariosLeft = styled.div`
-  /* height: 100%; */
-  /* width: 100%; */
+  height: 50%;
+  width: 100%;
+  min-width: 250px;
+  min-height: 250px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: end;
+  justify-content: space-between;
+
   /* background-color: #4c008267; */
+
+  @media (min-width: 768px) {
+    margin-top: 20px;
+    height: 30%;
+    min-height: 350px;
+  }
 `;
+
 const HorariosRight = styled.div`
-  /* height: 100%; */
-  /* width: 100%; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -233,18 +285,30 @@ const HorariosLista = styled.div`
   display: flex;
   flex-direction: column;
   align-items: end;
-  /* height: 70%; */
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
   /* background-color: #ff149160; */
-  padding-right: 12px;
+
+  @media (min-width: 768px) {
+    padding-right: 12px;
+  }
 `;
 
 const Horario = styled.div`
   font-size: 24px;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
-
   align-items: end;
-  margin-bottom: 16px;
+
+  /* background-color: darkblue; */
+
+  @media (min-width: 768px) {
+    margin-bottom: 0px;
+    font-size: 34px;
+  }
+
   span:nth-child(2) {
     font-weight: 100;
     font-size: smaller;
@@ -253,33 +317,41 @@ const Horario = styled.div`
 
 const SocialLinksContainer = styled.div`
   width: 100%;
-  /* height: 20%; */
-
-  background-color: #14ff575f;
 
   display: flex;
   flex-direction: row;
-  justify-content: end;
-  align-items: end;
-  /* margin-right: 20px; */
+  justify-content: start;
+  align-items: start;
+
+  /* background-color: #14ff575f; */
 
   @media (min-width: 768px) {
+    height: 15%;
     align-items: center;
     justify-content: end;
   }
 `;
 
 const LinkWrapper = styled.div`
-  margin-left: 50px;
+  margin-left: 30px;
   cursor: pointer;
   :hover {
     color: #c4c4c4;
   }
+  @media (min-width: 768px) {
+    margin-right: 50px;
+    width: 120px;
+    height: 120px;
+  }
 `;
 
 const StyledIcon = styled(Icon)`
-  width: 60px;
+  width: 80px;
   height: 100px;
+  @media (min-width: 768px) {
+    width: 120px;
+    height: 120px;
+  }
 `;
 
 export default Contato;

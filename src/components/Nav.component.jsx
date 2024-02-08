@@ -24,31 +24,32 @@ function Nav() {
 
   // <--------- ANIMATION WRAPPER START--------->
   useEffect(() => {
-    // if (isMobile) {
-    console.log("useLayoutEffect executed");
+    if (!isMobile) {
+      console.log("useLayoutEffect executed");
 
-    const ctx = gsap.context(() => {
-      const animation = gsap.timeline({
-        defaults: {
-          scale: 1,
-          duration: 0.6,
-          ease: "power3.inOut",
-        },
-      });
-      // <--------- ANIMATION START --------->
-      animation.from(buttons.current.querySelectorAll("div"), {
-        opacity: 0,
-        yPercent: -150,
-        stagger: 0.1,
-      });
-      animation.from(buttonMenu.current, {
-        opacity: 0,
-        scale: 0,
-      });
-      // <--------- ANIMATION END --------->
-    }, buttons); // <- Scope!
-    return () => ctx.revert(); // <- Cleanup!
-    // } else {
+      const ctx = gsap.context(() => {
+        const animation = gsap.timeline({
+          defaults: {
+            scale: 1,
+            duration: 0.6,
+            ease: "power3.inOut",
+          },
+        });
+        // <--------- ANIMATION START --------->
+        animation.from(buttons.current.querySelectorAll("div"), {
+          opacity: 0,
+          yPercent: -150,
+          stagger: 0.1,
+        });
+        animation.from(buttonMenu.current, {
+          opacity: 0,
+          scale: 0,
+        });
+        // <--------- ANIMATION END --------->
+      }, buttons); // <- Scope!
+      return () => ctx.revert(); // <- Cleanup!
+    }
+    // else {
     //   return;
     // }
   }, []); // // <--------- ANIMATION WRAPPER START--------->
@@ -149,7 +150,7 @@ const ButtonMenu = styled.div`
   position: fixed;
   z-index: 1;
   top: 8px;
-  right: 0;
+  right: 8px;
   /* background-color: gray; */
   cursor: pointer;
 

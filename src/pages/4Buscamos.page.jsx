@@ -120,7 +120,6 @@ const BuscamosSection = styled(Section)`
 
 const BuscamosContainer = styled(ContentContainer)`
   height: 100%;
-
   line-height: 1.2rem;
 
   display: flex;
@@ -148,6 +147,7 @@ const BuscamosContainer = styled(ContentContainer)`
 const BuscamosText = styled(SectionText)`
   padding-left: 16px;
   padding-right: 20px;
+  margin-top: 20px;
 
   display: flex;
   flex-direction: column;
@@ -177,6 +177,7 @@ const BuscamosTitle = styled(VerticalTitle)`
 
   @media (min-width: 768px) {
     flex-direction: column;
+    margin-top: 20px;
   }
 `;
 
