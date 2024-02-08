@@ -28,7 +28,7 @@ const Section = styled.section`
 `;
 
 const ContentContainer = styled.div`
-  /* margin-top: 26px; */
+  margin-top: 26px;
   /* height: fit-content; */
   padding-top: 20px;
   /* padding-bottom: 20px !important; */
@@ -43,16 +43,16 @@ const ContentContainer = styled.div`
 `;
 
 const SectionText = styled.div`
-  font-size: 5dvw;
+  /* font-size: 5dvw; */
+  font-size: 30px;
   max-width: 750px;
-  height: 95%;
+  height: 93%;
   /* width: 90%; */
   min-width: 40%;
   align-items: center;
   line-height: 1.2em;
   padding-bottom: 12px;
   padding-left: 16px !important;
-  /* text-align: justify; */
   word-wrap: break-word;
 
   p {
@@ -60,9 +60,9 @@ const SectionText = styled.div`
   }
 
   @media (min-width: 768px) {
+    height: 95%;
     min-width: 60%;
     max-width: 80%;
-    /* width: 100%; */
     text-align: justify;
     font-size: 26px;
   }
@@ -72,7 +72,7 @@ const VerticalTitle = styled.div`
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
 
-  margin-top: 40px;
+  /* margin-top: 40px; */
 
   height: fit-content;
   line-height: 0.8em;

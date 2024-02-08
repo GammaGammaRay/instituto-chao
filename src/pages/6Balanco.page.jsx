@@ -46,7 +46,9 @@ function Balanco() {
             }}
           >
             <span>{data}</span>
-            <span>R$ {formatCurrency(secondArray[index + 2])}</span>
+            <span style={{ whiteSpace: "nowrap" }}>
+              R$ {formatCurrency(secondArray[index + 2])}
+            </span>
           </BalancoTableLine>
         ))}
       </>
@@ -149,10 +151,9 @@ const BalancoSection = styled(Section)`
   display: flex;
   justify-content: center;
   /* overflow-y: hidden; */
-  height: fit-content;
+  /* height: fit-content; */
 
   h3 {
-    font-size: 5dvw;
     line-height: 3dvh;
     font-weight: 500;
   }
@@ -168,28 +169,29 @@ const BalancoText = styled(SectionText)`
 `;
 
 const BalancoContainer = styled(ContentContainer)`
-  line-height: 1.2em;
-  width: 66%;
+  /* line-height: 1.2em; */
+  width: 90%;
   height: 95%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   padding-bottom: 20px;
 
   overflow-x: hidden;
 
   /* background-color: #7fffd488; */
 
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
+    width: 90%;
+    justify-content: center;
     flex-direction: column;
-    justify-content: start;
   }
 `;
 
 const BalancoTitle = styled(HorizontalTitle)`
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
-  font-size: 5vw;
+  font-size: max(2dvw, 6dvw);
   height: 100%;
 
   line-height: 0.8em;
@@ -214,6 +216,7 @@ const MonthTitle = styled(HorizontalTitle)`
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
   font-size: clamp(3vw, 4vw, 20px);
+  font-size: max(2dvw, 3dvw);
   height: 100%;
 
   line-height: 0.8em;
@@ -253,11 +256,7 @@ const BalancoTableTop = styled.div`
   justify-content: start;
   align-items: end;
 
-  /* position: sticky; */
   background-color: var(--color-red);
-  /* height: 200px; */
-
-  /* background-color: bisque; */
 `;
 const BalancoTableBody = styled.div`
   display: flex;
@@ -273,42 +272,49 @@ const BalancoTableBody = styled.div`
   /* background-color: #e553e051; */
 
   h3 {
-    font-size: 3dvh;
+    font-size: min(30px, 3dvh);
   }
 `;
 
 const BalancoTableLine = styled.div`
   height: fit-content;
-  font-size: 3dvw;
+  /* font-size: 3dvw; */
+  font-size: min(4dvw, 30px);
 
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   /* background-color: antiquewhite; */
 
   @media (min-width: 768px) {
-    font-size: 2dvw;
+    padding-top: 8px;
+    font-size: min(3dvw, 30px);
+  }
+
+  span {
+    margin-top: 12px;
   }
 
   span:nth-child(1) {
+    padding-right: 12px;
     @media (min-width: 768px) {
-      font-size: 2dvw;
+      width: 50%;
     }
-    font-size: 4dvw;
     /* background-color: antiquewhite; */
   }
   span:nth-child(2) {
-    @media (min-width: 768px) {
-      font-size: 2dvw;
-    }
-    font-size: 5dvw;
-    /* background-color: antiquewhite; */
+    white-space: nowrap;
+    margin-right: 12px;
   }
 `;
 
 const HorizontalLine = styled.div`
   background-color: black;
-  height: 4px;
+  z-index: 3;
+  /* height: 4px; */
+  padding: 2px 0px;
+  margin: px 0px;
 `;
 
 export default Balanco;

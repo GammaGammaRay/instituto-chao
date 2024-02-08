@@ -52,35 +52,36 @@ function Nav() {
     //   return;
     // }
   }, []); // // <--------- ANIMATION WRAPPER START--------->
-  useEffect(() => {
-    // if (isMobile) {
-    console.log("useLayoutEffect executed");
 
-    const ctx = gsap.context(() => {
-      const animation = gsap.timeline({
-        defaults: {
-          scale: 1,
-          duration: 0.6,
-          ease: "power3.inOut",
-        },
-      });
-      // <--------- ANIMATION START --------->
-      animation.from(buttons.current.querySelectorAll("div"), {
-        opacity: 0,
-        yPercent: -150,
-        stagger: 0.1,
-      });
-      animation.from(buttonMenu.current, {
-        opacity: 0,
-        scale: 0,
-      });
-      // <--------- ANIMATION END --------->
-    }, buttons); // <- Scope!
-    return () => ctx.revert(); // <- Cleanup!
-    // } else {
-    //   return;
-    // }
-  }, []);
+  // useEffect(() => {
+  //   // if (isMobile) {
+  //   console.log("useLayoutEffect executed");
+
+  //   const ctx = gsap.context(() => {
+  //     const animation = gsap.timeline({
+  //       defaults: {
+  //         scale: 1,
+  //         duration: 0.6,
+  //         ease: "power3.inOut",
+  //       },
+  //     });
+  //     // <--------- ANIMATION START --------->
+  //     animation.from(buttons.current.querySelectorAll("div"), {
+  //       opacity: 0,
+  //       yPercent: -150,
+  //       stagger: 0.1,
+  //     });
+  //     animation.from(buttonMenu.current, {
+  //       opacity: 0,
+  //       scale: 0,
+  //     });
+  //     // <--------- ANIMATION END --------->
+  //   }, buttons); // <- Scope!
+  //   return () => ctx.revert(); // <- Cleanup!
+  //   // } else {
+  //   //   return;
+  //   // }
+  // }, []);
 
   function scrollToSection(sectionId) {
     gsap.to(window, {

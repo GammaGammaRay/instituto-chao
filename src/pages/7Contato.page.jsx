@@ -177,9 +177,11 @@ const ContatoEnderecoInfo = styled.div`
 const HorarioContainer = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: start;
-  justify-content: end;
+  /* align-items: start; */
+  justify-content: start;
   width: 100%;
+
+  /* background-color: blue; */
 
   h2 {
     writing-mode: vertical-rl;
@@ -195,14 +197,16 @@ const HorarioContainer = styled.div`
   }
 `;
 const RightDiv = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: start;
-  width: 100%;
   justify-content: end;
+
   @media (min-width: 768px) {
     width: 50%;
-    align-items: end;
+    /* align-items: end; */
+    /* justify-content: start; */
   }
 `;
 

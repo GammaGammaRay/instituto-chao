@@ -150,7 +150,7 @@ const QuemSomosContainer = styled(ContentContainer)`
 
 const QuemSomosText = styled(SectionText)`
   /* padding-left: calc(var(--text-padding) * 0.2); */
-  /* padding-right: 20px; */
+  padding-right: 20px;
   overflow: auto;
 
   &::-webkit-scrollbar {
@@ -173,6 +173,7 @@ const QuemSomosTitle = styled(VerticalTitle)`
   writing-mode: vertical-lr;
   flex-direction: column;
   flex-direction: row;
+  /* background-color: aqua; */
   /* position: sticky;
   top: 0px;
   &.sticky {

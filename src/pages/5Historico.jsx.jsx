@@ -91,21 +91,12 @@ const HistoricoContainer = styled(ContentContainer)`
 
   @media (min-width: 768px) {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: start;
     width: 95%;
   }
 
   @media (min-width: 1200px) {
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: start;
     width: 60%;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    align-items: start;
   }
 `;
 
