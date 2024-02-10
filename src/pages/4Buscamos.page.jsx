@@ -31,7 +31,6 @@ function Buscamos() {
             manutenção do projeto, gasta-se menos comprando nesse modelo, pois
             não há especulação no preço dos produtos.
           </p>
-          <br />
           <p>
             No gráfico abaixo, em pesquisa realizada pelo Instituto Ipê, podemos
             ver um comparativo dos preços do Chão com outros mercados da região.
@@ -55,7 +54,6 @@ function Buscamos() {
             e econômicas e sempre priorizando relações de produção e de trabalho
             mais democráticas em todo o país.
           </p>
-          <br />
 
           <p>
             A comida, além de ser a cadeia essencial, pode ser usada para fazer
@@ -64,7 +62,6 @@ function Buscamos() {
             espaço e, a cada dia, inserimos mais uma camada de questionamentos.
             O grande debate é a mudança das relações entre as pessoas.
           </p>
-          <br />
 
           <p>
             O objetivo é colocar luz em processos que estão escondidos nas
@@ -72,7 +69,6 @@ function Buscamos() {
             incentivar ou não determinada rede de relações, determinado fluxo
             econômico.
           </p>
-          <br />
 
           <p>
             É, também, uma conversa sobre o valor do trabalho de cada parte da
@@ -82,7 +78,6 @@ function Buscamos() {
             mais do que outros? Como distribuímos a riqueza gerada na nossa
             sociedade?
           </p>
-          <br />
 
           <p>
             Precisamos pensar novos princípios econômicos, regidos por uma
@@ -92,7 +87,6 @@ function Buscamos() {
             como alimentação, saúde, transporte, moradia e educação não podem
             ser fonte de lucro, em detrimento da defesa da vida.
           </p>
-          <br />
         </BuscamosText>
         {isMobile ? (
           <BuscamosTitle>
@@ -109,26 +103,28 @@ function Buscamos() {
 
 const BuscamosSection = styled(Section)`
   background-color: var(--color-green);
-
+  display: flex;
   button {
     width: 50%;
     margin-top: 12px;
-    margin-bottom: 12px;
+    margin-bottom: 20px;
     font-size: 1.5dvw;
   }
 `;
 
 const BuscamosContainer = styled(ContentContainer)`
-  height: 100%;
-  line-height: 1.2rem;
+  background-color: aqua;
+  line-height: 1.2em;
 
   display: flex;
   flex-direction: row;
   justify-content: center;
+  /* position: relative; */
 
   @media (min-width: 768px) {
+    flex-direction: column;
+    justify-content: start;
     align-items: start;
-    width: 95%;
 
     display: flex;
     flex-direction: row;
@@ -136,23 +132,16 @@ const BuscamosContainer = styled(ContentContainer)`
   }
 
   @media (min-width: 1200px) {
+    flex-direction: column;
+    justify-content: start;
     align-items: start;
-    width: 60%;
 
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
   }
 `;
 const BuscamosText = styled(SectionText)`
-  padding-left: 16px;
-  padding-right: 20px;
-  margin-top: 20px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
   overflow: auto;
 
   &::-webkit-scrollbar {
@@ -166,18 +155,24 @@ const BuscamosText = styled(SectionText)`
     background: #292929;
   }
 
-  @media (min-width: 768px) {
+  /* @media (min-width: 768px) {
     padding-left: var(--text-padding);
-  }
+  } */
 `;
 
 const BuscamosTitle = styled(VerticalTitle)`
   writing-mode: vertical-lr;
   flex-direction: row;
+  /* background-color: aqua; */
 
   @media (min-width: 768px) {
     flex-direction: column;
-    margin-top: 20px;
+    margin-left: 12px;
+  }
+  span {
+    @media (min-width: 768px) {
+      transform: rotate(180deg);
+    }
   }
 `;
 

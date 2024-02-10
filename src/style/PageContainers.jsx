@@ -1,12 +1,10 @@
 import { styled } from "styled-components";
 
-const BodyContainer = styled.div`
-  height: 100vh;
-`;
-
 const Section = styled.section`
-  width: 100vw;
-  height: 100vh;
+  /* width: 100%; */
+  height: 100svh;
+
+  /* padding: 3dvh, 0; */
 
   scroll-snap-type: y mandatory;
   scroll-snap-stop: always;
@@ -15,53 +13,46 @@ const Section = styled.section`
   flex-direction: row;
   align-items: start;
   justify-content: start;
-
-  position: relative;
+  z-index: 1;
 
   @media (min-width: 768px) {
-    scroll-margin: 50px 0px 0px 0px;
-    height: calc(100vh - var(--nav-height));
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
   }
 `;
 
 const ContentContainer = styled.div`
-  margin: 26px, 0px;
-  /* height: fit-content; */
-  padding-top: 20px;
+  /* margin: 26em, 0em; */
+  /* padding-top: 0em !important;
+  padding-bottom: 5em !important; */
   /* padding-bottom: 20px !important; */
 
-  padding-top: 20px;
-  padding-bottom: 20px;
+  /* padding-top: 20px; */
+  /* padding-bottom: 20px; */
 
   @media (min-width: 768px) {
-    padding-left: 12px;
-    padding-right: 12px;
+    width: 60%;
+    padding-left: 5em;
+    padding-right: 5em;
   }
 `;
 
 const SectionText = styled.div`
   font-size: 24px;
   max-width: 750px;
-  height: 93%;
-  /* width: 90%; */
   min-width: 40%;
   align-items: center;
   line-height: 1.2em;
-  padding-bottom: 12px;
-  padding-left: 16px !important;
   word-wrap: break-word;
-  margin-bottom: 12px;
+
+  overflow-y: auto;
 
   p {
-    margin-bottom: 12px;
+    margin-bottom: 1rem;
   }
 
   @media (min-width: 768px) {
-    margin-bottom: 0px;
-    height: 95%;
     min-width: 60%;
     max-width: 80%;
     text-align: justify;
@@ -73,9 +64,9 @@ const VerticalTitle = styled.div`
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
 
-  margin-top: 40px;
+  /* margin-top: 40px; */
 
-  height: fit-content;
+  /* height: fit-content; */
   line-height: 0.8em;
   word-wrap: break-word;
 
@@ -83,37 +74,37 @@ const VerticalTitle = styled.div`
   flex-direction: row;
   align-items: start;
   flex-basis: 0;
-  width: 100%;
+  /* width: 100%; */
   font-size: clamp(2em, 10vh, 10vh);
 
   text-align: end;
   /* background-color: lightcyan; */
-  will-change: transform;
+  /* will-change: transform; */
 
-  padding-left: 10px;
-  padding-right: 10px;
+  /* padding-left: 10px; */
+  /* padding-right: 10px; */
 
   span {
-    margin-bottom: 16px;
+    /* margin-bottom: 16px; */
 
     @media (min-width: 768px) {
-      margin-top: 0px;
-      margin-bottom: 0px;
+      /* margin-top: 0px; */
+      /* margin-bottom: 0px; */
       transform: rotate(180deg);
     }
   }
 
   @media (min-width: 768px) {
-    width: 100%;
-    height: fit-content;
+    /* width: 100%; */
+    /* height: fit-content; */
     text-orientation: sideways;
     flex-direction: column;
     align-items: start;
     justify-content: start;
     flex-basis: 0;
-    will-change: transform;
+    /* will-change: transform; */
     font-size: clamp(4em, 20vh, 70vh);
-    margin-top: 0px;
+    /* margin-top: 0px; */
   }
 `;
 
@@ -121,7 +112,7 @@ const HorizontalTitle = styled.div`
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
   font-size: clamp(10vw, 4vw, 20px);
-  height: fit-content;
+  /* height: fit-content; */
   line-height: 0.8em;
   word-wrap: break-word;
 
@@ -135,12 +126,12 @@ const HorizontalTitle = styled.div`
   will-change: transform;
 
   @media (max-width: 768px) {
-    width: 100%;
+    /* width: 100%; */
     font-size: 10px;
   }
 
   @media (min-width: 768px) {
-    width: 100%;
+    /* width: 100%; */
     height: fit-content;
     text-orientation: sideways;
     flex-direction: column;
@@ -148,12 +139,11 @@ const HorizontalTitle = styled.div`
     justify-content: start;
     flex-basis: 0;
     font-size: var(--title-font-size-vert);
-    will-change: transform;
+    /* will-change: transform; */
   }
 `;
 
 export {
-  BodyContainer,
   Section,
   ContentContainer,
   SectionText,

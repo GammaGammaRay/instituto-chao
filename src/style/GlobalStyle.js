@@ -27,11 +27,10 @@ const GlobalStyle = createGlobalStyle`
 
     :root {
 
-    --nav-height: 50px;
-    --section-height: 100vh;
+    --nav-height: 5svh;
 
     --color-gray: #ded6d0;
-    --title-font-size-horz: clamp(10vw, 4vw, 20px);
+    --title-font-size-horz: clamp(10svw, 4svw, 2svw);
     --title-font-size-vert: clamp(4em, 20vh, 70vh);
     
     
@@ -47,7 +46,7 @@ const GlobalStyle = createGlobalStyle`
     --title-font: 'MDNichrome', sans-serif;
     --title-font-weight: 500;
 
-    --text-padding: 50px;
+    /* --text-padding: 50px; */
 
     --sm-screen: 768px;
 
@@ -75,41 +74,17 @@ const GlobalStyle = createGlobalStyle`
     color: #fff;
     cursor: pointer;
     width: 60%;
-    padding: 12px;
+    /* padding: 12px; */
 }
     h1 {
     font-weight: 700;
     font-size: 26px;
     color: white;
 }
-    input {
-    font-size: 20px;
-    width: calc(100% - 30px);
-    border-radius: 5px;
-    outline: none;
-    border: 1px solid #ccc;
-    padding: 15px;
-    margin: 1px;
-    :focus {
-        border: 2px solid #ffb6b6;
-        margin: 0px;
-    }
-}
 
-    input::placeholder {
-    font-weight: 100;
-    font-style: italic;
-    color: #cfcfcfff;
-}
-    form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    width: 100%;
-    border-radius: 5px;
-}
+
+
+  
     a {
     /* line-height: 18px; */
     color: white;

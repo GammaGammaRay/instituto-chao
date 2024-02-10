@@ -61,13 +61,17 @@ function Balanco() {
   return (
     <BalancoSection id="balanco" ref={main}>
       {spreadsheetData === null || spreadsheetData.length === 0 ? (
-        <BalancoText>Buscando Dados...</BalancoText>
+        // {true ? (
+        <BalancoLoading>
+          <Loader />
+          Buscando Dados...
+        </BalancoLoading>
       ) : (
         <BalancoContainer>
           <BalancoTableTop>
             <BalancoTableTopContent>
               <BalancoTitle ref={title}>
-                <span style={{ marginBottom: "8px" }}>BALANÇO</span>
+                <span>BALANÇO</span>
                 <span>FINANCEIRO</span>
               </BalancoTitle>
 
@@ -97,10 +101,16 @@ function Balanco() {
           </BalancoTableTop>
 
           <BalancoTableBody>
+            {/* <HorizontalLine /> */}
             <h3 style={{ fontSize: `min(6dvw, 40px)` }}>CUSTOS OPERACIONAIS</h3>
-            {mapDataToTable(spreadsheetData)}
             <HorizontalLine />
-            <BalancoTableLine>
+            {mapDataToTable(spreadsheetData)}
+            {/* <HorizontalLine /> */}
+            <BalancoTableLine
+              style={{
+                backgroundColor: "#ffffff1c",
+              }}
+            >
               <h3>DESPESAS TOTAIS</h3>
               <span>
                 {spreadsheetData[1].slice(15, 16).map((data, index) => (
@@ -170,8 +180,11 @@ const BalancoSection = styled(Section)`
   }
 `;
 
-const BalancoText = styled(SectionText)`
-  margin-bottom: 500px;
+const BalancoLoading = styled(SectionText)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   /* background-color: #892be258; */
 `;
@@ -179,11 +192,11 @@ const BalancoText = styled(SectionText)`
 const BalancoContainer = styled(ContentContainer)`
   /* line-height: 1.2em; */
   width: 90%;
-  height: 95%;
+  /* height: 95%; */
   display: flex;
   flex-direction: column;
   justify-content: start;
-  padding-bottom: 20px;
+  /* padding-bottom: 2dvh; */
 
   overflow-x: hidden;
 
@@ -203,7 +216,8 @@ const BalancoTitle = styled(HorizontalTitle)`
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
   font-size: max(2dvw, 8dvw);
-  height: 100%;
+  /* height: 100%; */
+  width: fit-content;
 
   line-height: 0.8em;
 
@@ -228,7 +242,7 @@ const MonthTitle = styled(HorizontalTitle)`
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
   font-size: max(2dvw, 6dvw);
-  height: 100%;
+  /* height: 100%; */
 
   line-height: 0.8em;
 
@@ -248,7 +262,7 @@ const MonthTitle = styled(HorizontalTitle)`
     flex-basis: 0;
 
     img {
-      padding: 12px;
+      padding: 0.8dvh;
     }
   }
 
@@ -284,23 +298,22 @@ const BalancoTableBody = styled.div`
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
 
-  padding-top: 12px;
   overflow-y: hidden;
   overflow-x: hidden;
 
-  /* background-color: #e553e051; */
-
   h3 {
     font-size: min(30px, 3dvh);
+    width: fit-content;
   }
 `;
 
 const BalancoTableLine = styled.div`
-  height: fit-content;
+  /* height: fit-content; */
   /* font-size: 3dvw; */
   font-size: min(4dvw, 30px);
+  padding-left: 6px;
 
   display: flex;
   flex-direction: row;
@@ -308,13 +321,21 @@ const BalancoTableLine = styled.div`
   align-items: center;
   /* background-color: antiquewhite; */
 
+  h3 {
+    /* height: fit-content; */
+    /* background-color: blue; */
+    /* text-align: center; */
+    text-anchor: middle;
+    /* transform: translateY(0.2dvh); */
+  }
+
   @media (min-width: 768px) {
-    padding-top: 8px;
+    /* padding-top: 8px; */
     font-size: min(3dvw, 30px);
   }
 
   span {
-    margin-top: 12px;
+    /* margin-top: 12px; */
   }
 
   span:nth-child(1) {
@@ -326,7 +347,7 @@ const BalancoTableLine = styled.div`
   }
   span:nth-child(2) {
     white-space: nowrap;
-    margin-right: 12px;
+    /* margin-right: 12px; */
   }
 `;
 
@@ -334,12 +355,42 @@ const HorizontalLine = styled.div`
   background-color: black;
   z-index: 3;
   /* height: 4px; */
-  padding: 1px 0px;
-  margin: 1px 0px;
+  /* padding: 5px 0px; */
+  /* margin: 1px 0px; */
+  height: 2px;
 
   @media (min-width: 768px) {
-    padding: 2px 0px;
-    margin: 2px 0px;
+    height: 3px;
+    /* padding: 2px 0px; */
+    /* margin: 2px 0px; */
+  }
+`;
+
+const Loader = styled.span`
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: block;
+  margin: 40px auto;
+  position: relative;
+  background: #fff;
+  box-shadow: -24px 0 #fff, 24px 0 #fff;
+  box-sizing: border-box;
+  animation: shadowPulse 1.2s linear infinite;
+
+  @keyframes shadowPulse {
+    33% {
+      background: #fff;
+      box-shadow: -24px 0 #ff3d00, 24px 0 #fff;
+    }
+    66% {
+      background: #ff3d00;
+      box-shadow: -24px 0 #fff, 24px 0 #fff;
+    }
+    100% {
+      background: #fff;
+      box-shadow: -24px 0 #fff, 24px 0 #ff3d00;
+    }
   }
 `;
 

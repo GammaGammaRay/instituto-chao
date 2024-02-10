@@ -1,8 +1,6 @@
 import React from "react";
 import Nav from "./components/Nav.component.jsx";
 
-import { BodyContainer } from "./style/PageContainers";
-
 import Logo from "./pages/0Logo.page.jsx";
 import QuemSomos from "./pages/1QuemSomos.page.jsx";
 import ComoFunciona from "./pages/2ComoFunciona.page.jsx";
@@ -18,17 +16,15 @@ function App() {
   return (
     <React.Fragment>
       <MobileProvider>
-        <Nav />
-        <BodyContainer>
-          <Logo />
-          <QuemSomos />
-          <ComoFunciona />
-          <Contribuicao />
-          <Buscamos />
-          <Historico />
-          <Balanco />
-          <Contato />
-        </BodyContainer>
+        {/* <Nav /> */}
+        <Logo />
+        <QuemSomos />
+        <ComoFunciona />
+        <Contribuicao />
+        <Buscamos />
+        <Historico />
+        <Balanco />
+        <Contato />
       </MobileProvider>
     </React.Fragment>
   );

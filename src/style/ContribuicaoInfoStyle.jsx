@@ -3,8 +3,6 @@ import { Section, ContentContainer } from "./PageContainers";
 import { Icon } from "@iconify/react";
 
 export const ContribuicaoSection = styled(Section)`
-  height: 100%;
-  width: 100%;
   box-shadow: 0px -10px 12px rgba(0, 0, 0, 0.1); /* Horizontal offset, vertical offset, blur radius, color */
   font-family: "MDNichrome";
   letter-spacing: 0.1em;
@@ -13,14 +11,14 @@ export const ContribuicaoSection = styled(Section)`
   align-items: center;
   justify-content: start;
   background-color: var(--color-brown2);
-  overflow-x: hidden;
-  overflow-y: hidden;
+  /* overflow-x: hidden; */
+  /* overflow-y: hidden; */
 
   @media (min-width: 1300px) {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
   }
 
   color: white;
@@ -29,14 +27,11 @@ export const ContribuicaoSection = styled(Section)`
 
 export const ContribuicaoContainer = styled(ContentContainer)`
   width: 98%;
-  height: 100%;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-
-  padding: 16px;
 
   @media (min-width: 1300px) {
     align-items: center;
@@ -46,7 +41,7 @@ export const ContribuicaoContainer = styled(ContentContainer)`
     justify-content: space-between;
   }
 
-  /* background-color: lightgrey; */
+  background-color: lightgrey;
 `;
 
 export const ContribuicaoColLeft = styled.div`
@@ -62,17 +57,13 @@ export const ContribuicaoColLeft = styled.div`
   @media (min-width: 1300px) {
     align-items: start;
     width: 80%;
-    height: fit-content;
     justify-content: space-between;
-    padding-bottom: 0px;
-    padding-left: 50px;
   }
 
   /* background-color: lightcoral; */
 `;
 
 export const ContribuicaoColRight = styled.div`
-  height: fit-content;
   width: 95%;
 
   display: flex;
@@ -80,14 +71,9 @@ export const ContribuicaoColRight = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  /* padding-bottom: 50px; */
-
   @media (min-width: 1300px) {
     width: 40%;
-    padding-right: 50px;
-    padding-left: 50px;
     flex-direction: column;
-    /* height: fit-content; */
   }
 
   /* background-color: lightgreen; */
@@ -95,14 +81,10 @@ export const ContribuicaoColRight = styled.div`
 
 export const Line = styled.div`
   width: 100%;
-  /* max-height: 20%; */
-  height: fit-content;
-  margin: 15px 0px;
 `;
 
 export const LineVert = styled.div`
   width: 100%;
-  height: fit-content;
   display: flex;
   flex-direction: column;
   /* align-items: end;
@@ -110,8 +92,6 @@ export const LineVert = styled.div`
 `;
 export const LineVertManutencao = styled.div`
   width: 100%;
-  margin: 20px 0px;
-  height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: end;
@@ -152,10 +132,8 @@ export const ContribuicaoSugerida = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: end;
-  padding-bottom: 6px;
   @media (min-width: 768px) {
     align-items: center;
-    padding-bottom: 0px;
   }
 `;
 
@@ -194,7 +172,6 @@ export const LineInfoBoldRight = styled.span`
 export const LineInfoExtraBold = styled.span`
   font-size: 20dvw;
   width: fit-content;
-  height: 100%;
   text-align: center;
   /* background-color: #dc143c60; */
 
@@ -205,10 +182,7 @@ export const LineInfoExtraBold = styled.span`
 
 export const LineInfoSmall = styled.span`
   font-size: 3dvw;
-  /* height: 100%; */
   width: 40%;
-  /* padding-left: 8px; */
-  /* padding-right: 8px; */
   overflow-wrap: break-word; /* Use overflow-wrap instead of word-wrap */
   text-align: end;
   display: flex;
@@ -217,23 +191,17 @@ export const LineInfoSmall = styled.span`
   /* font-weight: 100; */
   font-family: "Grotesk";
   font-weight: 100;
-  padding-bottom: 14px;
-  padding-right: 8px;
   /* background-color: #deb8877b; */
 
   @media (min-width: 768px) {
-    padding-bottom: 8px;
     font-size: 2dvh;
     text-align: start;
     /* font-size: 1rem; */
     font-weight: 500;
-    padding-left: 8px;
-    padding-right: 8px;
   }
 `;
 
 export const LineContentLeft = styled.div`
-  height: 100%;
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -253,7 +221,6 @@ export const LineContentLeft = styled.div`
 `;
 export const LineContentRight = styled.div`
   font-size: 1em;
-  height: 100%;
 
   display: flex;
   flex-direction: row;
@@ -269,7 +236,6 @@ export const LineContentRight = styled.div`
   @media (min-width: 768px) {
     justify-content: end;
     font-size: 1em;
-    padding-left: 50px;
 
     &.porcentagemContribuicao {
       flex-direction: row;
@@ -278,15 +244,12 @@ export const LineContentRight = styled.div`
 `;
 
 export const IconWrapper = styled(Icon)`
-  width: 50px;
-  height: auto;
-  /* margin: 10px 0; */
+  /* width: 50px; */
   /* background-color: #ff69b499; */
 
-  @media (min-width: 768px) {
+  /* @media (min-width: 768px) {
     width: 100px;
-    height: 100px;
-  }
+  } */
 `;
 
 export default {

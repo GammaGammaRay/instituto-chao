@@ -1,6 +1,5 @@
-import React, { useLayoutEffect, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { styled } from "styled-components";
-
 import { Section } from "../style/PageContainers";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
@@ -9,61 +8,74 @@ import debounce from "lodash.debounce";
 function Logo() {
   const logoPage = useRef();
 
-  useEffect(() => {
-    const handleAnimation = () => {
-      gsap.registerPlugin(ScrollTrigger);
-      let animation;
+  // useEffect(() => {
+  //   gsap.registerPlugin(ScrollTrigger);
 
-      if (window.innerWidth > 768) {
-        // Change the animation for screen widths above 768px
-        animation = gsap.fromTo(
-          ".logo",
-          { width: 300, opacity: 0 },
-          {
-            width: 400,
-            opacity: 1,
-            duration: 2,
-            ease: "back",
-          }
-        );
-      } else {
-        // Default animation for screen widths below or equal to 768px
-        animation = gsap.fromTo(
-          ".logo",
-          { width: 200, opacity: 0 },
-          {
-            width: 300,
-            opacity: 1,
-            duration: 2,
-            ease: "power2.inOut",
-          }
-        );
-      }
+  //   const animation = gsap.fromTo(
+  //     ".logo",
+  //     { width: "5vw", opacity: 0 },
+  //     {
+  //       width: "20vw", // Use relative units for width
+  //       opacity: 1,
+  //       duration: 2,
+  //       ease: "back",
+  //     }
+  //   );
 
-      ScrollTrigger.saveStyles(".logo");
-      ScrollTrigger.matchMedia({
-        "(min-width: 769px)": () => {
-          ScrollTrigger.create({
-            trigger: ".logo",
-            animation: animation,
-            start: "top 80%",
-            end: "bottom 20%",
-            toggleActions: "play none none none",
-          });
-        },
-      });
-    };
+  //   const handleAnimation = () => {
+  //     gsap.registerPlugin(ScrollTrigger);
+  //     let animation;
 
-    const debouncedAnimation = debounce(handleAnimation, 10);
-    debouncedAnimation();
+  //     if (window.innerWidth > 768) {
+  //       animation = gsap.fromTo(
+  //         ".logo",
+  //         { width: "10vw", opacity: 0 },
+  //         {
+  //           width: "20vw", // Use relative units for width
+  //           opacity: 1,
+  //           duration: 2,
+  //           ease: "back",
+  //         }
+  //       );
+  //     } else {
+  //       animation = gsap.fromTo(
+  //         ".logo",
+  //         { width: "5vw", opacity: 0 },
+  //         {
+  //           width: "15vw", // Use relative units for width
+  //           opacity: 1,
+  //           duration: 2,
+  //           ease: "power2.inOut",
+  //         }
+  //       );
+  //     }
 
-    window.addEventListener("resize", debouncedAnimation);
+  //     ScrollTrigger.saveStyles(".logo");
+  //     ScrollTrigger.matchMedia({
+  //       "(min-width: 769px)": () => {
+  //         ScrollTrigger.create({
+  //           trigger: ".logo",
+  //           animation: animation,
+  //           start: "top 80%",
+  //           end: "bottom 20%",
+  //           toggleActions: "play none none none",
+  //           pin: true, // Pin the trigger element
+  //           pinSpacing: false, // Disable spacing for pinned element
+  //         });
+  //       },
+  //     });
+  //   };
 
-    return () => {
-      window.removeEventListener("resize", debouncedAnimation);
-      debouncedAnimation.cancel();
-    };
-  }, []);
+  //   const debouncedAnimation = debounce(handleAnimation, 10);
+  //   debouncedAnimation();
+
+  //   window.addEventListener("resize", debouncedAnimation);
+
+  //   return () => {
+  //     window.removeEventListener("resize", debouncedAnimation);
+  //     debouncedAnimation.cancel();
+  //   };
+  // }, []);
 
   return (
     <LogoSection>
@@ -80,20 +92,21 @@ function Logo() {
 }
 
 const LogoPage = styled.div`
-  height: 100%;
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative; // Set position to relative
+  /* height: 100vh; // Adjust height to viewport height */
+  /* z-index: 1; // Set a higher z-index to ensure it's above the following section */
   img {
-    position: fixed;
-    width: 0px;
+    width: 100%;
+    max-width: 400px; // Set maximum width for the logo
   }
 `;
 
 const LogoSection = styled(Section)`
-  height: 100%;
   background-color: black;
+  justify-content: center;
 `;
 
 export default Logo;

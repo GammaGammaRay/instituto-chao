@@ -19,7 +19,6 @@ function Historico() {
             Abrimos as portas em maio de 2015, começamos com 6 pessoas e um
             financiamento coletivo de R$42 mil.
           </p>
-          <br />
 
           <p>
             Já no primeiro ano de funcionamento, o faturamento mensal cresceu
@@ -27,7 +26,6 @@ function Historico() {
             econômica e política no país, o crescimento foi superior a 600%.
             Nesse periodo, o Chão movimentou mais de R$150 milhões.
           </p>
-          <br />
 
           <p>
             Atualmente, somos uma equipe de 30 pessoas, que movimenta mais de
@@ -36,7 +34,6 @@ function Historico() {
             agrária, da agricultura familiar e de comunidades indígenas e
             quilombolas.
           </p>
-          <br />
 
           <p>
             Sempre tivemos o objetivo de ser um projeto auto sustentável. Para
@@ -46,7 +43,6 @@ function Historico() {
             consumidores, que podem satisfazer suas compras também em um só
             espaço.
           </p>
-          <br />
 
           <p>
             Ao longo desses 8 anos, o modelo de negócio e organizacional do Chão
@@ -55,7 +51,6 @@ function Historico() {
             desde a produção agroecológica e orgânica dos produtos, como sua
             venda de forma justa e distributiva.
           </p>
-          <br />
 
           <p>
             Nesse contexto, nossa rede de fornecedores e produtores passou a
@@ -66,7 +61,6 @@ function Historico() {
             - agricultores e agroindústrias familiares, associações e
             cooperativas.
           </p>
-          <br />
         </HistoricoText>
         <HistoricoTitle ref={title}>HISTÓRICO</HistoricoTitle>
       </HistoricoContainer>
@@ -81,7 +75,7 @@ const HistoricoSection = styled(Section)`
 
 const HistoricoContainer = styled(ContentContainer)`
   line-height: 1.2em;
-  height: 100%;
+  /* height: 100%; */
 
   display: flex;
   flex-direction: row;

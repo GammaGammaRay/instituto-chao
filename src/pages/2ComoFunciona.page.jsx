@@ -32,7 +32,6 @@ function ComoFunciona() {
             tensionando o estabelecido, deslocando o naturalizado, suspendendo o
             automático.
           </p>
-          <br />
           <p>
             Nesse coletivo desenvolvemos constantemente tecnologias de
             transformação da relação financeirizada das pessoas consigo mesmas,
@@ -41,7 +40,6 @@ function ComoFunciona() {
             valores, as práticas sociais e as relações que estabelecemos com o
             trabalho, com produtores, fornecedores e frequentadores.
           </p>
-          <br />
           <p>
             Em busca do fortalecimento de todos os componentes da cadeia
             produtiva, valorizamos economicamente produtores, trabalhadores e
@@ -49,7 +47,6 @@ function ComoFunciona() {
             todos. Os produtos são vendidos pelo preço de custo (preço de nota,
             frete e perdas).
           </p>
-          <br />
           <p>
             Todo mês fazemos uma previsão de custos e uma previsão de vendas e,
             a partir disso, sugerimos aos frequentadores, a cada compra, um
@@ -58,7 +55,6 @@ function ComoFunciona() {
             e, hoje, nossa necessidade mínima é de 25% e a sugestão de 30% sobre
             o valor dos produtos.
           </p>
-          <br />
           <p>
             Todo mês fazemos uma previsão de custos e uma previsão de vendas e,
             a partir disso, sugerimos aos frequentadores, a cada compra, um
@@ -67,7 +63,6 @@ function ComoFunciona() {
             e, hoje, nossa necessidade mínima é de 25% e a sugestão de 30% sobre
             o valor dos produtos.
           </p>
-          <br />
           <p>
             Todo mês fazemos uma previsão de custos e uma previsão de vendas e,
             a partir disso, sugerimos aos frequentadores, a cada compra, um
@@ -95,7 +90,7 @@ const ComoFuncionaSection = styled(Section)`
 const ComoFuncionaText = styled(SectionText)`
   /* padding-right: var(--text-padding); */
 
-  padding-right: 20px;
+  /* padding-right: 20px; */
   overflow: auto;
 
   &::-webkit-scrollbar {
@@ -112,7 +107,6 @@ const ComoFuncionaText = styled(SectionText)`
 
 const ComoFuncionaContainer = styled(ContentContainer)`
   line-height: 1.2em;
-  height: 100%;
   color: white;
 
   /* background-color: #f0f8ff3d; */
@@ -123,7 +117,7 @@ const ComoFuncionaContainer = styled(ContentContainer)`
   @media (min-width: 768px) {
     flex-direction: column;
     align-items: start;
-    width: 95%;
+    /* width: 95%; */
 
     display: flex;
     flex-direction: row;
@@ -133,7 +127,7 @@ const ComoFuncionaContainer = styled(ContentContainer)`
   @media (min-width: 1200px) {
     flex-direction: column;
     align-items: start;
-    width: 60%;
+    /* width: 60%; */
     justify-content: space-between;
 
     display: flex;

@@ -107,7 +107,7 @@ const ContatoSection = styled(Section)`
 
 const InfosContainer = styled(ContentContainer)`
   width: 100%;
-  margin-top: 40px;
+  /* margin-top: 40px; */
   display: flex;
   flex-direction: column-reverse;
   align-items: end;
@@ -116,19 +116,19 @@ const InfosContainer = styled(ContentContainer)`
   /* background-color: #80fe95ab; */
 
   h2 {
-    margin-left: 12px;
+    /* margin-left: 12px; */
     font-family: var(--title-font);
     font-weight: var(--title-font-weight);
   }
 
   @media (min-width: 768px) {
     height: 100%;
-    padding: 15px;
+    /* padding: 15px; */
     flex-direction: row;
     align-items: end;
     justify-content: space-between;
     h2 {
-      margin-left: 0px;
+      /* margin-left: 0px; */
       font-size: 5em;
     }
   }
@@ -146,23 +146,23 @@ const ContatoEnderecoContainer = styled(ContentContainer)`
   /* background-color: #206bad6a; */
 
   span {
-    margin-bottom: 6px;
+    /* margin-bottom: 6px; */
   }
 
   h2 {
     font-size: 10dvw;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
   }
 
   @media (min-width: 768px) {
     font-size: 34px;
     width: 90%;
     justify-content: end;
-    padding-bottom: 50px;
-    margin-left: 50px;
+    /* padding-bottom: 50px; */
+    /* margin-left: 50px; */
     h2 {
       font-size: max(5dvw, 7dvw);
-      margin-bottom: 40px;
+      /* margin-bottom: 40px; */
     }
   }
 `;
@@ -172,13 +172,13 @@ const ContatoEnderecoInfo = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-left: 12px;
-  margin-top: 12px;
+  /* padding-left: 12px; */
+  /* margin-top: 12px; */
 
   /* background-color: #a76b21; */
-  span {
+  /* span {
     margin-bottom: 12px;
-  }
+  } */
   div {
     display: flex;
     flex-direction: column;
@@ -187,11 +187,11 @@ const ContatoEnderecoInfo = styled.div`
 
   @media (min-width: 768px) {
     width: 90%;
-    height: 90px;
+    /* height: 90px; */
     flex-direction: row;
     justify-content: space-between;
     span {
-      margin-bottom: 0px;
+      /* margin-bottom: 0px; */
     }
 
     div {
@@ -232,7 +232,7 @@ const HorarioContainer = styled.div`
     flex-direction: row;
     h2 {
       font-size: 20dvh;
-      margin-right: 16px;
+      /* margin-right: 16px; */
     }
   }
 `;
@@ -241,7 +241,7 @@ const RightDiv = styled.div`
   flex-direction: column;
   align-items: start;
   justify-content: end;
-  padding-right: 20px;
+  /* padding-right: 20px; */
 
   /* background-color: darkcyan; */
 
@@ -257,8 +257,8 @@ const RightDiv = styled.div`
 const HorariosLeft = styled.div`
   height: 50%;
   width: 100%;
-  min-width: 250px;
-  min-height: 250px;
+  /* min-width: 250px; */
+  /* min-height: 250px; */
   display: flex;
   flex-direction: column;
   align-items: end;
@@ -267,9 +267,9 @@ const HorariosLeft = styled.div`
   /* background-color: #4c008267; */
 
   @media (min-width: 768px) {
-    margin-top: 20px;
+    /* margin-top: 20px; */
     height: 30%;
-    min-height: 350px;
+    /* min-height: 350px; */
   }
 `;
 
@@ -291,13 +291,13 @@ const HorariosLista = styled.div`
   /* background-color: #ff149160; */
 
   @media (min-width: 768px) {
-    padding-right: 12px;
+    /* padding-right: 12px; */
   }
 `;
 
 const Horario = styled.div`
   font-size: 24px;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   display: flex;
   flex-direction: column;
   align-items: end;
@@ -305,7 +305,7 @@ const Horario = styled.div`
   /* background-color: darkblue; */
 
   @media (min-width: 768px) {
-    margin-bottom: 0px;
+    /* margin-bottom: 0px; */
     font-size: 34px;
   }
 
@@ -333,25 +333,16 @@ const SocialLinksContainer = styled.div`
 `;
 
 const LinkWrapper = styled.div`
-  margin-left: 30px;
+  /* margin-left: 30px; */
   cursor: pointer;
   :hover {
     color: #c4c4c4;
-  }
-  @media (min-width: 768px) {
-    margin-right: 50px;
-    width: 120px;
-    height: 120px;
   }
 `;
 
 const StyledIcon = styled(Icon)`
   width: 80px;
   height: 100px;
-  @media (min-width: 768px) {
-    width: 120px;
-    height: 120px;
-  }
 `;
 
 export default Contato;
