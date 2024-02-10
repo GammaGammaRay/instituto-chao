@@ -11,14 +11,11 @@ export const ContribuicaoSection = styled(Section)`
   align-items: center;
   justify-content: start;
   background-color: var(--color-brown2);
-  /* overflow-x: hidden; */
-  /* overflow-y: hidden; */
 
   @media (min-width: 1300px) {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* box-sizing: border-box; */
   }
 
   color: white;
@@ -26,17 +23,12 @@ export const ContribuicaoSection = styled(Section)`
 `;
 
 export const ContribuicaoContainer = styled(ContentContainer)`
-  width: 98%;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
 
   @media (min-width: 1300px) {
-    align-items: center;
-    width: 100%;
-    align-items: center;
     flex-direction: row;
     justify-content: space-between;
   }
@@ -45,8 +37,6 @@ export const ContribuicaoContainer = styled(ContentContainer)`
 `;
 
 export const ContribuicaoColLeft = styled.div`
-  width: 95%;
-
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -55,8 +45,6 @@ export const ContribuicaoColLeft = styled.div`
   /* background-color: #cd5c5ca3; */
 
   @media (min-width: 1300px) {
-    align-items: start;
-    width: 80%;
     justify-content: space-between;
   }
 
@@ -64,17 +52,10 @@ export const ContribuicaoColLeft = styled.div`
 `;
 
 export const ContribuicaoColRight = styled.div`
-  width: 95%;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-
-  @media (min-width: 1300px) {
-    width: 40%;
-    flex-direction: column;
-  }
 
   /* background-color: lightgreen; */
 `;
@@ -84,14 +65,10 @@ export const Line = styled.div`
 `;
 
 export const LineVert = styled.div`
-  width: 100%;
   display: flex;
   flex-direction: column;
-  /* align-items: end;
-  justify-content: end; */
 `;
 export const LineVertManutencao = styled.div`
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: end;
@@ -105,12 +82,10 @@ export const LineVertManutencao = styled.div`
 
 export const LineRect = styled.div`
   height: 2px;
-  width: 100%;
   background-color: white;
 `;
 
 export const LineContent = styled.div`
-  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -127,14 +102,10 @@ export const LineContent = styled.div`
 `;
 
 export const ContribuicaoSugerida = styled.div`
-  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: end;
-  @media (min-width: 768px) {
-    align-items: center;
-  }
 `;
 
 export const LineInfoBold = styled.span`
@@ -149,7 +120,6 @@ export const LineInfoBold = styled.span`
 `;
 
 export const LineInfoBoldRight = styled.span`
-  width: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: end;
@@ -171,7 +141,6 @@ export const LineInfoBoldRight = styled.span`
 
 export const LineInfoExtraBold = styled.span`
   font-size: 20dvw;
-  width: fit-content;
   text-align: center;
   /* background-color: #dc143c60; */
 
@@ -182,7 +151,6 @@ export const LineInfoExtraBold = styled.span`
 
 export const LineInfoSmall = styled.span`
   font-size: 3dvw;
-  width: 40%;
   overflow-wrap: break-word; /* Use overflow-wrap instead of word-wrap */
   text-align: end;
   display: flex;
@@ -202,13 +170,11 @@ export const LineInfoSmall = styled.span`
 `;
 
 export const LineContentLeft = styled.div`
-  width: 50%;
   display: flex;
   flex-direction: column;
   align-items: start;
 
   font-size: 1.5em;
-  max-width: 50%;
   /* background-color: #0000ff58; */
 
   @media (min-width: 768px) {
@@ -244,7 +210,6 @@ export const LineContentRight = styled.div`
 `;
 
 export const IconWrapper = styled(Icon)`
-  /* width: 50px; */
   /* background-color: #ff69b499; */
 
   /* @media (min-width: 768px) {

@@ -88,9 +88,6 @@ const ComoFuncionaSection = styled(Section)`
 `;
 
 const ComoFuncionaText = styled(SectionText)`
-  /* padding-right: var(--text-padding); */
-
-  /* padding-right: 20px; */
   overflow: auto;
 
   &::-webkit-scrollbar {
@@ -110,29 +107,6 @@ const ComoFuncionaContainer = styled(ContentContainer)`
   color: white;
 
   /* background-color: #f0f8ff3d; */
-
-  display: flex;
-  justify-content: space-between;
-
-  @media (min-width: 768px) {
-    flex-direction: column;
-    align-items: start;
-    /* width: 95%; */
-
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-
-  @media (min-width: 1200px) {
-    flex-direction: column;
-    align-items: start;
-    /* width: 60%; */
-    justify-content: space-between;
-
-    display: flex;
-    flex-direction: row;
-  }
 `;
 
 const ComoFuncionaTitle = styled(VerticalTitle)`

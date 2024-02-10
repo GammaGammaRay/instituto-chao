@@ -75,29 +75,16 @@ const HistoricoSection = styled(Section)`
 
 const HistoricoContainer = styled(ContentContainer)`
   line-height: 1.2em;
-  /* height: 100%; */
 
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 
   /* background-color: #00ffff40; */
-
-  @media (min-width: 768px) {
-    display: flex;
-    width: 95%;
-  }
-
-  @media (min-width: 1200px) {
-    width: 60%;
-    align-items: start;
-  }
 `;
 
 const HistoricoText = styled(SectionText)`
-  padding-right: calc(var(--text-padding) * 0.2);
   overflow-y: auto;
-  overflow-x: hidden;
 
   &::-webkit-scrollbar {
     width: 12px;

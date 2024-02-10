@@ -104,42 +104,20 @@ function Buscamos() {
 const BuscamosSection = styled(Section)`
   background-color: var(--color-green);
   display: flex;
+
   button {
     width: 50%;
     margin-top: 12px;
     margin-bottom: 20px;
-    font-size: 1.5dvw;
   }
 `;
 
 const BuscamosContainer = styled(ContentContainer)`
-  background-color: aqua;
   line-height: 1.2em;
 
   display: flex;
   flex-direction: row;
   justify-content: center;
-  /* position: relative; */
-
-  @media (min-width: 768px) {
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-
-  @media (min-width: 1200px) {
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
 `;
 const BuscamosText = styled(SectionText)`
   overflow: auto;

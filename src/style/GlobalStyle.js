@@ -30,6 +30,7 @@ const GlobalStyle = createGlobalStyle`
     --nav-height: 5svh;
 
     --color-gray: #ded6d0;
+    --text-font-size: clamp(24px, 1.5svw, 50px);
     --title-font-size-horz: clamp(10svw, 4svw, 2svw);
     --title-font-size-vert: clamp(4em, 20vh, 70vh);
     

@@ -106,29 +106,25 @@ const ContatoSection = styled(Section)`
 `;
 
 const InfosContainer = styled(ContentContainer)`
-  width: 100%;
-  /* margin-top: 40px; */
   display: flex;
   flex-direction: column-reverse;
   align-items: end;
   justify-content: space-between;
 
+  width: 100%;
+
   /* background-color: #80fe95ab; */
 
   h2 {
-    /* margin-left: 12px; */
     font-family: var(--title-font);
     font-weight: var(--title-font-weight);
   }
 
   @media (min-width: 768px) {
-    height: 100%;
-    /* padding: 15px; */
     flex-direction: row;
     align-items: end;
     justify-content: space-between;
     h2 {
-      /* margin-left: 0px; */
       font-size: 5em;
     }
   }
@@ -139,45 +135,33 @@ const ContatoEnderecoContainer = styled(ContentContainer)`
   flex-direction: column;
   align-items: start;
   justify-content: space-between;
-  width: 100%;
-  height: fit-content;
   font-size: 24px;
 
   /* background-color: #206bad6a; */
 
   span {
-    /* margin-bottom: 6px; */
   }
 
   h2 {
     font-size: 10dvw;
-    /* margin-bottom: 10px; */
   }
 
   @media (min-width: 768px) {
     font-size: 34px;
-    width: 90%;
     justify-content: end;
-    /* padding-bottom: 50px; */
-    /* margin-left: 50px; */
     h2 {
       font-size: max(5dvw, 7dvw);
-      /* margin-bottom: 40px; */
     }
   }
 `;
 
 const ContatoEnderecoInfo = styled.div`
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* padding-left: 12px; */
-  /* margin-top: 12px; */
 
   /* background-color: #a76b21; */
   /* span {
-    margin-bottom: 12px;
   } */
   div {
     display: flex;
@@ -186,12 +170,9 @@ const ContatoEnderecoInfo = styled.div`
   }
 
   @media (min-width: 768px) {
-    width: 90%;
-    /* height: 90px; */
     flex-direction: row;
     justify-content: space-between;
     span {
-      /* margin-bottom: 0px; */
     }
 
     div {
@@ -216,7 +197,6 @@ const HorarioContainer = styled.div`
   flex-direction: row;
   align-items: start;
   justify-content: start;
-  width: 100%;
 
   /* background-color: blue; */
 
@@ -228,11 +208,9 @@ const HorarioContainer = styled.div`
   @media (min-width: 768px) {
     align-items: start;
     justify-content: end;
-    width: 70%;
     flex-direction: row;
     h2 {
       font-size: 20dvh;
-      /* margin-right: 16px; */
     }
   }
 `;
@@ -241,24 +219,16 @@ const RightDiv = styled.div`
   flex-direction: column;
   align-items: start;
   justify-content: end;
-  /* padding-right: 20px; */
 
   /* background-color: darkcyan; */
 
   @media (min-width: 768px) {
-    width: 100%;
     justify-content: space-between;
     align-items: end;
-    height: 100%;
-    width: 50%;
   }
 `;
 
 const HorariosLeft = styled.div`
-  height: 50%;
-  width: 100%;
-  /* min-width: 250px; */
-  /* min-height: 250px; */
   display: flex;
   flex-direction: column;
   align-items: end;
@@ -267,9 +237,7 @@ const HorariosLeft = styled.div`
   /* background-color: #4c008267; */
 
   @media (min-width: 768px) {
-    /* margin-top: 20px; */
     height: 30%;
-    /* min-height: 350px; */
   }
 `;
 
@@ -286,26 +254,24 @@ const HorariosLista = styled.div`
   flex-direction: column;
   align-items: end;
   justify-content: space-between;
-  height: 100%;
-  width: 100%;
-  /* background-color: #ff149160; */
+  background-color: #ff149160;
 
   @media (min-width: 768px) {
-    /* padding-right: 12px; */
   }
 `;
 
 const Horario = styled.div`
   font-size: 24px;
-  /* margin-bottom: 20px; */
   display: flex;
   flex-direction: column;
   align-items: end;
+  white-space: nowrap;
 
-  /* background-color: darkblue; */
+  /* margin-bottom: 2svh; */
+
+  background-color: darkblue;
 
   @media (min-width: 768px) {
-    /* margin-bottom: 0px; */
     font-size: 34px;
   }
 
@@ -316,8 +282,6 @@ const Horario = styled.div`
 `;
 
 const SocialLinksContainer = styled.div`
-  width: 100%;
-
   display: flex;
   flex-direction: row;
   justify-content: start;
@@ -326,14 +290,12 @@ const SocialLinksContainer = styled.div`
   /* background-color: #14ff575f; */
 
   @media (min-width: 768px) {
-    height: 15%;
     align-items: center;
     justify-content: end;
   }
 `;
 
 const LinkWrapper = styled.div`
-  /* margin-left: 30px; */
   cursor: pointer;
   :hover {
     color: #c4c4c4;

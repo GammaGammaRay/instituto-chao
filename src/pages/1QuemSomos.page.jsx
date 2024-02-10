@@ -38,7 +38,6 @@ function QuemSomos() {
             igualmente e apenas pelo trabalho, não remunera-se capital. Não há
             relação de exploração.
           </p>
-          <br />
           <p>
             Seguimos os princípios da Economia Solidária, uma política econômica
             do cuidado, tendo as pessoas como sujeito e finalidade da atividade
@@ -105,20 +104,14 @@ function QuemSomos() {
 
 const QuemSomosSection = styled(Section)`
   background-color: #e5d26a;
-
-  display: flex;
-  /* position: relative; */
 `;
 
 const QuemSomosContainer = styled(ContentContainer)`
   line-height: 1.2em;
 
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
   /* position: relative; */
 
-  @media (min-width: 768px) {
+  /* @media (min-width: 768px) {
     flex-direction: column;
     justify-content: start;
     align-items: start;
@@ -136,7 +129,7 @@ const QuemSomosContainer = styled(ContentContainer)`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-  }
+  } */
 `;
 
 const QuemSomosText = styled(SectionText)`

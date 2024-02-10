@@ -16,7 +16,7 @@ function App() {
   return (
     <React.Fragment>
       <MobileProvider>
-        {/* <Nav /> */}
+        <Nav />
         <Logo />
         <QuemSomos />
         <ComoFunciona />
