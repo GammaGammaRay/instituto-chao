@@ -113,8 +113,6 @@ const BuscamosSection = styled(Section)`
 `;
 
 const BuscamosContainer = styled(ContentContainer)`
-  line-height: 1.2em;
-
   display: flex;
   flex-direction: row;
   justify-content: center;

@@ -106,31 +106,7 @@ const QuemSomosSection = styled(Section)`
   background-color: #e5d26a;
 `;
 
-const QuemSomosContainer = styled(ContentContainer)`
-  line-height: 1.2em;
-
-  /* position: relative; */
-
-  /* @media (min-width: 768px) {
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-
-  @media (min-width: 1200px) {
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  } */
-`;
+const QuemSomosContainer = styled(ContentContainer)``;
 
 const QuemSomosText = styled(SectionText)`
   overflow: auto;

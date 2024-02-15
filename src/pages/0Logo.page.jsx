@@ -105,6 +105,10 @@ const LogoPage = styled.div`
 `;
 
 const LogoSection = styled(Section)`
+  @media (min-width: 768px) {
+    margin-top: var(--nav-height);
+  }
+
   background-color: black;
   justify-content: center;
 `;

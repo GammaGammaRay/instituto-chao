@@ -25,7 +25,6 @@ function ComoFunciona() {
             uma livraria, uma feira e uma mercearia com produtos agroecológicos,
             orgânicos e artesanais.
           </p>
-          <br />
           <p>
             Através desses espaços de trabalho, convidamos as pessoas a
             experimentar conosco novas formas de relação. Vamos aos poucos,
@@ -103,7 +102,6 @@ const ComoFuncionaText = styled(SectionText)`
 `;
 
 const ComoFuncionaContainer = styled(ContentContainer)`
-  line-height: 1.2em;
   color: white;
 
   /* background-color: #f0f8ff3d; */

@@ -74,8 +74,6 @@ const HistoricoSection = styled(Section)`
 `;
 
 const HistoricoContainer = styled(ContentContainer)`
-  line-height: 1.2em;
-
   display: flex;
   flex-direction: row;
   justify-content: space-between;

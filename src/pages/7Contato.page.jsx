@@ -1,9 +1,5 @@
 import React, { useContext } from "react";
-import {
-  ContentContainer,
-  HorizontalTitle,
-  Section,
-} from "../style/PageContainers";
+import { ContentContainer, Section } from "../style/PageContainers";
 import styled from "styled-components";
 import { Icon } from "@iconify/react";
 import { MobileContext } from "../context/mobileContext";

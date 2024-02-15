@@ -1,14 +1,11 @@
 import { styled } from "styled-components";
 
 const Section = styled.section`
-  /* height: calc(100svh- var(--nav-height)); */
-  /* height: 100svh; */
-  height: calc(100svh - var(--nav-height));
+  height: 100svh;
 
   scroll-snap-type: y mandatory;
   scroll-snap-stop: always;
   scroll-snap-align: start;
-  scroll-margin-top: var(--nav-height);
   display: flex;
   flex-direction: row;
   align-items: start;
@@ -16,6 +13,8 @@ const Section = styled.section`
   z-index: 1;
 
   @media (min-width: 768px) {
+    height: calc(100svh - var(--nav-height));
+    scroll-margin-top: var(--nav-height);
     flex-direction: column;
     align-items: center;
   }
@@ -26,40 +25,47 @@ const ContentContainer = styled.div`
   flex-direction: row;
   justify-content: center;
   align-content: center;
+  padding: 3svh 2svw;
 
-  /* background-color: aqua; */
+  /* background-color: #00ffff44; */
 
   @media (min-width: 768px) {
-    /* padding: 10dvh 0px; */
-    width: 70%;
+    padding: 10svh 0svw;
+    width: 70svw;
   }
 `;
 
 const SectionText = styled.div`
-  font-size: var(--text-font-size);
+  /* font-size: min(36px, 5svw); */
+  font-size: clamp(24px, 4vw, 46px);
   line-height: 1.2em;
   word-wrap: break-word;
-  max-height: 98svh;
+  max-height: 96svh;
+  text-align: justify;
 
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
 
-  padding: 1svh 1svw;
+  padding: 0 1svw;
+  /* margin: 1svh 2svw; */
 
   p {
-    margin-bottom: 1em;
+    margin-bottom: 1svh;
   }
 
   @media (min-width: 768px) {
     max-height: 90svh;
-    text-align: justify;
   }
 `;
 
 const VerticalTitle = styled.div`
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
+  font-size: clamp(100px, 10svw, 15svw);
+
+  margin-top: 2svh;
+  /* margin: 2svh 1.5svw; */
 
   line-height: 0.8em;
   word-wrap: break-word;
@@ -68,24 +74,23 @@ const VerticalTitle = styled.div`
   flex-direction: row;
   align-items: start;
   flex-basis: 0;
-  /* width: 100%; */
-  font-size: clamp(2em, 10vh, 10vh);
 
   text-align: end;
-  /* background-color: lightcyan; */
 
   span {
-    @media (min-width: 768px) {
-      transform: rotate(180deg);
-    }
+    margin-bottom: 1svh;
   }
 
   @media (min-width: 768px) {
+    margin: 0;
     text-orientation: sideways;
     flex-direction: column;
     align-items: start;
     justify-content: start;
     flex-basis: 0;
+    span {
+      transform: rotate(180deg);
+    }
   }
 `;
 

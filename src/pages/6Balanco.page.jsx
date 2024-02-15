@@ -3,9 +3,7 @@ import { styled } from "styled-components";
 import {
   Section,
   SectionText,
-  VerticalTitle,
   ContentContainer,
-  HorizontalTitle,
 } from "../style/PageContainers";
 import { fetchData, formatCurrency } from "../service/getGoogleSheets.jsx";
 import { MobileContext } from "../context/mobileContext";
@@ -172,7 +170,7 @@ const BalancoSection = styled(Section)`
   /* height: fit-content; */
 
   h3 {
-    line-height: 3dvh;
+    /* line-height: 3dvh; */
     font-weight: 500;
   }
   @media (min-width: 768px) {
@@ -212,14 +210,14 @@ const BalancoContainer = styled(ContentContainer)`
   }
 `;
 
-const BalancoTitle = styled(HorizontalTitle)`
+const BalancoTitle = styled.div`
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
   font-size: max(2dvw, 8dvw);
   /* height: 100%; */
   width: fit-content;
 
-  line-height: 0.8em;
+  /* line-height: 0.8em; */
 
   display: flex;
   flex-direction: column;
@@ -238,13 +236,13 @@ const BalancoTitle = styled(HorizontalTitle)`
   }
 `;
 
-const MonthTitle = styled(HorizontalTitle)`
+const MonthTitle = styled.div`
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
   font-size: max(2dvw, 6dvw);
   /* height: 100%; */
 
-  line-height: 0.8em;
+  /* line-height: 0.8em; */
 
   display: flex;
   flex-direction: column;

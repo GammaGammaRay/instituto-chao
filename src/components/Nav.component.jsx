@@ -163,7 +163,7 @@ const ButtonMenu = styled.div`
 `;
 
 const MenuContent = styled.div`
-  width: 200px;
+  width: 50svw;
   position: absolute;
   top: 50px;
   right: 0;
@@ -174,7 +174,7 @@ const MenuContent = styled.div`
 `;
 
 const NavBar = styled.div`
-  width: 100%;
+  width: 100svw;
   height: var(--nav-height);
   position: fixed;
   overflow-x: hidden;
