@@ -164,7 +164,6 @@ const BalancoSection = styled(Section)`
   display: flex;
   justify-content: center;
   align-items: center;
-  justify-content: start;
   /* overflow-y: hidden; */
 
   h3 {

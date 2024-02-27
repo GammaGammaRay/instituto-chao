@@ -3,65 +3,30 @@ import { styled } from "styled-components";
 import { Section } from "../style/PageContainers";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import debounce from "lodash.debounce";
 
 function Logo() {
   const logoPage = useRef();
 
   useEffect(() => {
-    const handleAnimation = () => {
-      gsap.registerPlugin(ScrollTrigger);
-      let animation;
-
-      if (window.innerWidth > 768) {
-        // Change the animation for screen widths above 768px
-        animation = gsap.fromTo(
-          ".logo",
-          { width: 300, opacity: 0 },
-          {
-            width: 400,
-            opacity: 1,
-            duration: 2,
-            ease: "back",
-          }
-        );
-      } else {
-        // Default animation for screen widths below or equal to 768px
-        animation = gsap.fromTo(
-          ".logo",
-          { width: 200, opacity: 0 },
-          {
-            width: 300,
-            opacity: 1,
-            duration: 2,
-            ease: "power2.inOut",
-          }
-        );
+    gsap.registerPlugin(ScrollTrigger);
+    const animation = gsap.fromTo(
+      ".logo",
+      { width: 300, opacity: 0 },
+      {
+        width: 400,
+        opacity: 1,
+        duration: 2,
+        ease: "back",
       }
+    );
 
-      ScrollTrigger.saveStyles(".logo");
-      ScrollTrigger.matchMedia({
-        "(min-width: 769px)": () => {
-          ScrollTrigger.create({
-            trigger: ".logo",
-            animation: animation,
-            start: "top 80%",
-            end: "bottom 20%",
-            toggleActions: "play none none none",
-          });
-        },
-      });
-    };
-
-    const debouncedAnimation = debounce(handleAnimation, 10);
-    debouncedAnimation();
-
-    window.addEventListener("resize", debouncedAnimation);
-
-    return () => {
-      window.removeEventListener("resize", debouncedAnimation);
-      debouncedAnimation.cancel();
-    };
+    ScrollTrigger.create({
+      trigger: ".logo",
+      animation: animation,
+      start: "top 80%",
+      end: "bottom 20%",
+      toggleActions: "play none none none",
+    });
   }, []);
 
   return (
@@ -82,7 +47,7 @@ const LogoPage = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative; // Set position to relative
+  position: relative;
   /* height: 100vh; // Adjust height to viewport height */
   /* z-index: 1; // Set a higher z-index to ensure it's above the following section */
   img {
@@ -92,6 +57,10 @@ const LogoPage = styled.div`
 `;
 
 const LogoSection = styled(Section)`
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  overflow-y: hidden;
   @media (min-width: 768px) {
     margin-top: var(--nav-height);
   }

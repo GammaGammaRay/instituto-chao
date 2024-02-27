@@ -26,13 +26,15 @@ const ContentContainer = styled.div`
   flex-direction: row;
   justify-content: center;
   align-content: center;
-  padding: 3svh 2svw;
+  padding: 2svh 0.5svw;
 
   /* background-color: #00ffff44; */
 
   @media (min-width: 768px) {
-    /* padding: 10svh 0svw; */
+    /* width: clamp(70svw, 75svw, 85svw); */
     width: 70svw;
+    padding: 3svh 2svw;
+    /* width: 70svw; */
   }
 `;
 
@@ -42,37 +44,42 @@ const SectionText = styled.div`
   line-height: 1.2em;
   word-wrap: break-word;
   max-height: 96svh;
-  text-align: justify;
+  /* text-align: justify; */
 
   display: flex;
   flex-direction: column;
   align-items: start;
 
-  padding: 0 1svw;
-  /* margin: 1svh 2svw; */
+  padding: 0svh 1svw 0svh 3svw;
 
   &::-webkit-scrollbar {
     width: var(--scroll-bar-width);
   }
 
   p {
-    margin-bottom: 1svh;
+    margin-bottom: 2svh;
   }
 
   @media (min-width: 768px) {
+    line-height: 1.1em;
+    font-size: clamp(24px, 3vw, 28px);
+    padding: 0 1svw;
     max-height: 90svh;
+    &::-webkit-scrollbar {
+      width: var(--scroll-bar-width-large);
+    }
   }
 `;
 
 const VerticalTitle = styled.div`
+  /* background-color: brown; */
+
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
-  font-size: clamp(80px, 10svw, 15svw);
+  font-size: clamp(120px, 10svw, 200px);
 
-  margin-top: 2svh;
-  /* margin: 2svh 1.5svw; */
+  margin-top: 5svh;
 
-  line-height: 0.8em;
   word-wrap: break-word;
 
   display: flex;
@@ -80,18 +87,19 @@ const VerticalTitle = styled.div`
   align-items: start;
   flex-basis: 0;
 
-  text-align: end;
+  /* text-align: end; */
 
   span {
     margin-bottom: 2svh;
   }
 
   @media (min-width: 768px) {
+    line-height: 0.8em;
     margin: 0;
     text-orientation: sideways;
     flex-direction: column;
-    align-items: start;
-    justify-content: start;
+    /* align-items: start; */
+    /* justify-content: start; */
     flex-basis: 0;
     span {
       transform: rotate(180deg);
