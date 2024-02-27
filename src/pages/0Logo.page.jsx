@@ -8,74 +8,61 @@ import debounce from "lodash.debounce";
 function Logo() {
   const logoPage = useRef();
 
-  // useEffect(() => {
-  //   gsap.registerPlugin(ScrollTrigger);
+  useEffect(() => {
+    const handleAnimation = () => {
+      gsap.registerPlugin(ScrollTrigger);
+      let animation;
 
-  //   const animation = gsap.fromTo(
-  //     ".logo",
-  //     { width: "5vw", opacity: 0 },
-  //     {
-  //       width: "20vw", // Use relative units for width
-  //       opacity: 1,
-  //       duration: 2,
-  //       ease: "back",
-  //     }
-  //   );
+      if (window.innerWidth > 768) {
+        // Change the animation for screen widths above 768px
+        animation = gsap.fromTo(
+          ".logo",
+          { width: 300, opacity: 0 },
+          {
+            width: 400,
+            opacity: 1,
+            duration: 2,
+            ease: "back",
+          }
+        );
+      } else {
+        // Default animation for screen widths below or equal to 768px
+        animation = gsap.fromTo(
+          ".logo",
+          { width: 200, opacity: 0 },
+          {
+            width: 300,
+            opacity: 1,
+            duration: 2,
+            ease: "power2.inOut",
+          }
+        );
+      }
 
-  //   const handleAnimation = () => {
-  //     gsap.registerPlugin(ScrollTrigger);
-  //     let animation;
+      ScrollTrigger.saveStyles(".logo");
+      ScrollTrigger.matchMedia({
+        "(min-width: 769px)": () => {
+          ScrollTrigger.create({
+            trigger: ".logo",
+            animation: animation,
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none none",
+          });
+        },
+      });
+    };
 
-  //     if (window.innerWidth > 768) {
-  //       animation = gsap.fromTo(
-  //         ".logo",
-  //         { width: "10vw", opacity: 0 },
-  //         {
-  //           width: "20vw", // Use relative units for width
-  //           opacity: 1,
-  //           duration: 2,
-  //           ease: "back",
-  //         }
-  //       );
-  //     } else {
-  //       animation = gsap.fromTo(
-  //         ".logo",
-  //         { width: "5vw", opacity: 0 },
-  //         {
-  //           width: "15vw", // Use relative units for width
-  //           opacity: 1,
-  //           duration: 2,
-  //           ease: "power2.inOut",
-  //         }
-  //       );
-  //     }
+    const debouncedAnimation = debounce(handleAnimation, 10);
+    debouncedAnimation();
 
-  //     ScrollTrigger.saveStyles(".logo");
-  //     ScrollTrigger.matchMedia({
-  //       "(min-width: 769px)": () => {
-  //         ScrollTrigger.create({
-  //           trigger: ".logo",
-  //           animation: animation,
-  //           start: "top 80%",
-  //           end: "bottom 20%",
-  //           toggleActions: "play none none none",
-  //           pin: true, // Pin the trigger element
-  //           pinSpacing: false, // Disable spacing for pinned element
-  //         });
-  //       },
-  //     });
-  //   };
+    window.addEventListener("resize", debouncedAnimation);
 
-  //   const debouncedAnimation = debounce(handleAnimation, 10);
-  //   debouncedAnimation();
-
-  //   window.addEventListener("resize", debouncedAnimation);
-
-  //   return () => {
-  //     window.removeEventListener("resize", debouncedAnimation);
-  //     debouncedAnimation.cancel();
-  //   };
-  // }, []);
+    return () => {
+      window.removeEventListener("resize", debouncedAnimation);
+      debouncedAnimation.cancel();
+    };
+  }, []);
 
   return (
     <LogoSection>

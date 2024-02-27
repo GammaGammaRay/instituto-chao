@@ -5,7 +5,7 @@ const Section = styled.section`
   min-width: 100svw;
 
   scroll-snap-type: y mandatory;
-  scroll-snap-align: start;
+  scroll-snap-align: start; /* Snap to the top of the next/closest section */
   scroll-snap-stop: always;
   display: flex;
   flex-direction: row;
