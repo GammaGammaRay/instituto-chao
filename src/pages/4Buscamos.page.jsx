@@ -120,9 +120,6 @@ const BuscamosContainer = styled(ContentContainer)`
 const BuscamosText = styled(SectionText)`
   overflow: auto;
 
-  &::-webkit-scrollbar {
-    width: 12px;
-  }
   &::-webkit-scrollbar-thumb {
     background: #000000;
     border-radius: 6px;

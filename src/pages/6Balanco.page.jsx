@@ -95,15 +95,12 @@ function Balanco() {
                 ))}
               </MonthTitle>
             </BalancoTableTopContent>
-            <HorizontalLine />
           </BalancoTableTop>
 
           <BalancoTableBody>
-            {/* <HorizontalLine /> */}
-            <h3 style={{ fontSize: `min(6dvw, 40px)` }}>CUSTOS OPERACIONAIS</h3>
+            <h3> CUSTOS OPERACIONAIS</h3>
             <HorizontalLine />
             {mapDataToTable(spreadsheetData)}
-            {/* <HorizontalLine /> */}
             <BalancoTableLine
               style={{
                 backgroundColor: "#ffffff1c",
@@ -147,7 +144,8 @@ function Balanco() {
             <HorizontalLine />
             <BalancoTableLine>
               <h3>PERCENTUAL DE ARRECADAÇÃO</h3>
-              <span style={{ fontSize: `min(6dvw, 40px)` }}>
+              {/* <span style={{ fontSize: `clamp(30px,10svw, 50px)` }}> */}
+              <span>
                 {spreadsheetData[1].slice(19, 20).map((data, index) => (
                   <div key={`${index}`}>{data}%</div>
                 ))}
@@ -162,19 +160,19 @@ function Balanco() {
 }
 
 const BalancoSection = styled(Section)`
-  justify-content: start;
   background-color: var(--color-red);
   display: flex;
   justify-content: center;
+  align-items: center;
+  justify-content: start;
   /* overflow-y: hidden; */
-  /* height: fit-content; */
 
   h3 {
-    /* line-height: 3dvh; */
     font-weight: 500;
+    /* line-height: 0.75; */
   }
   @media (min-width: 768px) {
-    font-size: 4dvh;
+    /* font-size: 4svh; */
   }
 `;
 
@@ -188,36 +186,46 @@ const BalancoLoading = styled(SectionText)`
 `;
 
 const BalancoContainer = styled(ContentContainer)`
-  /* line-height: 1.2em; */
   width: 90%;
-  /* height: 95%; */
   display: flex;
   flex-direction: column;
   justify-content: start;
-  /* padding-bottom: 2dvh; */
-
-  overflow-x: hidden;
+  align-items: start;
+  padding: 1svh 0.5svw;
 
   /* background-color: #7fffd488; */
+
   @media (min-width: 768px) {
-    width: 90%;
-    justify-content: center;
+    width: 70%;
+    /* height: 90%; */
   }
 
-  @media (min-width: 1200px) {
-    width: 60%;
-    justify-content: center;
+  &::-webkit-scrollbar-thumb {
+    background: #000000;
+    border-radius: 6px;
   }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #292929;
+  }
+`;
+
+const BalancoTableTopContent = styled.div`
+  /* font-size: clamp(40px, 8svw, 100px); */
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @media (min-width: 768px) {
+    width: 100%;
+  }
+  /* background-color: azure; */
 `;
 
 const BalancoTitle = styled.div`
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
-  font-size: max(2dvw, 8dvw);
-  /* height: 100%; */
   width: fit-content;
-
-  /* line-height: 0.8em; */
 
   display: flex;
   flex-direction: column;
@@ -228,7 +236,6 @@ const BalancoTitle = styled.div`
   text-align: end;
 
   @media (min-width: 768px) {
-    font-size: max(2dvw, 5dvw);
     width: 100%;
     align-items: start;
     justify-content: end;
@@ -239,10 +246,6 @@ const BalancoTitle = styled.div`
 const MonthTitle = styled.div`
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
-  font-size: max(2dvw, 6dvw);
-  /* height: 100%; */
-
-  /* line-height: 0.8em; */
 
   display: flex;
   flex-direction: column;
@@ -255,12 +258,11 @@ const MonthTitle = styled.div`
   /* background-color: #00ffff78; */
 
   @media (min-width: 768px) {
-    font-size: min(2.5dvw, 4dvw);
     width: 100%;
     flex-basis: 0;
 
     img {
-      padding: 0.8dvh;
+      padding: 0.8svh;
     }
   }
 
@@ -269,20 +271,9 @@ const MonthTitle = styled.div`
   }
 `;
 
-const BalancoTableTopContent = styled.div`
-  width: 90%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-  @media (min-width: 768px) {
-    width: 100%;
-    /* margin-bottom: 12px; */
-  }
-  /* background-color: azure; */
-`;
-
 const BalancoTableTop = styled.div`
+  /* font-size: clamp(30px, 3svw, 42px); */
+
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -292,75 +283,61 @@ const BalancoTableTop = styled.div`
   /* background-color: blue; */
 `;
 const BalancoTableBody = styled.div`
+  /* background-color: blue; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  /* height: 100%; */
+  /* height: fit-content; */
 
-  overflow-y: hidden;
-  overflow-x: hidden;
+  /* margin-top: 2svh; */
+
+  /* overflow-y: hidden; */
+  /* overflow-x: hidden; */
 
   h3 {
-    font-size: min(30px, 3dvh);
+    /* font-size: clamp(22px, 3svh, 40px); */
     width: fit-content;
+    @media (min-width: 768px) {
+      /* font-size: clamp(30px, 3svh, 50px); */
+    }
   }
 `;
 
 const BalancoTableLine = styled.div`
-  /* height: fit-content; */
-  /* font-size: 3dvw; */
-  font-size: min(4dvw, 30px);
-  padding-left: 6px;
-
+  font-size: clamp(16px, 2.2svw, 26px);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  /* background-color: antiquewhite; */
+  /* align-items: flex-start;  */
+  padding-top: 1svh;
+  padding-left: 0.5svw;
+  padding-right: 0.5svw;
 
-  h3 {
-    /* height: fit-content; */
-    /* background-color: blue; */
-    /* text-align: center; */
-    text-anchor: middle;
-    /* transform: translateY(0.2dvh); */
-  }
-
-  @media (min-width: 768px) {
-    /* padding-top: 8px; */
-    font-size: min(3dvw, 30px);
-  }
-
-  span {
-    /* margin-top: 12px; */
-  }
+  /* @media (min-width: 768px) {
+    font-size: clamp(24px, 4svw, 30px);
+  } */
 
   span:nth-child(1) {
     padding-right: 12px;
     @media (min-width: 768px) {
       width: 50%;
     }
-    /* background-color: antiquewhite; */
   }
+
   span:nth-child(2) {
     white-space: nowrap;
-    /* margin-right: 12px; */
   }
 `;
 
 const HorizontalLine = styled.div`
   background-color: black;
   z-index: 3;
-  /* height: 4px; */
-  /* padding: 5px 0px; */
-  /* margin: 1px 0px; */
   height: 2px;
 
   @media (min-width: 768px) {
     height: 3px;
-    /* padding: 2px 0px; */
-    /* margin: 2px 0px; */
   }
 `;
 

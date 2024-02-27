@@ -25,16 +25,15 @@ export const ContribuicaoSection = styled(Section)`
 export const ContribuicaoContainer = styled(ContentContainer)`
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
+  align-items: center;
   justify-content: space-around;
   height: 100svh;
-  width: 100svw;
+  width: 90svw;
 
   @media (min-width: 768px) {
-    height: 80svh;
-    width: 90svw;
+    width: 96svw;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 
   background-color: #d3d3d330;
@@ -43,45 +42,57 @@ export const ContribuicaoContainer = styled(ContentContainer)`
 export const ContribuicaoColLeft = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: start;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: space-between;
 
   @media (min-width: 768px) {
-    padding-right: 3svw;
-    /* justify-content: space-between; */
+    /* height: 50svh; */
+    align-items: start;
+    margin-right: 2svw;
   }
 
   /* @media (min-width: 1300px) {
     justify-content: space-between;
   } */
 
-  /* background-color: lightcoral; */
+  /* background-color: #f080806b; */
 `;
 
 export const ContribuicaoColRight = styled.div`
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
+  align-items: center;
   justify-content: center;
+  width: 100%;
 
-  /* background-color: lightgreen; */
+  @media (min-width: 768px) {
+    width: 40svw;
+    height: 50svh;
+  }
+
+  background-color: lightgreen;
 `;
 
 export const Line = styled.div`
   width: 100%;
+  /* background-color: #3d70cf6b; */
+  /* margin: 5svh 0px; */
 `;
 
 export const LineVert = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
 `;
 export const LineVertManutencao = styled.div`
   display: flex;
   flex-direction: column;
   align-items: end;
+  /* text-align: end; */
 
   @media (min-width: 768px) {
     align-items: start;
+    width: 100%;
   }
 `;
 
@@ -95,11 +106,12 @@ export const LineContent = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: end;
+  font-size: clamp(26px, 3svw, 40px);
 
   font-weight: 400;
-  /* font-size: 3svw; */
 
   @media (min-width: 768px) {
+    font-size: clamp(46px, 5svw, 80px);
     font-weight: 400;
   }
 
@@ -110,17 +122,24 @@ export const ContribuicaoSugerida = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: end;
+  align-items: start;
+
+  @media (min-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const LineInfoBold = styled.span`
-  /* font-size: 5svw; */
+  font-size: clamp(30px, 3svw, 50px);
+  line-height: 0.75;
   /* transform: translateY(5px); */
   &.contribuicao {
-    /* font-size: 4svw; */
+    font-size: 4svw;
   }
   @media (min-width: 768px) {
-    /* font-size: 7svw; */
+    font-size: clamp(50px, 5svw, 50px);
+    font-size: 7svw;
+    line-height: 0.75;
   }
   /* background-color: blanchedalmond; */
 `;
@@ -131,20 +150,20 @@ export const LineInfoBoldRight = styled.span`
   justify-content: end;
   text-align: end;
 
-  /* font-size: 1.5svw; */
-  /* transform: translateY(5px); */
+  font-size: 1.5svw;
 
   /* background-color: blanchedalmond; */
 
   @media (min-width: 768px) {
     justify-content: start;
     text-align: start;
-    /* font-size: 2em; */
+    /* font-size: 2svw; */
   }
 `;
 
-export const LineInfoExtraBold = styled.span`
-  font-size: 6ssvw;
+export const LineInfoPercentage = styled.span`
+  font-size: 10svw;
+  line-height: 0.75;
   /* text-align: center; */
   /* background-color: #dc143c60; */
 
@@ -153,23 +172,22 @@ export const LineInfoExtraBold = styled.span`
   }
 `;
 
-export const LineInfoSmall = styled.span`
-  /* font-size: 3svw; */
+export const LineInfoArrecadacao = styled.span`
+  font-size: clamp(12px, 1svw, 24px);
   overflow-wrap: break-word; /* Use overflow-wrap instead of word-wrap */
   text-align: end;
-  display: flex;
+  /* display: flex;
   justify-content: end;
-  align-items: end;
-  /* font-weight: 100; */
+  align-items: end; */
   font-family: "Grotesk";
   font-weight: 100;
   /* background-color: #deb8877b; */
 
   @media (min-width: 768px) {
-    /* font-size: 2dvh; */
     text-align: start;
-    font-size: 1rem;
     font-weight: 500;
+    max-width: 15svw;
+    margin: 0 0.6svw;
   }
 `;
 
@@ -178,8 +196,10 @@ export const LineContentLeft = styled.div`
   flex-direction: column;
   align-items: start;
 
+  max-width: 70%;
+  margin-right: 2svw;
   /* font-size: 1.5em; */
-  /* background-color: #0000ff58; */
+  /* background-color: #0000ff2f; */
 
   @media (min-width: 768px) {
     font-size: 1em;
@@ -190,13 +210,16 @@ export const LineContentLeft = styled.div`
   }
 `;
 export const LineContentRight = styled.div`
-  /* font-size: 1em; */
-
+  font-size: clamp(16px, 4svw, 80px);
   display: flex;
   flex-direction: row;
   align-items: end;
   justify-content: end;
   /* background-color: #00800067; */
+
+  /* span {
+    font-size: x-small;
+  } */
 
   &.porcentagemContribuicao {
     flex-direction: row;
@@ -205,7 +228,6 @@ export const LineContentRight = styled.div`
 
   @media (min-width: 768px) {
     justify-content: end;
-    /* font-size: 1em; */
 
     &.porcentagemContribuicao {
       flex-direction: row;
@@ -215,7 +237,8 @@ export const LineContentRight = styled.div`
 
 export const IconWrapper = styled(Icon)`
   /* width: 10svw; */
-  /* font-size: 5svw; */
+  font-size: clamp(50px, 5svw, 100px);
+  margin: 3svh 0;
   /* background-color: #ff69b499; */
 
   /* @media (min-width: 768px) {
@@ -236,8 +259,8 @@ export default {
   ContribuicaoSugerida,
   LineInfoBold,
   LineInfoBoldRight,
-  LineInfoExtraBold,
-  LineInfoSmall,
+  LineInfoPercentage,
+  LineInfoArrecadacao,
   LineContentLeft,
   LineContentRight,
   IconWrapper,

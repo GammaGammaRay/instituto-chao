@@ -16,8 +16,8 @@ import {
   ContribuicaoSugerida,
   LineInfoBold,
   LineInfoBoldRight,
-  LineInfoExtraBold,
-  LineInfoSmall,
+  LineInfoPercentage,
+  LineInfoArrecadacao,
   LineContentLeft,
   LineContentRight,
   IconWrapper,
@@ -64,16 +64,12 @@ function Contribuicao() {
                   <span>NECESSIDADE MÍNIMA DE ARRECADAÇÃO</span>
                 </LineContentLeft>
                 <LineContentRight className="vert">
-                  <LineInfoSmall>
+                  <LineInfoArrecadacao>
                     <span>
                       Arrecadações para custos do espaço e nosso trabalho
                     </span>
-                    {/* <span>
-                      De arrecadações para pagar os custos do espaço e do nosso
-                      trabalho
-                    </span> */}
-                  </LineInfoSmall>
-                  <LineInfoExtraBold>25%</LineInfoExtraBold>
+                  </LineInfoArrecadacao>
+                  <LineInfoPercentage>25%</LineInfoPercentage>
                 </LineContentRight>
               </LineContent>
             ) : (
@@ -82,14 +78,14 @@ function Contribuicao() {
                   <span>NECESSIDADE MÍNIMA DE ARRECADAÇÃO</span>
                 </LineContentLeft>
                 <LineContentRight className="porcentagemContribuicao">
-                  <LineInfoExtraBold>25%</LineInfoExtraBold>
+                  <LineInfoPercentage>25%</LineInfoPercentage>
 
-                  <LineInfoSmall>
+                  <LineInfoArrecadacao>
                     <span>
                       De arrecadações para pagar os custos do espaço e do nosso
                       trabalho
                     </span>
-                  </LineInfoSmall>
+                  </LineInfoArrecadacao>
                 </LineContentRight>
               </LineContent>
             )}
@@ -105,9 +101,9 @@ function Contribuicao() {
                 <br />
                 <span>SUGERIDA</span>
               </LineInfoBold>
-              <LineInfoExtraBold>
+              <LineInfoPercentage>
                 <span>30%</span>
-              </LineInfoExtraBold>
+              </LineInfoPercentage>
             </ContribuicaoSugerida>
             <LineRect />
           </LineVert>

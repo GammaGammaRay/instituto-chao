@@ -89,9 +89,6 @@ const ComoFuncionaSection = styled(Section)`
 const ComoFuncionaText = styled(SectionText)`
   overflow: auto;
 
-  &::-webkit-scrollbar {
-    width: 12px;
-  }
   &::-webkit-scrollbar-thumb {
     background: #ffffff;
     border-radius: 6px;

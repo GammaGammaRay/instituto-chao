@@ -2,10 +2,11 @@ import { styled } from "styled-components";
 
 const Section = styled.section`
   height: 100svh;
+  min-width: 100svw;
 
   scroll-snap-type: y mandatory;
-  scroll-snap-stop: always;
   scroll-snap-align: start;
+  scroll-snap-stop: always;
   display: flex;
   flex-direction: row;
   align-items: start;
@@ -17,6 +18,8 @@ const Section = styled.section`
     scroll-margin-top: var(--nav-height);
     flex-direction: column;
     align-items: center;
+    justify-content: start;
+    overflow-y: hidden;
   }
 `;
 
@@ -30,14 +33,14 @@ const ContentContainer = styled.div`
   /* background-color: #00ffff44; */
 
   @media (min-width: 768px) {
-    padding: 10svh 0svw;
+    /* padding: 10svh 0svw; */
     width: 70svw;
   }
 `;
 
 const SectionText = styled.div`
   /* font-size: min(36px, 5svw); */
-  font-size: clamp(24px, 4vw, 46px);
+  font-size: clamp(24px, 3vw, 28px);
   line-height: 1.2em;
   word-wrap: break-word;
   max-height: 96svh;
@@ -49,6 +52,10 @@ const SectionText = styled.div`
 
   padding: 0 1svw;
   /* margin: 1svh 2svw; */
+
+  &::-webkit-scrollbar {
+    width: var(--scroll-bar-width);
+  }
 
   p {
     margin-bottom: 1svh;
@@ -62,7 +69,7 @@ const SectionText = styled.div`
 const VerticalTitle = styled.div`
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
-  font-size: clamp(100px, 10svw, 15svw);
+  font-size: clamp(80px, 10svw, 15svw);
 
   margin-top: 2svh;
   /* margin: 2svh 1.5svw; */
@@ -78,7 +85,7 @@ const VerticalTitle = styled.div`
   text-align: end;
 
   span {
-    margin-bottom: 1svh;
+    margin-bottom: 2svh;
   }
 
   @media (min-width: 768px) {

@@ -33,6 +33,8 @@ const GlobalStyle = createGlobalStyle`
     /* --text-font-size: clamp(24px, 1.5svw, 50px); */
     --title-font-size-horz: clamp(10svw, 4svw, 2svw);
     /* --title-font-size-vert: max(10svh, 20svh); */
+
+    --scroll-bar-width: 12px;
     
     
     

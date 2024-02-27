@@ -111,9 +111,6 @@ const QuemSomosContainer = styled(ContentContainer)``;
 const QuemSomosText = styled(SectionText)`
   overflow: auto;
 
-  &::-webkit-scrollbar {
-    width: 12px;
-  }
   &::-webkit-scrollbar-thumb {
     background: #000000;
     border-radius: 6px;
