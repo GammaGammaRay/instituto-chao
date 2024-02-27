@@ -4,9 +4,7 @@ const Section = styled.section`
   height: 100svh;
   min-width: 100svw;
 
-  scroll-snap-type: y mandatory;
-  scroll-snap-align: start; /* Snap to the top of the next/closest section */
-  scroll-snap-stop: always;
+  scroll-snap-align: start;
   display: flex;
   flex-direction: row;
   align-items: start;

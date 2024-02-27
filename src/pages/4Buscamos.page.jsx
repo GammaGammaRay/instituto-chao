@@ -119,6 +119,9 @@ const BuscamosContainer = styled(ContentContainer)`
 `;
 const BuscamosText = styled(SectionText)`
   overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   &::-webkit-scrollbar-thumb {
     background: #000000;
@@ -126,6 +129,10 @@ const BuscamosText = styled(SectionText)`
   }
   &::-webkit-scrollbar-thumb:hover {
     background: #292929;
+  }
+
+  img {
+    width: 80%;
   }
 
   /* @media (min-width: 768px) {
