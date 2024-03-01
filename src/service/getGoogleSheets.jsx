@@ -1,10 +1,8 @@
-export async function getSpreadsheetData() {
-  const url =
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vRAFj2uUB3H44sGqjtYR5jB2-ZOzAdK4byLGPH-MIAb1SFluJOqaDULgVcEPJzxc9Hl0JV2Vfoh3Xka/pub?gid=0&single=true&output=csv"; // Replace with your published spreadsheet link
+export async function getSpreadsheetData(sheetIndex) {
+  const url = `https://docs.google.com/spreadsheets/d/e/2PACX-1vT-_y2kb6QITCzq60QqbwwS8ZZ0D347APs6zQV87Sb9ZObWAzKO-VKDowVQICPEGGeVPEFt2Cesn_2k/pub?output=csv&gid=${sheetIndex}`;
+
   const response = await fetch(url);
   const data = await response.text();
-
-  // Now 'data' contains the contents of your Google Spreadsheet as a CSV.
 
   const rows = data.split("\n");
   const columnData = {}; // To store data by column
@@ -22,6 +20,24 @@ export async function getSpreadsheetData() {
   });
   console.log(columnData);
   return columnData;
+}
+
+export async function fetchData(setSpreadsheetData, sheetIndex) {
+  try {
+    const data = await getSpreadsheetData(sheetIndex);
+    console.log(data);
+
+    const dataArray = Object.values(data);
+
+    if (Array.isArray(dataArray) && dataArray.length > 0) {
+      setSpreadsheetData(dataArray);
+    } else {
+      setSpreadsheetData("Não foi possível buscar os dados.");
+    }
+  } catch (error) {
+    console.error("Error fetching data", error);
+    setSpreadsheetData("Failed to fetch data");
+  }
 }
 
 function parseCSV(input) {
@@ -54,24 +70,6 @@ function parseCSV(input) {
   output.push(current);
 
   return output;
-}
-
-export async function fetchData(setSpreadsheetData) {
-  try {
-    const data = await getSpreadsheetData();
-    console.log(data);
-
-    const dataArray = Object.values(data);
-
-    if (Array.isArray(dataArray) && dataArray.length > 0) {
-      setSpreadsheetData(dataArray);
-    } else {
-      setSpreadsheetData("Não foi possível buscar os dados.");
-    }
-  } catch (error) {
-    console.error("Error fetching data", error);
-    setSpreadsheetData("Failed to fetch data");
-  }
 }
 
 export function formatCurrency(value) {

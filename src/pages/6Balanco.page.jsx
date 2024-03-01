@@ -16,8 +16,10 @@ function Balanco() {
 
   const [spreadsheetData, setSpreadsheetData] = useState([]);
 
+  const [sheetId, setSheetId] = useState(0);
+
   useEffect(() => {
-    fetchData(setSpreadsheetData);
+    fetchData(setSpreadsheetData, sheetId);
   }, []);
 
   function mapDataToTable(data) {
