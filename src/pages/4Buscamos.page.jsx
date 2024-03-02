@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 import {
   Section,
   SectionText,
-  VerticalTitle,
+  Title,
   ContentContainer,
 } from "../style/PageContainers";
 import { MobileContext } from "../context/mobileContext";
@@ -140,7 +140,7 @@ const BuscamosText = styled(SectionText)`
   } */
 `;
 
-const BuscamosTitle = styled(VerticalTitle)`
+const BuscamosTitle = styled(Title)`
   writing-mode: vertical-lr;
   flex-direction: row;
   /* background-color: aqua; */

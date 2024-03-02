@@ -2,7 +2,7 @@ import React, { useContext, useRef } from "react";
 import {
   Section,
   SectionText,
-  VerticalTitle,
+  Title,
   ContentContainer,
 } from "../style/PageContainers";
 import { styled } from "styled-components";
@@ -11,8 +11,6 @@ import { MobileContext } from "../context/mobileContext";
 function ComoFunciona() {
   const main = useRef();
   const title = useRef();
-
-  const isMobile = useContext(MobileContext);
 
   return (
     <ComoFuncionaSection ref={main} id="como-funciona">
@@ -104,15 +102,16 @@ const ComoFuncionaContainer = styled(ContentContainer)`
   /* background-color: #f0f8ff3d; */
 `;
 
-const ComoFuncionaTitle = styled(VerticalTitle)`
-  writing-mode: vertical-lr;
+const ComoFuncionaTitle = styled(Title)`
   top: 0px;
+  color: white;
 
   @media (min-width: 768px) {
+    writing-mode: vertical-rl;
     display: flex;
-    align-items: end;
+    align-items: start;
     justify-content: start;
-    transform: rotate(180deg);
+    /* transform: rotate(180deg); */
   }
 `;
 

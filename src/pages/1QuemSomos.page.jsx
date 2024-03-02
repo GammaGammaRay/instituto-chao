@@ -3,29 +3,28 @@ import { styled } from "styled-components";
 import {
   Section,
   SectionText,
-  VerticalTitle,
+  Title,
   ContentContainer,
 } from "../style/PageContainers";
 import { MobileContext } from "../context/mobileContext";
 
 function QuemSomos() {
-  const main = useRef();
-  const title = useRef();
+  const text = useRef();
   const isMobile = useContext(MobileContext);
 
   return (
-    <QuemSomosSection id="quem-somos" ref={main}>
-      <QuemSomosContainer>
+    <QuemSomosSection id="quem-somos">
+      <ContentContainer>
         {!isMobile ? (
-          <QuemSomosTitle ref={title}>
-            <span className="quem">QUEM</span>
-            <span className="somos">SOMOS?</span>
+          <QuemSomosTitle>
+            <span>QUEM</span>
+            <span>SOMOS?</span>
           </QuemSomosTitle>
         ) : (
           <div />
         )}
 
-        <QuemSomosText>
+        <QuemSomosText ref={text}>
           <p>
             O Chão é uma associação de trabalhadores, sem fins lucrativos, que
             se movimenta para o aprofundamento da consciência crítica, da
@@ -89,15 +88,8 @@ function QuemSomos() {
             ambiental e pela soberania alimentar.
           </p>
         </QuemSomosText>
-        {isMobile ? (
-          <QuemSomosTitle ref={title}>
-            <span className="quem">QUEM</span>
-            <span className="somos">SOMOS?</span>
-          </QuemSomosTitle>
-        ) : (
-          <div />
-        )}
-      </QuemSomosContainer>
+        {isMobile ? <QuemSomosTitle>QUEM SOMOS</QuemSomosTitle> : <div />}
+      </ContentContainer>
     </QuemSomosSection>
   );
 }
@@ -105,8 +97,6 @@ function QuemSomos() {
 const QuemSomosSection = styled(Section)`
   background-color: #e5d26a;
 `;
-
-const QuemSomosContainer = styled(ContentContainer)``;
 
 const QuemSomosText = styled(SectionText)`
   overflow: auto;
@@ -119,12 +109,27 @@ const QuemSomosText = styled(SectionText)`
     background: #292929;
   }
 
+  /* -webkit-mask-image: linear-gradient(
+    180deg,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    180deg,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  ); */
+
   /* @media (min-width: 768px) {
     padding-left: var(--text-padding);
   } */
 `;
 
-const QuemSomosTitle = styled(VerticalTitle)`
+const QuemSomosTitle = styled(Title)`
   writing-mode: vertical-lr;
   flex-direction: row;
   /* background-color: aqua; */

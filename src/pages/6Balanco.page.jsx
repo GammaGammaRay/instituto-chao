@@ -9,9 +9,6 @@ import { fetchData, formatCurrency } from "../service/getGoogleSheets.jsx";
 import { MobileContext } from "../context/mobileContext";
 
 function Balanco() {
-  const main = useRef();
-  const title = useRef();
-
   const isMobile = useContext(MobileContext);
 
   const [spreadsheetData, setSpreadsheetData] = useState([]);
@@ -59,7 +56,7 @@ function Balanco() {
   }
 
   return (
-    <BalancoSection id="balanco" ref={main}>
+    <BalancoSection id="balanco">
       {spreadsheetData === null || spreadsheetData.length === 0 ? (
         // {true ? (
         <BalancoLoading>
@@ -70,10 +67,11 @@ function Balanco() {
         <BalancoContainer>
           <BalancoTableTop>
             <BalancoTableTopContent>
-              <BalancoTitle ref={title}>
-                <span>BALANÇO</span>
-                <span>FINANCEIRO</span>
-              </BalancoTitle>
+              <h1>
+                BALANÇO
+                <br />
+                FINANCEIRO
+              </h1>
 
               <MonthTitle>
                 {isMobile ? (
@@ -100,7 +98,7 @@ function Balanco() {
           </BalancoTableTop>
 
           <BalancoTableBody>
-            <h3> CUSTOS OPERACIONAIS</h3>
+            CUSTOS OPERACIONAIS
             <HorizontalLine />
             {mapDataToTable(spreadsheetData)}
             <BalancoTableLine
@@ -116,7 +114,6 @@ function Balanco() {
               </span>
             </BalancoTableLine>
             <HorizontalLine />
-
             <BalancoTableLine>
               <h3>ARRECADAÇÕES TOTAIS</h3>
               <span>
@@ -167,6 +164,13 @@ const BalancoSection = styled(Section)`
   justify-content: center;
   align-items: center;
   /* overflow-y: hidden; */
+
+  h1 {
+    font-size: clamp(42px, 5svw, 80px);
+    font-family: var(--title-font);
+    font-weight: var(--title-font-weight);
+    color: black;
+  }
 
   h3 {
     font-weight: 500;
@@ -250,11 +254,7 @@ const MonthTitle = styled.div`
 
   display: flex;
   flex-direction: column;
-  align-items: end;
   justify-content: end;
-  flex-basis: 0;
-
-  text-align: end;
 
   /* background-color: #00ffff78; */
 
@@ -266,20 +266,11 @@ const MonthTitle = styled.div`
       padding: 0.8svh;
     }
   }
-
-  .h2 {
-    overflow: visible;
-  }
 `;
 
 const BalancoTableTop = styled.div`
-  /* font-size: clamp(30px, 3svw, 42px); */
-
   display: flex;
   width: 100%;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
 
   /* background-color: blue; */
 `;
@@ -289,12 +280,6 @@ const BalancoTableBody = styled.div`
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  /* height: fit-content; */
-
-  /* margin-top: 2svh; */
-
-  /* overflow-y: hidden; */
-  /* overflow-x: hidden; */
 
   h3 {
     /* font-size: clamp(22px, 3svh, 40px); */

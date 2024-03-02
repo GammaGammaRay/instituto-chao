@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 import {
   Section,
   SectionText,
-  VerticalTitle,
+  Title,
   ContentContainer,
 } from "../style/PageContainers";
 
@@ -93,7 +93,7 @@ const HistoricoText = styled(SectionText)`
   }
 `;
 
-const HistoricoTitle = styled(VerticalTitle)`
+const HistoricoTitle = styled(Title)`
   writing-mode: vertical-lr;
   /* background-color: #deb8875d; */
 `;

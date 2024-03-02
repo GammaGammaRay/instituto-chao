@@ -1,5 +1,10 @@
 import { styled } from "styled-components";
 
+// div {
+//   white-space: nowrap;
+//   -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 90%, rgba(0,0,0,0));
+// }
+
 const Section = styled.section`
   height: 100svh;
   min-width: 100svw;
@@ -71,12 +76,13 @@ const SectionText = styled.div`
   }
 `;
 
-const VerticalTitle = styled.div`
+const Title = styled.h1`
   /* background-color: brown; */
 
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
-  font-size: clamp(120px, 10svw, 200px);
+  font-size: clamp(80px, 10svw, 140px);
+  color: black;
 
   margin-top: 5svh;
 
@@ -87,60 +93,16 @@ const VerticalTitle = styled.div`
   align-items: start;
   flex-basis: 0;
 
-  /* text-align: end; */
-
   span {
     margin-bottom: 2svh;
   }
 
   @media (min-width: 768px) {
+    font-size: clamp(120px, 10svw, 200px);
     line-height: 0.8em;
-    margin: 0;
-    text-orientation: sideways;
+    margin-top: 0;
     flex-direction: column;
-    /* align-items: start; */
-    /* justify-content: start; */
-    flex-basis: 0;
-    span {
-      transform: rotate(180deg);
-    }
   }
 `;
 
-const HorizontalTitle = styled.div`
-  font-family: var(--title-font);
-  font-weight: var(--title-font-weight);
-  font-size: clamp(10vw, 4vw, 20px);
-  line-height: 0.8em;
-  word-wrap: break-word;
-
-  display: flex;
-  flex-direction: row;
-  align-items: start;
-  flex-basis: 0;
-
-  text-align: end;
-  /* background-color: lightcyan; */
-
-  @media (max-width: 768px) {
-    font-size: 10px;
-  }
-
-  @media (min-width: 768px) {
-    height: fit-content;
-    text-orientation: sideways;
-    flex-direction: column;
-    align-items: start;
-    justify-content: start;
-    flex-basis: 0;
-    font-size: var(--title-font-size-vert);
-  }
-`;
-
-export {
-  Section,
-  ContentContainer,
-  SectionText,
-  VerticalTitle,
-  HorizontalTitle,
-};
+export { Section, ContentContainer, SectionText, Title };
