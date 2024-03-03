@@ -67,10 +67,10 @@ function QuemSomos() {
           <div />
         )}
 
-        <QuemSomosText ref={text}>
-          <div className="sticky-wrapper">
+        <QuemSomosText ref={text} fadeTop={isOverflowingTop}>
+          {/* <div className="sticky-wrapper">
             <FadeTopOverflow />
-          </div>
+          </div> */}
 
           <p>
             O Chão é uma associação de trabalhadores, sem fins lucrativos, que
@@ -141,12 +141,6 @@ function QuemSomos() {
     </QuemSomosSection>
   );
 }
-
-const TopDiv = styled.div`
-  width: 100%;
-  height: 200px;
-  background-color: darksalmon;
-`;
 
 const QuemSomosSection = styled(Section)`
   background-color: #e5d26a;

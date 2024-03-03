@@ -43,6 +43,8 @@ const ContentContainer = styled.div`
   }
 `;
 
+const SectionTextContainer = styled.div``;
+
 const SectionText = styled.div`
   font-size: clamp(24px, 3vw, 28px);
   line-height: 1.2em;
@@ -80,26 +82,44 @@ const SectionText = styled.div`
 
   .sticky-wrapper {
     width: 100%;
-    height: 200px;
     position: sticky;
     top: 0;
-    z-index: 1; /* Ensure it's above other content */
+    z-index: 1;
   }
+
+  ${(props) =>
+    props.fadeTop &&
+    `
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      height: 200px;
+      width: 100%;
+      pointer-events: none;
+      z-index: 1;
+      background: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,1) 100%);
+    }
+  `}
 `;
 
 const FadeTopOverflow = styled.div`
   position: absolute;
   top: 0;
+
   /* left: 0; */
   /* right: 0; */
   height: 200px;
   width: 100%;
-  /* pointer-events: none; */
+  pointer-events: none;
   z-index: 1;
+  background: linear-gradient(to top, transparent, black 50%);
   /* opacity: 1; */
   /* transition: opacity 0.3s; */
   /* background-color: aliceblue; */
   background: linear-gradient(to top, transparent, black 50%);
+  /* -webkit-mask-image: linear-gradient(to bottom, transparent, black); */
+  /* mask-image: linear-gradient(to bottom, transparent, black); */
 `;
 
 const FadeBottomOverflow = styled.div`
