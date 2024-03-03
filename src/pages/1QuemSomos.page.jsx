@@ -5,12 +5,55 @@ import {
   SectionText,
   Title,
   ContentContainer,
+  FadeTopOverflow,
+  FadeBottomOverflow,
 } from "../style/PageContainers";
 import { MobileContext } from "../context/mobileContext";
 
 function QuemSomos() {
   const text = useRef();
+  const [isOverflowingTop, setOverflowingTop] = useState(false);
+  const [isOverflowingBottom, setOverflowingBottom] = useState(false);
   const isMobile = useContext(MobileContext);
+
+  const bottomScrollMargin = 5;
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (text.current) {
+        const { scrollTop, scrollHeight, clientHeight } = text.current;
+        setOverflowingTop((prev) => (scrollTop > 0 ? true : false));
+        setOverflowingBottom(
+          (prev) => scrollTop + clientHeight < scrollHeight - bottomScrollMargin
+        );
+        // console.log("scroll top: " + scrollTop);
+        // console.log("scroll height: " + scrollHeight);
+        // console.log(
+        //   "overflowing bottom: " +
+        //     (scrollTop + clientHeight) +
+        //     "<" +
+        //     scrollHeight
+        // );
+      }
+    };
+
+    if (text.current) {
+      text.current.addEventListener("scroll", handleScroll);
+      console.log("add scroll event listener");
+      handleScroll(); // Check initial state
+    }
+
+    return () => {
+      if (text.current) {
+        text.current.removeEventListener("scroll", handleScroll);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    console.log("overflowing top: " + isOverflowingTop);
+    console.log("overflowing bottom: " + isOverflowingBottom);
+  }, [isOverflowingTop, isOverflowingBottom]);
 
   return (
     <QuemSomosSection id="quem-somos">
@@ -25,6 +68,10 @@ function QuemSomos() {
         )}
 
         <QuemSomosText ref={text}>
+          <div className="sticky-wrapper">
+            <FadeTopOverflow />
+          </div>
+
           <p>
             O Chão é uma associação de trabalhadores, sem fins lucrativos, que
             se movimenta para o aprofundamento da consciência crítica, da
@@ -87,6 +134,7 @@ function QuemSomos() {
             pública, pelo combate à fome, pela biodiversidade e preservação
             ambiental e pela soberania alimentar.
           </p>
+          <FadeBottomOverflow />
         </QuemSomosText>
         {isMobile ? <QuemSomosTitle>QUEM SOMOS</QuemSomosTitle> : <div />}
       </ContentContainer>
@@ -94,12 +142,18 @@ function QuemSomos() {
   );
 }
 
+const TopDiv = styled.div`
+  width: 100%;
+  height: 200px;
+  background-color: darksalmon;
+`;
+
 const QuemSomosSection = styled(Section)`
   background-color: #e5d26a;
 `;
 
 const QuemSomosText = styled(SectionText)`
-  overflow: auto;
+  /* overflow: auto; */
 
   &::-webkit-scrollbar-thumb {
     background: #000000;
@@ -108,25 +162,6 @@ const QuemSomosText = styled(SectionText)`
   &::-webkit-scrollbar-thumb:hover {
     background: #292929;
   }
-
-  /* -webkit-mask-image: linear-gradient(
-    180deg,
-    transparent,
-    black 10%,
-    black 90%,
-    transparent
-  );
-  mask-image: linear-gradient(
-    180deg,
-    transparent,
-    black 10%,
-    black 90%,
-    transparent
-  ); */
-
-  /* @media (min-width: 768px) {
-    padding-left: var(--text-padding);
-  } */
 `;
 
 const QuemSomosTitle = styled(Title)`

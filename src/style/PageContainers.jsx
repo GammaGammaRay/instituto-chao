@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 
 // div {
 //   white-space: nowrap;
-//   -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 90%, rgba(0,0,0,0));
+//   -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 90%, rgba(0,0,0,0));
 // }
 
 const Section = styled.section`
@@ -44,7 +44,6 @@ const ContentContainer = styled.div`
 `;
 
 const SectionText = styled.div`
-  /* font-size: min(36px, 5svw); */
   font-size: clamp(24px, 3vw, 28px);
   line-height: 1.2em;
   word-wrap: break-word;
@@ -57,6 +56,10 @@ const SectionText = styled.div`
 
   padding: 0svh 1svw 0svh 3svw;
 
+  position: relative;
+  overflow: hidden;
+  overflow-y: auto;
+
   &::-webkit-scrollbar {
     width: var(--scroll-bar-width);
   }
@@ -66,7 +69,7 @@ const SectionText = styled.div`
   }
 
   @media (min-width: 768px) {
-    line-height: 1.1em;
+    line-height: 1.2em;
     font-size: clamp(24px, 3vw, 28px);
     padding: 0 1svw;
     max-height: 90svh;
@@ -74,6 +77,40 @@ const SectionText = styled.div`
       width: var(--scroll-bar-width-large);
     }
   }
+
+  .sticky-wrapper {
+    width: 100%;
+    height: 200px;
+    position: sticky;
+    top: 0;
+    z-index: 1; /* Ensure it's above other content */
+  }
+`;
+
+const FadeTopOverflow = styled.div`
+  position: absolute;
+  top: 0;
+  /* left: 0; */
+  /* right: 0; */
+  height: 200px;
+  width: 100%;
+  /* pointer-events: none; */
+  z-index: 1;
+  /* opacity: 1; */
+  /* transition: opacity 0.3s; */
+  /* background-color: aliceblue; */
+  background: linear-gradient(to top, transparent, black 50%);
+`;
+
+const FadeBottomOverflow = styled.div`
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 20px;
+  pointer-events: none;
+  z-index: 1;
+  /* opacity: 1; */
+  /* transition: opacity 0.3s; */
 `;
 
 const Title = styled.h1`
@@ -105,4 +142,11 @@ const Title = styled.h1`
   }
 `;
 
-export { Section, ContentContainer, SectionText, Title };
+export {
+  Section,
+  ContentContainer,
+  SectionText,
+  Title,
+  FadeTopOverflow,
+  FadeBottomOverflow,
+};

@@ -105,6 +105,7 @@ const ComoFuncionaContainer = styled(ContentContainer)`
 const ComoFuncionaTitle = styled(Title)`
   top: 0px;
   color: white;
+  writing-mode: vertical-lr;
 
   @media (min-width: 768px) {
     writing-mode: vertical-rl;
