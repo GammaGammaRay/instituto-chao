@@ -89,69 +89,52 @@ function Contato() {
 }
 
 const ContatoSection = styled(Section)`
-  font-family: "Grotesk";
-  letter-spacing: 0.12em;
   background-color: var(--color-salmon);
   color: white;
-  overflow: hidden;
-
-  /* display: flex;
-  flex-direction: row;
-  align-items: start;
-  justify-content: space-between; */
 `;
 
 const InfosContainer = styled(ContentContainer)`
-  display: flex;
-  flex-direction: column-reverse;
+  /* display: flex; */
+  /* flex-direction: column-reverse; */
   align-items: end;
 
   padding: 0px 0px !important;
-
-  width: 100svw;
   height: 100%;
+  /* max-width: 100svw; */
+  /* width: 100svw; */
+  margin: 10px;
 
-  /* background-color: #80fe95ab; */
-
+  background-color: #80fe95ab;
   h1,
   h2 {
     font-family: var(--title-font);
     font-weight: var(--title-font-weight);
   }
-
   @media (min-width: 768px) {
     flex-direction: row;
-    justify-content: flex-start;
-    /* justify-content: space-between; */
+    justify-content: space-between;
   }
 `;
 
-const ContatoEnderecoContainer = styled(ContentContainer)`
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: space-between;
+const ContatoEnderecoContainer = styled.div`
+  /* margin-left: auto; */
+  /* display: flex; */
+  /* flex-direction: column; */
   font-size: clamp(18px, 1.8svw, 22px);
 
-  width: fit-content;
-  max-width: 80%;
+  /* width: fit-content; */
+  /* width: 80%; */
 
   background-color: #206bad6a;
 
   h1 {
-    width: fit-content;
     font-size: clamp(24px, 8svw, 110px);
     white-space: nowrap;
-    max-width: 100%;
   }
 `;
 
 const ContatoEnderecoInfo = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  width: 100%;
 
   background-color: #a76b21;
 
@@ -159,14 +142,9 @@ const ContatoEnderecoInfo = styled.div`
     flex-direction: row;
     justify-content: space-between;
 
-    div {
-      justify-content: space-between;
-    }
-
     div:nth-child(1) {
       display: flex;
       flex-direction: column;
-      align-items: start;
     }
     div:nth-child(2) {
       display: flex;
@@ -186,7 +164,6 @@ const HorarioContainer = styled.div`
 
   h2 {
     writing-mode: vertical-rl;
-    font-size: 15dvh;
   }
 
   @media (min-width: 768px) {
@@ -204,15 +181,9 @@ const RightDiv = styled.div`
   align-items: start;
   justify-content: space-between;
 
-  width: 100%;
   height: 100%;
 
-  /* background-color: darkcyan; */
-
-  @media (min-width: 768px) {
-    justify-content: space-between;
-    align-items: end;
-  }
+  background-color: darkcyan;
 `;
 
 const HorariosLeft = styled.div`
@@ -266,9 +237,10 @@ const SocialLinksContainer = styled.div`
   justify-content: start;
   align-items: start;
 
-  /* background-color: #14ff575f; */
+  background-color: #14ff575f;
 
   @media (min-width: 768px) {
+    /* width: 100%; */
     align-items: center;
     justify-content: end;
   }

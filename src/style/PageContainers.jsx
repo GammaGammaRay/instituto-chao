@@ -32,10 +32,9 @@ const ContentContainer = styled.div`
   /* background-color: #00ffff44; */
 
   @media (min-width: 768px) {
-    /* width: clamp(70svw, 75svw, 85svw); */
-    width: 70svw;
-    padding: 3svh 2svw;
+    width: clamp(70svw, 80svw, 85svw);
     /* width: 70svw; */
+    padding: 3svh 2svw;
   }
 `;
 
@@ -89,6 +88,7 @@ const Title = styled.h1`
   font-weight: var(--title-font-weight);
   font-size: clamp(80px, 10svw, 140px);
   color: black;
+  white-space: nowrap;
 
   margin-top: 5svh;
 
@@ -104,6 +104,7 @@ const Title = styled.h1`
   }
 
   @media (min-width: 768px) {
+    white-space: normal;
     font-size: clamp(120px, 10svw, 200px);
     line-height: 0.8em;
     margin-top: 0;
