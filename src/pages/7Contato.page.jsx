@@ -134,13 +134,15 @@ const ContatoEnderecoContainer = styled(ContentContainer)`
   font-size: clamp(18px, 1.8svw, 22px);
 
   width: fit-content;
+  max-width: 80%;
 
   background-color: #206bad6a;
 
   h1 {
     width: fit-content;
-    font-size: clamp(24px, 12dvw, 110px);
+    font-size: clamp(24px, 8svw, 110px);
     white-space: nowrap;
+    max-width: 100%;
   }
 `;
 
@@ -200,9 +202,10 @@ const RightDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: start;
-  justify-content: end;
+  justify-content: space-between;
 
   width: 100%;
+  height: 100%;
 
   /* background-color: darkcyan; */
 
