@@ -27,7 +27,7 @@ function Contato() {
           </SocialLinksContainer>
         )}
         <ContatoEnderecoContainer>
-          <h2>CONTATO E ENDEREÇO</h2>
+          <h1>CONTATO E ENDEREÇO</h1>
           <ContatoEnderecoInfo>
             <div>
               <span>+55 11 3819-4205</span>
@@ -95,22 +95,25 @@ const ContatoSection = styled(Section)`
   color: white;
   overflow: hidden;
 
-  display: flex;
+  /* display: flex;
   flex-direction: row;
   align-items: start;
-  justify-content: start;
+  justify-content: space-between; */
 `;
 
 const InfosContainer = styled(ContentContainer)`
   display: flex;
   flex-direction: column-reverse;
   align-items: end;
-  justify-content: space-between;
 
-  width: 100%;
+  padding: 0px 0px !important;
+
+  width: 100svw;
+  height: 100%;
 
   /* background-color: #80fe95ab; */
 
+  h1,
   h2 {
     font-family: var(--title-font);
     font-weight: var(--title-font-weight);
@@ -118,11 +121,8 @@ const InfosContainer = styled(ContentContainer)`
 
   @media (min-width: 768px) {
     flex-direction: row;
-    align-items: end;
-    justify-content: space-between;
-    h2 {
-      font-size: 5em;
-    }
+    justify-content: flex-start;
+    /* justify-content: space-between; */
   }
 `;
 
@@ -131,23 +131,16 @@ const ContatoEnderecoContainer = styled(ContentContainer)`
   flex-direction: column;
   align-items: start;
   justify-content: space-between;
-  font-size: 24px;
+  font-size: clamp(18px, 1.8svw, 22px);
 
-  /* background-color: #206bad6a; */
+  width: fit-content;
 
-  span {
-  }
+  background-color: #206bad6a;
 
-  h2 {
-    font-size: 10dvw;
-  }
-
-  @media (min-width: 768px) {
-    font-size: 34px;
-    justify-content: end;
-    h2 {
-      font-size: max(5dvw, 7dvw);
-    }
+  h1 {
+    width: fit-content;
+    font-size: clamp(24px, 12dvw, 110px);
+    white-space: nowrap;
   }
 `;
 
@@ -156,20 +149,13 @@ const ContatoEnderecoInfo = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
-  /* background-color: #a76b21; */
-  /* span {
-  } */
-  div {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-  }
+  width: 100%;
+
+  background-color: #a76b21;
 
   @media (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;
-    span {
-    }
 
     div {
       justify-content: space-between;
@@ -194,7 +180,7 @@ const HorarioContainer = styled.div`
   align-items: start;
   justify-content: start;
 
-  /* background-color: blue; */
+  background-color: #0000ff3b;
 
   h2 {
     writing-mode: vertical-rl;
@@ -215,6 +201,8 @@ const RightDiv = styled.div`
   flex-direction: column;
   align-items: start;
   justify-content: end;
+
+  width: 100%;
 
   /* background-color: darkcyan; */
 
@@ -251,9 +239,6 @@ const HorariosLista = styled.div`
   align-items: end;
   justify-content: space-between;
   /* background-color: #ff149160; */
-
-  @media (min-width: 768px) {
-  }
 `;
 
 const Horario = styled.div`
@@ -267,6 +252,8 @@ const Horario = styled.div`
   span:nth-child(2) {
     font-weight: 100;
     font-size: smaller;
+    margin-top: 0.2svh;
+    margin-bottom: 1.5svh;
   }
 `;
 
