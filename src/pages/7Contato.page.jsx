@@ -9,99 +9,66 @@ function Contato() {
   return (
     <ContatoSection id="contato">
       <InfosContainer>
-        {!isMobile ? (
-          <div></div>
-        ) : (
-          <SocialLinksContainer>
-            <LinkWrapper>
-              <a href="https://www.facebook.com/institutochao/">
-                <StyledIcon icon="simple-icons:facebook" />
-              </a>
-            </LinkWrapper>
-
-            <LinkWrapper>
-              <a href="https://www.instagram.com/institutochao">
-                <StyledIcon icon="simple-icons:instagram" />
-              </a>
-            </LinkWrapper>
-          </SocialLinksContainer>
-        )}
-        <ContatoEnderecoContainer>
-          <h1>CONTATO E ENDEREÇO</h1>
-          <ContatoEnderecoInfo>
-            <div>
-              <span>+55 11 3819-4205</span>
-              <span>
-                <a href="mailto:contato@institutochao.org">
-                  contato@institutochao.org
-                </a>
-              </span>
-            </div>
-            <div>
-              <span>Rua Harmonia, 114 - Vila Madalena</span>
-              <span>São Paulo / SP - 05435-000 - BR</span>
-            </div>
-          </ContatoEnderecoInfo>
-        </ContatoEnderecoContainer>
-        <RightDiv>
-          <HorarioContainer>
-            <HorariosLeft>
-              <HorariosLista>
-                <Horario>
-                  <span>2ᵃ FEIRA</span>
-                  <span>8 ÀS 14h</span>
-                </Horario>
-                <Horario>
-                  <span>3ᵃ a 6ᵃ FEIRA</span>
-                  <span>8 ÀS 19h</span>
-                </Horario>
-                <Horario>
-                  <span>SÁB. E DOM.</span>
-                  <span>8 ÀS 17h</span>
-                </Horario>
-              </HorariosLista>
-            </HorariosLeft>
-            <HorariosRight>
-              <h2>HORÁRIO</h2>
-            </HorariosRight>
-          </HorarioContainer>
-          {!isMobile ? (
-            <SocialLinksContainer>
-              <LinkWrapper>
-                <a href="https://www.facebook.com/institutochao/">
-                  <StyledIcon icon="simple-icons:facebook" />
-                </a>
-              </LinkWrapper>
-
-              <LinkWrapper>
-                <a href="https://www.instagram.com/institutochao">
-                  <StyledIcon icon="simple-icons:instagram" />
-                </a>
-              </LinkWrapper>
-            </SocialLinksContainer>
-          ) : (
-            <div></div>
-          )}
-        </RightDiv>
+        <EnderecoContatoContainer>
+          <EnderecoContato>
+            <h1>CONTATO E ENDEREÇO</h1>
+            <ContatoEnderecoInfo>
+              <div>
+                <span>+55 11 3819-4205</span>
+                <span>
+                  <a href="mailto:contato@institutochao.org">
+                    contato@institutochao.org
+                  </a>
+                </span>
+              </div>
+              <div>
+                <span>Rua Harmonia, 114 - Vila Madalena</span>
+                <span>São Paulo / SP - 05435-000 - BR</span>
+              </div>
+            </ContatoEnderecoInfo>
+          </EnderecoContato>
+        </EnderecoContatoContainer>
+        <HorarioContainer>
+          <HorariosLeft>
+            <HorariosLista>
+              <Horario>
+                <span>2ᵃ FEIRA</span>
+                <span>8 ÀS 14h</span>
+              </Horario>
+              <Horario>
+                <span>3ᵃ a 6ᵃ FEIRA</span>
+                <span>8 ÀS 19h</span>
+              </Horario>
+              <Horario>
+                <span>SÁB. E DOM.</span>
+                <span>8 ÀS 17h</span>
+              </Horario>
+            </HorariosLista>
+          </HorariosLeft>
+          <HorariosRight>
+            <h2>HORÁRIO</h2>
+          </HorariosRight>
+        </HorarioContainer>
       </InfosContainer>
     </ContatoSection>
   );
 }
 
 const ContatoSection = styled(Section)`
+  font-family: "Grotesk";
+  /* letter-spacing: 0.12em; */
   background-color: var(--color-salmon);
   color: white;
 `;
 
 const InfosContainer = styled(ContentContainer)`
-  /* display: flex; */
-  /* flex-direction: column-reverse; */
+  display: flex;
+  flex-direction: column-reverse;
   align-items: end;
+  padding: 0px;
 
-  padding: 0px 0px !important;
   height: 100%;
-  /* max-width: 100svw; */
-  /* width: 100svw; */
+  width: 100svw;
   margin: 10px;
 
   background-color: #80fe95ab;
@@ -116,21 +83,25 @@ const InfosContainer = styled(ContentContainer)`
   }
 `;
 
-const ContatoEnderecoContainer = styled.div`
-  /* margin-left: auto; */
-  /* display: flex; */
-  /* flex-direction: column; */
-  font-size: clamp(18px, 1.8svw, 22px);
+const EnderecoContatoContainer = styled.div`
+  height: 100%;
+  width: fit-content;
 
-  /* width: fit-content; */
-  /* width: 80%; */
-
-  background-color: #206bad6a;
+  display: flex;
+  align-items: end;
 
   h1 {
-    font-size: clamp(24px, 8svw, 110px);
+    font-size: clamp(24px, 8svw, 130px);
     white-space: nowrap;
   }
+
+  background-color: #80ccfeab;
+`;
+
+const EnderecoContato = styled.div`
+  height: fit-content;
+
+  background-color: #80fec3ab;
 `;
 
 const ContatoEnderecoInfo = styled.div`
@@ -155,35 +126,16 @@ const ContatoEnderecoInfo = styled.div`
 `;
 
 const HorarioContainer = styled.div`
+  height: 100%;
+  /* width: fit-content; */
+  max-width: 100%;
+
   display: flex;
   flex-direction: row;
   align-items: start;
   justify-content: start;
 
-  background-color: #0000ff3b;
-
-  h2 {
-    writing-mode: vertical-rl;
-  }
-
-  @media (min-width: 768px) {
-    align-items: start;
-    justify-content: end;
-    flex-direction: row;
-    h2 {
-      font-size: 20dvh;
-    }
-  }
-`;
-const RightDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: space-between;
-
-  height: 100%;
-
-  background-color: darkcyan;
+  background-color: #fe80ceab;
 `;
 
 const HorariosLeft = styled.div`
@@ -200,11 +152,17 @@ const HorariosLeft = styled.div`
 `;
 
 const HorariosRight = styled.div`
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: end;
-  /* background-color: #8834c567; */
+
+  h2 {
+    font-size: clamp(32px, 12svw, 160px);
+    writing-mode: vertical-rl;
+  }
+  background-color: #8834c567;
 `;
 
 const HorariosLista = styled.div`
@@ -257,5 +215,4 @@ const StyledIcon = styled(Icon)`
   width: 80px;
   height: 100px;
 `;
-
 export default Contato;
