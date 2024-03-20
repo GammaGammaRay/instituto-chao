@@ -37,7 +37,7 @@ const GlobalStyle = createGlobalStyle`
     /* --title-font-size-vert: max(10svh, 20svh); */
 
     --scroll-bar-width: 6px;
-    --scroll-bar-width-large: 12px;
+    --scroll-bar-width-large: 8px;
     
     
     

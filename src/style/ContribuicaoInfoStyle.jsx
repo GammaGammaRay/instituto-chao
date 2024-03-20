@@ -36,7 +36,7 @@ export const ContribuicaoContainer = styled(ContentContainer)`
     justify-content: space-between;
   }
 
-  background-color: #d3d3d330;
+  /* background-color: #d3d3d330; */
 `;
 
 export const ContribuicaoColLeft = styled.div`
@@ -70,7 +70,7 @@ export const ContribuicaoColRight = styled.div`
     height: 50svh;
   }
 
-  background-color: lightgreen;
+  /* background-color: lightgreen; */
 `;
 
 export const Line = styled.div`

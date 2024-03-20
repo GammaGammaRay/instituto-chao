@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 
 // div {
 //   white-space: nowrap;
-//   -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 90%, rgba(0,0,0,0));
+//   -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 90%, rgba(0,0,0,0));
 // }
 
 const Section = styled.section`
@@ -15,6 +15,7 @@ const Section = styled.section`
   align-items: start;
   justify-content: center;
   z-index: 1;
+  overflow-y: hidden;
 
   @media (min-width: 768px) {
     height: calc(100svh - var(--nav-height));
@@ -43,11 +44,28 @@ const ContentContainer = styled.div`
   }
 `;
 
+const SectionTextWrapper = styled.div`
+  max-height: 96svh;
+  /* background-color: #892be267; */
+  position: relative;
+
+  .sticky-wrapper-top {
+    position: sticky;
+    width: 100%;
+    z-index: 1;
+  }
+  .sticky-wrapper-bottom {
+    position: sticky;
+    width: 100%;
+    z-index: 1;
+  }
+`;
+
 const SectionText = styled.div`
-  /* font-size: min(36px, 5svw); */
   font-size: clamp(24px, 3vw, 28px);
   line-height: 1.2em;
   word-wrap: break-word;
+  height: 100%;
   max-height: 96svh;
   /* text-align: justify; */
 
@@ -57,8 +75,13 @@ const SectionText = styled.div`
 
   padding: 0svh 1svw 0svh 3svw;
 
+  position: relative;
+  /* overflow: hidden; */
+  /* overflow-y: auto; */
+
   &::-webkit-scrollbar {
     width: var(--scroll-bar-width);
+    background-color: #ffffff28;
   }
 
   p {
@@ -66,7 +89,7 @@ const SectionText = styled.div`
   }
 
   @media (min-width: 768px) {
-    line-height: 1.1em;
+    line-height: 1.2em;
     font-size: clamp(24px, 3vw, 28px);
     padding: 0 1svw;
     max-height: 90svh;
@@ -105,4 +128,4 @@ const Title = styled.h1`
   }
 `;
 
-export { Section, ContentContainer, SectionText, Title };
+export { Section, ContentContainer, SectionText, Title, SectionTextWrapper };

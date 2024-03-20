@@ -1,7 +1,5 @@
 import React, { useContext } from "react";
 
-import { styled } from "styled-components";
-import { Icon } from "@iconify/react";
 import { MobileContext } from "../context/mobileContext";
 import {
   ContribuicaoSection,
