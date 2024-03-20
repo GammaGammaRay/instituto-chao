@@ -1,10 +1,5 @@
 import { styled } from "styled-components";
 
-// div {
-//   white-space: nowrap;
-//   -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 90%, rgba(0,0,0,0));
-// }
-
 const Section = styled.section`
   height: 100svh;
   min-width: 100svw;
@@ -48,17 +43,6 @@ const SectionTextWrapper = styled.div`
   max-height: 96svh;
   /* background-color: #892be267; */
   position: relative;
-
-  .sticky-wrapper-top {
-    position: sticky;
-    width: 100%;
-    z-index: 1;
-  }
-  .sticky-wrapper-bottom {
-    position: sticky;
-    width: 100%;
-    z-index: 1;
-  }
 `;
 
 const SectionText = styled.div`
@@ -76,12 +60,11 @@ const SectionText = styled.div`
   padding: 0svh 1svw 0svh 3svw;
 
   position: relative;
-  /* overflow: hidden; */
-  /* overflow-y: auto; */
 
   &::-webkit-scrollbar {
     width: var(--scroll-bar-width);
     background-color: #ffffff28;
+    border-radius: 10px;
   }
 
   p {

@@ -17,12 +17,12 @@ const GlobalStyle = createGlobalStyle`
 
     html{
         scroll-snap-type: y mandatory;
-  scroll-snap-stop: always;
+        scroll-snap-stop: always;
         
         &::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-    background: transparent;
+            width: 0;
+            height: 0;
+            background: transparent;
 }
 
     }
@@ -70,26 +70,6 @@ const GlobalStyle = createGlobalStyle`
     
 }
 
-    input::-webkit-input-placeholder {
-  font-family: inherit; 
-  font-size: inherit;
-}
-    button {
-    outline: none;
-    border: none;
-    border-radius: 5px;
-    background-color: #e6d36b;
-    font-size: 20px;
-    color: #fff;
-    cursor: pointer;
-    width: 60%;
-    /* padding: 12px; */
-}
-    h1 {
-    font-weight: 700;
-    font-size: 26px;
-    color: white;
-}
 
 
 

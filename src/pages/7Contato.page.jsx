@@ -250,26 +250,19 @@ const HorariosLista = styled.div`
   flex-direction: column;
   align-items: end;
   justify-content: space-between;
-  background-color: #ff149160;
+  /* background-color: #ff149160; */
 
   @media (min-width: 768px) {
   }
 `;
 
 const Horario = styled.div`
-  font-size: 24px;
+  font-size: large;
   display: flex;
   flex-direction: column;
   align-items: end;
   white-space: nowrap;
-
-  /* margin-bottom: 2svh; */
-
-  background-color: darkblue;
-
-  @media (min-width: 768px) {
-    font-size: 34px;
-  }
+  font-weight: 600;
 
   span:nth-child(2) {
     font-weight: 100;

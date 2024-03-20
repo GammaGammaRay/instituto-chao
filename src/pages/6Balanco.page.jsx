@@ -68,9 +68,9 @@ function Balanco() {
           <BalancoTableTop>
             <BalancoTableTopContent>
               <h1>
-                BALANÇO
+                <span>BALANÇO</span>
                 <br />
-                FINANCEIRO
+                <span>FINANCEIRO</span>
               </h1>
 
               <MonthTitle>
@@ -163,21 +163,29 @@ const BalancoSection = styled(Section)`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* overflow-y: hidden; */
+  overflow: hidden;
+  /* line-height: 1rem; */
 
   h1 {
     font-size: clamp(42px, 5svw, 80px);
+    font-weight: 500;
+    font-family: var(--title-font);
+    font-weight: var(--title-font-weight);
+    /* 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+
+    color: black;
+    /* background-color: #892be258; */
+  }
+
+  h2 {
+    font-size: clamp(32px, 2.8svw, 46px);
+    font-weight: 500;
     font-family: var(--title-font);
     font-weight: var(--title-font-weight);
     color: black;
-  }
-
-  h3 {
-    font-weight: 500;
-    /* line-height: 0.75; */
-  }
-  @media (min-width: 768px) {
-    /* font-size: 4svh; */
   }
 `;
 
@@ -192,76 +200,44 @@ const BalancoLoading = styled(SectionText)`
 
 const BalancoContainer = styled(ContentContainer)`
   width: 90%;
+  min-height: 96%;
+  max-height: 98svh;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: start;
-  padding: 1svh 0.5svw;
+  padding: 0svh 0svw;
+  /* padding: 1svh 0.5svw; */
+  /* margin: 20svh 30px; */
 
-  /* background-color: #7fffd488; */
+  background-color: #7fffd488;
 
   @media (min-width: 768px) {
     width: 70%;
-    /* height: 90%; */
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: #000000;
-    border-radius: 6px;
-  }
-  &::-webkit-scrollbar-thumb:hover {
-    background: #292929;
   }
 `;
 
 const BalancoTableTopContent = styled.div`
-  /* font-size: clamp(40px, 8svw, 100px); */
   width: 90%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  height: fit-content;
 
   @media (min-width: 768px) {
     width: 100%;
   }
-  /* background-color: azure; */
-`;
-
-const BalancoTitle = styled.div`
-  font-family: var(--title-font);
-  font-weight: var(--title-font-weight);
-  width: fit-content;
-
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: end;
-  flex-basis: 0;
-
-  text-align: end;
-
-  @media (min-width: 768px) {
-    width: 100%;
-    align-items: start;
-    justify-content: end;
-    flex-basis: 0;
-  }
+  background-color: azure;
 `;
 
 const MonthTitle = styled.div`
-  font-family: var(--title-font);
-  font-weight: var(--title-font-weight);
-
   display: flex;
   flex-direction: column;
   justify-content: end;
 
-  /* background-color: #00ffff78; */
+  background-color: #00ffff78;
 
   @media (min-width: 768px) {
-    width: 100%;
-    flex-basis: 0;
-
     img {
       padding: 0.8svh;
     }
@@ -269,41 +245,21 @@ const MonthTitle = styled.div`
 `;
 
 const BalancoTableTop = styled.div`
-  display: flex;
   width: 100%;
 
   /* background-color: blue; */
 `;
 const BalancoTableBody = styled.div`
-  /* background-color: blue; */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 100%;
+  background-color: #0000ff49;
 
-  h3 {
-    /* font-size: clamp(22px, 3svh, 40px); */
-    width: fit-content;
-    @media (min-width: 768px) {
-      /* font-size: clamp(30px, 3svh, 50px); */
-    }
-  }
+  width: 100%;
 `;
 
 const BalancoTableLine = styled.div`
-  font-size: clamp(16px, 2.2svw, 26px);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  /* align-items: flex-start;  */
-  padding-top: 1svh;
-  padding-left: 0.5svw;
-  padding-right: 0.5svw;
-
-  /* @media (min-width: 768px) {
-    font-size: clamp(24px, 4svw, 30px);
-  } */
 
   span:nth-child(1) {
     padding-right: 12px;
