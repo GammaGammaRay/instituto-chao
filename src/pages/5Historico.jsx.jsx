@@ -82,7 +82,7 @@ const HistoricoContainer = styled(ContentContainer)`
 `;
 
 const HistoricoText = styled(SectionText)`
-  overflow-y: auto;
+  overflow-y: scroll;
 
   &::-webkit-scrollbar-thumb {
     background: #000000;

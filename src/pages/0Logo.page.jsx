@@ -47,7 +47,7 @@ const LogoPage = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  /* position: relative; */
   /* height: 100vh; // Adjust height to viewport height */
   /* z-index: 1; // Set a higher z-index to ensure it's above the following section */
   img {
@@ -60,7 +60,7 @@ const LogoSection = styled(Section)`
   flex-direction: column;
   align-items: center;
   justify-content: start;
-  overflow-y: hidden;
+  overflow: hidden;
   @media (min-width: 768px) {
     margin-top: var(--nav-height);
   }

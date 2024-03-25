@@ -3,7 +3,7 @@ import { Section, ContentContainer } from "./PageContainers";
 import { Icon } from "@iconify/react";
 
 export const ContribuicaoSection = styled(Section)`
-  box-shadow: 0px -10px 12pxF rgba(0, 0, 0, 0.1); /* Horizontal offset, vertical offset, blur radius, color */
+  box-shadow: 0px -10px 12px rgba(0, 0, 0, 0.1); /* Horizontal offset, vertical offset, blur radius, color */
   font-family: "MDNichrome";
   letter-spacing: 0.1em;
   display: flex;
@@ -31,7 +31,7 @@ export const ContribuicaoContainer = styled(ContentContainer)`
   width: 90svw;
 
   @media (min-width: 768px) {
-    width: 96svw;
+    max-width: 96svw;
     flex-direction: row;
     justify-content: space-between;
   }
@@ -111,7 +111,7 @@ export const LineContent = styled.div`
   font-weight: 400;
 
   @media (min-width: 768px) {
-    font-size: clamp(46px, 5svw, 80px);
+    font-size: clamp(46px, 4svw, 80px);
     font-weight: 400;
   }
 

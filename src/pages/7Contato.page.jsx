@@ -59,6 +59,7 @@ const ContatoSection = styled(Section)`
   /* letter-spacing: 0.12em; */
   background-color: var(--color-salmon);
   color: white;
+  overflow: hidden;
 `;
 
 const InfosContainer = styled(ContentContainer)`
@@ -67,11 +68,13 @@ const InfosContainer = styled(ContentContainer)`
   align-items: end;
   padding: 0px;
 
-  height: 100%;
-  width: 100svw;
+  width: 99svw;
+  /* width: fit-content; */
+  height: 100svh;
   margin: 10px;
+  /* padding: 0px 20px; */
 
-  background-color: #80fe95ab;
+  /* background-color: #80fe95ab; */
   h1,
   h2 {
     font-family: var(--title-font);
@@ -93,21 +96,22 @@ const EnderecoContatoContainer = styled.div`
   h1 {
     font-size: clamp(24px, 8svw, 130px);
     white-space: nowrap;
+    margin-bottom: 2svh;
   }
 
-  background-color: #80ccfeab;
+  /* background-color: #80ccfeab; */
 `;
 
 const EnderecoContato = styled.div`
   height: fit-content;
 
-  background-color: #80fec3ab;
+  /* background-color: #80fec3ab; */
 `;
 
 const ContatoEnderecoInfo = styled.div`
   display: flex;
-
-  background-color: #a76b21;
+  font-size: clamp(18px, 2.2svw, 26px);
+  /* background-color: #a76b21; */
 
   @media (min-width: 768px) {
     flex-direction: row;
@@ -135,7 +139,7 @@ const HorarioContainer = styled.div`
   align-items: start;
   justify-content: start;
 
-  background-color: #fe80ceab;
+  /* background-color: #fe80ceab; */
 `;
 
 const HorariosLeft = styled.div`
@@ -162,7 +166,7 @@ const HorariosRight = styled.div`
     font-size: clamp(32px, 12svw, 160px);
     writing-mode: vertical-rl;
   }
-  background-color: #8834c567;
+  /* background-color: #8834c567; */
 `;
 
 const HorariosLista = styled.div`

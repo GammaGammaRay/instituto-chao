@@ -259,10 +259,10 @@ const BalancoTableLine = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
 
   span:nth-child(1) {
-    padding-right: 12px;
+    /* padding-right: 12px; */
     @media (min-width: 768px) {
       width: 50%;
     }
