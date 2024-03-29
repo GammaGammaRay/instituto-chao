@@ -164,20 +164,25 @@ const BalancoSection = styled(Section)`
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  /* padding: 0; */
+  margin: 0;
   /* line-height: 1rem; */
+  /* line-height: 1; */
 
   h1 {
     font-size: clamp(42px, 5svw, 80px);
     font-weight: 500;
     font-family: var(--title-font);
     font-weight: var(--title-font-weight);
+
+    /* margin: 0; */
     /* 
     display: flex;
     flex-direction: column;
     justify-content: space-between; */
 
     color: black;
-    /* background-color: #892be258; */
+    background-color: #892be258;
   }
 
   h2 {

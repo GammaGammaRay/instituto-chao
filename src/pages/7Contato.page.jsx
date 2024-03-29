@@ -66,23 +66,26 @@ const InfosContainer = styled(ContentContainer)`
   display: flex;
   flex-direction: column-reverse;
   align-items: end;
-  padding: 0px;
+  justify-content: space-between;
+  /* padding: 0px; */
 
-  width: 99svw;
+  width: 97svw;
+  max-height: 100svh;
+  margin-top: 40px;
   /* width: fit-content; */
-  height: 100svh;
-  margin: 10px;
+  /* margin: 10px; */
   /* padding: 0px 20px; */
 
-  /* background-color: #80fe95ab; */
+  background-color: #80fe95ab;
   h1,
   h2 {
     font-family: var(--title-font);
     font-weight: var(--title-font-weight);
   }
   @media (min-width: 768px) {
+    min-height: 90svh;
+    margin: 0px;
     flex-direction: row;
-    justify-content: space-between;
   }
 `;
 
@@ -135,23 +138,31 @@ const HorarioContainer = styled.div`
   max-width: 100%;
 
   display: flex;
-  flex-direction: row;
+  flex-direction: column-reverse;
   align-items: start;
   justify-content: start;
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: start;
+  }
 
-  /* background-color: #fe80ceab; */
+  background-color: #fe80ceab;
 `;
 
 const HorariosLeft = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: end;
   justify-content: space-between;
 
-  /* background-color: #4c008267; */
+  background-color: #4c008267;
 
   @media (min-width: 768px) {
-    height: 30%;
+    flex-direction: row;
+    align-items: end;
+    justify-content: space-between;
   }
 `;
 
@@ -164,16 +175,27 @@ const HorariosRight = styled.div`
 
   h2 {
     font-size: clamp(32px, 12svw, 160px);
-    writing-mode: vertical-rl;
+    @media (min-width: 768px) {
+      writing-mode: vertical-rl;
+    }
   }
   /* background-color: #8834c567; */
 `;
 
 const HorariosLista = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: end;
   justify-content: space-between;
+  height: fit-content;
+
+  @media (min-width: 768px) {
+    flex-direction: column;
+    align-items: end;
+    justify-content: space-between;
+    /* height: 30%; */
+  }
+
   /* background-color: #ff149160; */
 `;
 
