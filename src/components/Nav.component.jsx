@@ -145,10 +145,13 @@ const MenuContent = styled.div`
 const NavBar = styled.div`
   width: 100svw;
   height: var(--nav-height);
+  max-height: 60px;
+  min-height: 30px;
   position: fixed;
   overflow-x: hidden;
   overflow-y: hidden;
   font-size: 20px;
+  /* line-height: 20px; */
 
   top: 0px;
   left: 0px;
@@ -170,11 +173,21 @@ const NavButtonContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
+
+  background-color: #f0ffff55;
 `;
 
-const NavBtn = styled.div`
+const NavBtn = styled.button`
   cursor: pointer;
-  margin-top: 12px;
+  background: green;
+  border: none;
+  padding: 0;
+  vertical-align: middle;
+  color: inherit;
+  font: inherit;
+  display: inline-flex;
+  align-items: center;
 `;
 
 export default Nav;

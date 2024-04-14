@@ -63,7 +63,9 @@ const GlobalStyle = createGlobalStyle`
     body{
   
 
-    font-family: 'Grotesk', sans-serif;
+    /* font-family: 'Grotesk', sans-serif; */
+    font-family: "Hanken Grotesk", sans-serif;
+    font-weight: 400;
     background-color: #d7d7d7;
     width: 100%;
 

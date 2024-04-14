@@ -49,7 +49,7 @@ function Buscamos() {
           <p>
             Assim, amplia-se o consumo de produtos mais sustentáveis, promove-se
             a redistribuição de renda e a descentralização do poder. Temos mais
-            de 550 grupos produtores no Brasil que fornecem para a associação.,
+            de 550 grupos produtores no Brasil que fornecem para a associação,
             construindo uma rede horizontal e participativa de relações sociais
             e econômicas e sempre priorizando relações de produção e de trabalho
             mais democráticas em todo o país.

@@ -45,8 +45,8 @@ const SectionTextWrapper = styled.div`
 `;
 
 const SectionText = styled.div`
-  font-size: clamp(24px, 3vw, 28px);
-  line-height: 1.2em;
+  font-size: clamp(20px, 3vw, 24px);
+  /* line-height: 1.2em; */
   word-wrap: break-word;
   height: 100%;
   max-height: 96svh;
@@ -71,8 +71,8 @@ const SectionText = styled.div`
   }
 
   @media (min-width: 768px) {
-    line-height: 1.2em;
-    font-size: clamp(24px, 3vw, 28px);
+    /* line-height: 1.2em; */
+    font-size: clamp(18px, 3vw, 24px);
     padding: 0 1svw;
     max-height: 90svh;
     &::-webkit-scrollbar {
@@ -110,6 +110,16 @@ const Title = styled.h1`
     margin-top: 0;
     flex-direction: column;
   }
+
+  @media (min-width: 768px) and (min-height: ) {
+    white-space: normal;
+    font-size: clamp(120px, 10svw, 200px);
+    line-height: 0.8em;
+    margin-top: 0;
+    flex-direction: column;
+  }
+
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait);
 `;
 
 export { Section, ContentContainer, SectionText, Title, SectionTextWrapper };

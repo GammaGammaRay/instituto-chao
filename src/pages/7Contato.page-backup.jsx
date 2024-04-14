@@ -61,6 +61,7 @@ function Contato() {
                 </Horario>
               </HorariosLista>
             </HorariosLeft>
+
             <HorariosRight>
               <h2>HORÁRIO</h2>
             </HorariosRight>
@@ -80,7 +81,7 @@ function Contato() {
               </LinkWrapper>
             </SocialLinksContainer>
           ) : (
-            <div></div>
+            <div />
           )}
         </RightDiv>
       </InfosContainer>
@@ -161,7 +162,7 @@ const HorarioContainer = styled.div`
   align-items: start;
   justify-content: start;
 
-  background-color: #0000ff3b;
+  /* background-color: #0000ff3b; */
 
   h2 {
     writing-mode: vertical-rl;
@@ -240,7 +241,11 @@ const SocialLinksContainer = styled.div`
   justify-content: start;
   align-items: start;
 
+  width: 100%;
+  height: 100%;
   background-color: #14ff575f;
+
+  font-size: 60px;
 
   @media (min-width: 768px) {
     /* width: 100%; */

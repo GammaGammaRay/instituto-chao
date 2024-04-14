@@ -48,6 +48,19 @@ function Contato() {
           <HorariosRight>
             <h2>HORÁRIO</h2>
           </HorariosRight>
+          <SocialLinksContainer>
+            <LinkWrapper>
+              <a href="https://www.facebook.com/institutochao/">
+                <StyledIcon icon="simple-icons:facebook" />
+              </a>
+            </LinkWrapper>
+
+            <LinkWrapper>
+              <a href="https://www.instagram.com/institutochao">
+                <StyledIcon icon="simple-icons:instagram" />
+              </a>
+            </LinkWrapper>
+          </SocialLinksContainer>
         </HorarioContainer>
       </InfosContainer>
     </ContatoSection>
@@ -71,6 +84,7 @@ const InfosContainer = styled(ContentContainer)`
 
   width: 97svw;
   max-height: 100svh;
+  min-height: 86svh;
   margin-top: 40px;
   /* width: fit-content; */
   /* margin: 10px; */
@@ -91,8 +105,9 @@ const InfosContainer = styled(ContentContainer)`
 
 const EnderecoContatoContainer = styled.div`
   height: 100%;
-  width: fit-content;
 
+  /* width: fit-content; */
+  width: 100%;
   display: flex;
   align-items: end;
 
@@ -102,7 +117,11 @@ const EnderecoContatoContainer = styled.div`
     margin-bottom: 2svh;
   }
 
-  /* background-color: #80ccfeab; */
+  @media (min-width: 768px) {
+    width: fit-content;
+  }
+
+  background-color: #80ccfeab;
 `;
 
 const EnderecoContato = styled.div`
@@ -114,33 +133,35 @@ const EnderecoContato = styled.div`
 const ContatoEnderecoInfo = styled.div`
   display: flex;
   font-size: clamp(18px, 2.2svw, 26px);
-  /* background-color: #a76b21; */
+  background-color: #a76b21;
 
+  div:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+  }
+  div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    /* justify-content: end; */
+    background-color: #9ce4d993;
+  }
   @media (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;
-
-    div:nth-child(1) {
-      display: flex;
-      flex-direction: column;
-    }
-    div:nth-child(2) {
-      display: flex;
-      flex-direction: column;
-      align-items: end;
-    }
   }
 `;
 
 const HorarioContainer = styled.div`
   height: 100%;
   /* width: fit-content; */
-  max-width: 100%;
+  width: fit-content;
 
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: row;
   align-items: start;
-  justify-content: start;
+  /* justify-content: end; */
+
   @media (min-width: 768px) {
     display: flex;
     flex-direction: row;
@@ -153,7 +174,6 @@ const HorarioContainer = styled.div`
 
 const HorariosLeft = styled.div`
   display: flex;
-  flex-direction: row;
   align-items: end;
   justify-content: space-between;
 
@@ -173,18 +193,19 @@ const HorariosRight = styled.div`
   justify-content: space-between;
   align-items: end;
 
+  writing-mode: vertical-rl;
   h2 {
     font-size: clamp(32px, 12svw, 160px);
-    @media (min-width: 768px) {
+    /* @media (min-width: 768px) {
       writing-mode: vertical-rl;
-    }
+    } */
   }
   /* background-color: #8834c567; */
 `;
 
 const HorariosLista = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: end;
   justify-content: space-between;
   height: fit-content;
@@ -220,6 +241,9 @@ const SocialLinksContainer = styled.div`
   flex-direction: row;
   justify-content: start;
   align-items: start;
+
+  width: 500px;
+  height: 500px;
 
   background-color: #14ff575f;
 
