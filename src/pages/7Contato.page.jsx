@@ -28,26 +28,28 @@ function Contato() {
             </ContatoEnderecoInfo>
           </EnderecoContato>
         </EnderecoContatoContainer>
-        <HorarioContainer>
-          <HorariosLeft>
-            <HorariosLista>
-              <Horario>
-                <span>2ᵃ FEIRA</span>
-                <span>8 ÀS 14h</span>
-              </Horario>
-              <Horario>
-                <span>3ᵃ a 6ᵃ FEIRA</span>
-                <span>8 ÀS 19h</span>
-              </Horario>
-              <Horario>
-                <span>SÁB. E DOM.</span>
-                <span>8 ÀS 17h</span>
-              </Horario>
-            </HorariosLista>
-          </HorariosLeft>
-          <HorariosRight>
-            <h2>HORÁRIO</h2>
-          </HorariosRight>
+        <SectionRightContainer>
+          <HorarioContainer>
+            <HorariosLeft>
+              <HorariosLista>
+                <Horario>
+                  <span>2ᵃ FEIRA</span>
+                  <span>8 ÀS 14h</span>
+                </Horario>
+                <Horario>
+                  <span>3ᵃ a 6ᵃ FEIRA</span>
+                  <span>8 ÀS 19h</span>
+                </Horario>
+                <Horario>
+                  <span>SÁB. E DOM.</span>
+                  <span>8 ÀS 17h</span>
+                </Horario>
+              </HorariosLista>
+            </HorariosLeft>
+            <HorariosRight>
+              <h2>HORÁRIO</h2>
+            </HorariosRight>
+          </HorarioContainer>
           <SocialLinksContainer>
             <LinkWrapper>
               <a href="https://www.facebook.com/institutochao/">
@@ -61,14 +63,13 @@ function Contato() {
               </a>
             </LinkWrapper>
           </SocialLinksContainer>
-        </HorarioContainer>
+        </SectionRightContainer>
       </InfosContainer>
     </ContatoSection>
   );
 }
 
 const ContatoSection = styled(Section)`
-  font-family: "Grotesk";
   /* letter-spacing: 0.12em; */
   background-color: var(--color-salmon);
   color: white;
@@ -90,7 +91,7 @@ const InfosContainer = styled(ContentContainer)`
   /* margin: 10px; */
   /* padding: 0px 20px; */
 
-  background-color: #80fe95ab;
+  /* background-color: #80fe95ab; */
   h1,
   h2 {
     font-family: var(--title-font);
@@ -121,7 +122,7 @@ const EnderecoContatoContainer = styled.div`
     width: fit-content;
   }
 
-  background-color: #80ccfeab;
+  /* background-color: #80ccfe4c; */
 `;
 
 const EnderecoContato = styled.div`
@@ -133,7 +134,7 @@ const EnderecoContato = styled.div`
 const ContatoEnderecoInfo = styled.div`
   display: flex;
   font-size: clamp(18px, 2.2svw, 26px);
-  background-color: #a76b21;
+  /* background-color: #a76b21; */
 
   div:nth-child(1) {
     display: flex;
@@ -144,7 +145,7 @@ const ContatoEnderecoInfo = styled.div`
     flex-direction: column;
     align-items: end;
     /* justify-content: end; */
-    background-color: #9ce4d993;
+    /* background-color: #9ce4d993; */
   }
   @media (min-width: 768px) {
     flex-direction: row;
@@ -220,6 +221,12 @@ const HorariosLista = styled.div`
   /* background-color: #ff149160; */
 `;
 
+const SectionRightContainer = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+`;
+
 const Horario = styled.div`
   font-size: large;
   display: flex;
@@ -241,9 +248,6 @@ const SocialLinksContainer = styled.div`
   flex-direction: row;
   justify-content: start;
   align-items: start;
-
-  width: 500px;
-  height: 500px;
 
   background-color: #14ff575f;
 

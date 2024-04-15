@@ -111,15 +111,13 @@ const Title = styled.h1`
     flex-direction: column;
   }
 
-  @media (min-width: 768px) and (min-height: ) {
+  @media (min-width: 768px) and (max-height: 600px) {
     white-space: normal;
-    font-size: clamp(120px, 10svw, 200px);
+    font-size: clamp(70px, 20svh, 200px);
     line-height: 0.8em;
     margin-top: 0;
     flex-direction: column;
   }
-
-  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait);
 `;
 
 export { Section, ContentContainer, SectionText, Title, SectionTextWrapper };

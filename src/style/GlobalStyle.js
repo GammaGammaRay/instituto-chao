@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+
 @font-face {
   font-family: 'Grotesk'; /* The name you want to use for the 'Grotesk' font */
   src: url('/fonts/Grotesk-Regular.otf') format('opentype');
@@ -64,7 +65,9 @@ const GlobalStyle = createGlobalStyle`
   
 
     /* font-family: 'Grotesk', sans-serif; */
-    font-family: "Hanken Grotesk", sans-serif;
+    /* font-family: "Hanken Grotesk", sans-serif; */
+    /* font-weight: 400; */
+    font-family: "Nunito", sans-serif;
     font-weight: 400;
     background-color: #d7d7d7;
     width: 100%;

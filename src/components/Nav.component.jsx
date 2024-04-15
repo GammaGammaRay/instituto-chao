@@ -150,7 +150,7 @@ const NavBar = styled.div`
   position: fixed;
   overflow-x: hidden;
   overflow-y: hidden;
-  font-size: 20px;
+  font-size: 16px;
   /* line-height: 20px; */
 
   top: 0px;
@@ -175,17 +175,13 @@ const NavButtonContainer = styled.div`
   justify-content: space-around;
   align-items: center;
 
-  background-color: #f0ffff55;
+  /* background-color: #f0ffff55; */
 `;
 
-const NavBtn = styled.button`
+const NavBtn = styled.div`
   cursor: pointer;
-  background: green;
   border: none;
-  padding: 0;
   vertical-align: middle;
-  color: inherit;
-  font: inherit;
   display: inline-flex;
   align-items: center;
 `;

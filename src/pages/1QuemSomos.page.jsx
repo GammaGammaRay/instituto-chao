@@ -69,24 +69,6 @@ function QuemSomos() {
             pública, pelo combate à fome, pela biodiversidade e preservação
             ambiental e pela soberania alimentar.
           </p>
-          <p>
-            Com todas as contradições inerentes, o nosso caminho é o do cuidado,
-            da aproximação das pessoas, da busca por relações mais justas e
-            transparentes. Aliando-se a movimentos sociais, comunidades
-            tradicionais e outras instituições, lutamos pela reforma agrária e
-            urbana, pela agroecologia, pela educação pública, pela saúde
-            pública, pelo combate à fome, pela biodiversidade e preservação
-            ambiental e pela soberania alimentar.
-          </p>
-          <p>
-            Com todas as contradições inerentes, o nosso caminho é o do cuidado,
-            da aproximação das pessoas, da busca por relações mais justas e
-            transparentes. Aliando-se a movimentos sociais, comunidades
-            tradicionais e outras instituições, lutamos pela reforma agrária e
-            urbana, pela agroecologia, pela educação pública, pela saúde
-            pública, pelo combate à fome, pela biodiversidade e preservação
-            ambiental e pela soberania alimentar.
-          </p>
         </QuemSomosText>
         {isMobile ? <QuemSomosTitle>QUEM SOMOS</QuemSomosTitle> : <div />}
       </ContentContainer>
