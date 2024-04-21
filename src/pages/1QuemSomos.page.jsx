@@ -114,7 +114,6 @@ const QuemSomosText = styled(SectionText)`
 const QuemSomosTitle = styled(Title)`
   writing-mode: vertical-lr;
   flex-direction: row;
-  /* background-color: aqua; */
 
   @media (min-width: 768px) {
     flex-direction: column;
