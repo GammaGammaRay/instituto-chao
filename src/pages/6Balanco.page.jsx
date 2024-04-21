@@ -143,7 +143,7 @@ function Balanco() {
             <HorizontalLine />
             <BalancoTableLine>
               <h3>PERCENTUAL DE ARRECADAÇÃO</h3>
-              {/* <span style={{ fontSize: `clamp(30px,10svw, 50px)` }}> */}
+
               <span>
                 {spreadsheetData[1].slice(19, 20).map((data, index) => (
                   <div key={`${index}`}>{data}%</div>
@@ -164,7 +164,7 @@ const BalancoSection = styled(Section)`
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  font-size: clamp(14px, 1.7svw, 24px);
+  font-size: clamp(14px, 3.3svh, 26px);
   /* padding: 0; */
   margin: 0;
   /* line-height: 1rem; */
@@ -219,7 +219,7 @@ const BalancoContainer = styled(ContentContainer)`
   /* background-color: #7fffd488; */
 
   @media (min-width: 768px) {
-    width: 70%;
+    width: 90%;
   }
 `;
 
@@ -287,7 +287,7 @@ const HorizontalLine = styled.div`
   height: 2px;
 
   @media (min-width: 768px) {
-    height: 3px;
+    height: 2px;
   }
 `;
 
