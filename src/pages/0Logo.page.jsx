@@ -50,6 +50,7 @@ const LogoPage = styled.div`
   /* position: relative; */
   /* height: 100vh; // Adjust height to viewport height */
   /* z-index: 1; // Set a higher z-index to ensure it's above the following section */
+
   img {
     width: 100%;
     max-width: 400px; // Set maximum width for the logo

@@ -27,6 +27,19 @@ function Contato() {
               </div>
             </ContatoEnderecoInfo>
           </EnderecoContato>
+          <SocialLinksContainer>
+            <LinkWrapper>
+              <a href="https://www.facebook.com/institutochao/">
+                <StyledIcon icon="simple-icons:facebook" />
+              </a>
+            </LinkWrapper>
+
+            <LinkWrapper>
+              <a href="https://www.instagram.com/institutochao">
+                <StyledIcon icon="simple-icons:instagram" />
+              </a>
+            </LinkWrapper>
+          </SocialLinksContainer>
         </EnderecoContatoContainer>
         <SectionRightContainer>
           <HorarioContainer>
@@ -50,19 +63,6 @@ function Contato() {
               <h2>HORÁRIO</h2>
             </HorariosRight>
           </HorarioContainer>
-          <SocialLinksContainer>
-            <LinkWrapper>
-              <a href="https://www.facebook.com/institutochao/">
-                <StyledIcon icon="simple-icons:facebook" />
-              </a>
-            </LinkWrapper>
-
-            <LinkWrapper>
-              <a href="https://www.instagram.com/institutochao">
-                <StyledIcon icon="simple-icons:instagram" />
-              </a>
-            </LinkWrapper>
-          </SocialLinksContainer>
         </SectionRightContainer>
       </InfosContainer>
     </ContatoSection>
@@ -70,6 +70,7 @@ function Contato() {
 }
 
 const ContatoSection = styled(Section)`
+  max-height: 100svh;
   /* letter-spacing: 0.12em; */
   background-color: var(--color-salmon);
   color: white;
@@ -84,7 +85,7 @@ const InfosContainer = styled(ContentContainer)`
   /* padding: 0px; */
 
   width: 97svw;
-  max-height: 100svh;
+  /* max-height: 100svh; */
   min-height: 86svh;
   margin-top: 40px;
   /* width: fit-content; */
@@ -98,19 +99,18 @@ const InfosContainer = styled(ContentContainer)`
     font-weight: var(--title-font-weight);
   }
   @media (min-width: 768px) {
-    min-height: 90svh;
     margin: 0px;
-    flex-direction: row;
   }
 `;
 
 const EnderecoContatoContainer = styled.div`
-  height: 100%;
+  /* height: 100%; */
 
   /* width: fit-content; */
   width: 100%;
   display: flex;
   align-items: end;
+  justify-content: space-between;
 
   h1 {
     font-size: clamp(24px, 8svw, 130px);
@@ -118,11 +118,7 @@ const EnderecoContatoContainer = styled.div`
     margin-bottom: 2svh;
   }
 
-  @media (min-width: 768px) {
-    width: fit-content;
-  }
-
-  /* background-color: #80ccfe4c; */
+  background-color: #80ccfe4c;
 `;
 
 const EnderecoContato = styled.div`
@@ -133,7 +129,7 @@ const EnderecoContato = styled.div`
 
 const ContatoEnderecoInfo = styled.div`
   display: flex;
-  font-size: clamp(18px, 2.2svw, 26px);
+  font-size: clamp(12px, 2.2svw, 24px);
   /* background-color: #a76b21; */
 
   div:nth-child(1) {
@@ -170,7 +166,7 @@ const HorarioContainer = styled.div`
     justify-content: start;
   }
 
-  background-color: #fe80ceab;
+  /* background-color: #fe80ceab; */
 `;
 
 const HorariosLeft = styled.div`
@@ -178,7 +174,7 @@ const HorariosLeft = styled.div`
   align-items: end;
   justify-content: space-between;
 
-  background-color: #4c008267;
+  /* background-color: #4c008267; */
 
   @media (min-width: 768px) {
     flex-direction: row;
@@ -196,10 +192,7 @@ const HorariosRight = styled.div`
 
   writing-mode: vertical-rl;
   h2 {
-    font-size: clamp(32px, 12svw, 160px);
-    /* @media (min-width: 768px) {
-      writing-mode: vertical-rl;
-    } */
+    font-size: clamp(32px, 19svh, 160px);
   }
   /* background-color: #8834c567; */
 `;
@@ -225,6 +218,7 @@ const SectionRightContainer = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: end;
 `;
 
 const Horario = styled.div`
@@ -236,9 +230,9 @@ const Horario = styled.div`
   font-weight: 600;
 
   span:nth-child(2) {
-    font-weight: 100;
+    font-weight: 300;
     font-size: smaller;
-    margin-top: 0.2svh;
+    margin-top: 3px;
     margin-bottom: 1.5svh;
   }
 `;
@@ -246,15 +240,15 @@ const Horario = styled.div`
 const SocialLinksContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: start;
   align-items: start;
+  min-width: 140px;
+  width: 20%;
+  justify-content: space-between;
 
-  background-color: #14ff575f;
+  /* background-color: #14ff575f; */
 
   @media (min-width: 768px) {
-    /* width: 100%; */
-    align-items: center;
-    justify-content: end;
+    min-width: 180px;
   }
 `;
 
@@ -266,7 +260,11 @@ const LinkWrapper = styled.div`
 `;
 
 const StyledIcon = styled(Icon)`
-  width: 80px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
+  @media (min-width: 768px) {
+    width: 8dvw;
+    height: 100%;
+  }
 `;
 export default Contato;

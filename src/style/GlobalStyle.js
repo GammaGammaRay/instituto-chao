@@ -2,15 +2,15 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 
-@font-face {
-  font-family: 'Grotesk'; /* The name you want to use for the 'Grotesk' font */
+/* @font-face {
+  font-family: 'Grotesk'; 
   src: url('/fonts/Grotesk-Regular.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
-}
+} */
 
 @font-face {
-  font-family: 'MDNichrome'; /* The name you want to use for the 'MDNichrome' font */
+  font-family: 'MDNichrome'; 
   src: url('/fonts/MDNichrome-Dark.otf') format('opentype');
   font-weight: normal;
   font-style: normal;

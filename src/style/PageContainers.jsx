@@ -90,7 +90,7 @@ const Title = styled.h1`
   color: black;
   white-space: nowrap;
 
-  margin-top: 5svh;
+  margin-top: 40px;
 
   word-wrap: break-word;
 

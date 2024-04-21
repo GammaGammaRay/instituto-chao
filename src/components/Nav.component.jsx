@@ -132,7 +132,9 @@ const ButtonMenu = styled.div`
 `;
 
 const MenuContent = styled.div`
-  width: 50svw;
+  width: 20svw;
+  min-height: 120px;
+  height: fit-content;
   position: absolute;
   top: 50px;
   right: 0;

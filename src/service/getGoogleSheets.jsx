@@ -2,10 +2,13 @@ export async function getSpreadsheetData(sheetIndex) {
   const url = `https://docs.google.com/spreadsheets/d/e/2PACX-1vT-_y2kb6QITCzq60QqbwwS8ZZ0D347APs6zQV87Sb9ZObWAzKO-VKDowVQICPEGGeVPEFt2Cesn_2k/pub?output=csv&gid=${sheetIndex}`;
 
   const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error("Failed to fetch data");
+  }
   const data = await response.text();
 
   const rows = data.split("\n");
-  const columnData = {}; // To store data by column
+  const columnData = {};
 
   rows.forEach((row, rowIndex) => {
     const values = parseCSV(row);

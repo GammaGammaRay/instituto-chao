@@ -43,6 +43,11 @@ function Buscamos() {
             alt="Gráfico Comparando Preços dos Diferentes Tipos de Mercado"
           />
           <button a="https://drive.google.com/file/d/11ftAww3OHQfi0fInlIeFH-SM0idRE__R/view">
+            <img
+              type="image/svg+xml"
+              src="external-link.svg"
+              alt="External Link"
+            />{" "}
             Veja a pesquisa completa
           </button>
 
@@ -106,9 +111,30 @@ const BuscamosSection = styled(Section)`
   display: flex;
 
   button {
-    width: 50%;
+    font-family: "Nunito", sans-serif;
+    font-weight: 300;
+    font-size: clamp(16px, 2dvw, 20px);
+    min-height: 30px;
+    width: fit-content;
     margin-top: 12px;
     margin-bottom: 20px;
+    border: none;
+    background-color: #5b9b43;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    img {
+      height: 70%;
+      margin-right: 5px;
+      width: fit-content;
+    }
+
+    &:hover {
+      background-color: #e6d36b;
+      /* color: white; */
+    }
   }
 `;
 
