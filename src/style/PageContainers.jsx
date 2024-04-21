@@ -1,8 +1,8 @@
 import { styled } from "styled-components";
 
 const Section = styled.section`
-  /* height: 100dvh; */
-  height: -webkit-fill-available;
+  height: 100lvh;
+  /* height: -webkit-fill-available; */
   min-width: 100svw;
 
   scroll-snap-align: start;
@@ -14,7 +14,7 @@ const Section = styled.section`
   overflow-y: hidden;
 
   @media (min-width: 768px) {
-    height: calc(100svh - var(--nav-height));
+    height: calc(100dvh - var(--nav-height));
     scroll-margin-top: var(--nav-height);
     flex-direction: column;
     align-items: center;
