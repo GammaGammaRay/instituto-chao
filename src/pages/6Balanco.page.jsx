@@ -144,11 +144,11 @@ function Balanco() {
             <BalancoTableLine>
               <h3>PERCENTUAL DE ARRECADAÇÃO</h3>
 
-              <span>
+              <h3>
                 {spreadsheetData[1].slice(19, 20).map((data, index) => (
                   <div key={`${index}`}>{data}%</div>
                 ))}
-              </span>
+              </h3>
             </BalancoTableLine>
             <HorizontalLine />
           </BalancoTableBody>
@@ -164,11 +164,9 @@ const BalancoSection = styled(Section)`
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  font-size: clamp(14px, 3.3svh, 26px);
-  /* padding: 0; */
+  font-size: clamp(14px, 2.4svh, 18px);
   margin: 0;
-  /* line-height: 1rem; */
-  /* line-height: 1; */
+  color: black;
 
   h1 {
     font-size: clamp(42px, 5svw, 80px);
@@ -176,22 +174,37 @@ const BalancoSection = styled(Section)`
     font-family: var(--title-font);
     font-weight: var(--title-font-weight);
 
-    /* margin: 0; */
-    /* 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; */
-
-    color: black;
     /* background-color: #892be258; */
   }
 
   h2 {
-    font-size: clamp(32px, 2.8svw, 46px);
+    font-size: clamp(16px, 10svw, 24px);
     font-weight: 500;
     font-family: var(--title-font);
     font-weight: var(--title-font-weight);
-    color: black;
+  }
+
+  h3 {
+    font-size: clamp(16px, 10svw, 18px);
+    font-weight: 500;
+    font-family: var(--title-font);
+    font-weight: var(--title-font-weight);
+  }
+
+  @media (min-width: 768px) {
+    font-size: clamp(14px, 3.3svh, 26px);
+
+    h1 {
+      font-size: clamp(42px, 5svw, 80px);
+    }
+
+    h2 {
+      font-size: clamp(32px, 2.8svw, 46px);
+    }
+
+    h3 {
+      font-size: clamp(32px, 2.8svw, 46px);
+    }
   }
 `;
 
@@ -269,6 +282,7 @@ const BalancoTableLine = styled.div`
   margin-bottom: 0.5dvh;
 
   span:nth-child(1) {
+    width: 70%;
     /* padding-right: 12px; */
     @media (min-width: 768px) {
       width: 50dvw;
