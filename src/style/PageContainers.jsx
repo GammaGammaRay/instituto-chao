@@ -13,6 +13,7 @@ const Section = styled.section`
   z-index: 1;
   overflow-y: hidden;
   scroll-snap-type: y mandatory;
+  scroll-snap-stop: always;
 
   @media (min-width: 768px) {
     height: calc(100dvh - var(--nav-height));
