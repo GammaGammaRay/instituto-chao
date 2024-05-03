@@ -320,7 +320,7 @@ const SocialLinksContainer = styled.div`
 
   /* background-color: #14ff575f; */
 
-  @media (max-width: 500px) {
+  @media (max-width: 600px) {
     flex-direction: column;
     align-items: start;
     justify-content: space-between;
