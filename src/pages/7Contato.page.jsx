@@ -14,32 +14,22 @@ function Contato() {
             <h1>CONTATO E ENDEREÇO</h1>
             <ContatoEnderecoInfo>
               <div>
-                <span>+55 11 3819-4205</span>
-                <span>
-                  <a href="mailto:contato@institutochao.org">
-                    contato@institutochao.org
-                  </a>
-                </span>
+                <ContactLink href="tel:+551138194205">
+                  <StyledIconContact icon="material-symbols:add-call-rounded" />
+                  +55 11 3819-4205
+                </ContactLink>
+                <ContactLink href="mailto:contato@institutochao.org">
+                  <StyledIconContact icon="material-symbols:outgoing-mail" />
+                  contato@institutochao.org
+                </ContactLink>
               </div>
-              <div>
-                <span>Rua Harmonia, 114 - Vila Madalena</span>
-                <span>São Paulo / SP - 05435-000 - BR</span>
-              </div>
+              <ContactLink href="https://maps.app.goo.gl/YxRLDpG2yAKwpt9V6">
+                Rua Harmonia, 114 - Vila Madalena <br /> São Paulo / SP -
+                05435-000 - BR
+                <StyledIconContact icon="flowbite:map-pin-alt-solid" />
+              </ContactLink>
             </ContatoEnderecoInfo>
           </EnderecoContato>
-          <SocialLinksContainer>
-            <LinkWrapper>
-              <a href="https://www.facebook.com/institutochao/">
-                <StyledIcon icon="simple-icons:facebook" />
-              </a>
-            </LinkWrapper>
-
-            <LinkWrapper>
-              <a href="https://www.instagram.com/institutochao">
-                <StyledIcon icon="simple-icons:instagram" />
-              </a>
-            </LinkWrapper>
-          </SocialLinksContainer>
         </EnderecoContatoContainer>
         <SectionRightContainer>
           <HorarioContainer>
@@ -60,9 +50,26 @@ function Contato() {
               </HorariosLista>
             </HorariosLeft>
             <HorariosRight>
-              <h2>HORÁRIO</h2>
+              <h1>HORÁRIO</h1>
             </HorariosRight>
           </HorarioContainer>
+          {isMobile ? (
+            <div />
+          ) : (
+            <SocialLinksContainer>
+              <LinkWrapper>
+                <a href="https://www.facebook.com/institutochao/">
+                  <StyledIconSocial icon="simple-icons:facebook" />
+                </a>
+              </LinkWrapper>
+
+              <LinkWrapper>
+                <a href="https://www.instagram.com/institutochao">
+                  <StyledIconSocial icon="simple-icons:instagram" />
+                </a>
+              </LinkWrapper>
+            </SocialLinksContainer>
+          )}
         </SectionRightContainer>
       </InfosContainer>
     </ContatoSection>
@@ -71,7 +78,6 @@ function Contato() {
 
 const ContatoSection = styled(Section)`
   max-height: 100svh;
-  /* letter-spacing: 0.12em; */
   background-color: var(--color-salmon);
   color: white;
   overflow: hidden;
@@ -82,15 +88,10 @@ const InfosContainer = styled(ContentContainer)`
   flex-direction: column-reverse;
   align-items: end;
   justify-content: space-between;
-  /* padding: 0px; */
 
   width: 97svw;
-  /* max-height: 100svh; */
   min-height: 86svh;
   margin-top: 40px;
-  /* width: fit-content; */
-  /* margin: 10px; */
-  /* padding: 0px 20px; */
 
   /* background-color: #80fe95ab; */
   h1,
@@ -99,38 +100,50 @@ const InfosContainer = styled(ContentContainer)`
     font-weight: var(--title-font-weight);
   }
   @media (min-width: 768px) {
+    flex-direction: row;
     margin: 0px;
+  }
+
+  svg {
+    fill: white;
   }
 `;
 
 const EnderecoContatoContainer = styled.div`
   /* height: 100%; */
-
   /* width: fit-content; */
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   align-items: end;
   justify-content: space-between;
 
   h1 {
-    font-size: clamp(24px, 8svw, 130px);
+    font-size: clamp(24px, 12svw, 130px);
     white-space: nowrap;
-    margin-bottom: 2svh;
+    margin-bottom: 1svh;
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      font-size: clamp(24px, 14svw, 160px);
+      margin-bottom: 2svh;
+    }
   }
 
   background-color: #80ccfe4c;
 `;
 
 const EnderecoContato = styled.div`
-  height: fit-content;
+  height: 30dvh;
 
   /* background-color: #80fec3ab; */
 `;
 
 const ContatoEnderecoInfo = styled.div`
   display: flex;
-  font-size: clamp(12px, 2.2svw, 24px);
+  font-size: clamp(14px, 2.2svw, 18px);
   /* background-color: #a76b21; */
+  flex-direction: column;
 
   div:nth-child(1) {
     display: flex;
@@ -139,13 +152,21 @@ const ContatoEnderecoInfo = styled.div`
   div:nth-child(2) {
     display: flex;
     flex-direction: column;
-    align-items: end;
-    /* justify-content: end; */
-    /* background-color: #9ce4d993; */
   }
+  .StyledIcon {
+    width: 20px;
+    height: 20px;
+  }
+
   @media (min-width: 768px) {
+    font-size: clamp(18px, 4svw, 42px);
     flex-direction: row;
     justify-content: space-between;
+    div:nth-child(2) {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+    }
   }
 `;
 
@@ -191,7 +212,7 @@ const HorariosRight = styled.div`
   align-items: end;
 
   writing-mode: vertical-rl;
-  h2 {
+  h1 {
     font-size: clamp(32px, 19svh, 160px);
   }
   /* background-color: #8834c567; */
@@ -237,6 +258,20 @@ const Horario = styled.div`
   }
 `;
 
+const ContactLink = styled.a`
+  display: flex;
+  margin-bottom: 10px;
+  /* flex-direction: row;
+  align-items: center;
+  justify-content: center; */
+  &:hover {
+    background-color: white;
+    color: var(--color-salmon);
+  }
+
+  /* background-color: #00008b34; */
+`;
+
 const SocialLinksContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -254,17 +289,29 @@ const SocialLinksContainer = styled.div`
 
 const LinkWrapper = styled.div`
   cursor: pointer;
-  :hover {
-    color: #c4c4c4;
+  padding: 5%;
+  border-radius: 5dvw;
+  &:hover {
+    background-color: white;
   }
 `;
 
-const StyledIcon = styled(Icon)`
+const StyledIconSocial = styled(Icon)`
   width: 60px;
   height: 60px;
+  &:hover {
+    color: var(--color-salmon);
+  }
+
   @media (min-width: 768px) {
     width: 8dvw;
     height: 100%;
   }
 `;
+
+const StyledIconContact = styled(Icon)`
+  width: 2.5dvw;
+  height: 2.5dvw;
+`;
+
 export default Contato;

@@ -168,31 +168,27 @@ const BalancoSection = styled(Section)`
   margin: 0;
   color: black;
 
-  h1 {
-    font-size: clamp(42px, 5svw, 80px);
-    font-weight: 500;
+  h1,
+  h2,
+  h3 {
     font-family: var(--title-font);
     font-weight: var(--title-font-weight);
-
-    /* background-color: #892be258; */
+    font-weight: 500;
+  }
+  h1 {
+    font-size: clamp(42px, 5svw, 80px);
   }
 
   h2 {
     font-size: clamp(16px, 10svw, 24px);
-    font-weight: 500;
-    font-family: var(--title-font);
-    font-weight: var(--title-font-weight);
   }
 
   h3 {
     font-size: clamp(16px, 10svw, 18px);
-    font-weight: 500;
-    font-family: var(--title-font);
-    font-weight: var(--title-font-weight);
   }
 
   @media (min-width: 768px) {
-    font-size: clamp(14px, 3.3svh, 26px);
+    font-size: clamp(16px, 3svh, 24px);
 
     h1 {
       font-size: clamp(42px, 5svw, 80px);

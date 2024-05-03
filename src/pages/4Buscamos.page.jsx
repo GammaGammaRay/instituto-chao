@@ -45,7 +45,7 @@ function Buscamos() {
           <button a="https://drive.google.com/file/d/11ftAww3OHQfi0fInlIeFH-SM0idRE__R/view">
             <img
               type="image/svg+xml"
-              src="external-link.svg"
+              src="icon-externalLink.svg"
               alt="External Link"
             />{" "}
             <span>Veja a pesquisa completa</span>

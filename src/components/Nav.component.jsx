@@ -71,7 +71,7 @@ function Nav() {
             className="MenuButtonImage"
             type="image/svg+xml"
             src="chao_burguerMenu-border.svg"
-            alt="Logo Instituto Chão"
+            alt="Dropdown Menu"
           />
           <MenuContent open={buttonMenuOpen}>
             <DrpDwnNavBtn onClick={() => scrollToSection("quem-somos")}>
@@ -175,11 +175,11 @@ const NavButtonContainer = styled.div`
   width: fit-content;
   max-width: 100%;
   width: 800px;
-
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  height: 100%;
 
   /* background-color: #f0ffff55; */
 `;
@@ -190,6 +190,11 @@ const NavBtn = styled.div`
   vertical-align: middle;
   display: inline-flex;
   align-items: center;
+  height: 100%;
+  &:hover {
+    background-color: white;
+    color: black;
+  }
 `;
 
 const DrpDwnNavBtn = styled.div`
