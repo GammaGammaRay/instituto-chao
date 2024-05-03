@@ -98,7 +98,7 @@ function Balanco() {
           </BalancoTableTop>
 
           <BalancoTableBody>
-            CUSTOS OPERACIONAIS
+            <h3>CUSTOS OPERACIONAIS</h3>
             <HorizontalLine />
             {mapDataToTable(spreadsheetData)}
             <BalancoTableLine
@@ -107,7 +107,7 @@ function Balanco() {
               }}
             >
               <h3>DESPESAS TOTAIS</h3>
-              <span>
+              <span style={{ fontWeight: "700" }}>
                 {spreadsheetData[1].slice(15, 16).map((data, index) => (
                   <div key={`${index}`}>R$ {formatCurrency(data)}</div>
                 ))}
@@ -116,7 +116,7 @@ function Balanco() {
             <HorizontalLine />
             <BalancoTableLine>
               <h3>ARRECADAÇÕES TOTAIS</h3>
-              <span>
+              <span style={{ fontWeight: "700" }}>
                 {spreadsheetData[1].slice(16, 17).map((data, index) => (
                   <div key={`${index}`}>R$ {formatCurrency(data)}</div>
                 ))}
@@ -125,7 +125,7 @@ function Balanco() {
             <HorizontalLine />
             <BalancoTableLine>
               <h3>SALDO MENSAL</h3>
-              <span>
+              <span style={{ fontWeight: "700" }}>
                 {spreadsheetData[1].slice(17, 18).map((data, index) => (
                   <div key={`${index}`}>R$ {formatCurrency(data)}</div>
                 ))}
@@ -134,7 +134,7 @@ function Balanco() {
             <HorizontalLine />
             <BalancoTableLine>
               <h3>VENDAS DE PRODUTOS</h3>
-              <span>
+              <span style={{ fontWeight: "700" }}>
                 {spreadsheetData[1].slice(18, 19).map((data, index) => (
                   <div key={`${index}`}>R$ {formatCurrency(data)}</div>
                 ))}
@@ -169,8 +169,7 @@ const BalancoSection = styled(Section)`
   color: black;
 
   h1,
-  h2,
-  h3 {
+  h2 {
     font-family: var(--title-font);
     font-weight: var(--title-font-weight);
     font-weight: 500;
@@ -185,6 +184,7 @@ const BalancoSection = styled(Section)`
 
   h3 {
     font-size: clamp(16px, 10svw, 18px);
+    font-weight: 700;
   }
 
   @media (min-width: 768px) {
@@ -199,7 +199,7 @@ const BalancoSection = styled(Section)`
     }
 
     h3 {
-      font-size: clamp(32px, 2.8svw, 46px);
+      font-size: clamp(22px, 2.8svw, 32px);
     }
   }
 `;
