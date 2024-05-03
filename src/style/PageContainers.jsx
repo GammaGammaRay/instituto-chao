@@ -1,9 +1,9 @@
 import { styled } from "styled-components";
 
 const Section = styled.section`
-  height: 100lvh;
+  height: 100dvh;
   /* height: -webkit-fill-available; */
-  min-width: 100dvw;
+  /* min-width: 100dvw; */
 
   scroll-snap-align: start;
   display: flex;
