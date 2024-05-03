@@ -13,27 +13,46 @@ function Contato() {
           <EnderecoContato>
             <h1>CONTATO E ENDEREÇO</h1>
             <ContatoEnderecoInfo>
-              <ContactLink href="tel:+551138194205" draggable="false">
-                <StyledIconContact icon="material-symbols:add-call-rounded" />
-                +55 11 3819-4205
-              </ContactLink>
-              <ContactLink
-                href="mailto:contato@institutochao.org"
-                draggable="false"
-              >
-                <StyledIconContact icon="material-symbols:outgoing-mail" />
-                contato@institutochao.org
-              </ContactLink>
-              <ContactLink
-                href="https://maps.app.goo.gl/YxRLDpG2yAKwpt9V6"
-                draggable="false"
-              >
-                <StyledIconContact icon="flowbite:map-pin-alt-solid" />
-                <span>
-                  Rua Harmonia, 114 - Vila Madalena <br /> São Paulo / SP -
-                  05435-000 - BR
-                </span>
-              </ContactLink>
+              <ContactLinkContainer>
+                <ContactLink href="tel:+551138194205" draggable="false">
+                  <StyledIconContact icon="material-symbols:add-call-rounded" />
+                  +55 11 3819-4205
+                </ContactLink>
+                <ContactLink
+                  href="mailto:contato@institutochao.org"
+                  draggable="false"
+                >
+                  <StyledIconContact icon="material-symbols:outgoing-mail" />
+                  contato@institutochao.org
+                </ContactLink>
+                <ContactLink
+                  href="https://maps.app.goo.gl/YxRLDpG2yAKwpt9V6"
+                  draggable="false"
+                >
+                  <StyledIconContact icon="flowbite:map-pin-alt-solid" />
+                  <span>
+                    Rua Harmonia, 114 - Vila Madalena <br /> São Paulo / SP -
+                    05435-000 - BR
+                  </span>
+                </ContactLink>
+              </ContactLinkContainer>
+              {isMobile ? (
+                <SocialLinksContainer>
+                  <LinkWrapper>
+                    <a href="https://www.facebook.com/institutochao/">
+                      <StyledIconSocial icon="simple-icons:facebook" />
+                    </a>
+                  </LinkWrapper>
+
+                  <LinkWrapper>
+                    <a href="https://www.instagram.com/institutochao">
+                      <StyledIconSocial icon="simple-icons:instagram" />
+                    </a>
+                  </LinkWrapper>
+                </SocialLinksContainer>
+              ) : (
+                <div />
+              )}
             </ContatoEnderecoInfo>
           </EnderecoContato>
         </EnderecoContatoContainer>
@@ -145,8 +164,10 @@ const EnderecoContato = styled.div`
 `;
 
 const ContatoEnderecoInfo = styled.div`
-  /* display: flex; */
-  font-size: clamp(14px, 2.2svw, 18px);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: clamp(18px, 2.2svw, 22px);
   /* background-color: #a76b21; */
 
   div:nth-child(1) {
@@ -208,6 +229,7 @@ const HorariosLeft = styled.div`
 `;
 
 const HorariosRight = styled.div`
+  font-size: clamp(32px, 2dvw, 120px);
   max-width: 100%;
   display: flex;
   flex-direction: column;
@@ -264,6 +286,12 @@ const Horario = styled.div`
   }
 `;
 
+const ContactLinkContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  /* background-color: #00008b34; */
+`;
+
 const ContactLink = styled.a`
   display: flex;
   margin-bottom: 10px;
@@ -283,16 +311,15 @@ const ContactLink = styled.a`
 const SocialLinksContainer = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: start;
-  /* min-width: 140px; */
-  /* width: 20%; */
-  justify-content: space-between;
+  align-items: center;
+  justify-content: end;
 
   /* background-color: #14ff575f; */
 
   @media (min-width: 768px) {
-    /* min-width: 180px; */
-    /* margin-right: 100px; */
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;
   }
 `;
 
