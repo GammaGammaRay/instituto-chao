@@ -44,6 +44,13 @@ const ResetStyle = createGlobalStyle`
 		border-collapse: collapse;
 		border-spacing: 0;
 	}
+	a {
+  -webkit-touch-callout : none;     /* iOS Safari */
+  -webkit-user-select   : none;     /* Chrome/Safari/Opera */
+  -khtml-user-select    : none;     /* Konqueror */
+  -moz-user-select      : none;     /* Firefox */
+  -ms-user-select       : none;     /* Internet Explorer/Edge */
+}
 `;
 
 export default ResetStyle;

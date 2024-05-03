@@ -13,15 +13,21 @@ function Contato() {
           <EnderecoContato>
             <h1>CONTATO E ENDEREÇO</h1>
             <ContatoEnderecoInfo>
-              <ContactLink href="tel:+551138194205">
+              <ContactLink href="tel:+551138194205" draggable="false">
                 <StyledIconContact icon="material-symbols:add-call-rounded" />
                 +55 11 3819-4205
               </ContactLink>
-              <ContactLink href="mailto:contato@institutochao.org">
+              <ContactLink
+                href="mailto:contato@institutochao.org"
+                draggable="false"
+              >
                 <StyledIconContact icon="material-symbols:outgoing-mail" />
                 contato@institutochao.org
               </ContactLink>
-              <ContactLink href="https://maps.app.goo.gl/YxRLDpG2yAKwpt9V6">
+              <ContactLink
+                href="https://maps.app.goo.gl/YxRLDpG2yAKwpt9V6"
+                draggable="false"
+              >
                 <StyledIconContact icon="flowbite:map-pin-alt-solid" />
                 <span>
                   Rua Harmonia, 114 - Vila Madalena <br /> São Paulo / SP -
@@ -116,6 +122,7 @@ const EnderecoContatoContainer = styled.div`
   display: flex;
   align-items: end;
   justify-content: space-between;
+  user-select: text;
 
   h1 {
     font-size: clamp(24px, 12svw, 130px);
@@ -263,6 +270,8 @@ const ContactLink = styled.a`
   flex-direction: row;
   align-items: center;
   justify-content: start;
+  user-select: text;
+
   &:hover {
     background-color: white;
     color: var(--color-salmon);
@@ -283,6 +292,7 @@ const SocialLinksContainer = styled.div`
 
   @media (min-width: 768px) {
     /* min-width: 180px; */
+    /* margin-right: 100px; */
   }
 `;
 

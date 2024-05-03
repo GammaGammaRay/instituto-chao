@@ -191,6 +191,7 @@ const NavBtn = styled.div`
   display: inline-flex;
   align-items: center;
   height: 100%;
+  /* background-color: #f0ffff55; */
   &:hover {
     background-color: white;
     color: black;
