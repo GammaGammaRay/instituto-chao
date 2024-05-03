@@ -115,7 +115,7 @@ const InfosContainer = styled(ContentContainer)`
   justify-content: space-between;
 
   width: 97svw;
-  min-height: 86svh;
+  min-height: 90dvh;
   margin-top: 40px;
 
   /* background-color: #80fe95ab; */
@@ -136,8 +136,7 @@ const InfosContainer = styled(ContentContainer)`
 
 const EnderecoContatoContainer = styled.div`
   /* height: 100%; */
-  /* width: fit-content; */
-  /* width: 100%; */
+  width: 100%;
   display: flex;
   align-items: end;
   justify-content: space-between;
@@ -152,7 +151,6 @@ const EnderecoContatoContainer = styled.div`
   @media (min-width: 768px) {
     h1 {
       font-size: clamp(24px, 8svw, 120px);
-      margin-bottom: 2svh;
     }
   }
 
@@ -167,7 +165,8 @@ const ContatoEnderecoInfo = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  font-size: clamp(22px, 2.2svw, 26px);
+  height: 100%;
+  font-size: clamp(18px, 2.2svw, 24px);
   /* background-color: #a76b21; */
 
   div:nth-child(1) {
@@ -183,6 +182,9 @@ const ContatoEnderecoInfo = styled.div`
     height: 20px;
   }
 
+  @media (min-width: 500px) {
+    font-size: clamp(22px, 2.2svw, 26px);
+  }
   @media (min-width: 768px) {
     font-size: clamp(18px, 4svw, 42px);
     flex-direction: row;
@@ -293,6 +295,7 @@ const Horario = styled.div`
 const ContactLinkContainer = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   /* background-color: #00008b34; */
 `;
 
@@ -315,15 +318,15 @@ const ContactLink = styled.a`
 const SocialLinksContainer = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: end;
   justify-content: end;
-
+  /* height: 100%; */
   /* background-color: #14ff575f; */
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     flex-direction: column;
     align-items: start;
-    justify-content: space-between;
+    justify-content: end;
   }
 
   @media (min-width: 768px) {
@@ -347,6 +350,11 @@ const StyledIconSocial = styled(Icon)`
   height: 60px;
   &:hover {
     color: var(--color-salmon);
+  }
+
+  @media (max-width: 600px) {
+    width: 40px;
+    height: 40px;
   }
 
   @media (min-width: 768px) {
