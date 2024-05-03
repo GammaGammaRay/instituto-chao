@@ -125,12 +125,20 @@ const BuscamosSection = styled(Section)`
     align-items: center;
     justify-content: center;
     /* white-space: nowrap; */
-    width: 20dvw;
-
+    width: 70dvw;
     img {
-      height: 70%;
+      /* height: 50%; */
       margin-right: 5px;
-      width: fit-content;
+      width: 7.5%;
+      max-width: 20px;
+    }
+    @media (min-width: 768px) {
+      width: 40dvw;
+      img {
+        height: 70%;
+        margin-right: 5px;
+        width: fit-content;
+      }
     }
 
     &:hover {

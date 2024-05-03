@@ -125,7 +125,7 @@ const EnderecoContatoContainer = styled.div`
 
   @media (min-width: 768px) {
     h1 {
-      font-size: clamp(24px, 12svw, 120px);
+      font-size: clamp(24px, 8svw, 120px);
       margin-bottom: 2svh;
     }
   }
@@ -237,8 +237,8 @@ const SectionRightContainer = styled.div`
   width: fit-content;
   display: flex;
   flex-direction: column;
-  align-items: end;
-  background-color: #ff149160;
+  align-items: center;
+  /* background-color: #ff149160; */
 `;
 
 const Horario = styled.div`
@@ -279,7 +279,7 @@ const SocialLinksContainer = styled.div`
   /* width: 20%; */
   justify-content: space-between;
 
-  background-color: #14ff575f;
+  /* background-color: #14ff575f; */
 
   @media (min-width: 768px) {
     /* min-width: 180px; */
