@@ -167,7 +167,7 @@ const ContatoEnderecoInfo = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  font-size: clamp(18px, 2.2svw, 22px);
+  font-size: clamp(22px, 2.2svw, 26px);
   /* background-color: #a76b21; */
 
   div:nth-child(1) {
@@ -238,6 +238,10 @@ const HorariosRight = styled.div`
 
   writing-mode: vertical-rl;
   h1 {
+    font-size: clamp(32px, 19svh, 130px);
+  }
+
+  @media (min-width: 768px) {
     font-size: clamp(32px, 19svh, 160px);
   }
   /* background-color: #8834c567; */
@@ -316,6 +320,12 @@ const SocialLinksContainer = styled.div`
 
   /* background-color: #14ff575f; */
 
+  @media (max-width: 500px) {
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+  }
+
   @media (min-width: 768px) {
     flex-direction: row;
     align-items: start;
@@ -346,8 +356,8 @@ const StyledIconSocial = styled(Icon)`
 `;
 
 const StyledIconContact = styled(Icon)`
-  width: 2.5dvw;
-  height: 2.5dvw;
+  width: clamp(24px, 3dvw, 36px);
+  height: clamp(24px, 3dvw, 36px);
 `;
 
 export default Contato;
