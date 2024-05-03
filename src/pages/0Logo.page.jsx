@@ -11,9 +11,9 @@ function Logo() {
     gsap.registerPlugin(ScrollTrigger);
     const animation = gsap.fromTo(
       ".logo",
-      { width: 300, opacity: 0 },
+      { width: 200, opacity: 0 },
       {
-        width: 400,
+        width: 300,
         opacity: 1,
         duration: 2,
         ease: "back",
@@ -27,6 +27,29 @@ function Logo() {
       end: "bottom 20%",
       toggleActions: "play none none none",
     });
+
+    // Additional animation for smaller screens
+    if (window.innerWidth > 768) {
+      const smallerScreenAnimation = gsap.fromTo(
+        ".logo",
+        { width: 300, opacity: 0 },
+        {
+          width: 400,
+          opacity: 1,
+          duration: 2,
+          ease: "back",
+        }
+      );
+      gsap.to(".logo", { clearProps: "all" }); // Clear previous animation properties
+      gsap.registerPlugin(ScrollTrigger);
+      ScrollTrigger.create({
+        trigger: ".logo",
+        animation: smallerScreenAnimation,
+        start: "top 80%",
+        end: "bottom 20%",
+        toggleActions: "play none none none",
+      });
+    }
   }, []);
 
   return (

@@ -104,15 +104,16 @@ function Contribuicao() {
               </LineInfoPercentage>
             </ContribuicaoSugerida>
             <LineRect />
+            <LineVertManutencao>
+              <LineInfoBoldRight>
+                <span>OU MAIS</span>
+                <span>Para manutencão e ampliacão</span>
+                <span>(equilibra as contas e possibilita</span>
+                <span>investir no projeto)</span>
+              </LineInfoBoldRight>
+            </LineVertManutencao>
           </LineVert>
-          <LineVertManutencao>
-            <LineInfoBoldRight>
-              <span>OU MAIS</span>
-              <span>Para manutencão e ampliacão</span>
-              <span>(equilibra as contas e possibilita</span>
-              <span>investir no projeto)</span>
-            </LineInfoBoldRight>
-          </LineVertManutencao>
+
           <LineRect />
         </ContribuicaoColRight>
       </ContribuicaoContainer>

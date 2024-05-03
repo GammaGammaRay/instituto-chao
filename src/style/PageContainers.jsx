@@ -48,6 +48,7 @@ const SectionTextWrapper = styled.div`
 const SectionText = styled.div`
   font-size: clamp(20px, 3vw, 24px);
   /* line-height: 1.2em; */
+  white-space: break-spaces;
   word-wrap: break-word;
   height: 100%;
   max-height: 96svh;
@@ -87,7 +88,7 @@ const Title = styled.h1`
 
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
-  font-size: clamp(80px, 10svw, 140px);
+  font-size: clamp(70px, 10svw, 70px);
   color: black;
   white-space: nowrap;
 

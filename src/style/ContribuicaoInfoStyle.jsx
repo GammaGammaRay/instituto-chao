@@ -150,11 +150,13 @@ export const LineInfoBoldRight = styled.span`
   justify-content: end;
   text-align: end;
 
-  font-size: 1.5svw;
+  font-size: clamp(12px, 2svw, 24px);
+  /* font-size: 1.5svw; */
 
   /* background-color: blanchedalmond; */
 
   @media (min-width: 768px) {
+    flex-direction: column;
     justify-content: start;
     text-align: start;
     /* font-size: 2svw; */
@@ -173,20 +175,20 @@ export const LineInfoPercentage = styled.span`
 `;
 
 export const LineInfoArrecadacao = styled.span`
-  font-size: clamp(12px, 1svw, 24px);
+  font-size: clamp(10px, 0.8svw, 16px);
   overflow-wrap: break-word; /* Use overflow-wrap instead of word-wrap */
   text-align: end;
   /* display: flex;
   justify-content: end;
   align-items: end; */
-  font-family: "Grotesk";
+  /* font-family: "Grotesk"; */
   font-weight: 100;
   /* background-color: #deb8877b; */
 
   @media (min-width: 768px) {
     text-align: start;
-    font-weight: 500;
-    max-width: 15svw;
+    font-weight: 100;
+    max-width: 25svw;
     margin: 0 0.6svw;
   }
 `;

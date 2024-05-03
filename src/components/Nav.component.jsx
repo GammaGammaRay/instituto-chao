@@ -74,20 +74,24 @@ function Nav() {
             alt="Logo Instituto Chão"
           />
           <MenuContent open={buttonMenuOpen}>
-            <NavBtn onClick={() => scrollToSection("quem-somos")}>
+            <DrpDwnNavBtn onClick={() => scrollToSection("quem-somos")}>
               Quem Somos?
-            </NavBtn>
-            <NavBtn onClick={() => scrollToSection("como-funciona")}>
+            </DrpDwnNavBtn>
+            <DrpDwnNavBtn onClick={() => scrollToSection("como-funciona")}>
               Como Funciona?
-            </NavBtn>
-            <NavBtn onClick={() => scrollToSection("buscamos")}>
-              O que buscamos?
-            </NavBtn>
-            <NavBtn onClick={() => scrollToSection("historico")}>
+            </DrpDwnNavBtn>
+            <DrpDwnNavBtn onClick={() => scrollToSection("buscamos")}>
+              O Que Buscamos?
+            </DrpDwnNavBtn>
+            <DrpDwnNavBtn onClick={() => scrollToSection("historico")}>
               Histórico
-            </NavBtn>
-            <NavBtn onClick={() => scrollToSection("balanco")}>Balanço</NavBtn>
-            <NavBtn onClick={() => scrollToSection("contato")}>Contato</NavBtn>
+            </DrpDwnNavBtn>
+            <DrpDwnNavBtn onClick={() => scrollToSection("balanco")}>
+              Balanço
+            </DrpDwnNavBtn>
+            <DrpDwnNavBtn onClick={() => scrollToSection("contato")}>
+              Contato
+            </DrpDwnNavBtn>
           </MenuContent>
         </ButtonMenu>
       ) : (
@@ -100,7 +104,7 @@ function Nav() {
               Como Funciona?
             </NavBtn>
             <NavBtn onClick={() => scrollToSection("buscamos")}>
-              O que buscamos?
+              O Que Buscamos?
             </NavBtn>
             <NavBtn onClick={() => scrollToSection("historico")}>
               Histórico
@@ -133,13 +137,13 @@ const ButtonMenu = styled.div`
 
 const MenuContent = styled.div`
   width: 20svw;
-  min-height: 120px;
+  min-width: 160px;
   height: fit-content;
   position: absolute;
   top: 50px;
   right: 0;
   background-color: white;
-  padding: 10px;
+  padding: 5px;
   flex-direction: column;
   display: ${({ open }) => (open ? "flex" : "none")};
 `;
@@ -186,6 +190,17 @@ const NavBtn = styled.div`
   vertical-align: middle;
   display: inline-flex;
   align-items: center;
+`;
+
+const DrpDwnNavBtn = styled.div`
+  font-weight: 500;
+  font-size: 18px;
+  cursor: pointer;
+  border: none;
+  vertical-align: middle;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 8px;
 `;
 
 export default Nav;

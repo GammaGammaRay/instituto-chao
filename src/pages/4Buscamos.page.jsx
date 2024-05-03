@@ -48,7 +48,7 @@ function Buscamos() {
               src="external-link.svg"
               alt="External Link"
             />{" "}
-            Veja a pesquisa completa
+            <span>Veja a pesquisa completa</span>
           </button>
 
           <p>
@@ -115,7 +115,6 @@ const BuscamosSection = styled(Section)`
     font-weight: 300;
     font-size: clamp(16px, 2dvw, 20px);
     min-height: 30px;
-    width: fit-content;
     margin-top: 12px;
     margin-bottom: 20px;
     border: none;
@@ -124,6 +123,9 @@ const BuscamosSection = styled(Section)`
     cursor: pointer;
     display: flex;
     align-items: center;
+    justify-content: center;
+    /* white-space: nowrap; */
+    width: 20dvw;
 
     img {
       height: 70%;
