@@ -186,9 +186,10 @@ export const LineInfoArrecadacao = styled.span`
   /* background-color: #deb8877b; */
 
   @media (min-width: 768px) {
+    font-size: clamp(12px, 0.8svw, 16px);
     text-align: start;
     font-weight: 100;
-    max-width: 25svw;
+    max-width: 30svw;
     margin: 0 0.6svw;
   }
 `;

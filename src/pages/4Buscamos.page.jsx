@@ -42,14 +42,16 @@ function Buscamos() {
             src="graph.svg"
             alt="Gráfico Comparando Preços dos Diferentes Tipos de Mercado"
           />
-          <button a="https://drive.google.com/file/d/11ftAww3OHQfi0fInlIeFH-SM0idRE__R/view">
-            <img
-              type="image/svg+xml"
-              src="icon-externalLink.svg"
-              alt="External Link"
-            />{" "}
-            <span>Veja a pesquisa completa</span>
-          </button>
+          <a href="https://drive.google.com/file/d/11ftAww3OHQfi0fInlIeFH-SM0idRE__R/view">
+            <button>
+              <img
+                type="image/svg+xml"
+                src="icon-externalLink.svg"
+                alt="External Link"
+              />{" "}
+              Veja a pesquisa completa
+            </button>
+          </a>
 
           <p>
             Assim, amplia-se o consumo de produtos mais sustentáveis, promove-se
