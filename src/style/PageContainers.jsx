@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 const Section = styled.section`
   height: 100lvh;
   /* height: -webkit-fill-available; */
-  min-width: 100svw;
+  min-width: 100dvw;
 
   scroll-snap-align: start;
   display: flex;
