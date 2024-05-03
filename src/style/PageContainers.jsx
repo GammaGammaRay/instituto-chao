@@ -51,7 +51,7 @@ const SectionText = styled.div`
   white-space: break-spaces;
   word-wrap: break-word;
   height: 100%;
-  max-height: 96svh;
+  max-height: 96dvh;
   /* text-align: justify; */
 
   display: flex;
