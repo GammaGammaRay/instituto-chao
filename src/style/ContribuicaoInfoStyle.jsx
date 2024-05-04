@@ -27,11 +27,11 @@ export const ContribuicaoContainer = styled(ContentContainer)`
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  height: 100svh;
-  width: 90svw;
+  height: 100dvh;
+  width: 90dvw;
 
   @media (min-width: 768px) {
-    max-width: 96svw;
+    max-width: 96dvw;
     flex-direction: row;
     justify-content: space-between;
   }
@@ -46,9 +46,9 @@ export const ContribuicaoColLeft = styled.div`
   justify-content: space-between;
 
   @media (min-width: 768px) {
-    /* height: 50svh; */
+    /* height: 50dvh; */
     align-items: start;
-    margin-right: 2svw;
+    margin-right: 2dvw;
   }
 
   /* @media (min-width: 1300px) {
@@ -66,8 +66,8 @@ export const ContribuicaoColRight = styled.div`
   width: 100%;
 
   @media (min-width: 768px) {
-    width: 40svw;
-    height: 50svh;
+    width: 40dvw;
+    height: 50dvh;
   }
 
   /* background-color: lightgreen; */
@@ -76,7 +76,6 @@ export const ContribuicaoColRight = styled.div`
 export const Line = styled.div`
   width: 100%;
   /* background-color: #3d70cf6b; */
-  /* margin: 5svh 0px; */
 `;
 
 export const LineVert = styled.div`
@@ -106,12 +105,12 @@ export const LineContent = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: end;
-  font-size: clamp(26px, 3svw, 40px);
+  font-size: clamp(26px, 3dvw, 40px);
 
   font-weight: 400;
 
   @media (min-width: 768px) {
-    font-size: clamp(46px, 4svw, 80px);
+    font-size: clamp(46px, 4dvw, 80px);
     font-weight: 400;
   }
 
@@ -121,8 +120,8 @@ export const LineContent = styled.div`
 export const ContribuicaoSugerida = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: start;
+  justify-content: space-between;
 
   @media (min-width: 768px) {
     flex-direction: column;
@@ -130,16 +129,11 @@ export const ContribuicaoSugerida = styled.div`
 `;
 
 export const LineInfoBold = styled.span`
-  font-size: clamp(30px, 3svw, 50px);
-  line-height: 0.75;
-  /* transform: translateY(5px); */
-  &.contribuicao {
-    font-size: 4svw;
-  }
+  font-size: clamp(30px, 3dvw, 50px);
+
   @media (min-width: 768px) {
-    font-size: clamp(50px, 5svw, 50px);
-    font-size: 7svw;
-    line-height: 0.75;
+    font-size: clamp(50px, 5dvw, 50px);
+    font-size: 7dvw;
   }
   /* background-color: blanchedalmond; */
 `;
@@ -150,8 +144,7 @@ export const LineInfoBoldRight = styled.span`
   justify-content: end;
   text-align: end;
 
-  font-size: clamp(12px, 2svw, 24px);
-  /* font-size: 1.5svw; */
+  font-size: clamp(12px, 2dvw, 24px);
 
   /* background-color: blanchedalmond; */
 
@@ -159,38 +152,30 @@ export const LineInfoBoldRight = styled.span`
     flex-direction: column;
     justify-content: start;
     text-align: start;
-    /* font-size: 2svw; */
   }
 `;
 
 export const LineInfoPercentage = styled.span`
-  font-size: 10svw;
-  line-height: 0.75;
-  /* text-align: center; */
+  font-size: clamp(50px, 10dvw, 48px);
   /* background-color: #dc143c60; */
 
   @media (min-width: 768px) {
-    /* font-size: clamp(5rem, 8rem, 8rem); */
   }
 `;
 
 export const LineInfoArrecadacao = styled.span`
-  font-size: clamp(10px, 0.8svw, 16px);
-  overflow-wrap: break-word; /* Use overflow-wrap instead of word-wrap */
+  font-size: clamp(10px, 0.8dvw, 16px);
+  overflow-wrap: break-word;
   text-align: end;
-  /* display: flex;
-  justify-content: end;
-  align-items: end; */
-  /* font-family: "Grotesk"; */
   font-weight: 100;
   /* background-color: #deb8877b; */
 
   @media (min-width: 768px) {
-    font-size: clamp(12px, 0.8svw, 16px);
+    font-size: clamp(12px, 0.8dvw, 16px);
     text-align: start;
     font-weight: 100;
-    max-width: 30svw;
-    margin: 0 0.6svw;
+    max-width: 25dvw;
+    margin: 0 0.6dvw;
   }
 `;
 
@@ -198,31 +183,26 @@ export const LineContentLeft = styled.div`
   display: flex;
   flex-direction: column;
   align-items: start;
-
+  font-size: clamp(26px, 3dvw, 40px);
   max-width: 70%;
-  margin-right: 2svw;
-  /* font-size: 1.5em; */
+  margin-right: 2dvw;
   /* background-color: #0000ff2f; */
 
   @media (min-width: 768px) {
     font-size: 1em;
-    /* font-size: clamp(0.5em, 1em, 2em); */
+    font-size: clamp(12px, 0.8dvw, 16px);
   }
   span {
     overflow: visible;
   }
 `;
 export const LineContentRight = styled.div`
-  font-size: clamp(16px, 4svw, 80px);
+  font-size: clamp(16px, 4dvw, 80px);
   display: flex;
   flex-direction: row;
   align-items: end;
   justify-content: end;
   /* background-color: #00800067; */
-
-  /* span {
-    font-size: x-small;
-  } */
 
   &.porcentagemContribuicao {
     flex-direction: row;
@@ -239,9 +219,9 @@ export const LineContentRight = styled.div`
 `;
 
 export const IconWrapper = styled(Icon)`
-  /* width: 10svw; */
-  font-size: clamp(50px, 5svw, 100px);
-  margin: 3svh 0;
+  /* width: 10dvw; */
+  font-size: clamp(50px, 5dvw, 100px);
+  margin: 3dvh 0;
   /* background-color: #ff69b499; */
 
   /* @media (min-width: 768px) {

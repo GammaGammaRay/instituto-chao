@@ -94,26 +94,25 @@ function Contribuicao() {
         <ContribuicaoColRight>
           <LineVert>
             <ContribuicaoSugerida>
-              <LineInfoBold className="contribuicao">
-                <span>CONTRIBUIÇÃO</span>
+              <LineContentLeft className="contribuicao">
+                CONTRIBUIÇÃO
                 <br />
-                <span>SUGERIDA</span>
-              </LineInfoBold>
+                SUGERIDA
+              </LineContentLeft>
               <LineInfoPercentage>
                 <span>30%</span>
               </LineInfoPercentage>
             </ContribuicaoSugerida>
             <LineRect />
-            <LineVertManutencao>
-              <LineInfoBoldRight>
-                <span>OU MAIS</span>
-                <span>Para manutencão e ampliacão</span>
-                <span>(equilibra as contas e possibilita</span>
-                <span>investir no projeto)</span>
-              </LineInfoBoldRight>
-            </LineVertManutencao>
           </LineVert>
-
+          <LineVertManutencao>
+            <LineInfoBoldRight>
+              <span>OU MAIS</span>
+              <span>Para manutencão e ampliacão</span>
+              <span>(equilibra as contas e possibilita</span>
+              <span>investir no projeto)</span>
+            </LineInfoBoldRight>
+          </LineVertManutencao>
           <LineRect />
         </ContribuicaoColRight>
       </ContribuicaoContainer>
