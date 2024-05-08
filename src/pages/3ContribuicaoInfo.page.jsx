@@ -66,9 +66,11 @@ function Contribuicao() {
                 </LineContentRight>
               </LineContent>
               <LineRect />
-              <LineInfoArrecadacao>
-                <span>Arrecadações para custos do espaço e nosso trabalho</span>
-              </LineInfoArrecadacao>
+              <LineVertManutencao>
+                <LineInfoArrecadacao>
+                  Arrecadações para custos do espaço e nosso trabalho
+                </LineInfoArrecadacao>
+              </LineVertManutencao>
             </Line>
           ) : (
             <Line>
@@ -94,7 +96,7 @@ function Contribuicao() {
         <ContribuicaoColRight>
           <LineVert>
             <ContribuicaoSugerida>
-              <LineContentLeft className="contribuicao">
+              <LineContentLeft>
                 CONTRIBUIÇÃO
                 <br />
                 SUGERIDA

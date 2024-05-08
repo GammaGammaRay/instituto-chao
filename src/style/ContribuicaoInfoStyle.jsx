@@ -62,6 +62,8 @@ export const ContribuicaoColRight = styled.div`
   width: 100%;
 
   @media (min-width: 768px) {
+    justify-content: center;
+    align-items: center;
     width: 40dvw;
     height: 50dvh;
   }
@@ -70,21 +72,23 @@ export const ContribuicaoColRight = styled.div`
 `;
 
 export const Line = styled.div`
-  width: 100%;
+  width: 96dvw;
+  @media (min-width: 768px) {
+    width: 100%;
+  }
   /* background-color: #3d70cf6b; */
 `;
 
 export const LineVert = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 96dvw;
+  /* background-color: #3d70cf6b; */
+  @media (min-width: 768px) {
+    width: 100%;
+  }
 `;
 
-export const NecessidadeMinimaContainer = styled.div`
-  height: 500px;
-  width: fit-content;
-  background-color: #3d70cf6b;
-`;
 export const LineVertManutencao = styled.div`
   display: flex;
   flex-direction: column;
@@ -93,8 +97,8 @@ export const LineVertManutencao = styled.div`
 
   @media (min-width: 768px) {
     align-items: start;
-    /* width: 100%; */
   }
+  /* background-color: #a14dbb6b; */
 `;
 
 export const LineRect = styled.div`
@@ -122,13 +126,14 @@ export const LineContent = styled.div`
 export const ContribuicaoSugerida = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: start;
+  align-items: end;
   justify-content: space-between;
-  line-height: 0.8;
+  /* line-height: 0.8; */
   @media (min-width: 768px) {
+    align-items: start;
     flex-direction: column;
   }
-  /* background-color: #3d70cf6b; */
+  background-color: #3d70cf6b;
 `;
 
 export const LineInfoBold = styled.span`
@@ -177,13 +182,12 @@ export const LineInfoArrecadacao = styled.span`
   font-family: "Hanken Grotesk", sans-serif;
   font-weight: 400;
   line-height: 0.8;
+  font-size: clamp(11px, 0.8dvw, 16px);
   letter-spacing: 0.05em;
   font-weight: 600;
-  font-size: clamp(11px, 0.8dvw, 16px);
   margin-right: 4px;
-  /* overflow-wrap: break-word; */
+  width: 40%;
   text-align: end;
-  width: 50%;
   /* background-color: #deb8877b; */
 
   @media (min-width: 768px) {
@@ -200,8 +204,9 @@ export const LineContentLeft = styled.div`
   align-items: start;
   font-size: clamp(22px, 3dvw, 40px);
   max-width: 70%;
+  /* height: 100%; */
   margin-right: 2dvw;
-  /* background-color: #0000ff2f; */
+  background-color: #0000ff2f;
 
   @media (min-width: 768px) {
     font-size: clamp(32px, 4.5dvw, 64px);
@@ -247,5 +252,4 @@ export default {
   LineContentLeft,
   LineContentRight,
   IconWrapper,
-  NecessidadeMinimaContainer,
 };
