@@ -55,22 +55,23 @@ function Contribuicao() {
           </Line>
           <IconWrapper icon="pepicons-pop:equal-circle" />
 
-          <Line>
-            {isMobile ? (
+          {isMobile ? (
+            <Line>
               <LineContent>
                 <LineContentLeft>
                   <span>NECESSIDADE MÍNIMA DE ARRECADAÇÃO</span>
                 </LineContentLeft>
                 <LineContentRight className="vert">
-                  <LineInfoArrecadacao>
-                    <span>
-                      Arrecadações para custos do espaço e nosso trabalho
-                    </span>
-                  </LineInfoArrecadacao>
                   <LineInfoPercentage>25%</LineInfoPercentage>
                 </LineContentRight>
               </LineContent>
-            ) : (
+              <LineRect />
+              <LineInfoArrecadacao>
+                <span>Arrecadações para custos do espaço e nosso trabalho</span>
+              </LineInfoArrecadacao>
+            </Line>
+          ) : (
+            <Line>
               <LineContent>
                 <LineContentLeft>
                   <span>NECESSIDADE MÍNIMA DE ARRECADAÇÃO</span>
@@ -86,10 +87,9 @@ function Contribuicao() {
                   </LineInfoArrecadacao>
                 </LineContentRight>
               </LineContent>
-            )}
-
-            <LineRect />
-          </Line>
+              <LineRect />
+            </Line>
+          )}
         </ContribuicaoColLeft>
         <ContribuicaoColRight>
           <LineVert>
@@ -99,21 +99,18 @@ function Contribuicao() {
                 <br />
                 SUGERIDA
               </LineContentLeft>
-              <LineInfoPercentage>
-                <span>30%</span>
-              </LineInfoPercentage>
+              <LineInfoPercentage>30%</LineInfoPercentage>
             </ContribuicaoSugerida>
             <LineRect />
-          </LineVert>
-          <LineVertManutencao>
-            <LineInfoBoldRight>
+            <LineVertManutencao>
               <span>OU MAIS</span>
-              <span>Para manutencão e ampliacão</span>
-              <span>(equilibra as contas e possibilita</span>
-              <span>investir no projeto)</span>
-            </LineInfoBoldRight>
-          </LineVertManutencao>
-          <LineRect />
+              <LineInfoBoldRight>
+                <span>Para manutencão e ampliacão</span>
+                <span>(equilibra as contas e possibilita</span>
+                <span>investir no projeto)</span>
+              </LineInfoBoldRight>
+            </LineVertManutencao>
+          </LineVert>
         </ContribuicaoColRight>
       </ContribuicaoContainer>
     </ContribuicaoSection>

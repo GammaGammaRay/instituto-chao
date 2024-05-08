@@ -277,12 +277,12 @@ const SectionRightContainer = styled.div`
 `;
 
 const Horario = styled.div`
-  font-size: large;
+  font-size: clamp(16px, 2dvw, 32px);
+  font-weight: 600;
   display: flex;
   flex-direction: column;
   align-items: end;
   white-space: nowrap;
-  font-weight: 600;
 
   span:nth-child(2) {
     font-weight: 300;
@@ -320,6 +320,7 @@ const SocialLinksContainer = styled.div`
   flex-direction: row;
   align-items: end;
   justify-content: end;
+  /* width: fit-content; */
   /* height: 100%; */
   /* background-color: #14ff575f; */
 
@@ -337,11 +338,13 @@ const SocialLinksContainer = styled.div`
 `;
 
 const LinkWrapper = styled.div`
-  cursor: pointer;
-  padding: 5%;
-  border-radius: 5dvw;
-  &:hover {
-    background-color: white;
+  @media (min-width: 768px) {
+    margin: 0 15px;
+    cursor: pointer;
+    border-radius: 1dvw;
+    &:hover {
+      background-color: white;
+    }
   }
 `;
 
@@ -360,6 +363,7 @@ const StyledIconSocial = styled(Icon)`
   @media (min-width: 768px) {
     width: 8dvw;
     height: 100%;
+    margin: 5px;
   }
 `;
 
