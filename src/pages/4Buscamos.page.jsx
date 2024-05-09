@@ -114,7 +114,7 @@ const BuscamosSection = styled(Section)`
 
   button {
     font-family: "Nunito", sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     font-size: clamp(16px, 2dvw, 20px);
     min-height: 30px;
     margin-top: 12px;

@@ -320,6 +320,7 @@ const SocialLinksContainer = styled.div`
   flex-direction: row;
   align-items: end;
   justify-content: end;
+  /* width: 25%; */
   /* width: fit-content; */
   /* height: 100%; */
   /* background-color: #14ff575f; */
@@ -328,9 +329,11 @@ const SocialLinksContainer = styled.div`
     flex-direction: column;
     align-items: start;
     justify-content: end;
+    width: fit-content;
   }
 
   @media (min-width: 768px) {
+    width: fit-content;
     flex-direction: row;
     align-items: start;
     justify-content: space-between;
@@ -351,6 +354,7 @@ const LinkWrapper = styled.div`
 const StyledIconSocial = styled(Icon)`
   width: 60px;
   height: 60px;
+  margin: 5px;
   &:hover {
     color: var(--color-salmon);
   }
