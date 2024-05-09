@@ -76,9 +76,10 @@ const SectionText = styled.div`
 
   @media (min-width: 768px) {
     /* line-height: 1.2em; */
-    font-size: clamp(18px, 3vw, 24px);
+    font-size: clamp(18px, 3vw, 32px);
     padding: 0 1svw;
     max-height: 90svh;
+    max-width: 50dvw;
     &::-webkit-scrollbar {
       width: var(--scroll-bar-width-large);
     }

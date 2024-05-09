@@ -133,7 +133,7 @@ export const ContribuicaoSugerida = styled.div`
     align-items: start;
     flex-direction: column;
   }
-  background-color: #3d70cf6b;
+  /* background-color: #3d70cf6b; */
 `;
 
 export const LineInfoBold = styled.span`
@@ -187,14 +187,15 @@ export const LineInfoArrecadacao = styled.span`
   font-weight: 600;
   margin-right: 4px;
   width: 40%;
+  max-width: 200px;
   text-align: end;
   /* background-color: #deb8877b; */
 
   @media (min-width: 768px) {
     font-size: clamp(12px, 0.8dvw, 16px);
-    text-align: start;
-    max-width: 25dvw;
-    margin: 0 0.6dvw;
+    text-align: end;
+    max-width: 35%;
+    margin: 5px 0.6dvw;
   }
 `;
 
@@ -202,18 +203,19 @@ export const LineContentLeft = styled.div`
   display: flex;
   flex-direction: column;
   align-items: start;
-  font-size: clamp(22px, 3dvw, 40px);
-  max-width: 70%;
+  font-size: clamp(28px, 5dvw, 55px);
+  max-width: 60%;
   /* height: 100%; */
   margin-right: 2dvw;
-  background-color: #0000ff2f;
 
   @media (min-width: 768px) {
+    max-width: 50%;
     font-size: clamp(32px, 4.5dvw, 64px);
   }
   span {
     overflow: visible;
   }
+  /* background-color: #0000ff2f; */
 `;
 export const LineContentRight = styled.div`
   font-size: clamp(16px, 4dvw, 60px);

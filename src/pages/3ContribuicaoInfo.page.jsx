@@ -79,14 +79,13 @@ function Contribuicao() {
                   <span>NECESSIDADE MÍNIMA DE ARRECADAÇÃO</span>
                 </LineContentLeft>
                 <LineContentRight className="porcentagemContribuicao">
-                  <LineInfoPercentage>25%</LineInfoPercentage>
-
                   <LineInfoArrecadacao>
                     <span>
                       De arrecadações para pagar os custos do espaço e do nosso
                       trabalho
                     </span>
                   </LineInfoArrecadacao>
+                  <LineInfoPercentage>25%</LineInfoPercentage>
                 </LineContentRight>
               </LineContent>
               <LineRect />
