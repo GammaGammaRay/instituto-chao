@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
 }
 
     html{
-        
+        scroll-snap-type: y mandatory;
         
         &::-webkit-scrollbar {
             width: 0;
@@ -61,7 +61,7 @@ const GlobalStyle = createGlobalStyle`
 
     
     body{
-        scroll-snap-type: y mandatory;
+  
 
     /* font-family: 'Grotesk', sans-serif; */
     font-family: "Hanken Grotesk", sans-serif;
