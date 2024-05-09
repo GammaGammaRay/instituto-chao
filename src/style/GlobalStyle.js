@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
 }
 
     html{
-        scroll-snap-type: y ;
+        scroll-snap-type: y mandatory;
         
         &::-webkit-scrollbar {
             width: 0;
