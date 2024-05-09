@@ -214,7 +214,7 @@ const BalancoLoading = styled(SectionText)`
 `;
 
 const BalancoContainer = styled(ContentContainer)`
-  width: 90%;
+  width: 94%;
   min-height: 96%;
   max-height: 98svh;
   display: flex;
@@ -233,7 +233,7 @@ const BalancoContainer = styled(ContentContainer)`
 `;
 
 const BalancoTableTopContent = styled.div`
-  width: 90%;
+  /* width: 90%; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -249,6 +249,7 @@ const MonthTitle = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: end;
+  align-items: end;
 
   /* background-color: #00ffff78; */
 

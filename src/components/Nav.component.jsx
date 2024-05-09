@@ -122,7 +122,7 @@ const ButtonMenu = styled.div`
   width: 50px;
   position: fixed;
   z-index: 1;
-  top: 8px;
+  top: 4px;
   right: 8px;
   /* background-color: gray; */
   cursor: pointer;
