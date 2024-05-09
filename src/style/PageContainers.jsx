@@ -2,18 +2,16 @@ import { styled } from "styled-components";
 
 const Section = styled.section`
   height: 100dvh;
-  /* height: -webkit-fill-available; */
-  /* min-width: 100dvw; */
 
   scroll-snap-align: start;
+  scroll-snap-stop: always;
+  overflow-y: hidden;
+
   display: flex;
   flex-direction: row;
   align-items: start;
   justify-content: center;
   z-index: 1;
-  overflow-y: hidden;
-
-  scroll-snap-stop: always;
 
   @media (min-width: 768px) {
     height: calc(100dvh - var(--nav-height));
@@ -30,25 +28,19 @@ const ContentContainer = styled.div`
   flex-direction: row;
   justify-content: center;
   align-content: center;
-  padding: 2svh 0.5svw;
+  padding: 2svh 0.5dvw;
 
   /* background-color: #00ffff44; */
 
   @media (min-width: 768px) {
-    width: clamp(70svw, 80svw, 85svw);
-    /* width: 70svw; */
-    padding: 3svh 2svw;
+    width: clamp(70dvw, 80dvw, 85dvw);
+    /* width: 70dvw; */
+    padding: 3svh 2dvw;
   }
 `;
 
-const SectionTextWrapper = styled.div`
-  max-height: 96svh;
-  /* background-color: #892be267; */
-  position: relative;
-`;
-
 const SectionText = styled.div`
-  font-size: clamp(20px, 3vw, 24px);
+  font-size: clamp(22px, 3vw, 24px);
   /* line-height: 1.2em; */
   white-space: break-spaces;
   word-wrap: break-word;
@@ -60,7 +52,7 @@ const SectionText = styled.div`
   flex-direction: column;
   align-items: start;
 
-  padding: 0svh 1svw 0svh 3svw;
+  padding: 0svh 1dvw 0svh 3dvw;
 
   position: relative;
 
@@ -77,7 +69,7 @@ const SectionText = styled.div`
   @media (min-width: 768px) {
     /* line-height: 1.2em; */
     font-size: clamp(18px, 3vw, 32px);
-    padding: 0 1svw;
+    padding: 0 1dvw;
     max-height: 90svh;
     max-width: 50dvw;
     &::-webkit-scrollbar {
@@ -91,7 +83,7 @@ const Title = styled.h1`
 
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
-  font-size: clamp(70px, 10svw, 70px);
+  font-size: clamp(70px, 10dvw, 70px);
   color: black;
   white-space: nowrap;
 
@@ -110,7 +102,7 @@ const Title = styled.h1`
 
   @media (min-width: 768px) {
     white-space: normal;
-    font-size: clamp(120px, 10svw, 200px);
+    font-size: clamp(120px, 10dvw, 200px);
     line-height: 0.8em;
     margin-top: 0;
     flex-direction: column;
@@ -125,4 +117,4 @@ const Title = styled.h1`
   }
 `;
 
-export { Section, ContentContainer, SectionText, Title, SectionTextWrapper };
+export { Section, ContentContainer, SectionText, Title };
