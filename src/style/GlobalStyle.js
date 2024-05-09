@@ -29,12 +29,12 @@ const GlobalStyle = createGlobalStyle`
 
     :root {
 
-    --nav-height: 5svh;
+    --nav-height: 5dvh;
 
     --color-gray: #ded6d0;
     /* --text-font-size: clamp(24px, 1.5dvw, 50px); */
     --title-font-size-horz: clamp(10dvw, 4dvw, 2dvw);
-    /* --title-font-size-vert: max(10svh, 20svh); */
+    /* --title-font-size-vert: max(10dvh, 20dvh); */
 
     --scroll-bar-width: 6px;
     --scroll-bar-width-large: 8px;

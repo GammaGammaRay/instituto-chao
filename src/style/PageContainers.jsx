@@ -28,14 +28,14 @@ const ContentContainer = styled.div`
   flex-direction: row;
   justify-content: center;
   align-content: center;
-  padding: 2svh 0.5dvw;
+  padding: 2dvh 0.5dvw;
 
   /* background-color: #00ffff44; */
 
   @media (min-width: 768px) {
     width: clamp(70dvw, 80dvw, 85dvw);
     /* width: 70dvw; */
-    padding: 3svh 2dvw;
+    padding: 3dvh 2dvw;
   }
 `;
 
@@ -52,7 +52,7 @@ const SectionText = styled.div`
   flex-direction: column;
   align-items: start;
 
-  padding: 0svh 1dvw 0svh 3dvw;
+  padding: 0dvh 1dvw 0dvh 3dvw;
 
   position: relative;
 
@@ -63,14 +63,14 @@ const SectionText = styled.div`
   }
 
   p {
-    margin-bottom: 2svh;
+    margin-bottom: 2dvh;
   }
 
   @media (min-width: 768px) {
     /* line-height: 1.2em; */
     font-size: clamp(18px, 3vw, 32px);
     padding: 0 1dvw;
-    max-height: 90svh;
+    max-height: 90dvh;
     max-width: 50dvw;
     &::-webkit-scrollbar {
       width: var(--scroll-bar-width-large);
@@ -97,7 +97,7 @@ const Title = styled.h1`
   flex-basis: 0;
 
   span {
-    margin-bottom: 2svh;
+    margin-bottom: 2dvh;
   }
 
   @media (min-width: 768px) {
@@ -110,7 +110,7 @@ const Title = styled.h1`
 
   @media (min-width: 768px) and (max-height: 600px) {
     white-space: normal;
-    font-size: clamp(70px, 20svh, 200px);
+    font-size: clamp(70px, 20dvh, 200px);
     line-height: 0.8em;
     margin-top: 0;
     flex-direction: column;
