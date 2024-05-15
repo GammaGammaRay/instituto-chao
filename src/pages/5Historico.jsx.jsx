@@ -69,6 +69,7 @@ function Historico() {
 }
 
 const HistoricoSection = styled(Section)`
+  display: flex;
   background-color: var(--color-pink);
   overflow: hidden;
 `;
@@ -76,7 +77,7 @@ const HistoricoSection = styled(Section)`
 const HistoricoContainer = styled(ContentContainer)`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
 
   /* background-color: #00ffff40; */
 `;
